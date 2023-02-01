@@ -10,6 +10,9 @@ other4 = "https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2_changes_2012-20
 other5 = "https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/tricks.wgrib2"
 other6 = "https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/tricks.ncep"
 other7 = "https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/tricks.cheap"
+"pywgrib2_s_cookbook" = "https://www.cpc.ncep.noaa.gov/products/people/lxu/cookbook/"
+"windows 10" = "https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/Windows10/"
+"changelog" = "https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/Changes"
 
 [release_notes]
 "wgrib2_v3.1.1_changes" = "3.1.1 Changelog"
@@ -22,11 +25,10 @@ other7 = "https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/tricks.cheap"
 "pywgrib2_s_write" = "write grib2"
 "pywgrib2_s_close" = "close file, used to flush, free up resources"
 "pywgrib2_s_conventions" = "Conventions"
-pywgrib2_s_install.html
-pywgrib2_s_wgrib2.html
-pywgrib2_s_global_variables.html
+"pywgrib2_s_install" = "Install pygrib2_s_install"
+"pywgrib2_s_wgrib2" = ""
+"pywgrib2_s_global_variables" = ""
 # Missing page: output of pywgrib2_s.ing(...)
-"cookbook" = "https://www.cpc.ncep.noaa.gov/products/people/lxu/cookbook/"
 
 [documentation]
 "problems" = "Error Messages"
@@ -47,7 +49,6 @@ pywgrib2_s_global_variables.html
 "calling_wgrib2" = "calling wgrib2 from C"
 "user_grib2tables" = "user grib2tables"
 "special_file_names" = "special files"
-
 
 [options]
 [options.logic]
@@ -448,3 +449,10 @@ pywgrib2_s_global_variables.html
  "-transient" =           "init  X      make file X transient, CW2"
 
 [solutions]
+"time_interpolation" = "Time interpolation"
+"new_grid_intro" = "new_grid intro"
+
+[writing]
+"gribify2" = "gribify using import and a template"
+"g2grb" = "writing grib2 with GrADS and wgrib2"
+"grb2_wrt" = "grib2_wrt(..)"

@@ -12,3 +12,6 @@ dependencies:
 
   - pip:
       - markdownify
+
+
+# conda env create -f environemnt.yml
