@@ -1,332 +1,201 @@
-  wgrib2: wgrib for GRIB-2 
- Utility to read and write grib2 files 
-News
 
-[wgrib2 v3.1.1 has been released](./wgrib2_v3.1.1_changes.html)
-
-News
-
-[pywgrib2\_s](./pywgrib2_s.html) been released for beta (Linux/MacOS) (wgrib2 v3.0.0, 9/2020)
-
-Introduction
- Wgrib2 is a processor for grib2 files. It is a utility
-and library for manipulating grib files, The utility was designed to be
-used to reduce the need for custom Fortran programs to 
-read, write and manipulate grib files.
-Wgrib2 has the following abilities.
-
-* inventory and read grib2 files
-* create subsets
-* create regional subsets by cookie cutter or projections
-* export to ieee, text, binary, CSV, netcdf and mysql
-* import to ieee, text, binary, and netcdf
-* write of new grib2 fields
-* parallel processing by using threads (OpenMP)
-* parallel processing by flow-based programming
-
-
- Wgrib2 is versatile because it's command line is a simple
-language. This makes wgrib2 useful in embedding. 
-Some programs that embed wgrib2.
-
-* [g2ctl](https://www.cpc.ncep.noaa.gov/products/wesley/g2ctl.html)
-a control maker for [GraADS](https://www.nws.noaa.gov/cgi-bin/nwsexit.pl?url=https://www.iges.org/grads/)* [atl\_g2ctl, alt\_gmp](https://www.cpc.ncep.noaa.gov/products/wesley/alt_g2ctl_gmp.html)
-alternative versions of g2ctl/gribmap for for
-[GraADS](https://www.nws.noaa.gov/cgi-bin/nwsexit.pl?url=https://www.iges.org/grads/)* grib-filter/g2subset cgi-bin programs for Nomads (NOAA OperationalModel Archive & Distribution System)
-* [g2grb.gs](https://www.cpc.ncep.noaa.gov/products/wesley/g2grb.html) enables GrADS to write grib2 files
-* [grb1to2.pl](https://www.cpc.ncep.noaa.gov/products/wesley/grb1to2.html) grib1 to grib2 converter
-* [Xplane11](https://www.x-plane.com/) flight simulator
- * [rNOMADS](https://www.nws.noaa.gov/cgi-bin/nwsexit.pl?url=https://cran.r-project.org/web/packages/rNOMADS/index.html) R interface for NOAA weather data
+### wgrib2: -lon
 
 
 
-OpenMP Configuration
+### Introduction
 
 
-OpenMP is used to speed up wgrib2 by running loops over
-multiple cores. OpenMP is enabled by default for most builds
-and you can slow up your machine if you the wrong OpenMP
-configuration.
 
-The first configuration is to set up the number of
-threads that wgrib2 will use. The default configuration
-is set the number of threads equal to the number of
-physical cores. The default is reasonable except for
-when your computer becommes becomes
-unresonsive. For a 4 core CPU, I set the number of threads
-to be 3, so I another core to handle other work.
+The -lon option prints the value of the grid point
+closest to the specified longitude latitude. The latitude-longitude of the grid
+point are also printed. If you use the verbose mode, the grid
+coordinates (i,j) and the number of the element are also printed.
+The -lon option can be repeated to save processing
+time. 
 
 
 ```
 
-export OMP_NUM_THREADS=3
+-sh-2.05b$ wgrib2 eta.t00z.awphys18.grb2 -d 1 -s -lon 249 39 -lon 255 33
+1:0:d=2003090300:MSLET:mean sea level:18 hour fcst:lon=249.035,lat=38.9912,val=101685:
+lon=254.964,lat=32.9671,val=101668
+
+-sh-3.00$ wgrib2 rtma.t12z.2dvaranl\_ndfd.grb2.c2 -d 1 -v -lon -120 30
+1:0:lon=240.008805,lat=29.988418,i=220037,ix=72,iy=206,val=0
 
 ```
 
-The next OpenMP configuration is how to handle unused threads (cores).
-By setting OMP\_WAIT\_POLICY to PASSIVE,
-unused cores are made availible to to work on other tasks.
-Setting OMP\_WAIT\_POLICY to ACTIVE, will not share the cores.
-In kindergarten, you learned the value of sharing.
+
+In the latter example, the verbose mode has been set and
+the inventory includes both the value, location and its 
+grid coordinates; i.e., the 220037th element in the array and 
+its coordinates are (72,206). Note that these coordinates
+are after the data has been converted into a WE:SN scan order.
+Both the i, ix and iy start with a value of one.
+
+### Usage
+
+
 
 
 ```
 
-export OMP_WAIT_POLICY=PASSIVE
+-lon LONGITUDE LATITUDE
+      LONGITUDE = 0 .. 360
+      LATITUDE = -90 .. 90
+
+      If the verbosity is 0, the print out the longitude and
+        latitude of the nearest grid point as well as the grid value.
+
+      If the verbosity is 1 or higher, the prints out the longitude and
+        latitude of the nearest grid point, the index (i) to the data,
+        the grid coordinates (ix,iy) as well as the grid point value.
+
+        i = 1..number of grid points
+        ix = 1..nx
+        iy = 1..ny
 
 ```
 
-News
-
-4/14/2022: wgrib2 v3.1.1 is released
- Changes for wgrib2 v3.1.1
-* fixes check\_pdt\_len for some ECMWF and ICON files with vertial coordinates
-* fixes -unix\_time because of glibc
-* more support for unix time: -set\_date, -import\_netcdf
-* tested: gcc/gfortran on Ubuntu 20.04, Redhat 7
-* tested: icc/ifort on Redhat 7
-* tested: AOCC v3.2 (clang, flang) on Ubuntu 20.04
-* minor tested: Windows 10 using cygwin64
-* minor tested: gcc/gfortran on Ubuntu 18.04
-
-
-Usage
-* each option corresponds to a subroutine call
-* type wgrib2 to see primary options
-* inventory format is specified on command line by options
-* if no "inv" option is specified, -s is used
-
-
-Joining the development effort
-* Source code: knowledge of C and some grib-2
-* Changes to existing source code has to use the same licence as the original code
-* New code (files) must either be GNU or public domain.
-* Github? No. 
-* Bug reports are important
-* Some inovations by first time contributors
-	+ first implementation of lat-lon of common grids
-	+ write netcdf files
-	+ callable wgrib2 (making wgrib2 a subroutine)
-	+ write to mysql files
-	+ AEC compression
-	+ python interface* Contact wesley.ebisuzaki@noaa.gov
-
-
-Contributions by
-* Wesley Ebisuzaki: many modules
-* Reinoud Bokhorst: tosubmsg, checksum 
-* DWD (Gregor Schee, Daniel Lee and others): AEC compression
-* Jaakko Hyvätti: gribtab
-* John Howard: callable wgrib2
-* Dusan Jovic: staggered grids, proj4 code
-* Kristian Nilssen: netcdf module
-* Karl Pfeiffer: georeferencing
-* Pablo Romero: unix\_time
-* Manfred Schwarb: many modules
-* Arlindo da Silva: openGrADS, bbox
-* Niklas Sondell: mysql module
-* Sam Trahan: satellite tables
-* George Trojan: python interface, improvements to wgrib2api
-* Sergey Varlamov: netcdf module improvements, georeferencing updates
-* thanks to the people who report the bugs and more who provide the fixes!
-
-
-Documentation
-* [problems-error message](./problems.html)* [Slides for talk to CUNY students 6/2016: grib1/grib2](https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/grib1-grib2v3.pptx)* [intro\_grib2.pdf using GFS fcst](https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/intro_grib2.pdf)* [Understanding the default inventory](./default_inv.html)* [converting from wgrib to wgrib2 in scripts](./convert_wgrib2.html)* [Powerpoint presentation](https://www.cpc.ncep.noaa.gov/products/outreach/seminars/CPC/archive/grib2_wgrib2.ppt) 4/6/2011 at NCEP 
-* [Changes in wgrib2 from 5/2012 to 1/2015 (pdf)](https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2_changes_2012-2015.pdf)* [submessages](./submessages.html)* [writing a simple function](./function.html)* [selecting fields to decode](./selecting_messages.html)* [option types: init inv out misc](./types.html)* [bin, ieee, text format](./bin_ieee_text_format.html)* [small fast databases](./small_fast_databases.html)* [usage questions](./usage_questions.html)* [using pipes](./pipes.html) and [multiprocessing](./for_n.html)* [compile questions](./compile_questions.html)* [limitations](./limitations.html)* [make wgrib2 faster](./speed.html)* [calling wgrib2 from C](./calling_wgrib2.html)* [user defined grib tables](./user_grib2tables.html)* [special files](./special_file_names.html)* [some tricks](https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/tricks.wgrib2)* [some tricks for NCEP users](https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/tricks.ncep)* [one-line tricks](https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/tricks.cheap)
-
-
-The options
-* [the common options](./short_cmd_list.html)* [all the commands](./long_cmd_list.html)
-
-
-Some solutions
-* [Time interpolation of two grib files](./time_interpolation.html)* interpolation to new grid: [new\_grid](./new_grid.html), [Lat-Lon nearest neighbor](./lola.html), 
-[Lat-Lon by Cressman](./cress_lola.html)* CSV (comman separated value) file: [-csv](./csv.html), [-spread](./spread.html)* [Windows\_10 version of wgrib2](https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/Windows10/)* [Fast averaging](./ave.html)
-
-
-Selecting Fields/Records/Message
-Select/Ignore by name/level/time/etc
-* [-match](./match.html) process records that match a posix extended regular expression
-* [-not](./not.html) process records not matching a regular expression
-* [-match\_inv](./match_inv.html) the inventory used by -match and -not
-* [-i](./i.html) reads inventory from stdin for record selection
-
-
-Select by number (better to use previous method)
-* [-d](./d.html) dump specific record
-* [-for](./for.html) select a range of records to process (nth message)
-* [-for\_n](./for_n.html) select a range of records to process (nth message/submessage)
-
-
-Selective Processing: if options
-
-After selecting the fields to process, you can refine the processing by
-the "if" options. With wgrib2 v3.0.0, the [IF](./if.html)
-structure was improved. Scripts that used the older IF structure still work;
-however, the new IF structure is easier to read.
-
-If possible, it is better to use the match options than the if options.
-The -match/-not options prevent unwanted records from being processed which
-saves time over the if options which process the fields.
-
-Individual Grid Point Data
-* [-ij](./ij.html) print value at grid point (i, j)
-* [-ijlat](./ijlat.html) print lat, lon, value at grid point (i, j)
-* [-ilat](./ilat.html) print lat, lon, value of Nth grid point
-* [-lon](./lon.html) prints the lat-lon, and value of the grid point nearest the specified lat-lon
-* [-max](./stats.html) prints the maximum value
-* [-min](./stats.html) prints the minimum value
-* [-stats](./stats.html) prints some statistics about the fields
-* [-V](./macros.html) verbose inventory (shows stats)
-
-
-Regridding, Interpolating to new grids
- Wgrib2 has the ability to convert grib files from one grid
-to another. The conversion uses a user-selected interpolation
-scheme: bilinear (default), bicubic, nearest neighbor, budget, and spectral.
-The supported grids include lat-lon, gaussian, Lambert conformal, polar stereographic,
-and WMO-defined rotated lat-lon grid. This capability uses the NCEP IPOLATES2 library
-and is an optional package. 
-
- Note: the interpolation uses scalar and vector interpolation
-schemes. For the vector quantities the V field must immediately
-follow the corresponding U field.
-
-* [new\_grid](./new_grid.html)* [-new\_grid\_interpolation](./new_grid_interpolation.html) set interpolation type used by -new\_grid
-* [wgrib2m](./wgrib2m.html) fast regrid using multiple processes
-
-
-Exporting data to other programs
-* [-netcdf](./netcdf.html): write data in netcdf format
-* -mysql: export data to a mysql database
-* -mysql\_speed: export data to a mysql database
-* [-spread](./spread.html): write data for spreadsheets
-* [-csv](./csv.html): write in column separated values, another one for spreadsheets
-* [-text](./text.html): data in text format
-* [-bin](./bin.html): data native binary floating point
-* [-ieee](./ieee.html): data in big endian IEEE format
-* [-ijbox](./ijbox.html): write a rectangular grid of data
-* [-AAIG](./AAIG.html): arcinfo ascii grid, GIS
+### Example
 
 
 
-For a short list of options, type "wgrib -h"
-For a complete list, type "wgrib -help all"
-To search for an option, type "wgrib -help keyword"
-Writing grib2
 
-Wgrib2 has adopted the template approach for writing grib. You
-have a sample grib2 message (template), and you modify the grid point values
-and metadata to create a new grib message that you can write.
-This is similar to how ECMWF's ECCodes writes grib. The other approach
-is to supply many parameters to create a grib message which is used
-by NCEP's g2 library.
+```
 
-1. from wgrib2 [command line](./gribify2.html)- from GrADS using [g2grb.gs](../g2grb.html)- fron python using [write](./pywgrib2_s_write.html)- from fortran using [grb2\_write](./grb2_wrt.html)
+$ wgrib2 test.grb2 -s -lon -90 20
+1:0:d=2005090200:HGT:1000 mb:60 hour fcst:lon=270,lat=20,val=121.3
+2:133907:d=2005090200:HGT:975 mb:60 hour fcst:lon=270,lat=20,val=344.4
+3:263511:d=2005090200:HGT:950 mb:60 hour fcst:lon=270,lat=20,val=573
+4:389058:d=2005090200:HGT:925 mb:60 hour fcst:lon=270,lat=20,val=806.5
+...
 
+```
 
-Machines able to run wgrib2
- 64-bit with IPOLATES
-* Redhat 7 Enterprise: gcc/gfortran (primary development system)
-* Redhat 7 Enterprise: gcc/gfortran, icc/ifortran
-* SUSE Enterprise: gcc/gfortran, icc/ifortran
-* Ubuntu 20.04: gcc/gfortran (primary development system)
-* Ubuntu 20.04: AOCC's clang and flang (development system) with OpenJPEG
-* Ubuntu 20.04: nvidia with OpenJPEG
-* ARM: needed to be compiled with USE\_NETCDF4=1, USE\_JASPER=0 (old report)
-* Redhat linux: 32-bit with IPOLATES, not tested recently, use netcdf4 (old report)
-* Mandriva linux (old report)
-* AIX: use makefile, some fiddling with libraries is necessary, not tested recently
-* Solaris, needs gnu make and gcc (old report)
-* Solaris-10 (old report)
-* HPUX, needs changes to makefiles (old report)
-* Windows: using Cygwin system produces 32-bit binaries (old report)
-* Windows: using Cygwin system produces 64-bit binaries
-* Windows: compiled MingW (not recent), Watcom C, icc/ifort (old report)
-* Windows/linux subsystem (ubuntu): compiled with gcc/gfortran (old report)
-* Intel-based Mac using gcc and gfortran
+### Old vs New
 
 
-
-The makefile works on Redhat and Ubuntu (with needed installed options).
-For other systems, you may have to modify the makefile. The makefile
-requires gnu make which is a common version of make.
-
-System dependencies: 32 vs 64 bit, big vs little endian, Windows vs Linux/UNIX
-
-The wgrib2 source code is written to be portable; there are no
-issues with big vs little endian or the size of the integer as
-long as it is 32 bits or more. The source code is written in
-ANSI/ISO C (C89), with optional features that require
-POSIX or POSIX-2. There has been a debate about 
-moving the base rquirements to C99.
-
-* big vs little endian: either works
-* 32-bit machine: files limited to 2GB files, netcdf3 may not work
-* Windows: 2GB+ files with 64-bit cygwin, 2GB with other windows C compilers
-* Windows: only 64-bit cygwin is supported
-* POSIX: all POSIX code is optional. Regex support is POSIX and useful.
-* JPEG2000: OpenJPEG library or Jasper library
+ The original code for the 
+-lon option used the internal geolocation package.
+This package could compute the lat/lon of the grid points but
+nothing else. To find the grid point closest to a specified
+lat/lon, the distance to every grid point had to be calculated.
+Later, a short cut was added for lat-lon grids. Finally the
+geolocation packages gctpc and Proj4 have inverse functions
+which allow you to find the closest grid point to specified point
+for the the supported grids. For unsupported grids like the
+Gaussian grid and staggered grids, the original brute force
+code is used. You can turn off the new code by the
+-gctpc 0 option. The old code did
+not know about grid domains and would find the closest point
+even if the point were outside of the grid domain. The
+gctpc-based closest will return a lat=lon=999 to signal an
+intial point outside of the domain.
 
 
-Source Code and Compling Hints
-
-The wgrib2 source code is written to the POSIX-2 standard. Features requiring
-POSIX2, such as regular expressions, can usually be turned off
-in the makefile. The wgrib2 code can be compiled with 32 or 64 bit pointers and integers.
-However, the code has to be compiled in a like manner for all the libraries.
-Some packages are optional (netcdf, mysql) and enabling these options can really
-increase the executable size. 
+### Want Speed?
 
 
-While compiling wgrib2, you may see warnings about unknown pragmas. Pragmas
-are "comments" that are used when compiling an OpenMP version of the code. The
-default is to compile with OpenMP turned on.
+ You want extract the values for a 1000 different points.
+So you call wgrib2 1000 times and complain that wgrib2 is slow.
+Well decoding a jpeg2000 compressed file 1000 times does take time.
+It's better to add a 1000 -lon options to the 
+command line and only decode the file once.
+
+ The number of -lon options on a 
+command line is limited by a compile-time option. Try
+running wgrib2 -config and look for the line
+"maximum number of arguments on command line:". The current
+value is 5000 which allows you 5000 words on the command line. Each
+-lon option takes 3 words, so that gives
+you about 1600 -lon options you can run
+on one line. Of course, limitations such as the maximum line
+length or maximum number of continuations may stop you first.
+
+### Text, Binary and CSV Output
 
 
-2/2019: The HDF5 library has problems being compiled with newer gcc compilers.
-The only consisten method of adding NetCDF4 to wgrib2 is by using old compilers
-(RedHat 6) or using the Intel compilers. The work around to enable NetCDF3 support
-and use an external utility to convert the files to Netcdf4.
+ The -lon option writes the grid value
+to the inventory. What happens if you want the output written
+to a file. You could write the output of 
+-lon to a file by using the
+-last option.
 
 
-NetCDF3 has problem being compiled on 32-bit machines.
+```
 
-* [Source code](https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/)* [\_README](https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/_README)* [Change log](https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/Changes)* [compiling directions and questions](./compile_questions.html)* [wgrib2.tgz](https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz)* [OS-X installation by author of rNOMADS](https://bovineaerospace.wordpress.com/2017/08/20/how-to-install-wgrib2-in-osx/) using gcc and OS-X
+$ wgrib2 gep19.aec -lon 10 20  -last junk -nl_out junk -for 1:3
+1:0:lon=10.000000,lat=20.000000,val=12391.6
+2:70707:lon=10.000000,lat=20.000000,val=219.5
+3:96843:lon=10.000000,lat=20.000000,val=85
+$ cat junk
+lon=10.000000,lat=20.000000,val=12391.6
+lon=10.000000,lat=20.000000,val=219.5
+lon=10.000000,lat=20.000000,val=85
 
-
-Precompiled code from External Sites
-
-There are many sites with precompiled versions of wgrib2. This list
-is neither exhaustive nor an endorsement of the sites. I have
-not tested the wgrib2 executables from these sites and YMMV.
-
-* [OpenGrads:](https://www.nws.noaa.gov/cgi-bin/nwsexit.pl?url=https://opengrads.org/)
-Darwin, Freebsd, Linux, Windows(cygwin)
-* [Fedora Project](https://www.nws.noaa.gov/cgi-bin/nwsexit.pl?url=https://fedoraproject.org)* [RPMs:](https://www.nws.noaa.gov/cgi-bin/nwsexit.pl?url=https://download.opensuse.org/repositories/home:/gbvalor/) Centros, Fedora, OpenSUSE, RedHat, SUSE
-* [MacPorts](https://www.nws.noaa.gov/cgi-bin/nwsexit.pl?url=https://trac.macports.org/browser/trunk/dports/science/wgrib2/Portfile)
+```
 
 
-Status
+You can also use the -lola option which can
+write a 1x1 grid to binary, text or a grib file.
 
-The wgrib2 is used operationally in the NCEP production suite.
+
+```
+
+$ wgrib2 gep19.aec -no_header -lola "10:1:1" "20:1:1" out.txt text -for 1:3
+1:0:d=2009060500:HGT:200 mb:180 hour fcst:ENS=+19
+2:70707:d=2009060500:TMP:200 mb:180 hour fcst:ENS=+19
+3:96843:d=2009060500:RH:200 mb:180 hour fcst:ENS=+19
+$ cat out.txt
+12391.6
+219.5
+85
+
+```
 
 
-[Change logfile](https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/Changes)
+You can make a CSV file by first converting the grib file and running wgrib2 on that 
+grib file.
 
-Bugs
- Please report bugs to wesley.ebisuzaki@noaa.gov. When you report bugs,
-try to make them reproducible on a linux machine and include sample data.
 
-Distribution
+```
 
- The source code modules for wgrib2 are either in the public domain or under the GNU
- licence depending on the authors of the various modules. Wgrib2 uses libraries that
- are in the public domain, under various GNU licences, the Image Power JPEG-2000 Public Licence\*, 
- libpng licence\*, the zlib licence\*, the netcdf licence\*, HDF5 licence\*, MySQL licence\* and perhaps others. How 
- about one licence to rule them all?
- 
- \* optional package
- 
- |
+$ wgrib2 gep19.aec -no_header -lola "10:1:1" "20:1:1" out.grb grib -for 1:3
+1:0:d=2009060500:HGT:200 mb:180 hour fcst:ENS=+19
+2:70707:d=2009060500:TMP:200 mb:180 hour fcst:ENS=+19
+3:96843:d=2009060500:RH:200 mb:180 hour fcst:ENS=+19
+$ wgrib2 out.grb -csv out.csv
+1:0:d=2009060500:HGT:200 mb:180 hour fcst:ENS=+19
+2:182:d=2009060500:TMP:200 mb:180 hour fcst:ENS=+19
+3:364:d=2009060500:RH:200 mb:180 hour fcst:ENS=+19
+$ cat out.csv
+"2009-06-05 00:00:00","2009-06-12 12:00:00","HGT","200 mb",10,20,12391.6
+"2009-06-05 00:00:00","2009-06-12 12:00:00","TMP","200 mb",10,20,219.5
+"2009-06-05 00:00:00","2009-06-12 12:00:00","RH","200 mb",10,20,85
+
+```
+
+
+See also: [-last](./last.html),
+[-lola](./lola.html),
+[-config](./config.html)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
