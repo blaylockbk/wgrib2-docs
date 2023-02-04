@@ -32,7 +32,6 @@ will be using 80 ensemble members.
 The calculated variables are
 
 ```
-
 1) ensemble mean,  em = sum(x(i))/n,  i=1..n
 2) ensemble spread, RMSE = sqrt(sum((x(i)-em)**2)/n)  note: n is used rather than n-1
 3) minimum = minimum value over all ensemble members (for each grid point)
@@ -66,7 +65,6 @@ For the probabilities, a count is used to determine them.
 
 As previously mentioned, the above calculations may differ from those used
 in deriving the operational products.
-
 ```
 
 The -ens_processing option was developed for the
@@ -76,7 +74,6 @@ that these fields are expected to change. Generation of additional
 fields can be enabled by setting the second parameter to special values.
 
 ```
-
 10) probability of precipitation > 0 *
 11) probability of more than a trace of precipitation (trace=TBD) *
 12) probability of 2m temperature greater than 273.15K *
@@ -87,7 +84,6 @@ fields can be enabled by setting the second parameter to special values.
      trace can mean less than 0.01 inches
      trace can mean less than 0.1 mm
      for wgrib2, trace = accumulated precip < 0.xxx mm, or a rate < 0.xxx mm/day.
-
 ```
 
 The -ens_processing is unlike most wgrib2
@@ -105,7 +101,6 @@ is documented in detail because if varies between PDT and center that
 created the grib file.
 
 ```
-
 Ensemble mean, ensemble spread, ensemble minimum, ensemble maximum:
   Code Table 4.3 is preserved from the input file.
 
@@ -114,7 +109,6 @@ Percentiles, Probabilities:
   Other centers: code table 4.3 = 4, Ensemble forecast
 
 The NCEP files are more descriptive because a local table is used.
-
 ```
 
 ### Definition of an Ensemble MEmber
@@ -143,7 +137,6 @@ The number id of the ensemble members is ignored, and is not
 even necessary.
 
 ```
-
 bash-4.1$ wgrib2 all.grb | head -n 60
 1:0:d=2018020600:PRES:mean sea level:84 hour fcst:ENS=+1
 2:83628:d=2018020600:PRES:mean sea level:84 hour fcst:ENS=+2
@@ -160,7 +153,6 @@ bash-4.1$ wgrib2 all.grb | head -n 60
 41:2579586:d=2018020600:UGRD:planetary boundary layer:84 hour fcst:ENS=+1
 42:2629955:d=2018020600:UGRD:planetary boundary layer:84 hour fcst:ENS=+2
 ..
-
 ```
 
 ### Order of Fields: gmerge to the rescue
@@ -176,9 +168,7 @@ source code for many years.) There is a minor restriction, gmerge
 doesn't handle grib files which includes non-grib data.
 
 ```
-
 gmerge output fcst1 fcst2 fcst3
-
 ```
 
 The requirements for output to be in the right order.
@@ -201,7 +191,6 @@ option -ens_processing can be used to
 create the min/max/ave/spread of the ensemble.
 
 ```
-
 gmerge  output1 fcst1 fcst2 fcst3
 wgrib2  output1 -ens_processing output2 x
   note: x is a dummy argument, it may be used in the future
@@ -218,7 +207,6 @@ gmerge - fcst1 fcst2 fcst3 | wgrib2 - -ens_processing output x
 NOTE: must use a recent version of gmerge.  Old versions of gmerge
 only accepted a small number of input files and did not allow
 output to the pipe by "-".
-
 ```
 
 ### Fast Processing
@@ -240,13 +228,11 @@ A better approach is to adopt the technique used in
 limited by the amount of physical memory on the system.
 
 ```
-
 cat fcst.2018122600.mem* | wgrib2 - -set_grib_type c3 \
   -if (xxx1) -ens_processing out 1 -fi \
   -if (xxx2) -ens_proceesing out 1 -fi \
   ...
   -if (xxxN) -ens_proceesing out 1 -fi
-
 ```
 
 This approach only has two open files at any one time, and
@@ -261,7 +247,6 @@ On a compute nodes, you may have to replace the pipe with a temporary file.
 ## Usage
 
 ```
-
 -ens_processing FILE Option
    FILE = output file, grib2 format
    Option = 0   default
@@ -274,13 +259,11 @@ On a compute nodes, you may have to replace the pipe with a temporary file.
   If you would like to add more output from -ens_processing, it
   needs to be enabled by an option number.  Ask me (WNE) for
   a number.
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 input -ens\_processing output 0
 1:0:d=2018020600:PRES:mean sea level:84 hour fcst:ENS=+1
 2:83628:d=2018020600:PRES:mean sea level:84 hour fcst:ENS=+2
@@ -300,7 +283,6 @@ $ wgrib2 output
 8:872782:d=2018020600:VIS:surface:84 hour fcst:min all members
 9:938123:d=2018020600:VIS:surface:84 hour fcst:max all members
 ...
-
 ```
 
 ### GrADS
@@ -312,11 +294,9 @@ using the g2ctl/gribmap/GrADS set of programs. However, they
 can be displayed by atl_g2ctl/alt_gmp/GrADS set of programs.
 
 ```
-
   alt_g2ctl -short output >output.ctl
   alt_gmp output.ctl
   grads
-
 ```
 
 See also:

@@ -9,10 +9,8 @@ points in the processing.
 ## Usage
 
 ```
-
 -status file
         the status of the various opened files
-
 ```
 
 See also:

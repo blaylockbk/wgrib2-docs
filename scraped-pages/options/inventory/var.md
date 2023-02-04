@@ -34,14 +34,12 @@ was introduced. You can see the extended name by
 the -ext_name option.
 
 ```
-
 -sh-2.05b$ ./wgrib2 chem.grb2
 1:0:d=2009012600:MASSDEN:surface:anl:ENS=hi-res ctl chemical=Water Vapour
 -sh-2.05b$ ./wgrib2 chem.grb2 -ext\_name
 1:0:MASSDEN.hi-res_ctl.Water_Vapour
 -sh-2.05b$ ./wgrib2 chem.grb2 -misc
 1:0:ENS=hi-res ctl:chemical=Water Vapour
-
 ```
 
 The extended name takes the output of -misc,
@@ -55,22 +53,18 @@ To stop using the extended name in -AAIG, -csv and -netcdf, use the option
 ## Usage
 
 ```
-
 -ext_var
 -set_ext_name 0/1
 -var
-
 ```
 
 ### Examples
 
 ```
-
 -sh-2.05b$ ./wgrib2 chem.grb2 -var
 1:0:MASSDEN
 -sh-2.05b$ ./wgrib2 chem.grb2 -ext\_name
 1:0:MASSDEN.hi-res_ctl.Water_Vapour
-
 ```
 
 See also:

@@ -29,7 +29,6 @@ The contents of the output files will vary depending the qc_version.
 As of 1/2022, only qc_version 1 has been defined.
 
 ```
-
 1) ens_mean,  sum(x(i))/n,  i=1..n where n is the number of ensemble members
 2) ens_spread, sqrt(sum((x(i)-em)**2)/n)  note: n is used rather than n-1
 3) ens_min = minimum value over all ensemble members (for each grid point)
@@ -49,7 +48,6 @@ differs from -ens_processing which requires no missing values for all
 the ensemble members before calculating the various products. This
 will affect the calculation of the mean cloud top temperature some
 ensemble members are missing clouds.
-
 ```
 
 The -ens_qc is unlike most wgrib2
@@ -92,7 +90,6 @@ see the documentation for -ens_processing.
 ## Usage
 
 ```
-
 -ens_qc FILE1 FILE2 FILE3 QC_VERSION
    FILE1 = ensemble min, ensemble max, ensemble mean, ensemble spread
            output in grib2 format
@@ -103,13 +100,11 @@ see the documentation for -ens_processing.
            text, single line per field
    QC_VERSION = the type of QC to be run
            1  only acceptable value (1/2021)
-
 ```
 
 ### Example
 
 ```
-
 $ gmerge - sfg_2014060500_fhr06_mem0* | wgrib2 - -ens_qc out1 out2 out3 1
 1:0:d=2014060412:UGRD:0-1 hybrid pressure layer:12 hour fcst:ENS=+1
 2:183334:d=2014060412:UGRD:0-1 hybrid pressure layer:12 hour fcst:ENS=+2
@@ -158,7 +153,6 @@ UGRD:0-1 hybrid pressure layer:max scaled extreme=7.454012
 UGRD:1-2 hybrid pressure layer:max scaled extreme=8.029185
 UGRD:2-3 hybrid pressure layer:max scaled extreme=7.936052
 ...
-
 ```
 
 ### GrADS
@@ -170,11 +164,9 @@ using the g2ctl/gribmap/GrADS set of programs. However, they
 can be displayed by atl_g2ctl/alt_gmp/GrADS set of programs.
 
 ```
-
   alt_g2ctl -short output >output.ctl
   alt_gmp output.ctl
   grads
-
 ```
 
 See also:

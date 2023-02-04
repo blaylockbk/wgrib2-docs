@@ -25,7 +25,6 @@ are given [here](./ext_name.md).
 To select between the regular and extended name, you use
 
 ```
-
    -set_ens_name N
 
       N == 0                 default
@@ -39,7 +38,6 @@ To select between the regular and extended name, you use
       ex N == 6              level information + forecast information
       ex N == 7              misc + level information + forecast information
       N > 7                  for future use
-
 ```
 
 ### Extended Extended Names
@@ -54,13 +52,11 @@ the forecast time information. With this extension, the level
 information was added as another option field to the extended name.
 
 ```
-
   $ wgrib2.v3.0.2 FCST.grb -set_ext_num 1 -netcdf FCST.nc
      lost fields because the field names were not unque
 
   $ wgrib2.v3.0.2 FCST.grb -set_ext_num 5 -netcdf FCST.nc
      extended name include misc-info and forecast-time-info.
-
 ```
 
 The final modification to the extended name, was to make the field and space
@@ -74,10 +70,8 @@ The extended names also applies the match inventory. So string matches will have
 to be rewritten. Fortunately the process is mechanical.
 
 ```
-
   -match ":RH:"         ->     -match ":RH(:|.)"
   -match ":RH:500 mb:"  ->     -match ":RH(:|.)" -match ":500 mb:"
-
 ```
 
 Many options use the extended name if enabled by -set_ext_name. For example, the
@@ -86,14 +80,12 @@ Many options use the extended name if enabled by -set_ext_name. For example, the
 ### Examples
 
 ```
-
 -sh-2.05b$ ./wgrib2 chem.grb2 -var
 1:0:MASSDEN
 -sh-2.05b$ ./wgrib2 chem.grb2 -ext\_name
 1:0:MASSDEN.hi-res_ctl.Water_Vapour
 -sh-2.05b$ ./wgrib2 chem.grb2 -set\_ext\_name 1 -ext\_name
 1:0:MASSDEN.hi-res_ctl.Water_Vapour
-
 ```
 
 See also:

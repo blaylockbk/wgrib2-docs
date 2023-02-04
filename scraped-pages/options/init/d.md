@@ -31,19 +31,16 @@ in scripts unless you are 100% certain of the order of the records.
 ## Usage
 
 ```
-
 -d N
 -d N.M
 -d N:OFFSET
 -d N.M:OFFSET
 where N is an integer larger than 0, M is an positive integer, OFFSET is a positive integer
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 test.grb2 -s -d 1 -bin data.bin
 1:0:d=2005090200:HGT:1000 mb:60 hour fcst
 The above command writes the first record to a binary file data.bin
@@ -64,7 +61,6 @@ $ cat gfs.t00z.master.grb2f048 | wgrib2 - -d 1:4748163
 1:4748163:d=2018030400:VIS:surface:48 hour fcst:
 
 Using the offset option on a pipe
-
 ```
 
 See also:

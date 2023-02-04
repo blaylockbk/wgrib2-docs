@@ -23,7 +23,6 @@ code.
 ### A simple fortran program to write grib2
 
 ```
-
 use wgrib2api
 real, allocatable :: grid(:,:)
 
@@ -33,13 +32,11 @@ i = grb2_wrt('out.grb2','tempplate.grb2',1,data2=grid,meta='D=20170102030000:HGT
 write(*,*) 'error=',i
 stop
 end
-
 ```
 
 ### A simple program to write out the 10 m wind speed
 
 ```
-
 use wgrib2api
 real, allocatable :: u(:,:), v(:,:)
 character (len=200) meta
@@ -60,18 +57,15 @@ if (i.ne.0) stop 4
 write(*,*) ' file : out.grb'
 stop
 end
-
 ```
 
 ### Code fragment to write surface hgt from ss2grb2.f90
 
 ```
-
   metadata='d=' // datecode // ':HGT:surface:' // trim(ftime) // ':'
   iret = grb2_wrt(grib_output,grib_template,1,hgt_sfc,meta=metadata,order='raw')
   if (iret.ne.0) stop 1
   write(*,*) 'grib_write HGTsfc'
-
 ```
 
 The grib template, grib_template, is created on the fly by using wgrib2
@@ -84,7 +78,6 @@ have been set to we:ns but raw is slightly faster.
 ### Code fragment to write hgt(pres) from ss2grb2.f90
 
 ```
-
   do i = 1, n_plevs
      metadata='d=' // datecode // ':HGT:' // trim(plevs_txt(i)) &
        // ':' // trim(ftime) // ':'
@@ -92,7 +85,6 @@ have been set to we:ns but raw is slightly faster.
      if (iret.ne.0) stop 4
   enddo
   write(*,*) 'grib_write HGT mb'
-
 ```
 
 The pressure levels are defined by both a numeric value (plevs(n_plevs)
@@ -106,7 +98,6 @@ the metadata. The new style wasn't available for ss2grb2.f90.
 ### Usage
 
 ```
-
     iret =     grb2_wrt(GRB2, TEMPLATE, IMSG, data2=GRID, meta=META, (list of optional arguments))
                or
     iret =     grb2_wrt(GRB2, TEMPLATE, IMSG, data1=GRID1, meta=META, (list of optional arguments))
@@ -162,7 +153,6 @@ the metadata. The new style wasn't available for ss2grb2.f90.
                subcenter id, 255=undefined
     packing:   character (len=*)
                wgrib2 style packing name, ex c1, aec, simple
-
 ```
 
 ---

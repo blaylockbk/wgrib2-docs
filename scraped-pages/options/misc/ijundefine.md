@@ -20,7 +20,6 @@ the -grib_out option.
 ## Usage
 
 ```
-
 -ijundefine (in-box|out-box) ix0:ix1 iy0:iy1
 
 in-box:  decoded grid points inside the box are set to undefined
@@ -31,23 +30,18 @@ Note: the order of the data should be in default mode (we:sn).
 Note: ix0, iy0 is the lower left hand corner (w/s).
 
 Points on the box boundary are considered to be in the box.
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 test.grb2 -ijundefine out-box 1:1 1:10 -stats
-
 ```
 
 The above line calculates the statistics for ix=1, iy=1..10.
 
 ```
-
 $ wgrib2 test.grb2 -ijundefine out-box 10:30 20:40 -ijundefine in-box 11:29 21:39 -bin boundary.bin
-
 ```
 
 The above line undefines the grid points outside of a box and then undefines the grid points of a smaller

@@ -9,9 +9,7 @@ the grid. Requirements for this option are determined by g2ctl.
 ## Usage
 
 ```
-
 -domain
-
 ```
 
 ---

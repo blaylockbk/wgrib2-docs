@@ -12,12 +12,10 @@ Grid point values are stored as scaled integers, the scaling
 determines the precision.
 
 ```
-
 val = (base+i*2^bin_scaling)*10^dec_scaling
        base = real*4
        bin_scaling = integer from -127 .. 127
        dec_scaling = integer from -127 .. 127
-
 ```
 
 The -precision option prints the bin_scaling
@@ -29,15 +27,12 @@ The -precision output can be read by
 ## Usage
 
 ```
-
 -precision
-
 ```
 
 ### Examples
 
 ```
-
 $ wgrib2 ecmwf.tp.hc -precision
 1:0:encode i*2^-4*10^0
 
@@ -45,7 +40,6 @@ $ wgrib2 wind.grb -precision
 1:0:encode i*2^0*10^-1
 2:97922:encode i*2^0*10^-1
 3:179554:encode i*2^0*10^-1
-
 ```
 
 See also:

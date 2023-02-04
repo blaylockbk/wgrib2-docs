@@ -15,22 +15,18 @@ selecting the fields.
 ## Usage
 
 ```
-
 -for I:J:K        same as for n = I to J by K
 -for I:J          same as for n = I to J by 1
 -for I::K         same as for n = I to MAX_INTEGER by K
 -for I            same as for n = I to MAX_INTEGER by 1
-
 ```
 
 ### Example
 
 ```
-
  $ wgrib2 file.grb2 -for 4:5
 4:13335:d=2008120200:RH:750 mb:anl:
 5:17098:d=2008120200:TMP:2743 m above mean sea level:anl:
-
 ```
 
 See also:

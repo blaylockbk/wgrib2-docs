@@ -28,18 +28,14 @@ special-value undefineds.
 ## Usage
 
 ```
-
 -set_bitmap X   X=0, 1   0=do not use bitmap (default) 1=use bitmap
                 when packing undefined values with complex packing
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 in.grb -set\_bitmap 1 -set\_grib\_type complex3 -grib\_out out.grb
-
 ```
 
 The above line rewrites a file using complex3 packing and a bitmap.

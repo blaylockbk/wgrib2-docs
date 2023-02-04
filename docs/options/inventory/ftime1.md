@@ -11,19 +11,15 @@ more complicated time stamps and are more powerful.
 ## Usage
 
 ```
-
 -ftime1
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 grib2.polar -ftime1
 1.1:0:24 hour fcst
 1.2:0:24 hour fcst
-
 ```
 
 See also:

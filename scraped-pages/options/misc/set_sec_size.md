@@ -20,13 +20,11 @@ data section needs to be updated.
 ## Usage
 
 ```
-
 -set_sec_size  SECTION SIZE
 SECTION=0 .. 8
 SIZE=integer, size of new section
      can be zero for a missing section
      generally greater than 5
-
 ```
 
 ### Results

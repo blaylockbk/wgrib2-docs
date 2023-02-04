@@ -14,19 +14,15 @@ See [-set_metadata](./set_metadata.md) for the format of the metadata string.
 ## Usage:
 
 ```
-
 -set_metadata_str "metadata"
 metadata is a string
-
 ```
 
 ### Example:
 
 ```
-
 sh-4.1$ wgrib2 small.grb2 -set\_metadata\_str "1:0:d=2001020304:TMP:10 mb:anl:"
 1:0:d=2001020304:TMP:10 mb:anl:ENS=+19
-
 
 ```
 

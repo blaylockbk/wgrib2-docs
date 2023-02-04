@@ -6,7 +6,6 @@ The -help options list the commands that match your query. For example,
 suppose you want options that deal with time, then you would use the "-help time" option.
 
 ```
-
 $ wgrib2 -help time
 wgrib2 v0.2.0.3beta3 10/2015 Wesley Ebisuzaki, Reinoud Bokhorst, John Howard, Jaakko Hyvätti, Dusan Jovic,
 Kristian Nilssen, Karl Pfeiffer, Pablo Romero, Manfred Schwarb, Arlindo da Silva, Niklas Sondell, Sergey Varlamov
@@ -41,22 +40,18 @@ Kristian Nilssen, Karl Pfeiffer, Pablo Romero, Manfred Schwarb, Arlindo da Silva
  -nc_time         init X      netcdf, [[-]yyyymmddhhnnss]:[dt{s[ec]|m[in]|h[our]|d[ay]}], [-] is for time alignment only
  -no_nc_grads     init        netcdf file may be not grads v1.9b4 compatible, variable time step
  -no_nc_time      init        netcdf, disable previously defined initial or relative date and time step
-
 ```
 
 ## Usage
 
 ```
-
 -help search-term
 -help all
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 -help speed
 wgrib2 v0.2.0.5beta5 6/2016  Wesley Ebisuzaki, Reinoud Bokhorst, John Howard, Jaakko Hyvätti, Dusan Jovic, Daniel Lee,
 Kristian Nilssen, Karl Pfeiffer, Pablo Romero, Manfred Schwarb, Gregor Schee, Arlindo da Silva, Niklas Sondell,
@@ -64,7 +59,6 @@ Sam Trahan, Sergey Varlamov
    stock build
  -mysql_speed     out  7 args H=[host] U=[user] P=[password] D=[db] T=[table] W=[western_lons:0|1] PV=[remove unlikely:0|1]
  -wind_speed      out  X      calculate wind speed, X = output gribfile (U then V in datafile)
-
 ```
 
 See also:

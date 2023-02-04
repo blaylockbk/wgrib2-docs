@@ -25,22 +25,18 @@ can have multiple -if_rec options.
 ## Usage
 
 ```
-
 -if_rec I:J:K        same as for n = I to J by K
 -if_rec I:J          same as for n = I to J by 1
 -if_rec I::K         same as for n = I to MAX_INTEGER by K
 -if_rec I            same as for n = I to MAX_INTEGER by 1
-
 ```
 
 ### Example
 
 ```
-
  $ wgrib2 file.grb2 -if\_rec 4:5 -s -fi
 4:13335:d=2008120200:RH:750 mb:anl:
 5:17098:d=2008120200:TMP:2743 m above mean sea level:anl:
-
 ```
 
 See also: [-match](./match.md)

@@ -16,7 +16,6 @@ or record. However, is is possible to store related grids in into
 a single grib message. Below are some examples.
 
 ```
-
 Example 1:  1:4:d=2009060500:RH:2 m above ground:330 hour fcst:std dev
 Example 2:  1:0:d=2010032900:TMP:2 m above ground:anl:
 Example 3:  1:40:d=2011062206:ICAHT:cumulonimbus base:6 hour fcst:
@@ -36,7 +35,6 @@ Output Format:
   ftime = time attributes, ex. "12 hour fcst", "anl", "0-6 hr ave fcst"
   optional attr: optional attributes that are needed to define the field such as ensemble memeber,
                  chemical type (for concentration), probability range
-
 ```
 
 ### NOMADS: point value (text)
@@ -45,7 +43,6 @@ The Nomads g2subset/grib-filter software can download point-value text files.
 These text files are simply wgrib2 inventories created with the following options.
 
 ```
-
    wgrib2 IN.grb -crlf -v -s v0 -start_ft -lon (LON) (LAT)
 
    -crlf adds a cr-lf at the end of each line instead of the default lf or newline.
@@ -56,11 +53,9 @@ These text files are simply wgrib2 inventories created with the following option
    -start_ft adds the forecast or verification time or the start of the verification time
              if a forecast for a period of time (ex. 3-4 month forecast).
    -lon adds the point value to the inventory
-
 ```
 
 ```
-
 Output Format:
 
   (msg|msg.submsg):(byte location):d=(YYYYMMDDHH):(verbose variable):(level):(ftime):(optional attr):
@@ -77,7 +72,6 @@ Output Format:
                  chemical type (for concentration), probability range
   start_ft = start of the forecast/verification time
   val = value of the grid point at (lat) and (lon).
-
 ```
 
 In example 1, the optional attributes is "std dev". In this case, the field is the standard deviation

@@ -17,21 +17,17 @@ will have the netcdf file be uncompressed in netcdf-3 format.
 ### Simple usage
 
 ```
-
 -nc3
 -nc4
-
 ```
 
 ### Example 1
 
 ```
-
 $ wgrib2 ../example/eta.t00z.awphys18.grb2 -nc4 -netcdf eta.nc
 
 The above line converts the grib2 file into a netcdf4 file assuming wgrib2 was
 compiled with netCDF4.
-
 
 ```
 

@@ -9,16 +9,13 @@ By using -text_col option, you can write N numbers per line.
 ## Usage
 
 ```
-
 -text_col N
           N is an integer greater than zero
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 cdas.t00z.sfluxgrbf06.grib2 -d 1 -text\_col 3 -text junk
 1:0:d=2016122700:UFLX:surface:0-6 hour ave fcst:
 $ head junk
@@ -32,7 +29,6 @@ $ head junk
 0.013 0.012 0.011
 0.009 0.008 0.006
 0.005 0.003 0.002
-
 ```
 
 See also:

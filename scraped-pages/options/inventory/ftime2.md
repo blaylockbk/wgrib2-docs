@@ -17,19 +17,15 @@ by -set_ftime2.
 ## Usage
 
 ```
-
 -ftime2
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 grib2.polar -ftime2
 1.1:0:24 hour fcst
 1.2:0:24 hour fcst
-
 ```
 
 See also:

@@ -11,17 +11,14 @@ These option are useful for quickly determining if the field has reasonable numb
 ## Usage
 
 ```
-
 -stats
 -max
 -min
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 test.grb2 -stats
 1:0:ndata=65160:undef=0:mean=83.8696:min=-428.1:max=317.8
 
@@ -37,7 +34,6 @@ $ wgrib2 test.grb2 -max
 $ wgrib2 test.grb2 -min
 1:0:min=-428.1
 
-
 ```
 
 The -stats option can be combined with
@@ -45,20 +41,16 @@ the -undefine option to produce
 statistics for a box.
 
 ```
-
 $ wgrib2 test.grb2 -stats
 1:4:ndata=10512:undef=0:mean=77.5081:min=-370:max=340.2:cos_wt_mean=97.267
-
 ```
 
 produces the global statistics. By setting grid points to undefined,
 we can produce the statistics for a box.
 
 ```
-
 $ wgrib2 test.grb2 -undefine outobx 0:90 -10:10 -stats
 1:4:ndata=10512:undef=10179:mean=79.8829:min=41:max=144:cos_wt_mean=79.8688
-
 ```
 
 Note, if we reverse the order of the

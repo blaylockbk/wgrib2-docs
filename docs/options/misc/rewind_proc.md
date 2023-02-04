@@ -20,11 +20,9 @@ already open file during the processing phase.
 ## Usage
 
 ```
-
 -rewind_proc FILE
   FILE must be already opened
   This command is only useful in callable wgrib2
-
 ```
 
 See also:

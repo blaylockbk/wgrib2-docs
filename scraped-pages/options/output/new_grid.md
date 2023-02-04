@@ -59,7 +59,6 @@ The corresponding wgrib2 notation is "winds(grid)". See the
 ## Usage
 
 ```
-
 -new_grid_winds W -new_grid A B C outfile
     W = earth or grid
         earth means that the U wind goes eastward, V goes northward
@@ -67,7 +66,6 @@ The corresponding wgrib2 notation is "winds(grid)". See the
           which is not eastward in a Lambert-conformal or polar stereographic grids
     A, B, C are the output grid description
     outfile is an output file.  The grib2 interpolated records are written in outfile
-
 ```
 
 ## Grid description format
@@ -82,7 +80,6 @@ also has problems with grid smaller than 1 degree in longitudinal width. It assu
 that the calculations are not precise, and the grid is global.
 
 ```
-
 ### General Format
 
 
@@ -234,7 +231,6 @@ latlon, gaussian only support we:sn and we:ns ordering
                                                                           The locations are saved to the grib file as the first
                                                                           and second grib messages. (3 decimal digits precision)
 
-
 ```
 
 Sometimes one wants to convert grib files to a common grid. You already
@@ -244,19 +240,16 @@ For common grids, you can use the perl script
 to determine the grid format.
 
 ```
-
 $ grid_defn.pl small.grb2
 latlon 0.000000:2:10.000000 20.000000:2:8$
 
 grid_defn.pl does not add a newline at the end of its output.
 Not all grids are supported.
-
 ```
 
 ### Examples
 
 ```
-
   wgrib2 IN.grb -set_grib_type same -new_grid_winds earth -new_grid latlon 100:10:1 30:20:1 OUT.grb
     Interpolates from IN.grb to OUT.grb
     Uses the same grib packing as in the input file
@@ -283,7 +276,6 @@ shows a sorting to the required order for -new_grid to work.
     The first line creates an inventory with new variable names: UGRD -> UGRDa and VGRD -> UGRDb
     The second line sorts the inventory so that UGRDb follows UGRDB.
     The third line regrids the file, with the order of processing controlled by the inventory.
-
 ```
 
 ### Type of Interpolation
@@ -300,7 +292,6 @@ bilinear interpolation of soil or vegetation type is meaningless. So
 nearest neighbor interpolation is used instead.
 
 ```
-
     wgrib2 IN.grb -new_grid_winds earth \
       -new_grid_interpolation bilinear \
       -if ":(VGTYP|SOTYP):" -new_grid_interpolation neighbor -fi \
@@ -309,7 +300,6 @@ nearest neighbor interpolation is used instead.
    line 2: set default interpolation to bilinear
    line 3: if VGTYP or SOTYP then set the interpolation to nearest neighbor
    line 4: do the interpolation
-
 ```
 
 Comments (4/2018): When you convert from a high resolution grid
@@ -324,7 +314,6 @@ Most NCEP grib files use grid-relative winds. If you want to convert to Earth-re
 or grid-relative winds, you can use the -new_grid option.
 
 ```
-
    To Earth relative:
      wgrib2 IN.grb -set_grib_type same -new_grid_winds earth -new_grid_interpolation neighbor \
       -new_grid `grid_defn.pl IN.grb` OUT.grb
@@ -336,7 +325,6 @@ or grid-relative winds, you can use the -new_grid option.
 "-set_grib_type same" preserves the grib packing or compression
 "-new_grid_interpolation neighbor" should be faster than the default bilinear
 `grid_defn.pl IN.grb` returns the grid definition of the first grib message in IN.grb
-
 ```
 
 The limitations of the above command are
@@ -380,7 +368,6 @@ wouldn't work and weights would have to be recalculated every time.
 ### Installation
 
 ```
-
 With wgrib2 v2.0.8+, you have an option of compiling with the old iplib or
 the new ip2lib_d library.  With the older versions of wgrib2, you are limited
 to the old iplib or an hwrf version of that library.  It is recommended that
@@ -392,7 +379,6 @@ by the NAM native files.
  With wgrib2 v2.0.8+, you set USE\_IPOLATES to 3 in the makefile
 for ip2lib\_d. To use the old iplib, you set USE\_IPOLATES to 1. If you
 don't want the -new\_grid options, you can set USE\_IPOLATES to 0.
-
 
 
 ```

@@ -21,7 +21,6 @@ metadata copied depends on the version of wgrib2.
 ## Usage
 
 ```
-
 -set_pdt X      X=product defintion template number (example 8, not 4.8), default size, PDT is cleared
 -set_pdt +X     X=product defintion template number (example 8, not 4.8), copy metadata from current PDT
                   size may vary depending on current PDT
@@ -30,13 +29,11 @@ metadata copied depends on the version of wgrib2.
 -set_pdt +X:Y   X=product defintion template number (example 8, not 4.8), Y=byte size of PDT if variable-sized PDT
                   copy metadata
                 Note: using the wrong value of Y can produce errors
-
 ```
 
 ### Example
 
 ```
-
 wgrib2 prior to v2.0.2
 $ wgrib2 p.grb -set\_pdt 0 -grib OUT.grb
 1:0:d=2010111618:var discipline=0 center=7 local_table=0 parmcat=255 parm=255:no_level:-1 missing fcst:
@@ -50,19 +47,16 @@ $ wgrib2 png.grb -set\_pdt 0 -grib OUT.grb
 1:4:d=2009060500:var discipline=0 center=7 local_table=1 parmcat=255 parm=255:no_level:-1 missing fcst:
 $ wgrib2 png.grb -set\_pdt +0 -grib OUT.grb
 1:4:d=2009060500:RH:2 m above ground:330 hour fcst:
-
 ```
 
 Suppose a program has problems with pdt 60 and 61. Changing the pdt to
 1 and 11 will solve the incompatibility with only a little loss of metadata.
 
 ```
-
 $ wgrib2 IN.grb -if ":pdt=60:" -set\_pdt +1 -fi \
  -if ":pdt=61:" -set\_pdt +11 -fi \
  -grib OUT.grb
   requires wgrib2 v2.0.2+
-
 ```
 
 See also:

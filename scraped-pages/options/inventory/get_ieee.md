@@ -9,18 +9,15 @@ point number.
 ## Usage
 
 ```
-
 -get_ieee SECTION OCTET N
 SECTION = section number of the grib message to print
 OCTET = the octet number to print
 N = number of IEEE float to print (4 octets per IEEE number)
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 rtgssthr\_grb\_0.083\_awips.grib2
 1:0:d=2009062900:TMP:surface:anl:
   : field is surface temperature, SST over water
@@ -30,7 +27,6 @@ $ wgrib2 rtgssthr\_grb\_0.083\_awips.grib2 -packing -v
 $ wgrib2 rtgssthr\_grb\_0.083\_awips.grib2 -get\_ieee 5 12 1
 1:0:5-12=27133.000000
   : for jpeg2000 packing, the reference value is stored in Section 5, octet 12-15
-
 ```
 
 See also:

@@ -45,9 +45,7 @@ $ wgrib2 bad_n_header.grb2 -if_delayed_error -s -endif -reset_delayed_error
 ## Usage
 
 ```
-
 -if_delayed_error   will enter if block if there is a delayed error
-
 ```
 
 See also:

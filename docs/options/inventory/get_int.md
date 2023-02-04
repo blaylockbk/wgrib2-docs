@@ -14,18 +14,14 @@ the grib format for signed 4-octet integers.
 ## Usage
 
 ```
-
 -set_int SECTION OCTET_NUMBER COUNT
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 f.grb -get\_int 3 7 1
 1:0:3-7=65160
-
 ```
 
 See also:

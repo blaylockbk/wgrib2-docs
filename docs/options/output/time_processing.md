@@ -32,14 +32,12 @@ forecast and time2 is the forecast time. The possible temporal averaging operato
 can be
 
 ```
-
     ave1 = 1/N(H(t0,t1) + H(t0+dt,t1) + ... + H(t0+(N-1)*dt,(N-1)))
     ave2 = 1/N(H(t0,t1) + H(t0,t1+dt) + ... + H(t0,(N-1)*dt))
     ave3 = 1/N(H(t0,t1) + H(t0+dt,t1-dt) + ... + H(t0+(N-1)*dt, t1-(N-1)*dt))
     ave4 = 1/N(H(t0,t1) + H(t0-dt,t1+dt) + ... + H(t0-(N-1)*dt, t1+(N-1)*dt))
 
     the continous case is denoted by having dt == 0
-
 ```
 
 By stacking the averaging operator, a monthly climatology can be described by a 30 year average
@@ -61,7 +59,6 @@ are supported.
 ## Usage
 
 ```
-
 -time_processing Code_Table_4.10 Code_Table_4.11 (time interval)  (output grib file)
   Code_Table_4.10:  0 or ave, computes average
                     2 or max, computes maximum
@@ -72,7 +69,6 @@ are supported.
                     2 or forecast,  time series from one (long) forecast
   (time interval):  (integer)(units)
   units:            hr, dy, mo, yr, mn (minutes, v2.0.8)
-
 ```
 
 ### Code Table 4.11 = 1 (analyses)
@@ -84,7 +80,6 @@ level and grid. Whenever the field is unexpected, a new average is made. Note:
 the -time_processing option will handle missing fields. For example,
 
 ```
-
 Code Table 4.10 = 0, Code Table 4.11 = 1
 
 U500 2000-01-02 00Z             start ave
@@ -99,7 +94,6 @@ Z500 2000-01-02 00Z             start ave
 Z500 2000-01-02 06Z
 Z500 2000-01-02 12Z
 Z500 2000-01-02 18Z             end ave
-
 ```
 
 Code Table 4.1 = 1 is good for making means of many analyses.
@@ -111,7 +105,6 @@ Suppose that you want to make a daily average from one forecast with using forec
 0, 6, 12 and 18. (The forecast for the first day.)
 
 ```
-
 Code Table 4.10 = 0, Code Table 4.11 = 2
 
 U500 start 2000-01-02 00Z fhour=00 hours    start ave
@@ -126,7 +119,6 @@ T500 start 2000-01-02 00Z fhour=00 hours    start ave
 T500 start 2000-01-02 00Z fhour=06 hours
 T500 start 2000-01-02 00Z fhour=12 hours
 T500 start 2000-01-02 00Z fhour=18 hours    end ave
-
 ```
 
 Code Table 4.11 = 2 is good for processing a single forecast run.
@@ -199,7 +191,6 @@ to make a monthly mean for Nov. 2014. Using the above approach, the steps
 would be
 
 ```
-
 1.  cat narr.201411????.grb2 >tmp.grb2
 2.  wgrib2 tmp.grb2 |  \
 3.     sort -t: -k4,4 -k5,5 -k6,6 -k3,3 | \
@@ -210,7 +201,6 @@ The second line make an inventory.
 The third line sorts the inventory in the order for -ave to process.
 The fourth line makes the average by processing data in the order
   determined by the inventory created by line 3.
-
 ```
 
 The above approach processes one average at a time and requires a
@@ -229,7 +219,6 @@ sequential reads rather than small random-access reads.
 The following shows another approach.
 
 ```
-
 1.  cat narr.201411????.grb2 | \
 2.     wgrib2 - \
 3.        -if_fs ":HGT:200 mb:" -ave 3hr narr.201411 \
@@ -245,7 +234,6 @@ The third line selects the Z200 fields and runs the averaging
   one Z200 field and narr.201411???? puts the data into
   chronological order.
 Lines 4-6 apply the averaging option to other fields.
-
 ```
 
 The above approach computes the mean of Z200, U200, V200 and T200 data
@@ -258,7 +246,6 @@ the file. Here are the guts of a
 bash script, fast_grib2_mean.sh, which creates and runs the command line.
 
 ```
-
 1.  wgrib2 $1 -match_inv | cut -f4- -d: | sed -e 's/:n=.*//' >$tmp
 2.  cmd="cat $* | $wgrib2 - -set_grib_type c3 "
 3.  while read line
@@ -276,7 +263,6 @@ bash script, fast_grib2_mean.sh, which creates and runs the command line.
    $line included metacharacters such as parentheses.
 6. bash syntax to have the while loop read from $tmp
 7. run the command line
-
 ```
 
 Making the NARR monthly means using the above approach uses large
@@ -290,7 +276,6 @@ Sometimes one want to average several forecasts starting from
 the same initial time. An example would producing a week-4 forecast.
 
 ```
-
 1.  $wgrib2 $1 -match_inv | cut -f4-5 -d:  >$tmp
 2.  cmd="cat $* | $wgrib2 - -set_grib_type c3 "
 3.  while read line
@@ -309,7 +294,6 @@ the same initial time. An example would producing a week-4 forecast.
    $line included metacharacters such as parentheses.
 6. bash syntax to have the while loop read from $tmp
 7. run the command line
-
 ```
 
 Using the -merge_fcst option in a like

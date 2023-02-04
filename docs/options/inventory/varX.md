@@ -7,7 +7,6 @@ shows the discipline, master table, local table, center, parameter category
 and parameter number. The default format is
 
 ```
-
 var{discipline}_{master table}_{local table}_{center}_{parameter_category}_{parameter}
 
 ex.  var0_10_1_57_1_51
@@ -16,14 +15,12 @@ ex.  var0_10_1_57_1_51
        local table = 1
        parameter category = 1
        parameter = 51
-
 ```
 
 When you use verbose mode > 0 (-v, -v2, -v98, -v99), then the format
 of -varX changes to
 
 ```
-
 (WMO defined variables)
 
 ex. var discipline=0 master_table=2 parmcat=2 parm=3
@@ -31,7 +28,6 @@ ex. var discipline=0 master_table=2 parmcat=2 parm=3
 For locally defined variables, the local table is important and the format is
 
 ex.  var discipline=0 local_table=1 center=7 parmcat=1 parm=195
-
 ```
 
 One would use the -varX option when
@@ -48,18 +44,14 @@ understood by -set_var and -set_metadata (2.0.7 12/2017).
 ## Usage
 
 ```
-
 -varX
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 test.grb2 -varX
 1:0:var0_2_1_7_3_5
-
 ```
 
 See also: [-var](./var.md)

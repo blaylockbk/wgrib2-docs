@@ -22,11 +22,9 @@ records.
 ## Usage
 
 ```
-
 -rewind_init FILE
   FILE must be already opened
   This command is only useful in callable wgrib2
-
 ```
 
 See also:

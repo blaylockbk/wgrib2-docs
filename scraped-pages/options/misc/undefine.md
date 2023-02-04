@@ -14,7 +14,6 @@ find the regional average using the stat option.
 ## Usage
 
 ```
-
 -undefine (in-box|out-box) lon0:lon1 lat0:lat1
 
 in-box:  decoded grid points inside the box are set to undefined
@@ -23,24 +22,19 @@ lon0:lon1  west-east longitudes of the box
 lat0:lat1  south-north latitudes of the box
 
 Points on the box boundary are considered to be in the box.
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 test.grb2 -undefine out-box 350:10 -10:10 -stats
 1:0:ndata=65160:undef=64719:mean=94.1229:min=58.1:max=125.2
-
 ```
 
 The above line calculates the statistics for the box -10W-10E 10S-10N
 
 ```
-
 $ wgrib2 test.grb2 -undefine out-box 10:30 20:40 -undefine in-box 12:28 22:38 -bin boundary.bin
-
 ```
 
 The above line undefines the grid points outside of a box and then undefines the grid points of a smaller

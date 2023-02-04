@@ -9,9 +9,7 @@ spread sheet. This function is similar to
 with a different output format. The format is
 
 ```
-
    "time0","time1","time2","field","ftime","level",longitude,latitude,grid-value
-
 ```
 
 Some programs have a simple data model: x, y, z and time. Forecast models
@@ -19,7 +17,6 @@ need a more complicated data model. Most forecasts only need
 3 time coordinates. Some examples that need 1 to 3 times are,
 
 ```
-
   time0: reference time
          ex. temperature analysis for 00Z, June 2, 2014
 
@@ -30,21 +27,18 @@ need a more complicated data model. Most forecasts only need
   time0, time1, time2: reference time, start of forecasting period, end of forecasting period
          ex. precipitation forecast started with initial conditions at 00Z, June 2, 2014
              and for the average precipitation from 00Z June 2, 2014 to 00Z June 3, 2014.
-
 ```
 
 You can define quantities that require more than 3 times but they are
 relatively rare.
 
 ```
-
   Examples of quantities that need more than 3 times to describe
    a) climatology of 6-12 hour forecasts (start time of climatology, end time of the
          climatology, 6 hour, 12 hour)
    b) forecast of the monthly mean of the average 00Z-01Z temperature. (starting time
       of the monthly average, ending time of the monthly average, starting time of
       the diuranl average, ending time of the diurnal average)
-
 ```
 
 For an analysis that is valid at a time0, time1 and time2 will
@@ -60,7 +54,6 @@ For more complicated quantities, see the ftime value.
 In wgrib2 speak,
 
 ```
-
    time0 is -T in a different format
    time1 is -start\_FT in a different format
    time2 is -end\_FT in a different format
@@ -69,7 +62,6 @@ In wgrib2 speak,
    level is -lev
    longitude is in degrees with values between -180 and 180
    latitude is in degrees values between -90 and 90 (south = -ve, north = +ve)
-
 ```
 
 The -csv_long option only works on the grids
@@ -99,12 +91,10 @@ the HGT from the 19th ensemble member. A better field name may be
 ## Usage
 
 ```
-
 -csv_long output_file_name
    The CSV is written to output_file_name, note output_file_name cannot be a memory file
 -set_ext_name 1 -csv output_file_name
    the field is the extended grib name
-
 ```
 
 ### Warning #1

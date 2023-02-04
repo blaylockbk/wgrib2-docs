@@ -20,7 +20,6 @@ inaccurate for winds and other vectors near the pole.
 ## Usage
 
 ```
-
 -lola LonSW:#lon:dlon LatSW:#lat:dlat file format
 
 LonSW        Longitude of the South-West point, values from 0 .. 360
@@ -40,7 +39,6 @@ format       format of the output file: bin, text, spread
                grib = grib2
 
 The order of the data points is WE:SN (wgrib2 standard).
-
 
 ```
 

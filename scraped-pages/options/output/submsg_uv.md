@@ -22,17 +22,13 @@ be changed using the -new_grid_vectors option.
 ## Usage
 
 ```
-
 -submsg_uv output_file
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 test.grb2 -match ":500 mb:" -submsg\_uv output.grb
-
 ```
 
 See also:

@@ -19,18 +19,15 @@ be slightly different.
 ## Usage
 
 ```
-
 -checksum N
 1..8 for the checksum of section N
 -1 for the checksum of the entire message
 data for the checksum of the decoded gridded data
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 test.grb2 -checksum 3
 1:0:sec3_cksum=4006285726
 2:4786:sec3_cksum=4006285726
@@ -44,14 +41,11 @@ All 5 grib messages have the same GDS
 $ wgrib2 png.grb2 -checksum -1
 1:4:msg_cksum=827378178
 
-
 ```
 
 ```
-
 $ wgrib2 test.grb2 -checksum 3 | cut -f3 -d: | sort -u | wc -l
  1
-
 ```
 
 The above example prints out the number of grid defintion sections in the
@@ -65,7 +59,6 @@ submessages. By combining the message, only one copy of the
 bitmap is needed. This saves 99 copies of the bitmap.
 
 ```
-
 $ wgrib2 test.grb2 -checksum 6 | sort -k3,3 -t: | wgrib2 test.grib -i -tosubmsg new.grb2
 1:0:d=2008120200:TMP:800 mb:anl:
 2:4786:d=2008120200:TMP:750 mb:anl:
@@ -77,7 +70,6 @@ Submessage statistics:
 - # submessages written  : 5
 - Kbytes saved           : 0
 - Kbytes written         : 20
-
 ```
 
 See also:

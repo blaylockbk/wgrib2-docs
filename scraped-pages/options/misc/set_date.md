@@ -30,7 +30,6 @@ abreviation "mn" is easily confused as the abreviation for month and was added w
 ## Usage
 
 ```
-
 -set_date X            X = reference time, usually starting date
                        X=YYYY, YYYYMM, YYYYMMDD, YYYYMMDDHH, YYYYMMDDHHmm or YYYYMMDDHHmmSS
                        YYYY=year, MM=month, DD=day, HH=hour, mm=minute, SS=second
@@ -50,13 +49,11 @@ abreviation "mn" is easily confused as the abreviation for month and was added w
                        N = unsigned integer
                        units = hr, dy, mo or yr  (GrADS time units for hour, day, month and year)
                           mn (minutes) was added with v2.0.8.
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 png.grb2
 1:4:d=2009060500:RH:2 m above ground:330 hour fcst:ens std dev
 $ wgrib2 png.grb2 -set\_date 20180101 -grib OUTFILE -s
@@ -74,7 +71,6 @@ Note: wgrib2 png.grb2 -set_date -12hr -grib OUTFILE is the same as
       wgrib2 png.grb2 -set_date -12hr -grib OUTFILE -s
 because wgrib2 will add a "-s" to the command line when it detects
 that the command line has no inventory options.
-
 ```
 
 See also:

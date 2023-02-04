@@ -8,9 +8,7 @@ is no need for compatibility between versions of wgrib2. Use of this
 option is not recommended. The current output is by this C statement.
 
 ```
-
 sprintf(inv_out, "%8d %8u %8u %8u %8d %8d",inv_no,npnts,nx_,ny_,msg_no, submsg)
-
 ```
 
 ---

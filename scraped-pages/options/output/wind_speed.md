@@ -15,17 +15,14 @@ to restricting the decoding of records to U and V.
 ## Usage
 
 ```
-
 -wind_speed output_grib_file
 
    Comment: you can write the output of -wind_speed and -wind_dir to the same file
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 gep19.t00z.pgrb2af180 -wind\_dir wind.grb -wind\_speed wind.grb -match "(UGRD|VGRD)"
 4.1:86046:d=2009060500:UGRD:200 mb:180 hour fcst:ENS=+19
 4.2:86046:d=2009060500:VGRD:200 mb:180 hour fcst:ENS=+19
@@ -37,7 +34,6 @@ $ wgrib2 wind.grb
 2:97922:d=2009060500:WIND:200 mb:180 hour fcst:ENS=+19
 3:179554:d=2009060500:WDIR:250 mb:180 hour fcst:ENS=+19
 4:277476:d=2009060500:WIND:250 mb:180 hour fcst:ENS=+19
-
 ```
 
 See also: [-match](./match.md),

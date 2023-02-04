@@ -9,20 +9,16 @@ WE:SN order. This means that (1,1) is at the South-West corner.
 ## Usage
 
 ```
-
 -ij i j
       i = 1 .. nx
       j = 1 .. ny
-
 ```
 
 ### Example
 
 ```
-
 sh-2.05b$ wgrib2 new.grb2 -s -ij 1 1
 1:0:d=2005082812:HGT:1000 mb:78 hour fcst:val=162.3
-
 ```
 
 See also: [-ijlat](./ijlat.md), [-ilat](./ilat.md), [-lon](./lon.md)

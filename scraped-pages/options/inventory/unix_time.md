@@ -29,7 +29,6 @@ of systems which may have problems with unix_time.
 ## Usage
 
 ```
-
 -unix_time
    unix_time is the number of seconds after 00:00 UTC 1/1/1970
    prints the unix time for the reference and verification times
@@ -37,19 +36,16 @@ of systems which may have problems with unix_time.
    v3.1.1+: if the code detects a problem with the reference time, a fatal error occurs
    prior to v3.1.1: if the code detects a problem with the time, -1 is printed
       if there is no forecast time (ex. radar), the verification time is -1
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 test.grb2 -unix\_time
 1:0:unix_rt=1228176000:unix_vt=1228176000
 
 unix_rt is the reference time
 unix_vt is the verification time
-
 ```
 
 See also:

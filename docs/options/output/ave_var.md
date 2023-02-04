@@ -16,17 +16,14 @@ with the -ave option.
 ## Usage
 
 ```
-
 -ave_var (time interval)  (output grib file)
    time interval = (integer)(units)
    (units) = hr, dy, mo, yr
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 pgblnl.gdas.201302 -match ":UGRD:200 mb:" -ave\_var 6hr out
 141:1170314:d=2013020100:UGRD:200 mb:anl:
 659:5936420:d=2013020106:UGRD:200 mb:anl:
@@ -38,14 +35,12 @@ $ wgrib2 out
 2:13343:d=2013020100:UGRD:200 mb:112@6 hour StdDev(anl),missing=0:
 3:24058:d=2013020100:UGRD:200 mb:112@6 hour min(anl),missing=0:
 4:37401:d=2013020100:UGRD:200 mb:112@6 hour max(anl),missing=0:
-
 ```
 
 Making a GrADS control for "out" requires editing the ctl file to shorten
 the names of variables.
 
 ```
-
 $ alt\_g2ctl -0t out > out.ctl
 $ vi out.ctl
 .. edit out.ctl so the last 6 lines look like this
@@ -67,7 +62,6 @@ scanning out (process=0)
 merge index files
 writing out index
 /export/cpc-lw-webisuzak/wd51we/bin/alt_gmp v0.0.5 finished ctl=out.ctl records matched=4, not matched=0 ctl_defn=4
-
 ```
 
 See also:

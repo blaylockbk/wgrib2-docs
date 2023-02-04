@@ -11,18 +11,14 @@ The -pdt option is an alias to
 ## Usage
 
 ```
-
 -pdt
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 -pdt png.grb2
 1:4:code table 4.0=2 Derived forecasts based on all ensemble members at a horizontal level or in a horizontal layer at a point in time.
-
 ```
 
 See also:

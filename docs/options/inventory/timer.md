@@ -22,7 +22,6 @@ compilation with OpenMP.
 ## Usage
 
 ```
-
 -start_timer
    sets timer_time=0
 -timer
@@ -32,13 +31,11 @@ compilation with OpenMP.
 
   note: there is only one instance of timer_time
         timer_time is set to 0 in the initialization of wgrib2
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 gep19.aec -s -start\_timer -csv junk.csv -timer
 1:0:d=2009060500:HGT:200 mb:180 hour fcst:ENS=+19:time=0.068086
 2:70707:d=2009060500:TMP:200 mb:180 hour fcst:ENS=+19:time=0.064850
@@ -48,7 +45,6 @@ $ wgrib2 gep19.aec -s -start\_timer -csv junk.csv -timer
 finalize-time=0.000015:ave_time=0.061512 count=51
 
 Writing of the CSV is taking about 0.06 seconds per field.
-
 ```
 
 See also:

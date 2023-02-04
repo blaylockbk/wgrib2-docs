@@ -12,15 +12,12 @@ except for sections 0 and 8.
 ## Usage
 
 ```
-
 -Sec_len
-
 ```
 
 ### Examples
 
 ```
-
 $ wgrib2 small.grb2 -Sec\_len
 1:0:Sec size msg=188 id(1)=21 local(2)=0 grid(3)=72 product(4)=37 data-rep(5)=21 bitmap(6)=6 data(7)=11
 
@@ -32,7 +29,6 @@ $ wgrib2 small.grb2 -Sec\_len
   Section 5 is 21
   Section 6 is 6
   Section 7 is 11
-
 ```
 
 See also:

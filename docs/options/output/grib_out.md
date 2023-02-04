@@ -25,18 +25,14 @@ can alter the range of grid point values.
 ## Usage
 
 ```
-
 -grib_out file_name
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 new.grb2 -undefine out-box -10:10 20:40 -grib\_out small.grb2
 1:0:d=2005082812:HGT:1000 mb:78 hour fcst:
-
 ```
 
 The above routine sets all the grid points outside the 10W-10E 20N-40N to

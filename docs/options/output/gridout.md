@@ -11,7 +11,6 @@ option to print out i, j, latitude(i,j), longitude(i,j)
 ## Usage
 
 ```
-
 -gridout FILE
    FILE is an output of the command
    if grid is of the form: grid_val(nx,ny), lat(nx,ny), lon(nx,ny)
@@ -19,13 +18,11 @@ option to print out i, j, latitude(i,j), longitude(i,j)
      using the format "%10i,%10i, %.3f, %.3f\n"
 
      FILE will be a CSV file with the latitudes and longitudes of the grid points
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 small.grb2 -grid
 1:0:grid_template=0:winds(N/S):
 	lat-lon grid:(2 x 2) units 1e-06 input WE:SN output WE:SN res 48
@@ -38,7 +35,6 @@ $ cat grid.txt
          2,         1, 20.000, 10.000
          1,         2, 28.000, 0.000
          2,         2, 28.000, 10.000
-
 ```
 
 See also:

@@ -19,7 +19,6 @@ cannot be used in Version 2 "IF blocks".
 ### Definition
 
 ```
-
     wgrib2 (...) [if] [list of non-ouput options] [output option]
 
    [if] = -if, -not_if, -if_fs, -not_if_fs, -if_n, -if_rec
@@ -30,13 +29,11 @@ cannot be used in Version 2 "IF blocks".
    [output option] is the terminator of the if block
 
    If blocks should not be nested. The results are undefined.
-
 ```
 
 ### Example
 
 ```
-
      wgrib2 gribfile -if ":(UGRD|VGRD):" -grib winds.grb \
                      -if ":TMP:" -grib tmp.grb \
                      -if ":HGT:" -grib hgt.grb \
@@ -49,7 +46,6 @@ cannot be used in Version 2 "IF blocks".
         ...
 
      note: -fi is an output option
-
 ```
 
 ### Version 2 IF blocks (introduced wgrib2 v3.0.0)
@@ -62,19 +58,16 @@ can be nested. Note, the "if" flag is reset prior to processing of a record.
 ### Definition
 
 ```
-
 1. The if blocks can now be nested, and are terminated by an -endif.
 2. Within the if block, you can have -else and -elseif options.
 3. The -elseif options must proceed the -else option.
 4. The -fi option is not allowed.
 5. Version 1 and Version 2 if blocks cannot be mixed.
-
 ```
 
 ### Example 1
 
 ```
-
      wgrib2 gribfile -if ":(UGRD|VGRD):" -grib winds.grb \
                      -elseif ":TMP:" -grib tmp.grb \
                      -elseif ":HGT:" -grib hgt.grb \
@@ -83,7 +76,6 @@ can be nested. Note, the "if" flag is reset prior to processing of a record.
      wgrib2 gribfile -new_grid_interpolation bilinear \
         -if ":SOTYP:" -new_grid_interpolation neighbor -endif \
         ...
-
 ```
 
 ### Example 2
@@ -95,7 +87,6 @@ grib files. The new IF blocks make the code look readable. The old
 IF blocks would be a mess.
 
 ```
-
 # bash: fix SNOHF and CS(radiances) timing info
 for f in *.grb
 do
@@ -109,7 +100,6 @@ do
     -endif \
     -grib ../test/$f
 done
-
 ```
 
 ### Limitations
@@ -134,13 +124,11 @@ Version 2 IF blocks are recommended for future development.
 ## Usage
 
 ```
-
 -if X
 
 X is a regular expression
 sets the "run_flag" if X matches the "match inventory",
 used to control the execution of following options
-
 ```
 
 ### Future Changes
@@ -153,12 +141,10 @@ be ":vt=YYYYMMDDHH:". In order to future proof your
 must not include any item before the ":vt=YYYYMMDD:" field.
 
 ```
-
     -match ":vt=2011111500:"                  good
     -not ":vt=2011111500:$"                   good (dollar sign matches the end of the line)
     -not ":n=10:vt=2011111500:"               bad (item before :vt=)
     -match ":RH:975 mb:anl::vt=2010050806:"   bad (item before :vt=)
-
 ```
 
 Some recent changes (as of Nov 2011) to the match inventory include:

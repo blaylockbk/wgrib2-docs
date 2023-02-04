@@ -9,18 +9,14 @@ and -YY options are pretty useless.
 ## Usage
 
 ```
-
 -YY
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 png.grb2 -YY
 1:4:YY=2009
-
 ```
 
 See also: [-t](./t.md), [-T](./T.md)

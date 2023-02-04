@@ -10,15 +10,12 @@ part of the standard inventory, -s.
 ## Usage
 
 ```
-
 -aerosol_size
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 ngac.t00z.a3df03 -for 2:6
 2:77259:d=2014081000:TMP:1 hybrid level:3 hour fcst:
 3:131943:d=2014081000:RH:1 hybrid level:3 hour fcst:
@@ -34,7 +31,6 @@ $ wgrib2 ngac.t00z.a3df03 -for 2:6 -aerosol\_size
 4:205847:aerosol_size <=2e-07,&gt2e-06
 5:243914:aerosol_size <=2e-06,>3.6e-06
 6:279272:aerosol_size <=3.6e-06,>6e-06
-
 ```
 
 See also:

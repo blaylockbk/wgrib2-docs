@@ -41,23 +41,19 @@ to a WE:SN (output) grid. This is explained in the page for the
 ## Usage
 
 ```
-
 -ll2i LON LAT
       LON is the longitude -180..360
       LAT is the latitude from -90..90
       option prints out the index,  0..number of grid points - 1
-
 ```
 
 ### Example
 
 ```
-
 -sh-4.1$ wgrib2 png.grb2 -ll2i 11 22
 1:4:11.000000 22.000000 -> (40332)
 -sh-4.1$ wgrib2 png.grb2 -ilat 40332
 1:4:grid pt 40331,lon=10.000000,lat=22.000000,val=3.3
-
 ```
 
 See also: [-ilat](./ilat.md),

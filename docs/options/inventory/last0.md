@@ -24,9 +24,7 @@ option.
 ## Usage
 
 ```
-
 -last0 FILE
-
 ```
 
 See also:

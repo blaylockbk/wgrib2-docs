@@ -13,18 +13,15 @@ format of the time will change to be GrADS compatible.
 ## Usage
 
 ```
-
 -t
 -T
 -vt
 -VT
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 g720\_360.grb2 -t
 1:4:d=2009010100
 $ wgrib2 g720\_360.grb2 -t -v2
@@ -37,7 +34,6 @@ $ wgrib2 g720\_360.grb2 -vt -v2
 1:4:00Z06jan2009
 $ wgrib2 g720\_360.grb2 -VT
 1:4:vt=20090106000000
-
 ```
 
 See also:

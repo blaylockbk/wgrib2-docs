@@ -16,15 +16,12 @@ field, if any.
 ## Usage
 
 ```
-
 -prob
-
 ```
 
 ### Example
 
 ```
-
 sh-2.05b$ wgrib2 sref.t03z.pgrb243.prob.grib2 -prob
 1:0:prob <273
 2:1378:prob <273
@@ -33,7 +30,6 @@ sh-2.05b$ wgrib2 sref.t03z.pgrb243.prob.grib2 -prob
 5:8800:prob >2000
 6:9801:prob >3000
 7:10262:prob >4000
-
 ```
 
 Normally -prob in invoked by other

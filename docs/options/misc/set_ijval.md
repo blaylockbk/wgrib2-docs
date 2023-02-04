@@ -11,18 +11,15 @@ a rectangular array. For example, staggered and thinned grids are not stored an 
 ## Usage
 
 ```
-
 -set_ijval I J VAL
     grid(I,J) = VAL
     I = 1..NX
     J = 1..NY
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 small.grb2 small.grb2 -set\_ijval 1 1 91 -set\_ijval 2 1 92 -set\_ijval 1 2 93 -set\_ijval 2 2 94 -grib\_out new.grb2
 1:0:d=2009060500:HGT:200 mb:180 hour fcst:ENS=+19
 $ wgrib2 new.grb2 -csv new.csv
@@ -32,7 +29,6 @@ $ cat new.csv
 "2009-06-05 00:00:00","2009-06-12 12:00:00","HGT","200 mb",10,20,92
 "2009-06-05 00:00:00","2009-06-12 12:00:00","HGT","200 mb",0,28,93
 "2009-06-05 00:00:00","2009-06-12 12:00:00","HGT","200 mb",10,28,94
-
 ```
 
 See also:

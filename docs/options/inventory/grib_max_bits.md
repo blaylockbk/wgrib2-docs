@@ -24,10 +24,8 @@ between a bitsting and integer. I don't know the limits for
 other software packages.
 
 ```
-
 -grib_max_bits INTEGER
                INTEGER between 1 and 25
-
 ```
 
 See also:

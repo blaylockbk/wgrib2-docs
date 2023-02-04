@@ -17,15 +17,12 @@ Neither the grid point values nor the packing is changed.
 ## Usage
 
 ```
-
 -ncep_uv output_file
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 test.grb2 -match ":500 mb:" -ncep\_uv output.grb
 
 $ wgrib2 test.grb2 -inv /dev/null -new\_grid\_winds earth -new\_grid ncep grid 221 - | wgrib2 - -ncep\_uv output.grb
@@ -33,7 +30,6 @@ $ wgrib2 test.grb2 -inv /dev/null -new\_grid\_winds earth -new\_grid ncep grid 2
 In the above example, the first wgrib2 regrids the file and writes it into stdout.
 The second wgrib2 reads the new grib file from stdout and combines the U and V
 records together into one message.
-
 
 
 

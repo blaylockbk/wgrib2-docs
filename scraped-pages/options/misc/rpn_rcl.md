@@ -13,10 +13,8 @@ calculations which make them ideal for CW2 applications.
 ## Usage
 
 ```
-
 -rpn_rcl N     N=0..9
    replaces the memory-copy of the grid values with register N
-
 ```
 
 See also:

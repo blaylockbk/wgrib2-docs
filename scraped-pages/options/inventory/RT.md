@@ -13,18 +13,14 @@ the reference time (Grib Table 1.2).
 ## Usage
 
 ```
-
 -RT
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 png.grb2 -RT
 1:4:RT=Start of fcst
-
 ```
 
 See also:

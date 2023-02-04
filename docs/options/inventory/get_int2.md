@@ -15,18 +15,14 @@ the grib format for signed 2-octet integers.
 ## Usage
 
 ```
-
 -set_int2 SECTION OCTET_NUMBER COUNT
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 f.grb -get\_int2 1 6 1
 1:0:1-6=7
-
 ```
 
 See also:

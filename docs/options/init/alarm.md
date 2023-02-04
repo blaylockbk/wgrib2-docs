@@ -31,7 +31,6 @@ connections which will never trigger the
 -alarm N
           N is an integer from 0..65536 (ISO C standard)
           N = 0 will remove any pending alarm
-
 ```
 
 The -alarm option is a setup/init option. So

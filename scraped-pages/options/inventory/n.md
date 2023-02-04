@@ -7,7 +7,6 @@ If the message has two or more gridded fields, we say the message has submessage
 The wgrib2 convention for number the messages/submessages is
 
 ```
-
 Message/submessage numbering convention:
 
    No submessage, one field
@@ -24,7 +23,6 @@ Message/submessage numbering convention:
 Inventory numbering convention:
 
      I     I is integer starting from 1 and is the number of the field
-
 ```
 
 An alternative method for numbering the fields is the inventory number. The inventory number
@@ -39,18 +37,14 @@ when trying trying to multitask wgrib2. (For example, send even fields to CPU1 a
 to CPU2.)
 
 ```
-
 -sh-2.05b$ ./wgrib2 test.grb2 -s -npts -d 1
 1:0:d=2005090200:HGT:1000 mb:60 hour fcst:npts=259920
-
 ```
 
 ## Usage
 
 ```
-
 -n
-
 ```
 
 See also:

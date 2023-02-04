@@ -12,11 +12,9 @@ does not affect the order in which binary numbers are read/written.
 ## Usage
 
 ```
-
 -big_endian
    or
 -little_endian
-
 ```
 
 See also:

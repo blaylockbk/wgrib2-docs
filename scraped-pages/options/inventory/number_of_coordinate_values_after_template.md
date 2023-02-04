@@ -17,20 +17,16 @@ in pairs of IEEE single precision floats.
 ## Usage
 
 ```
-
 -number_of_coordinate_values_after_template
    prints section 4, octets 6-7 as an unsigned integer
    it is expected that each value uses 4 octets of storage a the end of Section 4.
-
 ```
 
 ### Example
 
 ```
-
 $  wgrib2 -number\_of\_coordinate\_values\_after\_template COSMO\_EU\_1rec.grib2 -get\_byte 4 6 2
 1:0:number_coordinates_values_in_pdt=45:4-6=0,45
-
 ```
 
 See also:

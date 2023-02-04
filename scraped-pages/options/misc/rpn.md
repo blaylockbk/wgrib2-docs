@@ -82,16 +82,13 @@ packages to do the calculation using Python, numpy and
 ## Usage
 
 ```
-
 -rpn  "A:B:C:..."
     A,B,C,.. = number, rpn function, or rpn operator
-
 ```
 
 Operators and Functions:
 
 ```
-
 Pop X, Push Fn(X)
 * abs: absolute value
 * acos: arc cos, [0, pi] radians
@@ -137,18 +134,15 @@ Pop Y, Pop X, push Fn(X,Y)
 
 
 Note: an operation involving an UNDEFINED is UNDEFINED
-
 ```
 
 Stack Operators:
 
 ```
-
 * clr, clear the stack (stack is emptied)
 * dup, duplicate the top of the stack
 * pop, remove the top of the stack
 * exc/swap, exchange the top 2 stack entries
-
 
 
 ```
@@ -156,7 +150,6 @@ Stack Operators:
 Register Operators: (note: CW2 v2.0.6+ uses registers 7,8,9 prior versions 0,1,2)
 
 ```
-
 * clr\_I, clear register I, I=0,1..,9 (19 for v2.0.6+)
 * rcl\_I, push register I on top of stack, I=0,1..,9 (19 for v2.0.6+)
 * sto\_I, save top of stack in register I, I=0,1..,9 (19 for v2.0.6+)
@@ -167,13 +160,11 @@ Register Operators: (note: CW2 v2.0.6+ uses registers 7,8,9 prior versions 0,1,2
 * note: latitudes and longitudes are double precision values, the stack is single precision
 
 
-
 ```
 
 Variables and Constants: put on the top of the stack
 
 ```
-
 * number number = floating point or integer number like 0, 10.1, -1.23e-4
 * days\_in\_ref\_month number of days in the month for the reference date (conversion between monthly acc. and rates)
 * days\_in\_verf\_month number of days in the month for the verification time (conversion betwee monthly acc. and rates)
@@ -181,13 +172,11 @@ Variables and Constants: put on the top of the stack
 * rand random number uniformly distributed between 0 and 1, each grid point has a different random number
 
 
-
 ```
 
 Printing Operators:
 
 ```
-
 * print\_corr, write cosine weighted spatial correlation, data[TOP] data[TOP-1]
 * print\_max, print\_min, data[TOP]
 * print\_rms, write cosine weighted RMS, data[TOP]-data[TOP-1]
@@ -197,7 +186,6 @@ Printing Operators:
  print grid\_ave(data[TOP]\*data[TOP-1])/grid\_ave(data[TOP])
 
 
-
 ```
 
 ### Example 1
@@ -205,17 +193,13 @@ Printing Operators:
 The standard units of grib temperature is K but you want the text output in Celcius.
 
 ```
-
 $ wgrib2 a.grb -match ":TMP:850 mb:" -rpn "273.15:-" -text C.dat
-
 ```
 
 Fahrenheit is easy too (F = (K-273.15)\*9/5+32).
 
 ```
-
 $ wgrib2 a.grb -match ":TMP:850 mb:" -rpn "273.15:-:9:\*:5:/:32:+" -text F.dat
-
 ```
 
 ### Example 2
@@ -224,9 +208,7 @@ Suppose you want to limit the relative humidity values to 100. This example only
 affect the RH fields. All submessages will be converted into messages.
 
 ```
-
 $ wgrib2 a.grb -if ":RH:" -rpn "100:min" -fi -grib\_out out.grb -not\_if ":RH:" -grib out.grb
-
 ```
 
 ### Example 3
@@ -235,7 +217,6 @@ Suppose that you wanted the 500 to 1000 mb thickness, and the file only containe
 one field of Z1000 and one field of Z500.
 
 ```
-
 $ wgrib2 IN.grb -match ":HGT:" -match ":(500|1000) mb:" \
  -if ":500 mb:" -rpn sto\_1 -fi \
  -if ":1000 mb:" -rpn sto\_2 -fi \
@@ -254,7 +235,6 @@ $ wgrib2 IN.grb -match ":HGT:" -match ":(500|1000) mb:" \
 
      Note: this is a very simple script and that doesn't check the matching
      date code, grid type, etc.
-
 ```
 
 ### Example 4
@@ -262,7 +242,6 @@ $ wgrib2 IN.grb -match ":HGT:" -match ":(500|1000) mb:" \
 Write out the 500 mb wind speed.
 
 ```
-
 $ wgrib2 IN.grb -match ":[UV]grd:500 mb:" \
  -if ":UGRD:" -rpn "sto\_1" -fi \
  -if ":VGRD:" -rpn "sto\_2" -fi \
@@ -283,7 +262,6 @@ $ wgrib2 IN.grb -match ":[UV]grd:500 mb:" \
      date code, grid type, etc.
 
      Note: there are options to calculate wind speed and wind direction
-
 ```
 
 ### Example 5
@@ -291,36 +269,28 @@ $ wgrib2 IN.grb -match ":[UV]grd:500 mb:" \
 Suppose someone made a mistake and the latent heat flux (LHTFL) had the wrong sign. RPN to the rescue.
 
 ```
-
 $ wgrib2 IN.grb -match ":LHTFL:" -rpn "-1:\*" -grib\_out new\_lhtfl.grb
-
 ```
 
 The file, new_lhtfl, only contained the LHTFL fields. You duplicate the file with the
 fixed LHTFL fields by
 
 ```
-
 $ wgrib2 IN.grb -if ":LHTFL:" -rpn "-1:\*" -fi -grib\_out new.grb
-
 ```
 
 It would be faster if you only compressed the LHTFL fields. (-grib uses the
 original compressed data and -grib_out uses the "data" register.)
 
 ```
-
 $ wgrib2 IN.grb -set\_grib\_type jpeg \
  -not\_if ":LHTFL:" -grib new.grb -if ":LHTFL:" -grib\_out new.grb
-
 ```
 
 If both the latent and sensible heat fluxes needed a sign reversal, you could do,
 
 ```
-
 $ wgrib2 IN.grb -if ":(LHTFL|SHTFL):" -rpn "-1:\*" -fi -grib\_out new.grb
-
 ```
 
 ### Example 6
@@ -329,7 +299,6 @@ If you want to set certain values to undefined, you define a mask and then
 apply the mask. In this example, values below 20 are set to undefined.
 
 ```
-
 $ wgrib2 a.grb -rpn "dup:20:>=:mask" -grib\_out -set\_grib\_type c3 new.grb
 
 The RPN calculator is used:
@@ -340,7 +309,6 @@ The RPN calculator is used:
 
 -set_grib_type c3    sets the grib compression to complex3
 -grib_out new.grb    writes a grib message using the decoded data
-
 ```
 
 Don't forget to enclose the argument to rpn in quotes because the shell can do unexpect things.
@@ -348,12 +316,10 @@ Don't forget to enclose the argument to rpn in quotes because the shell can do u
 Printing operators
 
 ```
-
    print_corr   write cosine weighted spatial correlation R(TOP-1), R(TOP)
    print_max    write max(R(TOP)) to stdout
    print_min    write min(R(TOP)) to stdout
    print_rms    write cosine weighted RMS(R(TOP-1)-R(TOP))
-
 ```
 
 ### Example 7: Merging
@@ -366,12 +332,10 @@ common grid. Then you use "-rpn merge". Make sure that both domains are
 contained in the common grid as this is a requirement of the interpolation library.
 
 ```
-
    wgrib2 OUTER.T2m -new_grid_winds earth -new_grid A B C A1.grb
    wgrib2 NESTED.T2m -new_grid_winds earth -new_grid A B C A2.grb
    wgrib2 A2.grb -rpn sto_1 -import_grib A1.GRB -rpn "rcl_1:merge" \
     -grib_out MERGED.T2m
-
 ```
 
 ### Example 8: Land Mask
@@ -380,7 +344,6 @@ The file mask.grb contains the values 0 for water, 1 for land and
 2 for sea ice. I wanted a small file with 0 for water+sea-ice and 1 for land.
 
 ```
-
 wgrib2 mask.grb -rpn "1:==" -set_scaling 0 1 -set_grib_type c1 -grib_out land.grb
 
   -rpn "1:=="        if grid value is 1, the new value is 1 else 0
@@ -390,7 +353,6 @@ wgrib2 mask.grb -rpn "1:==" -set_scaling 0 1 -set_grib_type c1 -grib_out land.gr
                    0.7 bits per point 16 bits precision complex packing 1 (mask.grb)
                    0.2 bits per point complex packing 1 (land.grb)
    grid size: 131K points, land.grb is 3331 bytes
-
 ```
 
 ### Example 9: Total-total index
@@ -407,9 +369,7 @@ I wanted the globally averaged precip in the non-metric unit
 of mm/day. It's one command away
 
 ```
-
   wgrib2 gfsfile -match PRATE -s -rpn "86400:*" -stats
-
 ```
 
 ### Changes
@@ -417,7 +377,6 @@ of mm/day. It's one command away
 Wgrib2 v3.0.0+ adds error chechking to floating point values,
 
 ```
-
    wgrib2 prior to 3.0.0
 
       wgrib2 IN.grb -rpn "2cars:+" -grib_out OUT.grb
@@ -427,7 +386,6 @@ Wgrib2 v3.0.0+ adds error chechking to floating point values,
 
       wgrib2 IN.grb -rpn "2cars:+" -grib_out OUT.grb
           will result in an error message as "2cars" is not a legal floating point value
-
 ```
 
 ### Comments

@@ -31,7 +31,6 @@ the file /dev/null is a convenient, always present file.
 ## Usage
 
 ```
-
 -ndate DATE OFFSET
        DATE = YYYY, YYYYMM, YYYYMMDD, YYYYMMDDHH, YYYYMMDDHHmm, YYYYMMDDHHmmss
        OFFSET=(integer)(yr|mo|dy|hr|mn)
@@ -52,16 +51,13 @@ the file /dev/null is a convenient, always present file.
    output date code: YYYYMMDD            if input date code is YYYYMMDD       or OFFSET is in days (dy)
    output date code: YYYYMM              if input date code is YYYYMM         or OFFSET is in months (mo)
    output date code: YYYY                if input date code is YYYY           or OFFSET is in years (yr)
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 /dev/null -ndate 2016010212 -6hr
 2016010206
-
 ```
 
 See also: [-ndates](./ndates.md)

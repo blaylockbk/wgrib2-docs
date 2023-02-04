@@ -13,17 +13,14 @@ the command line.
 ## Usage
 
 ```
-
 -v0
 -v
 -v2
-
 ```
 
 ### Example
 
 ```
-
 -$ wgrib2 fcst.grb
 1:4:d=2007032600:HGT:1000 mb:anl:
 2:422561:d=2007032600:HGT:1000 mb:3 hour fcst:
@@ -33,7 +30,6 @@ the command line.
 -$ wgrib2 fcst.grb -v2
 1:4:00Z26mar2007:HGT Geopotential Height [gpm]:lvl1=100000*10**0 lvl2=missing lvl1=(100,100000) lvl2=(255,missing):1000 mb:anl:
 2:422561:00Z26mar2007:HGT Geopotential Height [gpm]:lvl1=100000*10**0 lvl2=missing lvl1=(100,100000) lvl2=(255,missing):1000 mb:3 hour fcst:
-
 ```
 
 See also:

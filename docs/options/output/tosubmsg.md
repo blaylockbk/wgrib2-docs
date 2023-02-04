@@ -33,16 +33,13 @@ message but by using submessages, the total overhead is reduced.
 ## Usage
 
 ```
-
 -tosubmsg OUTPUT_FILE
 NOTE: OUTPUT_FILE cannot be a pipe.
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 test.grb2 -tosubmsg new.grb2
 
 1:0:d=2008120200:TMP:800 mb:anl:
@@ -61,7 +58,6 @@ $ wgrib2 new.grb2
 1.3:0:d=2008120200:RH:800 mb:anl:
 1.4:0:d=2008120200:RH:750 mb:anl:
 1.5:0:d=2008120200:TMP:2743 m above mean sea level:anl:
-
 ```
 
 See also:

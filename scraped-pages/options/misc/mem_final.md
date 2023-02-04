@@ -20,22 +20,18 @@ with writing the 1000 grib messages to disk.
 ## Usage
 
 ```
-
 -mem_final N FILE
                    N=0..19
                    FILE=file to write
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 gep19.t00z.pgrb2af180 -mem\_final 1 OUT.grb -grib @mem:1
 1:0:d=2009060500:HGT:200 mb:180 hour fcst:ENS=+19
 2:46042:d=2009060500:TMP:200 mb:180 hour fcst:ENS=+19
 ..
-
 ```
 
 The above line reads the file 'gep19.t00z.pgrb2af180' and and writes it

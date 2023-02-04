@@ -19,9 +19,7 @@ selects the HGT field and the second wgrib extracts the HGT based
 on the input inventory.
 
 ```
-
   wgrib2 IN.grb | grep ":HGT:" | wgrib2 IN.grb -i -grib OUT.grb
-
 
 ```
 
@@ -31,9 +29,7 @@ all the 2016 grib files to the pipe. The wgrib2 reads the pipe (file=-)
 and writes all the HGT fields to the file HGT2016.grb.
 
 ```
-
   cat pgb.2016????? | wgrib2 - -match ":HGT:" -grib HGT2016.grb
-
 
 ```
 
@@ -42,13 +38,11 @@ two processes to run at the same time. For example, the above
 line could be executed as,
 
 ```
-
   cat pgb.2016????? tmpfile
 
   wgrib2 tmpfile -match ":HGT:" -grib HGT2016.grb
 
   rm tmpfile
-
 
 ```
 
@@ -59,17 +53,13 @@ writes a CSV file. On a multi-core system, both processes
 and be computing at the same time.
 
 ```
-
   wgrib2 IN.grb -inv processed.txt  -new_grid_winds earth -new_grid ncep grid 2  - | wgrib2 - -csv out.csv
-
 ```
 
 Another usage of pipes is to avoid the 2GB limit on input grib2 file when using a 32-bit machine.
 
 ```
-
  cat BIGFILE | wgrib2 - -match ':HGT:' -grib HGT.grb
-
 ```
 
 ### Named Pipes
@@ -78,16 +68,13 @@ Named pipe are also useful. Consider the following line
 which converts the file into jpeg2000 packing.
 
 ```
-
    wgrib2 IN.grb -set_grib_type jpeg -grib_out JPEG.grb
-
 ```
 
 Jpeg2000 packing is slow and you can convert the file using
 3 cpus and named pipes.
 
 ```
-
 1  mkfifo pipe.1.$$ pipe.2.$$ pipe.3.$$
 2  wgrib2 IN.grb -for_n 1::3 -set_grib_type jpeg -grib_out pipe.1.$$ &
 3  wgrib2 IN.grb -for_n 2::3 -set_grib_type jpeg -grib_out pipe.2.$$ &
@@ -105,7 +92,6 @@ Jpeg2000 packing is slow and you can convert the file using
   line 6: cleanup
 
   * versions of wgrib2 prior to 5/2011 needed the -flush option for lines 2-4.
-
 ```
 
 The above is a simple example of multitasking a wgrib2 job.

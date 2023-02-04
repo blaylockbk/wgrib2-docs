@@ -10,15 +10,12 @@ grid points per row decreases as you approach the poles.
 ## Usage
 
 ```
-
 -nlons
-
 ```
 
 ### Example
 
 ```
-
 png.grib is on a 360x181 grid
 
 $ wgrib2 -grid png.grb2
@@ -49,7 +46,6 @@ bash-4.1$ wgrib2 reduced_gaussian_surface_jpeg.grib2 -grid
 
 $ wgrib2 reduced\_gaussian\_surface\_jpeg.grib2 -nlons
 1:0:nlon (S/N)=20 27 36 40 45 50 60 64 72 75 80 90 90 96 100 108 108 120 120 120 128 128 128 128 128 128 128 128 128 128 128 128 128 128 128 128 128 128 128 128 128 128 128 128 120 120 120 108 108 100 96 90 90 80 75 72 64 60 50 45 40 36 27 20
-
 ```
 
 See also:

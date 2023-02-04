@@ -8,18 +8,14 @@ into the inventory. It is used to make the inventory prettier.
 ## Usage
 
 ```
-
 -print "string"
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 png.grb2 -print "VAR is" -var -print "LEV is" -lev
 1:4:VAR is:RH:LEV is:2 m above ground
-
 ```
 
 See also:

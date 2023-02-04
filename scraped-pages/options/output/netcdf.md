@@ -25,27 +25,21 @@ All missing values in data are replaced by the \_FillValue defined in wgrib2 as
 ### Simple usage 1
 
 ```
-
 -netcdf file_name
-
 ```
 
 ### Example 1
 
 ```
-
 $ wgrib2 ../example/eta.t00z.awphys18.grb2 -netcdf eta.nc
 
 The above line converts the grib2 file into a netcdf file.
-
 ```
 
 ### Simple usage 2
 
 ```
-
 -set_ext_name 1 -netcdf file_name
-
 ```
 
 The first simple usage was good for simple variables like HGT (geopotential height)
@@ -53,7 +47,6 @@ and TMP (temperature). Using the grib name identifies the field. However,
 some grib fields cannot be identified by the grib name. For example,
 
 ```
-
 $ wgrib2 massmr.grb2 -netcdf junk\_simple\_name.nc
 1:0:d=2015072700:MASSMR:64 hybrid level:12 hour fcst:aerosol=Dust Dry:aerosol_size >=2e-07,<2e-06:
       The grib name is MASSMR (mass mixing ratio.  If you make a netcdf file with
@@ -66,7 +59,6 @@ $ ncdump -h junk\_simple\_name.nc
 		MASSMR_64hybridlevel:long_name = "Mass Mixing Ratio (Mass Fraction in Air)" ;
 		MASSMR_64hybridlevel:level = "64 hybrid level" ;
 		MASSMR_64hybridlevel:units = "kg/kg" ;
-
 ```
 
 The netcdf file, junk_simple_name.nc, contains the mass missing ratio of some unknown substance.
@@ -75,7 +67,6 @@ For this case we need to use the extend name.
 ### Example 2
 
 ```
-
 $ wgrib2 massmr.grb2 -set\_ext\_name 1 -netcdf junk\_ext\_name.nc
 1:0:d=2015072700:MASSMR.aerosol=Dust_Dry.aerosol_size_>=2e-07,<2e-06.:64 hybrid level:12 hour fcst:
 $ ncdump -h junk\_ext\_name.nc
@@ -86,7 +77,6 @@ $ ncdump -h junk\_ext\_name.nc
 		MASSMR_aerosol_EQ_Dust_Dry_aerosol_size_GE_2eM07_LT_2eM06_64hybridlevel:long_name = "Mass Mixing Ratio (Mass Fraction in Air)" ;
 		MASSMR_aerosol_EQ_Dust_Dry_aerosol_size_GE_2eM07_LT_2eM06_64hybridlevel:level = "64 hybrid level" ;
 		MASSMR_aerosol_EQ_Dust_Dry_aerosol_size_GE_2eM07_LT_2eM06_64hybridlevel:units = "kg/kg" ;
-
 ```
 
 ### Sub-options for -netcdf
@@ -122,7 +112,6 @@ are defined in the wgrib2 internal table and now include next types of GRIB2 lev
 ```
 
 
-
 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 20 : K level
@@ -137,7 +126,6 @@ are defined in the wgrib2 internal table and now include next types of GRIB2 lev
  | | |
  | | |
  | | |
-
 
 
 ```
@@ -213,7 +201,6 @@ Fields here include:
 ```
 
 
-
 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 100 - the grib2 level type code number
@@ -228,7 +215,6 @@ short\_name for the vertical axis in the netcdf file, string
  | | |
  | | |
  | | |
-
 
 
 ```
@@ -310,10 +296,8 @@ at all levels except at 975 mb if these data would be found in the grib2 decoded
 
 ```
 
-
 HGT:\*:geopotential
 HGT:975 mb:ignore
-
 
 ```
 
@@ -329,7 +313,6 @@ conversion of both 'surface' and upper air data although
 the input grib2 files are different.
 
 ```
-
 
 #
 # File name: jma\_msm\_g2nc.table
@@ -413,7 +396,6 @@ and change the name for the output file:
 
 Resulting netcdf files could be used directly at least from the GrADS (gradsnc or gradsdods)
 utility for data visualization and analyses.
-
 ```
 
 ### Example 4
@@ -423,7 +405,6 @@ convert to a regional subset and finally convert it into a netcdf file. Since th
 option doesn't support appending, the netcdf conversion cannot be in a loop.
 
 ```
-
 Version 1, using loops and a temporary file
 
 rm tempfile
@@ -446,7 +427,6 @@ Line 1 (cat), takes all the desired grib files and writes to stdout
 Line 2 (wgrib2), reads the grib file from stdin and selects the desired fields
 Line 3 (-new_grid), is a continuation of the wgrib2 command and writes the new grid to stdout
 Line 4 (wgrib2), reads the new grid from stdin and writes out a netcdf file (myfile.nc)
-
 ```
 
 ### Problems
@@ -459,10 +439,8 @@ in a different order will result in error messages. If your grib file
 doesn't follow the order, you can sort the file by the verification time.
 
 ```
-
 wgrib2 FILE.old -vt -s | sort -k3,3 -t: | wgrib2 -i FILE.old -grib FILE.new
 wgrib2 FILE.new -netcdf FILE.nc
-
 ```
 
 Another problem is that netcdf-3 files are limited to 4GB in size. The

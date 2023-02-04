@@ -22,15 +22,12 @@ for the longitudes and latitudes.)
 ## Usage
 
 ```
-
 -cyclic
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 gdt140.g2 -cyclic -nl -grid
 1:0:not cyclic:
 :grid_template=140:winds(N/S):
@@ -45,7 +42,6 @@ $ wgrib2 gep19.t00z.pgrb2af180 -cyclic -nl -grid
 	lat 90.000000 to -90.000000 by 1.000000
 	lon 0.000000 to 359.000000 by 1.000000 #points=65160
 ...
-
 ```
 
 See also:

@@ -42,11 +42,9 @@ of the numbers.
 ## Usage
 
 ```
-
 -set_grib_max_bits N
   N = maximum number of bits used to encode data
   the default value is 16, N = 1..25
-
 ```
 
 ### Comments

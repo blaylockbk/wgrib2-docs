@@ -38,7 +38,6 @@ part of the offical standard (expected 9/2016).
 ## Usage
 
 ```
-
 -set_grib_type X   X=ieee,simple,complex1,complex2,complex3,jpeg,aec,same
                      s, c1, c2, c3, j, a are short for simple .. aec
                      v2.0.7 adds complex1-bitmap, complex2-bitmap, complex3-bitmap
@@ -61,15 +60,12 @@ same = try to keep same packing type as input
 
 note: to use bitmap for undefined values in complex packing, you can use
  -set_bitmap 1 or you can use the complexN-bitmap.
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 in.grb -set\_grib\_type complex3 -grib\_out out.grb
-
 ```
 
 The above line rewrites a file using complex3 packing.

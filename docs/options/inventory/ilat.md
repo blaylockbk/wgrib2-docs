@@ -14,23 +14,19 @@ output grid may differ from the input grid.
 ## Usage
 
 ```
-
 -ilat i
       i = 1 .. number of grid points
-
 ```
 
 ### Example
 
 ```
-
 -sh-2.05b$ wgrib2 ens.grb -ilat 5
 1:0:grid pt 5,lon=4.000000,lat=-90.000000,val=18168.8
 2:45932:grid pt 5,lon=4.000000,lat=-90.000000,val=8e-07
 3:89724:grid pt 5,lon=4.000000,lat=-90.000000,val=2.6e-06
 4:144624:grid pt 5,lon=4.000000,lat=-90.000000,val=8309.4
 5:198928:grid pt 5,lon=4.000000,lat=-90.000000,val=205.9
-
 ```
 
 See also: [-ijlat](./ijlat.md),

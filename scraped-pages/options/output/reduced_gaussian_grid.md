@@ -34,7 +34,6 @@ Some fields have undefined values. Therefore, in some cases
 you may have to extrapolate a value.
 
 ```
-
          D------x-------U         (Gaussian latitude)
                               D=defined value, U=undefined values
                               x=location of value that is desired
@@ -58,7 +57,6 @@ The supported interpolation types are
 
 
 ### Example
-
 
 
 ```
@@ -89,9 +87,7 @@ lon 0.000000 to 357.187500 by 2.812500
 
 ```
 
-
 ## Usage
-
 
 
 
@@ -110,9 +106,7 @@ INTERPOLATION = linear, neighbor, linear-extrapolate, neighbor-extrapolate
 
 ```
 
-
 See also: [-grid](./grid.md),
-
 
 
 

@@ -21,10 +21,8 @@ is to mark the file as persistent.
 ## Usage
 
 ```
-
 -persistent FILE
   FILE must be already opened
-
 ```
 
 See also:

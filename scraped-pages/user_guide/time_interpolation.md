@@ -13,7 +13,6 @@ The scaling of the numbers is retained by the option "set_scaling same same".
 The latter option requires wgrib2 v2.0.5.
 
 ```
-
 #!/bin/sh
 # use wgrib2 to interpolate to time interpolate two forecast files
 #
@@ -55,7 +54,6 @@ $wgrib2 $in1 -rpn sto_1 -import_grib $in2 -rpn sto_2 -set_grib_type same \
      -rpn "rcl_1:$b2:*:rcl_2:$c2:*:+" -set_ftime "$d2" -set_scaling same same -grib_out $out \
   -if ":$a:" \
      -rpn "rcl_1:$b3:*:rcl_2:$c3:*:+" -set_ftime "$d3" -set_scaling same same -grib_out $out
-
 ```
 
 The script requires the the 2 and 3 hour forecast have the fields in

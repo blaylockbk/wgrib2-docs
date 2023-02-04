@@ -5,28 +5,23 @@
 The -grid option prints out the grid information.
 
 ```
-
 $ wgrib2 gep19.t00z.pgb2af180 -grid -d 1
 1:0:grid_template=0:winds(N/S):
 	lat-lon grid:(360 x 181) units 1e-06 input WE:NS output WE:SN res 48
 	lat 90.000000 to -90.000000 by 1.000000
 	lon 0.000000 to 359.000000 by 1.000000 #points=65160
-
 ```
 
 ```
-
 $ wgrib2 nam.683 -grid
 1:0:grid_template=30:winds(grid):
 	Lambert Conformal: (1473 x 1025) input WE:SN output WE:SN res 8
 	Lat1 12.190000 Lon1 226.541000 LoV 265.000000
 	LatD 25.000000 Latin1 25.000000 Latin2 25.000000
 	LatSP 0.000000 LonSP 0.000000
-
 ```
 
 ```
-
 $ wgrib2 .t00z.master.grb2f048 -grid -d 1
 ebis@landing2:~/grib2_examples$ wgrib2 gfs.t00z.master.grb2f048 -grid | more
 1:0:grid_template=40:winds(N/S):
@@ -34,18 +29,15 @@ ebis@landing2:~/grib2_examples$ wgrib2 gfs.t00z.master.grb2f048 -grid | more
 	number of latitudes between pole-equator=768 #points=4718592
 	lat 89.909340 to -89.909340
 	lon 0.000000 to 359.882813 by 0.117188
-
 ```
 
 ```
-
 $ wgrib2 merc.g2 -grid -d 1
 1:0:grid_template=10:winds(N/S):
 	Mercator grid: (73 x 23) LatD 22.500000 input WE:SN output WE:SN res 48
 	lat -48.090000 to 48.090000 by 513669.000000 m
 	lon 0.000000 to 0.000000 by 513669.000000 m
 	orientation 0.000000
-
 ```
 
 The four previous examples are for a grid definitions of a lat-lon, Lambert Conformal,
@@ -62,7 +54,6 @@ lat-lon grid defintion is given by
 Wgrib2's version of the lat-lon grid is given by
 
 ```
-
 $ wgrib2 gep19.t00z.pgb2af180 -grid -d 1
 1:0:grid_template=0:winds(N/S):
 	lat-lon grid:(360 x 181) units 1e-06 input WE:NS output WE:SN res 48
@@ -89,7 +80,6 @@ lat X to Y by Z .. latitudes start at X goes to Y by steps of Z
 lon X to Y by Z .. longitudes start at X goes to Y by steps of Z
                    note: grib2 uses longitude is in [0,360) model
 #points N       .. number of points in the grid including grid points with undefined values
-
 ```
 
 ### Staggered Grids, wgrib2 2.0.8+
@@ -127,9 +117,7 @@ the staggering. The storage description was updated in v2.0.8 to be
 ## Usage
 
 ```
-
 -grid
-
 ```
 
 See also:

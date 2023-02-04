@@ -14,18 +14,14 @@ probabiity forecasts, analysis errors or forecast errors are noted.
 ## Usage
 
 ```
-
 -process
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 -process png.grb2
 1:4:code table 4.3=4 ens fcst
-
 ```
 
 See also:

@@ -39,7 +39,6 @@ the I/O system, and becomes relatively small as the grid size increases.
 ###
 
 ```
-
 #!/usr/bin/env python3
 
 # this version does a call to wgrib2 to netcdf files
@@ -54,13 +53,11 @@ err = pywgrib2_s.wgrib2( [in_file, '-rewind_init', in_file, '-match',':HGT:500 m
 print("write netcdf-a=",err)
 err = pywgrib2_s.wgrib2( [in_file, '-rewind_init', in_file, '-match',':TMP:850 mb:', "-netcdf", outb] )
 print("write netcdf-b=",err)
-
 ```
 
 Usage
 
 ```
-
 ierr = pywgrib2_s.wgrib2( [ (list of wgrib2 arguments) ] )
       note: output files remain open and may not be flushed
             previously opened output files will continue writing after last write
@@ -70,20 +67,17 @@ ierr = pywgrib2_s.wgrib2( [ (list of wgrib2 arguments) ] )
       note: you can flush the output file by closing the file by pywgrib2_s.close(file)
       note: you can read from the beginning of a file by '-rewind_init', file after the
             file has been opened
-
 ```
 
 Version and Configuration of Wgrib2 Routine
 
 ```
-
 result = pywgrib2_s.wgrib2_version()
          result is a string with the wgrib2 version (same as wgrib2 -version)
 
 result = pywgrib2_s.wgrib2_configuration()
          result is a list of strings
          the same as wgrib2 -config
-
 ```
 
 How it works
@@ -100,7 +94,6 @@ The pywgrib2_s loads a shared wgrib2 library and calls the "wgrib2"
 using the following python code.
 
 ```
-
 def wgrib2(arg):
     #
     #    call wgrib2
@@ -122,7 +115,6 @@ def wgrib2(arg):
     ierr = my_wgrib2.wgrib2(arg_length, select)
     if debug: print("wgrib2 err=", ierr)
     return ierr
-
 ```
 
 See also:

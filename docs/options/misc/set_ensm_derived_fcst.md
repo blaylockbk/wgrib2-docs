@@ -13,17 +13,14 @@ have metadata to describe the cluster that was used.
 ## Usage
 
 ```
-
 -set_ensm_derived_fcst X Y
 X = [code table 4.7](https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_table4-7.shtml)
 Y = 0..255  number of forecasts in the ensemble
-
 ```
 
 ### Example
 
 ```
-
 $ wwgrib2 sst.grb2 -set\_ensm\_derived\_fcst 1 10 -grib newsst.grb
 1:0:d=1981110100:TMP:surface:0-1 month ave anl:wt ens-mean
 
@@ -33,7 +30,6 @@ $ wwgrib2 sst.grb2 -set\_ensm\_derived\_fcst 1 10 -grib newsst.grb
 
 -grib newsst.grb
    save the new grib file in newsst.grb
-
 ```
 
 See also:

@@ -11,9 +11,7 @@ The newer -alarm option is better suited for stopping jobs web jobs.
 ## Usage
 
 ```
-
 -limit N    where N is an integer.
-
 ```
 
 See also: [-quit](./quit.md),

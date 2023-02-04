@@ -14,19 +14,15 @@ You would use this option if wgrib2 calculates the incorrect size of Section 4.
 ## Usage
 
 ```
-
 -check_pdt_size    0 disable PDT size check
                    1 enable  PDT size check
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 png.grb2 -check\_pdt\_size 0
 1:4:YY=2009
-
 ```
 
 See also:

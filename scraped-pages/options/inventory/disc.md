@@ -8,27 +8,21 @@ The -disc option prints the discipline. Use the
 ## Usage
 
 ```
-
 -disc
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 grib2.polar -disc
 1.1:0:disciple=0
 1.2:0:disciple=0
-
 ```
 
 ```
-
 $ wgrib2 grib2.polar -v -disc
 1.1:0:disciple=0 Meteorlogy
 1.2:0:disciple=0 Meteorlogy
-
 ```
 
 See also:

@@ -8,22 +8,18 @@ For example, within NCEP, the subcenters include NCO, EMC, HPC, MPC, CPC, etc.
 ## Usage
 
 ```
-
 -subcenter
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 test.grb2 -subcenter
 1:0:subcenter=NCEP Ensemble Products
 2:46042:subcenter=NCEP Ensemble Products
 3:63079:subcenter=NCEP Ensemble Products
 4.1:86046:subcenter=NCEP Ensemble Products
 ...
-
 ```
 
 See also: [-center](./center.md),

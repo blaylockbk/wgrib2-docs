@@ -7,7 +7,6 @@ signed integer value as commonly use by grib for signed integers.
 The integer must range from -2147483647 to 2147483647,
 
 ```
-
 -set_int I J K
   I = 1..7
   J = 1..(section length-3)
@@ -19,7 +18,6 @@ would set
   Section I, Octet J+2:  (abs(K) >> 8) & 255
   Section I, Octet J+3:   abs(K) & 255;
  The above is using C syntax.
-
 ```
 
 Multiple integers can be set by making the third argument a colon seperated list.
@@ -27,12 +25,10 @@ Multiple integers can be set by making the third argument a colon seperated list
 ## Usage
 
 ```
-
 -set_int  SECTION STARTING_OCTET_LOCATION I-1:I-2:..:I-N
 SECTION=0 .. 7
 OCTET_LOCATION = 1..N
 I-M = Mth integer
-
 ```
 
 ### Example

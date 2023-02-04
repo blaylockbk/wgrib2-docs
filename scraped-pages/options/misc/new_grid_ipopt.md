@@ -25,7 +25,6 @@ overwrite the IPOPT values with the default values for that interpolation method
     (default for now, will be changed)
 
 ```
-
     note: should specify these values by -new_grid_interpolation
 
     when ipopt(2) == -1, sensible trunction number
@@ -53,7 +52,6 @@ overwrite the IPOPT values with the default values for that interpolation method
           noise is being added to the grid values.  So the appropriate spectral
           representation will have filter applied to the spectral represenation.
           The math hasn't been worked out.
-
 ```
 
 - neighbor-budget: not enabled by wgrib2
@@ -61,10 +59,8 @@ overwrite the IPOPT values with the default values for that interpolation method
 ## Usage
 
 ```
-
 -new_grid_ipopt X
     X = integer or integer:integer
-
 ```
 
 See also: [-new_grid](./new_grid.md),

@@ -17,7 +17,6 @@ next output option are executed like with an -if option.
 Here is an example of computing the 500 mb wind speed.
 
 ```
-
 $ wgrib2 a.grb -match ":[UV]grd:500 mb:anl:" \
  -if ":UGRD:" -rpn "sto\_1" -fi \
  -if ":VGRD:" -rpn "sto\_2" -fi \
@@ -37,14 +36,12 @@ $ wgrib2 a.grb -match ":[UV]grd:500 mb:anl:" \
 
      Note: this is a very simple script and that doesn't check the matching
      date code, grid type, etc.
-
 ```
 
 With operational NCEP files, the V field immediately follows the corresponding U field.
 If we assume that this is always true, then the following computes all the wind speeds.
 
 ```
-
 $ wgrib2 a.grb -match ":[UV]grd:" \
  -if ":UGRD:" -rpn "sto\_1" -fi \
  -if ":VGRD:" -rpn "sto\_2" -fi \
@@ -52,17 +49,14 @@ $ wgrib2 a.grb -match ":[UV]grd:" \
  -rpn "rcl\_1:sq:rcl\_2:sq:+:sqrt:clr\_1:clr\_2" \
  -set\_var WIND \
  -grib\_out out.grb
-
 ```
 
 ## Usage
 
 ```
-
 -if_reg X
 
 X is a list of register names, ex. 1:2 or 2:4:7
-
 ```
 
 See also:

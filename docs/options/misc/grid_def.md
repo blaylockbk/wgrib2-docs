@@ -58,11 +58,9 @@ values, use -import_lonlat.
 ## Usage
 
 ```
-
 -grib_def
   will alter the latitude or longitudes associated with the grid points
   when the variable is a latitude or longitude field
-
 ```
 
 ### Example
@@ -71,18 +69,15 @@ For -grid_def to work, the latitude and longitudes have
 processed prior the to remaining grids. The file, icon.grb, satifies this requirement.
 
 ```
-
 $ wgrib2 icon.grb
 1:0:d=2019040900:GEOLON:surface:anl:
 2:5898409:d=2019040900:GEOLAT:surface:anl:
 3:11796818:d=2019040900:TMP:2 m above ground:0-360 min max fcst:
-
 ```
 
 An additional requirement is the grids be the same.
 
 ```
-
 $ wgrib2 icon.grb -grid
 1:0:grid_template=101:
 	General Unstructured Grid grid=26 ref_grid=1 uuid=a27b8de6-18c4-11e4-820a-b5b098c6a5c0
@@ -92,24 +87,20 @@ $ wgrib2 icon.grb -grid
 
 3:11796818:grid_template=101:
 	General Unstructured Grid grid=26 ref_grid=1 uuid=a27b8de6-18c4-11e4-820a-b5b098c6a5c0
-
 ```
 
 A more precise method of identifying identical grids is by
 
 ```
-
 $ wgrib2 icon.grb -checksum 3     (Section 3 is the grid defininition template)
 1:0:sec3_cksum=470959557
 2:5898409:sec3_cksum=470959557
 3:11796818:sec3_cksum=470959557
-
 ```
 
 Using wgrib2 v3.0.0+, we can get a 2x2 degree lat-lon grid by,
 
 ```
-
 $ wgrib2 icon.grb -grid\_def -not\_if ":GEO(LAT|LON):" -s -lola 0:180:2 -90:91:2 lola.grb grib -endif
 1:0
 2:5898409
@@ -121,7 +112,6 @@ bash-4.1$ wgrib2 lola.grb -s -grid
 	lon 0.000000 to 358.000000 by 2.000000 #points=16380
 
 The -not_if is used so that GEOLAT and GEOLON fields are not interpolated.
-
 ```
 
 For wgrib2 up to v2.0.6 and, -grid_def did not recognize GEOLAT and GEOLON.
@@ -130,7 +120,6 @@ recognized. NLAT and ELON are NCEP local variables, so the center has to
 be changed to 7 which is NCEP by the GRIB standard.
 
 ```
-
 $ wgrib2 icon.grb \
  -if ":GEOLAT:" -set center 7 -set\_var NLAT -fi \
  -if ":GEOLON:" -set center 7 -set\_var ELON -fi \
@@ -139,17 +128,14 @@ $ wgrib2 icon.grb \
 1:0:d=2019040900:ELON:local level type 1 0:anl:
 2:5898409:d=2019040900:NLAT:local level type 1 0:anl:
 3:11796818:d=2019040900:TMP:local level type 103 2:0-6 hour max fcst::d=2019040900:TMP:local level type 103 2:0-6 hour max fcst:
-
 ```
 
 With wgrib2 v3.0.0, you can also use -rpn to update the latitude and
 longitudes.
 
 ```
-
 $ wgrib2 icon.grb icon.grb -if ":GEOLAT:" -rpn sto\_lat -endif -if ":GEOLON:" -rpn sto\_lon -endif \
  -not\_if ":GEO(LAT|LON):" -s -lola "0:180:2" "-90:91:2" lola.grb grib -endif
-
 ```
 
 See also:

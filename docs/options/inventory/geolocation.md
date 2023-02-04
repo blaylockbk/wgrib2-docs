@@ -45,19 +45,16 @@ generated the locations of the grid points. External methods were not considered
 ## Usage
 
 ```
-
 -geolocation
     print out geolocation routines used: proj4, gctpc, internal, external, or not_used
       external means the lat/lon may be read or computed by an external calculation.
       If wgrib3 does not need the geolocation information, the geolocation routines
          will not be called.
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 burned\_area\_20120131\_12\_23\_1km.grib2 -geolocation -lon -90 30
 1:0:geolocation=gctpc:lon=270.004694,lat=29.997210,val=0
 
@@ -67,7 +64,6 @@ $ wgrib2 burned\_area\_20120131\_12\_23\_1km.grib2 -geolocation
 1:0:geolocation=not_used
 
 	The geolocation use not used.
-
 ```
 
 See also:

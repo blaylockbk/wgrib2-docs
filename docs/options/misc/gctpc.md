@@ -50,7 +50,6 @@ Proj4 library
 - The first choice by many people.
 
 ```
-
 * test case 1 - read large Lambert conformal grid (6887 x 6610) and
 calculate lon/lat for the entire grid and print lon/lat for 1 grid point.
 This uses a spherical Earth.
@@ -80,7 +79,6 @@ Earth:
   case 2: code3.2=4 IAG-GRS80 ave radius=6367444.5 m
 
 Packing: grid point data - complex packing,c1
-
 ```
 
 The internal routines are fast, multithreaded but only handle
@@ -115,7 +113,6 @@ for "keeping the options open".
 ## Usage
 
 ```
-
 -gctpc 0
    do not use gctpc for geolocation
 -gctpc 1
@@ -133,7 +130,6 @@ for "keeping the options open".
      note: older version of the priority was wrong.
 
    Note: some grids are only  supported by the internal routines
-
 ```
 
 See also:

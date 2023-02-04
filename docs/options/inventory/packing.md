@@ -17,15 +17,12 @@ integers.
 ## Usage
 
 ```
-
 -packing
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 png.grb2 -packing
 bash-4.1$ wgrib2 png.grb2 -packing
 1:4:packing=grid point data - png compression,_
@@ -45,7 +42,6 @@ $ wgrib2 small.grb2 -v -packing
 The file small.grb2 is using simple packing, integers are stored using
 12 bits (#bits=12). The grid points can have values of (1.22666e+06+i*2^2)*10^-2
 where i is an integer that ranges from 0..4095.
-
 ```
 
 See also:

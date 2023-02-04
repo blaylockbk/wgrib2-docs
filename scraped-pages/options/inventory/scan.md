@@ -20,14 +20,12 @@ In grib1, all these scan orders are possible. The grib1 scan orders are,
 You read the above notation (WE:SN) by first go from W to E then go from S to N.
 
 ```
-
 AB:CD
    do i = C to D
      do j = A to B
        data
      enddo
    enddo
-
 ```
 
 Grib2, includes the above 8 scan orders and adds 4 more useful
@@ -40,7 +38,6 @@ scan orders.
 - EW|WE:NS
 
 ```
-
 AB|BA:CD
    odd_row=true
    do i = C to D
@@ -56,7 +53,6 @@ AB|BA:CD
      }
      odd_row = not odd_row
    enddo
-
 ```
 
 This "plow the field" order reduces the file size when using
@@ -68,15 +64,12 @@ Wgrib2 simplfies life by internally converting fields to WE:SN by default.
 ## Usage
 
 ```
-
 -scan
-
 ```
 
 ### Example
 
 ```
-
 -$ wgrib2 ds\_ens.grb -scan
 1:0:scan=5 input=WE|EW:SN output=WE:SN
 2:218709:scan=5 input=WE|EW:SN output=WE:SN
@@ -86,7 +79,6 @@ input=WE|EW:SN   the grib file is in WE|EW:SN scan order
 output=WE:SN     the internal registers and output files except for grib
                  will be in WE:SN order, use the -order option to change
                  the output scan order
-
 ```
 
 See also:

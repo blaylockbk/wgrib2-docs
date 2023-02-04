@@ -19,14 +19,12 @@ The available parameters that can be set will depend on the version of wgrib2 be
 To see the parameter available,
 
 ```
-
 $ wgrib2 grib_file -set junk junk
 *** FATAL ERROR: set: allowed values: discipline, center, subcenter, master_table, local_table,
 background_process_id, analysis_or_forecast_process_id, model_version_date, chemical, table_1.2,
 table_1.3, table_1.4, table_3.0, table_3.1/GDT, table_3.2, table_3.3, table_3.4, table_4.0/PDT,
 table_4.1, table_4.2, table_4.3, table_4.5a, table_4.5b, table_4.6, table_4.7, table_4.8,
 table_4.10, table_4.11, table_4.230, table_5.0/DRT, table_6.0, % ***
-
 ```
 
 "grib_file" has to be a grib file, and "junk" is any non-supported parameter.
@@ -34,12 +32,10 @@ table_4.10, table_4.11, table_4.230, table_5.0/DRT, table_6.0, % ***
 ## Usage
 
 ```
-
 -set X Y             X=field, Y=integer/float/long long int
                      depending on X
 
                      To find the values of X, use: wgrib2 - -set help all
-
 ```
 
 ### Fields (as of wgrib2 v2.0.1)
@@ -80,14 +76,12 @@ table_4.10, table_4.11, table_4.230, table_5.0/DRT, table_6.0, % ***
 ### Example
 
 ```
-
 $ wgrib2 -set center 99 -center
 1:0:center=De Bilt, Netherlands
 2:46042:center=De Bilt, Netherlands
 3:63079:center=De Bilt, Netherlands
 4.1:86046:center=De Bilt, Netherlands
 ...
-
 ```
 
 The -set_var option will rename

@@ -42,7 +42,6 @@ how many records it finds to average. For example, to make a daily
 average, a file has to be in the following order.
 
 ```
-
 U500 2000-01-02 00Z             start ave
 U500 2000-01-02 06Z
 U500 2000-01-02 12Z
@@ -55,7 +54,6 @@ Z500 2000-01-02 00Z             start ave
 Z500 2000-01-02 06Z
 Z500 2000-01-02 12Z
 Z500 2000-01-02 18Z             end ave
-
 ```
 
 To make a daily average of the above file, you need to specify the
@@ -63,29 +61,23 @@ output file and the time interval between samples. The time
 units are the same as used by GrADS (hr, dy, mo, yr).
 
 ```
-
 $ wgrib2 input.grb -ave 6hr out.grb
-
 ```
 
 If the file is not sorted, you can use the unix sort by,
 
 ```
-
 $ wgrib2 input.grb | sort -t: -k4,4 -k5,5 -k6,6 -k3,3 | \
  wgrib2 -i input.grb -set\_grib\_type c3 -ave 6hr output.grb
-
 ```
 
 If you want to make daily means from 4x daily monthly files
 and assuming that more than one variable/level is in the monthly file.
 
 ```
-
 $ wgrib2 input.grb | sed 's/\(:d=........\)/\1:/' | \
  sort -t: -k3,3 -k5,5 -k6,6 -k7,7 -k4,4 | \
  wgrib2 input.grb -i -set\_grib\_type c3 -ave 6hr daily.ave.grb
-
 ```
 
 Using -fcst_ave is like using
@@ -94,14 +86,12 @@ time instead of the reference time. To make an inventory that
 use the verification time instead of the reference time, you type,
 
 ```
-
 $ wgrib2 input.grb -vt -var -lev -misc
 1:0:vt=2011040101:PRATE:surface:
 2:592224:vt=2011040102:PRATE:surface:
 3:1233694:vt=2011040103:PRATE:surface:
 4:1909322:vt=2011040104:PRATE:surface:
 5:2612620:vt=2011040105:PRATE:surface:
-
 ```
 
 The sed command will be alterered very slightly when making the
@@ -119,14 +109,12 @@ following properties:
 - Each file has corresponding grib messages in the same order
 
 ```
-
 Conditions 1 and 2 can be met using
 
       wgrib2 IN.grb -grib OUT.grb
 
 Condition 4 can be met using
       wgrib2 IN.grb | sort -k3 -t: | wgrib2 -i IN.grb -grib OUT.grb
-
 ```
 
 Then you can use the gmerge program to produce a file in
@@ -134,7 +122,6 @@ the correct order. The program gmerge is included with the
 wgrib2 distribution under grib2/aux_progs/.
 
 ```
-
 $ ls pgb.20170107??
 pgb.2017010700	pgb.2017010706	pgb.2017010712	pgb.2017010718
 
@@ -155,7 +142,6 @@ $ wgrib2 /tmp/daily.grb
 2:325115:d=2017010700:ACPCP:surface:4@6 hour ave(0-6 hour acc fcst),missing=0:
 3:715210:d=2017010700:NCPCP:surface:4@6 hour ave(0-6 hour acc fcst),missing=0:
 ...
-
 ```
 
 ### Fast Averaging several files
@@ -165,7 +151,6 @@ to make a monthly mean for Nov. 2014. Using the above sorting approach, the step
 would be
 
 ```
-
 1.  cat narr.201411????.grb2 >tmp.grb2
 2.  wgrib2 tmp.grb2 |  \
 3.     sort -t: -k4,4 -k5,5 -k6,6 -k3,3 | \
@@ -176,7 +161,6 @@ The second line make an inventory.
 The third line sorts the inventory in the order for -ave to process.
 The fourth line makes the average by processing data in the order
   determined by the inventory created by line 3.
-
 ```
 
 The above approach processes one average at a time and requires a
@@ -188,13 +172,11 @@ random access.
 The gmerge approach would look like
 
 ```
-
 1.  gmerge - narr.201411????.grb2 | \
 2.     wgrib2 - -set_grib_type c3 -ave 3hr narr.201411
 
 The first line creates a file with all the data.
 The second line makes the average by processing data from line 1.
-
 ```
 
 For this to work, you would have to rewrite gmerge to that it can
@@ -219,7 +201,6 @@ sequential reads rather than small random-access reads.
 The following shows another approach.
 
 ```
-
 1.  cat narr.201411????.grb2 | \
 2.     wgrib2 - \
 3.        -if_fs ":HGT:200 mb:" -ave 3hr narr.201411 \
@@ -235,7 +216,6 @@ The third line selects the Z200 fields and runs the averaging
   one Z200 field and narr.201411???? puts the data into
   chronological order.
 Lines 4-6 apply the averaging option to other fields.
-
 ```
 
 The above approach computes the mean of Z200, U200, V200 and T200 data
@@ -248,7 +228,6 @@ the file. Here are the guts of a
 bash script, fast_grib2_mean.sh, which creates and runs the command line.
 
 ```
-
 1.  wgrib2 $1 -match_inv | cut -f4- -d: | sed -e 's/:n=.*//' >$tmp
 2.  cmd="cat $* | $wgrib2 - -set_grib_type c3 "
 3.  while read line
@@ -266,7 +245,6 @@ bash script, fast_grib2_mean.sh, which creates and runs the command line.
    $line included metacharacters such as parentheses.
 6. bash syntax to have the while loop read from $tmp
 7. run the command line
-
 ```
 
 Making the NARR monthly means using the above approach uses large
@@ -280,7 +258,6 @@ Sometimes one want to average several forecasts starting from
 the same initial time. An example would producing a week-4 forecast.
 
 ```
-
 1.  $wgrib2 $1 -match_inv | cut -f4-5 -d:  >$tmp
 2.  cmd="cat $* | $wgrib2 - -set_grib_type c3 "
 3.  while read line
@@ -299,7 +276,6 @@ the same initial time. An example would producing a week-4 forecast.
    $line included metacharacters such as parentheses.
 6. bash syntax to have the while loop read from $tmp
 7. run the command line
-
 ```
 
 Using the -merge_fcst option in a like
@@ -346,14 +322,12 @@ the code, the evaluation of the -if_fs options is done in parallel.
 ## Usage
 
 ```
-
 -ave (time interval)  (output grib file)
 -fcst_ave (time interval)  (output grib file)
 
    wgrib2 prior to v2.0.7 only works with PDT=4.0, 4.1 and 4.8
     support for PDT 4.2 and 4.12 by -ave added 7.2016
    wgrib2 v2.0.7 is limited by the -time_processing option
-
 ```
 
 See also:

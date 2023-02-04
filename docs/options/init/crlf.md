@@ -10,9 +10,7 @@ the line by CRLF. This will make the inventory Windows compatible.
 ## Usage
 
 ```
-
 -crlf
-
 ```
 
 See also:

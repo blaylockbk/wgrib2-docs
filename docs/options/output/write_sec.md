@@ -14,19 +14,15 @@ The -write_sec option is by codes that need low-level access to the grib data.
 ## Usage
 
 ```
-
 -write_sec N file            N = 0..8
                              file = file to write
-
 ```
 
 ### Example 1
 
 ```
-
 wgrib2 IN.grb -write_sec 0 sec0.dat -write_sec 1 sec1.dat -write_sec 2 sec2.dat -write_sec 3 sec3.dat \
   -write_sec 4 sec4.dat -write_sec 5 sec5.dat -write_sec 6 sec6.dat -write_sec 7 sec7.dat
-
 ```
 
 See also:

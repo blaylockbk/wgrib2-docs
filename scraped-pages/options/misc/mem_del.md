@@ -25,10 +25,8 @@ metadata and grid from memory.
 ## Usage
 
 ```
-
 -mem_del N
                    N=0..19
-
 ```
 
 ### Example

@@ -27,7 +27,6 @@ mesages with the latitudes (NLAT) ane longitudes (ELON).
 ## Usage
 
 ```
-
 -grib_out_irr2 NPNTS CENTER_GRID_NUBER REF_GRID_TYPE UUID OUTFILE
 
 NPNTS              = number of grid points, can be differ from the size of the input grid
@@ -37,7 +36,6 @@ UUID               = universally unique identifier, use uuidgen to create a new 
                      has a format: e1fc1f28-5024-4ff5-a04b-cf837d8574f6
                      0 = no UUID
 OUTFILE            = output grib file
-
 ```
 
 The option, -grib_out_irr2, can generate a grid with any number

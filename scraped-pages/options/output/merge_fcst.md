@@ -7,7 +7,6 @@ adjacent messages by increasing the time period for forecast average,
 accumulation, minimum and maximum. For example,
 
 ```
-
 $ wgrib2 prate.l.gdas.201404.ts -for 1:4
 1:0:d=2014040100:PRATE:surface:0-1 hour ave fcst:
 2:13083:d=2014040100:PRATE:surface:1-2 hour ave fcst:
@@ -26,7 +25,6 @@ $wgrib2 prate.l.gdas.201404.ts -for 1:4 -merge_fcst 2 /tmp/all2.grb
 $ wgrib2 /tmp/all2.grb
 1:0:d=2014040100:PRATE:surface:0-2 hour ave fcst:
 2:29531:d=2014040100:PRATE:surface:2-4 hour ave fcst:
-
 ```
 
 The -merge_fcst option needs the fields to be processed
@@ -38,14 +36,12 @@ and fhr24 (18-24 hour forecast) files and you want the 0-24 hour mean. Each of t
 forecast files contain hundreds of fields.
 
 ```
-
 $ cat fhr06 fhr12 fhr18 fhr24 | \
    wgrib2 - -set_grib_type c1 -set_grib_max_bits 20 -set_bin_prec 20 \
    -if ":PRATE:" -merge_fcst 4 OUT \
    -if ":APCP:" -merge_fcst 4 OUT \
    -if ":ACPCP:" -merge_fcst 4 OUT \
    -if ":BGRUN:" -merge_fcst 4 OUT
-
 ```
 
 The above command works by
@@ -59,17 +55,14 @@ The above command works by
 You can use the old and slow way which is
 
 ```
-
 $ cat fhr06 fhr12 fhr18 fhr24 > IN.grb
 $ wgrib2 IN.grb | sort -t: -k4,4 -k5,5 -k6,6n | wgrib2 -i IN.grb -grib OUT.grb
 $ wgrib2 OUT.grb -merge_fcst 4 OUT
-
 ```
 
 ## Usage
 
 ```
-
 -merge_fcst (N=number fields to combine) (output grib file)
 
 When N > 0, then N fields are merged together and then written to the output grib file
@@ -77,7 +70,6 @@ When N > 0, then N fields are merged together and then written to the output gri
 When N == 0, then there is no limit to the number of fields to be merged
              and intermediate steps are written out
               ex. 0-1 + 1-2 + 2-3 -> 0-1, 0-2, 0-3
-
 ```
 
 The most common use would be get the 12-hour, daily, N-day average

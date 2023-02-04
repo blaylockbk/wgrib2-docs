@@ -10,23 +10,19 @@ in the South-West corner. Note, multiple -ijlat can be on the command line.
 ## Usage
 
 ```
-
 -ijlat i j
       i = 1 .. nx
       j = 1 .. ny
-
 ```
 
 ### Example
 
 ```
-
 -sh-2.05b$ wgrib2 new.grb2 -s -ijlat 1 1
 1:0:d=2005082812:HGT:1000 mb:78 hour fcst:(1,1),lon=0,lat=-90,val=162.3
 
 -sh-2.05b$ wgrib2 new.grb2 -s -ijlat 1 1 -ijlat 2 2
 1:0:d=2005082812:HGT:1000 mb:78 hour fcst:(1,1),lon=0,lat=-90,val=162.3:(2,2),lon=1,lat=-89,val=183.7
-
 
 ```
 

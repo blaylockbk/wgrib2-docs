@@ -53,7 +53,6 @@ follows the recommendation of the defining site.
 ### Reading and Writing Grib
 
 ```
-
  [mk\_inv(grib, inv\_file)](./pywgrib2_s_mk_inv.md)                   makes inventory file
  [read\_inv(inv\_file)](./pywgrib2_s_read_inv.md)                       reads inventory file, returns list
  [inq(grib,...)](./pywgrib2_s_inq.md)                            inquire about grib2 file
@@ -61,7 +60,6 @@ follows the recommendation of the defining site.
                                             calculate lat-lon of grid points for common grids
  [write(grib,...)](./pywgrib2_s_write.md)                          write grib2
  [close(file)](./pywgrib2_s_close.md)                              close file, used to flush, free up resources,
-
 ```
 
 ### Memory Files
@@ -71,7 +69,6 @@ applications, so wgrib2 added memory files. These memory files resided in the me
 of wgrib2 and can be accessed from python.
 
 ```
-
  memory file:  @mem:N   N = 0,1,..,29   memory files 10-29 are reserved for use by pywgrib2_s
 
  get_bytes_mem(fileno)                    returns bytes (buffer) from from memory file number "fileno"
@@ -82,7 +79,6 @@ of wgrib2 and can be accessed from python.
  set_mem(fileno,buffer)                   copy buffer to memory file number "fileno"
                                           buffer can be type bytes, str or numpy.ndarray
                                           set_mem(12,'') will empty @mem:12
-
 ```
 
 ### Multi-Threading
@@ -108,7 +104,6 @@ need to know the version and configuration of the wgrib2 library.
 The pywgrib2_s.wgrib2(..) will let you directly call wgrib2.
 
 ```
-
  wgrib2_version()                           returns a string with the version of the
                                             wgrib2 library. Same as wgrib2 -version
 
@@ -116,7 +111,6 @@ The pywgrib2_s.wgrib2(..) will let you directly call wgrib2.
                                             of the wgrib2 library. Same as wgrib2 -config
 
  [wgrib2( [ (list of wgrib2 arguments) ] )](./pywgrib2_s_wgrib2.md)   call wgrib2
-
 
 
 ```
@@ -127,13 +121,11 @@ Registers are part of the reverse polish notation calculator (-rpn). They are us
 of pywgrib2_s, and should only be used by programs that make direct calls to wgrib2.
 
 ```
-
  reg_size(regno)                            returns size of register number "regno" in elements
  reg_shape(regno)                           reserved for future use
  get_flt_reg(regno)                         returns numpy.ndarray (numpy array) with floating point 32 value
  get_dbl_reg(regno)                         reserved for future use
  set_reg(regno, array)                      copy array (numpy.ndarray) to RPN register "regno"
-
 ```
 
 ### Requirements:

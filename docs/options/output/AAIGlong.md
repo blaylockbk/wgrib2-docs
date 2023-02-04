@@ -15,7 +15,6 @@ an equally spaced lat-lon grid.) Each field is written to different file in the 
 The file name convention
 
 ```
-
    NAME=(wgrib2 -S)
    remove (message number)[.submessage number]:(byte location):
    remove trailing semicolon if any
@@ -33,27 +32,22 @@ The file name convention
 
    If you need to format of the NAME to be unchanging, please freeze the
     version of wgrib2.
-
 ```
 
 ## Usage
 
 ```
-
 -AAIGlong
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 gep19.t00z.pgrb2af180 -match "HGT:500 mb" -AAIGlong
 raster file: D=20090605000000_HGT_500 mb_180 hour fcst_ENS=+19.asc
 9:280952:d=2009060500:HGT:500 mb:180 hour fcst:ENS=+19
 $ ls \*asc
 D=20090605000000_HGT_500 mb_180 hour fcst_ENS=+19.asc
-
 ```
 
 The above line converts all the 400 mb HGT fields into an

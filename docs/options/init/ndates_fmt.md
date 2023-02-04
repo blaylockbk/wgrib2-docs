@@ -13,7 +13,6 @@ The -ndates_fmt option needs to preceed the
 -ndates option.
 
 ```
-
 Default ndates format is " %s"
 
 $ wgrib2 /dev/null -ndates 201802 1dy 6hr
@@ -42,29 +41,24 @@ cp pgb2018020106 ~/data
 cp pgb2018020112 ~/data
 cp pgb2018020118 ~/data
 bash-4.1$
-
 ```
 
 The -ndates_fmt option understands three back-slash characters.
 
 ```
-
    \n gets converted into a new-line character
    \t gets converted into tab character
    \\ gets converted into a back-slash character
 
    Windows will be addressed later with respect to the end of line termination.
-
 ```
 
 ## Usage
 
 ```
-
 -ndates_new C_FORMAT
    C_FORMAT is a C-language format which includes a %s to print
    the date code.  The only back slash sequences allowed are \n, \t, and \\.
-
 ```
 
 See also: [-ndates](./ndates.md)

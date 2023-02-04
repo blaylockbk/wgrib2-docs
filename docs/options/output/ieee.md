@@ -30,30 +30,24 @@ by a software routine.
 ## Usage
 
 ```
-
 -ieee file_name
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 test.grb2 -s | grep ":RH:2 m" | wgrib2 -i test.grb2 -ieee data.bin
 285:36796469:d=2005090200:RH:2 m above ground:60 hour fcst
-
 ```
 
 The above line extracts the 2 meter RH from file test.grb2 and writes it in data.bin
 
 ```
 
-
       wgrib                ==>                 wgrib2
 
       -header -ieee -o out.bin                 -header -order raw -ieee out.bin
       -ieee -o out.bin                         -order raw -ieee out.bin
-
 
 ```
 

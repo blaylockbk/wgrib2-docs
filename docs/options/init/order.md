@@ -17,7 +17,6 @@ You must use the default -order we:sn option
 in order to get latitude, longitude information.
 
 ```
-
 -order raw
       data is the order as specified by the grib file
       this was the order that wgrib used
@@ -27,7 +26,6 @@ in order to get latitude, longitude information.
 
 -order we:sn
       data is in WE:SN order (default)
-
 ```
 
 See also:

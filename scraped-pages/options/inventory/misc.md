@@ -22,22 +22,18 @@ The -misc option is called by the
 ## Usage
 
 ```
-
 -misc
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 percentile\_precip.grib2 -stats
 1:0:75% level
 2:315649:90% level
 $ wgrib2 percentile\_precip.grib2 -s
 1:0:d=2014101012:TPRATE:surface:2@1 hour max(13-14 hour acc fcst)++,missing=0:75% level
 2:315649:d=2014101012:TPRATE:surface:2@1 hour max(13-14 hour acc fcst)++,missing=0:90% level
-
 ```
 
 See also: [-s](./s.md)

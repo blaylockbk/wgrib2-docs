@@ -8,15 +8,12 @@ into the inventory. It is used to make the inventory prettier.
 ## Usage
 
 ```
-
 -nl
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 -gdt png.grb2 -s
 1:4:d=2009060500:RH:2 m above ground:330 hour fcst:std dev
 $ wgrib2 -gdt png.grb2 -s -stats
@@ -24,7 +21,6 @@ $ wgrib2 -gdt png.grb2 -s -stats
 $ wgrib2 -gdt png.grb2 -s -nl -stats
 1:4:d=2009060500:RH:2 m above ground:330 hour fcst:std dev:
 :ndata=65160:undef=0:mean=6.24625:min=0:max=29.3:cos_wt_mean=6.01318
-
 ```
 
 See also:

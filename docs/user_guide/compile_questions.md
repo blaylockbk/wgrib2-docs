@@ -53,7 +53,6 @@ The makefile uses two and one optional environment variables that have to be set
    make lib                         (to make wgrib2 library)
 
    For NCEP's WCOSS-2.  see the question on lib64, and WCOSS-2.
-
 ```
 
 ### Intel Compilers
@@ -68,7 +67,6 @@ not supported. (Grib files will be limited to 2 GB, and I have no way to test.)
 To compile with the intel compilers on linux,
 
 ```
-
 Classic compilers
    export CC=icc
    export FC=ifort
@@ -80,7 +78,6 @@ LLVM compilers (wgrib2 v3.1.2+)
    export FC=ifx
    export COMP_SYS=oneapi_linux
    make
-
 ```
 
 ### Compiling with Cygwin (Windows)
@@ -130,12 +127,10 @@ Python support requires a shared wgrib2 library. This option
 only works for gnu/linux, gnu/MacOS, gnu/Windows, nvidia/linux AOCC/linux, icx/ifx.
 
 ```
-
   MAKE_SHARED_LIB=1
    note: to make the shared library $ make clean
                                     $ make lib
                                     shared library will be in lib/
-
 ```
 
 ### Grib names
@@ -151,11 +146,9 @@ This feature is more beta because of the difficulty with level
 and timing information in the variable names.
 
 ```
-
   USE_NAMES=NCEP          use NCEP name (default)
   USE_NAMES=ECMWF         use ECMWF names
   USE_NAMES=DWD1          use DWD names, DWD has two center ids.
-
 ```
 
 ### NetCDF
@@ -225,13 +218,11 @@ can alter the default values or even more. In my case, you can
 work around this $CONFIG_SITE by
 
 ```
-
 $ make
   (crash)
 $ cp -r lib64/* lib/
 $ make
   (builds wgrib2/wgrib2)
-
 ```
 
 ### Missing zlib.h
@@ -257,7 +248,6 @@ of the code.  The same array was used in other parts of the code
 which needed an integer work array.  You save memory by using the
 same array in both places.  It was common practice and the old
 compilers didn't complain.  Ignore the warnings.
-
 ```
 
 ```
@@ -268,7 +258,6 @@ Answer:
   "Make install" is not supported by the makefile because
 installation is just copying the executable to another location.
 There is no obvious default for all systems.
-
 ```
 
 ```
@@ -288,17 +277,14 @@ The wgrib2 makefile compiles the libraries in a manner optimized for wgrib2.
 The libraries are not meant for general use.  For example, the netcdf library
 doesn't have a fortran interface because I want the makefile to
 work if a user lacks a fortran compiler.
-
 ```
 
 ```
-
 Question: Why do build zlib and libpng?
 
 Answer:  Not all linux distributions include libpng or they give it a
 different name.  Some linux distributions may have different versions
 of libpng and zlib.
-
 ```
 
 ```
@@ -318,7 +304,6 @@ can be done.) Until recently, the hdf5 library had problems being compiled
 with the newer versions of gcc.  The latest version will compile with the
 gcc included with Ubuntu.  However the newest version breaks the -import_netcdf
 option with a uninformative hdf5 error message.
-
 ```
 
 ```
@@ -326,7 +311,6 @@ Question: Why don't you automatically download the netcdf and hdf5 packages?
 Answer:
 
    People concerned about security would not like that action.
-
 ```
 
 ```
@@ -341,7 +325,6 @@ work, you are probably not allowed to download programs.  The solution
 is to ask that your sys admin to compile the program for you.  But if
 your sys admin will compile code for you, why are you reading this page?
 Let him read this page.
-
 ```
 
 ```
@@ -359,7 +342,6 @@ The configure programs of various libraries may not handle certain
 machines or compilers.  For example an ARM user had to turn off the
 jasper library.  Clang on the MacOS may be a problem for the AEC
 library.
-
 ```
 
 ```
@@ -372,14 +354,12 @@ on a 64-bit platform or if netcdf-4 is used instead of netcdf-3. This
 problem is not being addressed because of a lack of 32-bit machines.
 
 Some versions of hdf5 will not compile with modern C compilers.
-
 ```
 
 ```
 Question: Why the option to turn off g2clib?
 
 Answer: g2clib is not needed but it can be installed for testing at NCEP.
-
 ```
 
 ```
@@ -393,7 +373,6 @@ rest of wgrib2.  Proj4 supports a different threading model.  As
 grids get larger, you want the speed of gctpc. Both libraries are being
 supported in order to help debugging and in the case that a future
 grid requires Proj4 support.
-
 ```
 
 ```
@@ -408,7 +387,6 @@ Answer:
   Some uses of wgrib2 may require a small RAM usage.
   Same makefile is used to compile the wgrib2 library.
   Some compilers may not support C99 or C11 (future).
-
 ```
 
 ```
@@ -422,7 +400,6 @@ Answer:
   the GNU environment before running.  The way to get around this
   problem is to compile wgrib2 with the same compiler that was used
   to compile the system commands.  (An old version of gcc/gfortran.)
-
 ```
 
 ```
@@ -435,7 +412,6 @@ Answer:
 
   This is because you are using an old Intel compiler.  The makefile uses the
 current option to enable OpenMP rather than the old option.
-
 ```
 
 ```
@@ -450,7 +426,6 @@ and gets this error.
 
 My home machine has wget v1.20 and works.  The created *.dat file can
 be used on machines with an old wget.
-
 ```
 
 ```
@@ -467,7 +442,6 @@ be used on machines with an old wget.
    and the WCOSS2 build complains about missing libjbig and liblzma.  I see them in /usr/lib64.
    Icc/ifort will compile OpenJPEG on my personal machine, I spent enough time with this
    weird machine.
-
 ```
 
 |

@@ -25,22 +25,18 @@ can have multiple -if_n options.
 ## Usage
 
 ```
-
 -if_n I:J:K        same as for n = I to J by K
 -if_n I:J          same as for n = I to J by 1
 -if_n I::K         same as for n = I to MAX_INTEGER by K
 -if_n I            same as for n = I to MAX_INTEGER by 1
-
 ```
 
 ### Example
 
 ```
-
  $ wgrib2 file.grb2 -if\_n 4:5 -s -fi
 4:13335:d=2008120200:RH:750 mb:anl:
 5:17098:d=2008120200:TMP:2743 m above mean sea level:anl:
-
 ```
 
 See also: [-match](./match.md)

@@ -10,7 +10,6 @@ have every point or every n-th point.
 ## Usage
 
 ```
-
 -ijbox i1:i2:di j1:j2:dj output_file format
      format = bin, text or spread   (format of output_file)
 
@@ -22,7 +21,6 @@ have every point or every n-th point.
       enddo
 
     Note: -big_endian and -little_endian have no effect the bin type output
-
 ```
 
 ### Example
@@ -35,14 +33,12 @@ able to do it with -ijox. The grid of rtgssthr_grb2
 is 1041 x 441.
 
 ```
-
 rm output
 i=1
 while [ $i -le 441 ] ; do
    wgrib2 rtgssthr_grb2 -append -header ijbox 1:1041 $i:$i output bin
    i=`expr $i + 1`
 done
-
 ```
 
 See also:

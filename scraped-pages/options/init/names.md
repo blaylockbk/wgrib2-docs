@@ -49,7 +49,6 @@ conversion of the names.
 ## Usage
 
 ```
-
 -names CENTER
        CENTER  =  ncep (default in the public-release makefile)
                   ecmwf
@@ -60,13 +59,11 @@ conversion of the names.
 
 The default convention is a compile-time option (USE_NAMES in the makefile).
 To see the default, run "wgrib2 -config" and look for "default WMO names:".
-
 ```
 
 ### Example
 
 ```
-
  wgrib2 wind.grb -names ecmwf
 1:0:d=2009060500:wdir:200 mb:180 hour fcst:ENS=+19
 2:97922:d=2009060500:ws:200 mb:180 hour fcst:ENS=+19
@@ -76,7 +73,6 @@ To see the default, run "wgrib2 -config" and look for "default WMO names:".
 1:0:d=2009060500:WDIR:200 mb:180 hour fcst:ENS=+19
 2:97922:d=2009060500:WIND:200 mb:180 hour fcst:ENS=+19
 3:179554:d=2009060500:WDIR:250 mb:180 hour fcst:ENS=+19
-
 ```
 
 ### NCEP Names

@@ -25,7 +25,6 @@ data varable "acpcp" and and 6 supporting variables.
 variables are
 
 ```
-
     variable 0: time
     variable 1: lat(x,y)                 latitude
     variable 2: lon(x,y)                 longitude
@@ -33,7 +32,6 @@ variables are
     variable 4: x                        integer
     variable 5: Lambert_Conformal        grid definition
     variable 6: acpcp(x,y,time)          accumulated convective precip
-
 ```
 
 Netcdf variables have dimensions which can
@@ -61,7 +59,6 @@ In this example, I am trying to read a NARR netcdf file produced by a 3rd party.
 As a first step, I want to list the variables in the netcdf file.
 
 ```
-
 acpcp.1979.nc = netcdf file
 
 small.grb2 = arbitary grib2 file (used so that -import_netcdf will run)
@@ -80,7 +77,6 @@ variable 6: acpcp
 In the above line, I am importing the variable "asd" from netcdf file "apcpc.1979.nc".
 As expected, "asd" is not a valid varaible, and I get an error message and the
 desired list of valid variables.
-
 ```
 
 ### Tutorial: Unknown attributes and dimensions of a variable
@@ -89,7 +85,6 @@ To get a variable description, you need to try to import a netcdf file. acpcp.19
 with a valid variable, acpcp, with an invalid dimension specification, "asd".
 
 ```
-
 bash-4.1$ wgrib2 ~/grib2/examples/small.grb2 -import_netcdf acpcp.1979.nc acpcp asd
 ndims=3 var_type=5 #var_attributes 16
 acpcp.0 attr=GRIB_id type=3 len=1
@@ -115,7 +110,6 @@ dimension mismatch asd, netcdf file has
    dim 2 id=2 name=x recs=349
 
 *** FATAL ERROR: import_netcdf: dimensions do not match ***
-
 ```
 
 By using an invalid dimension, the attributes and dimensions of the
@@ -135,7 +129,6 @@ variable, apcpcp(time, y, x).
 We can get the description of the latitude by
 
 ```
-
 1:0bash-4.1$ wgrib2 ~/grib2/examples/small.grb2 -import_netcdf acpcp.1979.nc lat asd
 ndims=2 var_type=5 #var_attributes 5
 lat.0 attr=axis: Y
@@ -149,7 +142,6 @@ dimension mismatch asd, netcdf file has
    dim 1 id=2 name=x recs=349
 
 *** FATAL ERROR: import_netcdf: dimensions do not match ***
-
 ```
 
 Similarily we can find the description of lon. We see
@@ -161,7 +153,6 @@ The NARR grid is a Lambert Conformal grid. The grid description is
 stored in the Lambert_Conformal variable.
 
 ```
-
 bash-4.1$ wgrib2 ~/grib2/examples/small.grb2 -import_netcdf acpcp.1979.nc Lambert_Conformal asd
 ndims=0 var_type=4 #var_attributes 6
 Lambert_Conformal.0 attr=false_easting type=6 len=1
@@ -174,7 +165,6 @@ _FillValue=0.000000 0 missing_value=0.000000 0
 WARNING: import_netcdf: size mismatch grib:4 netcdf:1
 data is padded
 1:0:d=2009060500:HGT:200 mb:180 hour fcst:ENS=+19
-
 ```
 
 ### Tutorial: converting a netcdf field to grib2
@@ -187,7 +177,6 @@ as our netcdf file. The following will read the 1st field from acpcp.1979.nc
 and convert it into grib2.
 
 ```
-
 bash-4.1$ wgrib2 narr.grb2 -import_netcdf acpcp.1979.nc acpcp "0:1:0:277:0:349" -set_var ACPCP \
    -set_lev surface -set_date 1979010100 -set_ftime2 "0-3 hour acc fcst" -grib_out out.grb2
 ndims=3 var_type=5 #var_attributes 16
@@ -227,7 +216,6 @@ _FillValue=9969209968386869046778552952102584320.000000 1 missing_value=-9969209
 a grid of 349 x 277.  You can check that the grib2 scan order is compatible with
 the netcdf scan order either by examining the lat/lon or by checking the netcdf
 file with the grib file obtained from another source.
-
 ```
 
 The -import_netcdf option is not convenient and
@@ -249,7 +237,6 @@ be transformed to WE:SN.
 ## Usage
 
 ```
-
 -import_netcdf file variable "dim_list"
                                  file     = netcdf file
                                  variable = variable in the netcdf file
@@ -258,7 +245,6 @@ be transformed to WE:SN.
                                  dim_spec    = dim_start:dim_loop
                                  dim_start   = index for start of hyberslap starting at 0
                                  dim_loop    = number time to loop
-
 ```
 
 ### More Examples

@@ -9,9 +9,7 @@ before writing (-text, -bin, etc) should append to a currently existing file.
 The -no_append directs the file to be created before use which is the default.
 
 ```
-
 $ wgrib2 grb2 -d 1 -append -text all.txt -no\_append -text rec.txt
-
 ```
 
 The above line will append record #1 to all.txt and write record #1 to new file rec.txt
@@ -19,13 +17,11 @@ The above line will append record #1 to all.txt and write record #1 to new file 
 ## Usage
 
 ```
-
 -append
       append to output files
 
 -no_append
       over-write the output files
-
 ```
 
 See also:

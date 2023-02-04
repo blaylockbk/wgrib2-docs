@@ -23,9 +23,7 @@ mode is turned on.
 ## Usage
 
 ```
-
 -flush
-
 ```
 
 ---

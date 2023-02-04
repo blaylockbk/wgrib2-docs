@@ -31,19 +31,15 @@ units of the forecast time.
 ## Usage
 
 ```
-
 -pds_fcst_time
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 percentile\_precip.grib2 -s -pds\_fcst\_time -code\_table\_4.4
 1:0:d=2014101012:TPRATE:surface:2@1 hour max(13-14 hour acc fcst)++,missing=0:75% level:pds_fcst_time1=13:code table 4.4=1 (hour)
 2:315649:d=2014101012:TPRATE:surface:2@1 hour max(13-14 hour acc fcst)++,missing=0:90% level:pds_fcst_time1=13:code table 4.4=1 (hour)
-
 ```
 
 See also:

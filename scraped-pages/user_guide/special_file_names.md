@@ -17,7 +17,6 @@ stdin or stdout. The context will determine whether stdin or stdout is used.
 This special file name is often used to pipe data between processes.
 
 ```
-
 Example:  wgrib2 IN.grb -set_grid_winds earth -set_grid ncep grid 3  - | \
             wgrib2 - -ncep_uv OUT.grb
 
@@ -27,7 +26,6 @@ Example:  wgrib2 IN.grb -set_grid_winds earth -set_grid ncep grid 3  - | \
             In this case, the - indicates that the input file is stdin.
           This form is fast because both processes run in parallel and
           there is no temporary disk file.
-
 ```
 
 ### 2. @tmp:STRING (temporary files)
@@ -37,14 +35,12 @@ after the process is finished. Multiple wgrib2 processes can use the same
 @tmp:STRING file without conflict. These files are only useful with callable wgrib2.
 
 ```
-
 Example:
 !  make a temporary inventory file
   i = wgrib2('ds.td.bin', '-inv', '@tmp:abc.inv')
 ! inquire how many grid point the "150 hour fcst" has
   i = grb2_inq('ds.td.bin', '@tmp:abc.inv', ':150 hour fcst:',npts=j)
   write(*,*) 'error code=',i,' number of grid points=',j
-
 ```
 
 ### 3. @mem:N (memory files) (alpha)
@@ -78,13 +74,11 @@ files, you could copy the grib file into memory and then
 avoid the slow random-access read.
 
 ```
-
 wgrib2 IN.grb | sort -t: -k3.3 -k4,4 -k5,5 | \
    wgrib2 -i IN.grb -grib sorted.grb
 
 wgrib2 IN.grb | sort -t: -k3.3 -k4,4 -k5,5 | \
    wgrib2 -i -mem_init 0 IN.grb @mem:0 -grib sorted.grb
-
 ```
 
 ### 4. /dev/null
@@ -111,12 +105,10 @@ When a file is opened by wgrib2, both the file handle and file name
 are saved. This allows wgrib2 supports multiple opens to the same file. For example,
 
 ```
-
   wgrib2 IN.grb -if ":HGT:" -grib OUT.grb \
                 -if ":TMP:" -grib OUT.grb \
                 -if ":UGRD:" -grib OUT.grb \
                 -if ":VGRD:" -grib OUT.grb
-
 ```
 
 writes the HGT, TMP, UGRD and VGRD to OUT.grb as you would expect. Technically
@@ -124,12 +116,10 @@ the 4 -grib options use the same file handle. Now if you change the above comman
 so that the last -grib writes to ./OUT.grb instead of OUT.grb.
 
 ```
-
   wgrib2 IN.grb -if ":HGT:" -grib OUT.grb \
                 -if ":TMP:" -grib OUT.grb \
                 -if ":UGRD:" -grib OUT.grb \
                 -if ":VGRD:" -grib ./OUT.grb
-
 ```
 
 You and I know that all 4 -grib options refer to the same file. However, wgrib2

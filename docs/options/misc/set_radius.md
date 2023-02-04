@@ -21,7 +21,6 @@ with the new shape of the Earth. Then you can use this new file.
 ## Usage
 
 ```
-
 -set_radius N      N=0,2,4,5,6,8,9
                    Code Table 3.2 is set to N
 -set_radius 1:R    R=radius in meters (spherical)
@@ -30,18 +29,15 @@ with the new shape of the Earth. Then you can use this new file.
                    Code Table 3.2 is set to 3
 -set_radius 7:X:Y  X=major axis Y=minor axis (oblate spheroid), X, Y in m
                    Code Table 3.2 is set to 7
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 small.grb2 -set\_radius 0 -radius
 1:0:code3.2=0 sphere predefined radius=6367470.0 m
 $ wgrib2 small.grb2 -set\_radius 1:6300000 -radius
 1:0:code3.2=1 sphere user defined radius=6300000.0 m
-
 ```
 
 See also:

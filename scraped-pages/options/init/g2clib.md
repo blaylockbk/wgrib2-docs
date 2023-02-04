@@ -79,14 +79,12 @@ Note that g2clib doesn't support ieee, RLE, AEC and irregular structured grids.
 ## Usage
 
 ```
-
 -g2clib N   N = 0, 1 or 2
             0 = WMO standard
             1 = emulate NCEP g2/g2c bug for decoding constant values fields (default)
             2 = use g2clib, only available if compiled with g2clib
                 This option should only be used for testing.
                 Some distributions will seg fault using this option.
-
 ```
 
 ---

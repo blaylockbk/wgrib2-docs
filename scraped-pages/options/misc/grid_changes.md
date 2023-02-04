@@ -16,22 +16,18 @@ skipped by a -match or similar option will count.
 ## Usage
 
 ```
-
 -grid_changes
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 fcst.grb2 -bin fcst.bin -grid\_changes -count
 -sh-3.00$ wgrib2 fcst.grb2 -bin fcst.bin -grid_changes
 1:4:d=2007032600:HGT:1000 mb:anl:
 2:422561:d=2007032600:HGT:1000 mb:3 hour fcst:
 Good: only one grid
 number of records: 2
-
 ```
 
 In the above example, we converted the file to binary. It consisted

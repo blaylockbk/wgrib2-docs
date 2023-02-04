@@ -10,7 +10,6 @@ a probability PDT. Then it adds the metadata for the probability
 part of the PDT.
 
 ```
-
 Step 1:
   If current PDT is 0,1,2,3,4 or 6, then the PDT is converted to 6 (4.6)
   using the -set_pdt +5 option.
@@ -30,24 +29,20 @@ Step 3:
   Z=Probability Type (see Code Table 4.9)
   A=lower limit
   B=upper limit
-
 ```
 
 ## Usage
 
 ```
-
 -set_prob X Y Z A B
  where X, Y, Z, A and B are defined above
  for wgrib2 v3.0.0+, X, Y, Z, A or B can have the value "".
   When the value "" is used, the previous value is not changed.
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 test2.grb
 1:0:d=2009060500:TMP:2 m above ground:180 hour fcst:ENS=+19
 $ wgrib2 -set\_prob 10 20 2 10.1 10.4 test2.grb
@@ -58,7 +53,6 @@ Y=20 Total number of forecat probabilities (Number of intervals for probability 
 Z=2  Code Table 4.9
 A=10 Lower limit (may not be used depending on Code Table 4.9)
 B=10 Upper limit (may not be used depending on Code Table 4.9)
-
 ```
 
 See also:

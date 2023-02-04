@@ -28,18 +28,15 @@ to a secondary file.
 ## Usage
 
 ```
-
 -new_grid_order GRIB_A GRIB_B
                 GRIB_A is a grib output file with data in order compatible with -new_grid
                 GRIB_B is a grib output file with data that cannot be processed by -new_grid
                    because corresponding U or V fields were missing
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 gep19.badorder -new\_grid\_winds earth -new\_grid ncep grid 3 test.grb
 1:0:d=2009060500:HGT:200 mb:180 hour fcst:ENS=+19
 2:70707:d=2009060500:UGRD:200 mb:180 hour fcst:ENS=+19
@@ -72,7 +69,6 @@ $ wgrib2 gep19.badorder -new\_grid\_order - junk | \
 9:424954:d=2009060500:HGT:500 mb:180 hour fcst:ENS=+19
 
 (worked)
-
 ```
 
 See also:

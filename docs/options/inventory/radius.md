@@ -12,18 +12,14 @@ shape and size of Earth.
 ## Usage
 
 ```
-
 -radius
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 -radius png.grb2
 1:4:code3.2=6 sphere predefined radius=6371229.0 m
-
 ```
 
 See also:

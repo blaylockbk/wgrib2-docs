@@ -7,10 +7,8 @@ a subset of the new Extended Names.
 
 ```
 
-
 old:    -full_name
 new:    -set_ext_name 3 -ext_name
-
 
 ```
 

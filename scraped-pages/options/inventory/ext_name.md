@@ -29,13 +29,11 @@ name was expanded to be name.misc-info.level-info.forecast-time.info
 where the last 3 field were optional.
 
 ```
-
   $ wgrib2.v3.0.1 FCST.grb -set_ext_num 1 -netcdf FCST.nc
      lost fields because the field names were not unque
 
   $ wgrib2.v3.0.1 FCST.grb -set_ext_num 5 -netcdf FCST.nc
      extended name include misc-info and forecast-time-info.
-
 ```
 
 The final modification to the extended name, was to make the field and space
@@ -58,14 +56,12 @@ was introduced. You can see the extended name by
 the -ext_name option.
 
 ```
-
 $  wgrib2 chem.grb2
 1:0:d=2009012600:MASSDEN:surface:anl:ENS=hi-res ctl chemical=Water Vapour
 $- wgrib2 chem.grb2 -ext\_name
 1:0:MASSDEN.hi-res_ctl.Water_Vapour
 $ wgrib2 chem.grb2 -misc
 1:0:ENS=hi-res ctl:chemical=Water Vapour
-
 ```
 
 The extended name takes the output of -misc,
@@ -89,7 +85,6 @@ name type using -set_ext_name.
 ## Usage
 
 ```
-
 -set_ext_name N
        N = 0..1  wgrib2 upto v3.0.1
        N = 0..7  wgrib2 v3.0.2+
@@ -97,7 +92,6 @@ name type using -set_ext_name.
 -ext_name
        prints extended name type N if N > 0
        prints extended name type 1 if N == 0
-
 ```
 
 Several options such as -netcdf use the
@@ -107,12 +101,10 @@ use the regular name (-var).
 ### Examples
 
 ```
-
 -sh-2.05b$ ./wgrib2 chem.grb2 -var
 1:0:MASSDEN
 -sh-2.05b$ ./wgrib2 chem.grb2 -ext\_name
 1:0:MASSDEN.hi-res_ctl.Water_Vapour
-
 ```
 
 See also: [-s](./s.md),

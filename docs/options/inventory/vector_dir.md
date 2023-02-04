@@ -11,18 +11,14 @@ the quantity is a U/V component of a vector.
 ## Usage
 
 ```
-
 -vector_dir
-
 ```
 
 ### Example
 
 ```
-
 $wgrib2 png.grb2 -vector\_dir
 1:4:winds(N/S)
-
 ```
 
 See also:

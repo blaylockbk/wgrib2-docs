@@ -8,15 +8,12 @@ and then ends the program.
 ## Usage
 
 ```
-
 -config
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 -config
 wgrib2 v0.1.7.8h 4/2009 Wesley Ebisuzaki, Jaakko Hyvätti, Kristian Nilssen, Karl Pfeiffer, Pablo Romero, Manfred Schwarb, Arlindo da Silva, Niklas Sondell, Sergey Varlamov
 
@@ -30,13 +27,11 @@ tigge package is installed
 maximum nunber of arguments on command line: 300
 stdout buffer length: 30000
 g2clib is the default decoder
-
 ```
 
 Here is the config four years later.
 
 ```
-
 $ wgrib2 -config
 bash-4.1$ wgrib2 -config
 wgrib2 v0.1.9.9beta3 8/2013 Wesley Ebisuzaki, Reinoud Bokhorst, Jaakko Hyvätti, Dusan Jovic, Kristian Nilssen, Karl Pfeiffer, Pablo Romero, Manfred Schwarb, Arlindo da Silva, Niklas Sondell, Sergey Varlamov
@@ -61,7 +56,6 @@ Fortran compiler: gfortran
 OpenMP: control number of threads with environment variable OMP_NUM_THREADS
 INT_MAX:   2147483647
 ULONG_MAX: 18446744073709551615
-
 ```
 
 See also:

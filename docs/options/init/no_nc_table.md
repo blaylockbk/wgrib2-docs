@@ -25,19 +25,15 @@ All missing values in data are replaced by the \_FillValue defined in wgrib2 as
 ### Simple usage
 
 ```
-
 -netcdf file_name
-
 ```
 
 ### Example 1
 
 ```
-
 $ wgrib2 ../example/eta.t00z.awphys18.grb2 -netcdf eta.nc
 
 The above line converts the grib2 file into a netcdf file.
-
 
 ```
 
@@ -74,7 +70,6 @@ are defined in the wgrib2 internal table and now include next types of GRIB2 lev
 ```
 
 
-
 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 20 : K level
@@ -89,7 +84,6 @@ are defined in the wgrib2 internal table and now include next types of GRIB2 lev
  | | |
  | | |
  | | |
-
 
 
 ```
@@ -165,7 +159,6 @@ Fields here include:
 ```
 
 
-
 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 100 - the grib2 level type code number
@@ -180,7 +173,6 @@ short\_name for the vertical axis in the netcdf file, string
  | | |
  | | |
  | | |
-
 
 
 ```
@@ -262,10 +254,8 @@ at all levels except at 975 mb if these data would be found in the grib2 decoded
 
 ```
 
-
 HGT:\*:geopotential
 HGT:975 mb:ignore
-
 
 ```
 
@@ -281,7 +271,6 @@ conversion of both 'surface' and upper air data although
 the input grib2 files are different.
 
 ```
-
 
 #
 # File name: jma\_msm\_g2nc.table
@@ -365,7 +354,6 @@ and change the name for the output file:
 
 Resulting netcdf files could be used directly at least from the GrADS (gradsnc or gradsdods)
 utility for data visualization and analyses.
-
 ```
 
 ### Example 3
@@ -375,7 +363,6 @@ convert to a regional subset and finally convert it into a netcdf file. Since th
 option doesn't support appending, the netcdf conversion cannot be in a loop.
 
 ```
-
 Version 1, using loops and a temporary file
 
 rm tempfile
@@ -398,7 +385,6 @@ Line 1 (cat), takes all the desired grib files and writes to stdout
 Line 2 (wgrib2), reads the grib file from stdin and selects the desired fields
 Line 3 (-new_grid), is a continuation of the wgrib2 command and writes the new grid to stdout
 Line 4 (wgrib2), reads the new grid from stdin and writes out a netcdf file (myfile.nc)
-
 ```
 
 See also:

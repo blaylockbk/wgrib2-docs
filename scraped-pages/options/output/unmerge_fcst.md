@@ -6,9 +6,7 @@ Prior to GFS-FV3, the precipitation was stored in the "old-style". This style
 handled 6 hour accumulations in a simple manner.
 
 ```
-
   0-6, 6-12, 12-18, 18-24, etc
-
 ```
 
 Eventually someone wanted to store 3 hour accumulations. However, people who had code
@@ -18,18 +16,14 @@ the file still had to contain the 6 hour accumulations. So the code to read the
 the accumulations like this.
 
 ```
-
   0-3, 0-6, 6-9, 6-12, 12-15, 12-18, 18-21, 18-24, etc
-
 ```
 
 Now the FV3-GFS model developers agreed to store precipitation accumulations in
 the easy-to-use format,
 
 ```
-
   0-3, 0-6, 0-9, 0-12, 0-15, 0-18, 0-21, 0-24, etc
-
 ```
 
 However, people who had code that read the accumulation in the old style said that
@@ -47,7 +41,6 @@ FV3-GFS precip problem when trying to make time series.
 ### Example usage
 
 ```
-
 # make a file with the APCP from cat gfs.t00z.pgrb2.0p25.f(N) N=000..029
 $ cat gfs.t00z.pgrb2.0p25.f00? gfs.t00z.pgrb2.0p25.f01? gfs.t00z.pgrb2.0p25.f02? | wgrib2 - -match APCP -grib $stmp/all_apcpc.grb
 
@@ -90,7 +83,6 @@ $ wgrib2 all_apcpc.grb -match ':0-'
 54:18724060:d=2020101600:APCP:surface:0-27 hour acc fcst:
 56:19538757:d=2020101600:APCP:surface:0-28 hour acc fcst:
 58:20377109:d=2020101600:APCP:surface:0-29 hour acc fcst:
-
 ```
 
 As you can see, 0-1, 0-2, 0-3, 0-4, 0-5 and 0-6 accumulations are duplicated.
@@ -98,7 +90,6 @@ As you can see, 0-1, 0-2, 0-3, 0-4, 0-5 and 0-6 accumulations are duplicated.
 The -unmerge_fcst option is used to find the precipitation time series.
 
 ```
-
 $ wgrib2 all_apcpc.grb -unmerge_fcst precip_ts.grb 0hr 1
 1:0:d=2020101600:APCP:surface:0-1 hour acc fcst:
 2:225707:d=2020101600:APCP:surface:0-1 hour acc fcst:
@@ -107,7 +98,6 @@ $ wgrib2 all_apcpc.grb -unmerge_fcst precip_ts.grb 0hr 1
 5:1001100:d=2020101600:APCP:surface:0-3 hour acc fcst:
 6:1307459:d=2020101600:APCP:surface:0-3 hour acc fcst:
 ...
-
 ```
 
 The first argument is the output file. The second argument is
@@ -115,7 +105,6 @@ the start of the accumulations to start, i.e., 0hr. Finally the
 third argument is 1 to include the 0-1 accumulation. The output is
 
 ```
-
 $ wgrib2 precip_ts.grb
 1:0:d=2020101600:APCP:surface:0-1 hour acc fcst:
 2:225707:d=2020101600:APCP:surface:1-2 hour acc fcst:
@@ -127,13 +116,11 @@ $ wgrib2 precip_ts.grb
 27:2307262:d=2020101600:APCP:surface:26-27 hour acc fcst:
 28:2307465:d=2020101600:APCP:surface:27-28 hour acc fcst:
 29:2307668:d=2020101600:APCP:surface:28-29 hour acc fcst:
-
 ```
 
 ## Usage
 
 ```
-
 -unmerge_fcst (output file) (N)(time unit) I
    output file: name of output grib file
    N: integer,  usually 0
@@ -141,7 +128,6 @@ $ wgrib2 precip_ts.grb
       If you want to process A-B hour acc fcst
       then N=1, time unit = hr
   I = 1
-
 ```
 
 See also:

@@ -28,19 +28,15 @@ special value undefineds. (The special value is ignored.)
 ## Usage
 
 ```
-
 -bitmap
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 grib2.polar -bitmap
 1.1:0:no bitmap
 1.2:0:no bitmap
-
 ```
 
 See also:

@@ -11,7 +11,6 @@ the -grib_out option. Here is
 an example script.
 
 ```
-
 #!/bin/sh
 #
 # example of converting a binary file to grib2
@@ -38,7 +37,6 @@ date=2009041312
 
 wgrib2 conustemplate.grb2 -no_header -import_bin PRCP_CU_GAUGE_V1.0CONUS_0.25deg.lnx.$date.RT \
   -set_date $date0 -undefine_val -999 -rpn 10:/:86400:/ -grib_out precip$date0.grb2
-
 ```
 
 ---

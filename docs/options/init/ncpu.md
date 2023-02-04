@@ -25,18 +25,14 @@ threads/cpus when you are running multiple copies of wgrib2.
 ## Usage
 
 ```
-
 -ncpu N
   N = number of threads
-
 ```
 
 ### Example
 
 ```
-
    $ wgrib2 IN.grb -ncpu 3 -new_grid_winds grid -new_grid ncep grid 221 - | wgrib2 - -ncpu 1 -set_grib_type j -ncep_uv OUT.grb
-
 ```
 
 The above line uses 3 threads for regridding and one thread for jpeg2000 compression. The jpeg2000

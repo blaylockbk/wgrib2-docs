@@ -3,11 +3,9 @@
 \*\*\* FATAL ERROR: unknown option -xyz \*\*\*
 
 ```
-
 bash-4.1$ wgrib2 small.grb -nosuchoption
 
 *** FATAL ERROR: unknown option -nosuchoption ***
-
 ```
 
 In this case, there is no option, -nosuchoption, and wgrib2 rightly complains.
@@ -24,10 +22,8 @@ if you are requesting an option from a package that was not enabled
 at compile time.
 
 ```
-
 bash-4.1$ wgrib2 small.grb -mysql host user password db table
 mysql package not installed
-
 ```
 
 \*\*\* FATAL ERROR: missing arguments option=ij \*\*\*
@@ -37,11 +33,9 @@ this error message when you last option has too few arguments.
 In this case, -ij requires two arguments
 
 ```
-
  bash-4.1$ wgrib2 small.grb -ij 19
 
 *** FATAL ERROR: missing arguments option=ij ***
-
 ```
 
 \*\*\* FATAL ERROR: too many grib files .. 1st=small.grb 2nd=11 \*\*\*
@@ -53,11 +47,9 @@ are 10 and -ij. The "11" doesn't start with a dash, so it is assumed to
 be a grib file. Since there was already a grib file found, error message.
 
 ```
-
 bash-4.1$ wgrib2 small.grb -ij 10 -ij 11 12
 
 *** FATAL ERROR: too many grib files .. 1st=small.grb 2nd=11 ***
-
 ```
 
 grib1 message ignored (use wgrib)
@@ -68,10 +60,8 @@ decoders can handle both formats at the same time, but wgrib2 is
 not one of them.
 
 ```
-
 bash-4.1$ wgrib2 z500.grib1
 grib1 message ignored (use wgrib)
-
 ```
 
 \*\*\* FATAL ERROR: missing input file non-existant-file \*\*\*
@@ -79,11 +69,9 @@ grib1 message ignored (use wgrib)
 You get this error message you wgrib2 cannot open the grib file.
 
 ```
-
 bash-4.1$ wgrib2 non-existant-file
 
 *** FATAL ERROR: missing input file non-existant-file ***
-
 ```
 
 \*\*\* FATAL ERROR: no input file defined \*\*\*
@@ -94,11 +82,9 @@ have enough arguments. In this example, -ij requires two arguments. The
 grib file becomes the second argument.
 
 ```
-
 bash-4.1$ wgrib2 -ij 10 small.grb2
 
 *** FATAL ERROR: no input file defined ***
-
 ```
 
 \*\*\* FATAL ERROR: rdieee: bad header \*\*\*
@@ -106,14 +92,12 @@ bash-4.1$ wgrib2 -ij 10 small.grb2
 Wgrib2 is trying to read a f77-style binary file (-import_ieee).
 
 ```
-
 (header)		4 byte integer, 4*n
 (ieee floating point)   grid point 1
 (ieee floating point)   grid point 2
 ...
 (ieee floating point)   grid point n
 (trailer)		4 byte integer, 4*n
-
 ```
 
 However, either the header is missing or the header has an unexpected value.
@@ -123,10 +107,8 @@ grib message that was read in.
 (No Output)
 
 ```
-
 bash-4.1$ wgrib2 open.gs
 bash-4.1$
-
 ```
 
 If wgrib2 fails to find a grib2 message, nothing is written out to stdout.

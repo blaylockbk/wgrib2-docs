@@ -15,12 +15,10 @@ a wildcard character that matches any character including a zero.
 ## Usage
 
 ```
-
 -if_fs X
 -not_if_fs X
 
 X is a fixed string (not a regular expression)
-
 ```
 
 See also: [-if](./if.md),

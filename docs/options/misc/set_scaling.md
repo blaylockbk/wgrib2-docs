@@ -6,7 +6,6 @@ The values at the grid points points are usually stored in in this format,
 
 ```
 
-
   Y = (R + i*2**B)*(10**D)
 
   R = reference value (32-bit IEEE floating point number)
@@ -14,13 +13,11 @@ The values at the grid points points are usually stored in in this format,
   N = binary bit precision
   B = binary scaling, -127..127
   D = decimal scaling, -127..127
-
 ```
 
 There are 3 sytems for storing the number which I call
 
 ```
-
 
 ECMWF convention: D = 0, N = parameter
 
@@ -39,7 +36,6 @@ NCEP convention: B = parameter, D = parameter
   D = decimal scaling, a parameter
 
   Note, global model uses a variant: B = 0, D = parameter
-
 ```
 
 Both the ECMWF and NCEP conventions have their advantages and
@@ -86,11 +82,9 @@ the -set_bin_prec option perhaps with the
 -set_grib_max_bits option.
 
 ```
-
 -set_scaling D B
   D = decimal scaling or the text 'same' with no quotes
   B = binary scaling or the text 'same' with no quotes
-
 ```
 
 See alse:

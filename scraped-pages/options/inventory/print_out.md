@@ -8,16 +8,13 @@ to a file.
 ## Usage
 
 ```
-
 -print_out "string" FILE
      Writes "string" to FILE
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 LIS.c3 -if ':SNOD:' \
  -s -last junk \
  -print\_out ' (found snod)' junk \
@@ -35,7 +32,6 @@ d=2014030500:SNOD:surface:anl: (found snod)
  -s -last junk                        -last prints the output from the last option (-s) to junk
  -print_out ' (found snod)' junk      writes string to junk
  -nl_out junk                         writes a new-line to junk
-
 ```
 
 See also:

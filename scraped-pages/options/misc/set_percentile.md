@@ -18,19 +18,15 @@ Percentiles are also supported by the
 ## Usage
 
 ```
-
 -set_percentile X         X = percentile 0..100
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib p.grb -set\_percentile 50 -grib\_out new.grb
 1:0:d=2010020304:PRMSL:mean sea level:6 hour fcst:50% level
 2:17960:d=2010020304:PRES:1 hybrid level:3 hour fcst:50% level
-
 ```
 
 See also:

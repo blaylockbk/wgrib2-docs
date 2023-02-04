@@ -8,18 +8,14 @@ discipline, master table and local table.
 ## Usage
 
 ```
-
 -set_table
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 f.grb -table
 1:0:discipline=0 master_table=2 local_table=1
-
 ```
 
 See also:

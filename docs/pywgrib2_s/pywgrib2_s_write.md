@@ -18,13 +18,11 @@ than 200 bytes.
 
 ```
 
-
 ```
 
 ## Usage
 
 ```
-
      a=pywgrib2_s.write(file,template,msg_no [, optional arguments])
 
      file     = output file
@@ -139,7 +137,6 @@ than 200 bytes.
                                       This is 12 bits binary in ECMWF style precision.
                                  See https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/
                                           set_scaling.html
-
 ```
 
 Order of setting values 2. template

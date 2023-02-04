@@ -7,24 +7,20 @@ process selected fields. With wgrib, you could process all "-d all", specific
 message number, "-d N", or by using "grep" and the "-i" option.
 
 ```
-
    wgrib -d all grb                            writes all records to binary file to "dump"
    wgrib -d 10  grb                            write record 10 to binary file "dump"
    wgrib grb | grep ":HGT:" | wgrib -i grb     write HGT fields to "dump"
-
 ```
 
 Wgrib2 is very similar. The differences is that "-d all" is gone and writing
 to binary file is not a default option.
 
 ```
-
    wgrib2 -bin dump grb                       write all records to binary file "dump"
    wgrib2 -d 10   -bin dump grb               write record 10 to binary file "dump"
    wgrib2 -d 10.1 -bin dump grb               write record 10.1 to binary file "dump"
    wgrib2 grb | grep ":HGT:" | wgrib2 -i grb -bin dump    write HGT fields to "dump"
    wgrib2 -match ":HGT:" grb -bin dump        new syntax: write HGT fields to "dump"
-
 ```
 
 One difference is record numbers may have a "decimal point". With grib2, for example,

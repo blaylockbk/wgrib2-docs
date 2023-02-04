@@ -19,15 +19,12 @@ wind direction (WDIR).
 ## Usage
 
 ```
-
 -wind_uv output_grib_file
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 gep19.t00z.pgrb2af180 -wind\_dir wind.grb -wind\_speed wind.grb -match "(UGRD|VGRD)"
 4.1:86046:d=2009060500:UGRD:200 mb:180 hour fcst:ENS=+19
 4.2:86046:d=2009060500:VGRD:200 mb:180 hour fcst:ENS=+19
@@ -45,7 +42,6 @@ $ wgrib2 uv.grb
 2:89777:d=2009060500:UGRD:200 mb:180 hour fcst:ENS=+19
 3:179554:d=2009060500:UGRD:250 mb:180 hour fcst:ENS=+19
 4:269331:d=2009060500:UGRD:250 mb:180 hour fcst:ENS=+19
-
 
 ```
 

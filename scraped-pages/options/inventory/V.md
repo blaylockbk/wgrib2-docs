@@ -12,7 +12,6 @@ which are defined in the Macro.c file. The -s option is special because if there
 ## Usage
 
 ```
-
 -s
       equivalent to -t -var -lev -ftime -ens
 
@@ -21,7 +20,6 @@ which are defined in the Macro.c file. The -s option is special because if there
 
 -V
       equivalent to -vt -lev -ftime -var -ens -stats -grid
-
 
 ```
 

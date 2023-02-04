@@ -8,19 +8,15 @@ The -s option prints out a simple inventory with minutes and seconds.
 -misc yyppp
 
 ```
-
 -sh-2.05b$ wgrib2 new.grb2 -s
 1:0:d=2007032600:HGT:1000 mb:anl:
 2:125535:d=2007032600:HGT:1000 mb:3 hour fcst:
-
 ```
 
 ## Usage
 
 ```
-
 -s
-
 ```
 
 See also: [macros](./macros.md),

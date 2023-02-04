@@ -9,12 +9,10 @@ grids 10 through 20 by 2, you can add the option -for_n 10:20:2.
 ## Usage
 
 ```
-
 -for_n I:J:K        same as for n = I to J by K
 -for_n I:J          same as for n = I to J by 1
 -for_n I::K         same as for n = I to MAX_INTEGER by K
 -for_n I            same as for n = I to MAX_INTEGER by 1
-
 ```
 
 # wgrib2: multi-processing with -for_n and -n
@@ -67,7 +65,6 @@ Now that we can run wgrib2 on the even and odd records, how
 do we make the output. Here is a simple way in Unix/Linux.
 
 ```
-
 # bad example: slow, output in different order
 # input=grib file, output=grib file, makes regional subset using two copies of wgrib2
 f=input
@@ -75,7 +72,6 @@ wgrib2 $f -ijsmall_grib 1:10 1:10 /tmp/p1 -for_n 1:99999:2 >/dev/null
 wgrib2 $f -ijsmall_grib 1:10 1:10 /tmp/p2 -for_n 2:99999:2 >/dev/null
 cat /tmp/p1 /tmp/p2 >output
 rm /tmp/p1 /tmp/p2
-
 ```
 
 The above method is not optimal as it uses temporary files,
@@ -84,7 +80,6 @@ pipes and a simple program that reads the pipes and writes out
 a merged output file.
 
 ```
-
 # input=grib file, output=grib file, makes regional subset using two copies of wgrib2
 # uses named pipes for speedup, keeps order of records
 f=input
@@ -94,7 +89,6 @@ wgrib2 $f -ijsmall_grib 1:10 1:10 /tmp/p1.$$ -for_n 1::2 >/dev/null &
 wgrib2 $f -ijsmall_grib 1:10 1:10 /tmp/p2.$$ -for_n 2::2 >/dev/null &
 gmerge output /tmp/p1.$$ /tmp/p2.$$
 rm /tmp/p1.$$ /tmp/p2.$$
-
 ```
 
 The program, gmerge, simply reads a grib message from p1.$$ and
@@ -110,7 +104,6 @@ writes it to output. This is repeated until there is no data left
 inventories on mutiple cpus.
 
 ```
-
 # input=grib file, run 2 copies of wgrib2 and writes inventory on stdout
 f=input
 mkfifo /tmp/p1.$$
@@ -119,7 +112,6 @@ wgrib2 -for_n 1::2 $file -s -lon 0 0 >/tmp/p1.$$ &
 wgrib2 -for_n 2::2 $file -s -lon 0 0 >/tmp/p2.$$ &
 amerge /tmp/p1.$$ /tmp/p2.$$
 rm /tmp/p1.$$ /tmp/p2.$$
-
 ```
 
 ### More than 2 CPUs
@@ -130,7 +122,6 @@ you may want to split the work into 4 jobs. The current versions
 of gmerge and amerge allow input for upto 32 different inputs.
 
 ```
-
 # same as 2nd example but with 3 cpus
 f=input
 mkfifo /tmp/p1.$$ /tmp/p2.$$ /tmp/p3.$$
@@ -139,7 +130,6 @@ wgrib2 $f -ijsmall_grib 1:10 1:10 /tmp/p2.$$ -for_n 2::3 >/dev/null &
 wgrib2 $f -ijsmall_grib 1:10 1:10 /tmp/p3.$$ -for_n 3::3 >/dev/null &
 gmerge output /tmp/p1.$$ /tmp/p2.$$ /tmp/p3.$$
 rm /tmp/p1.$$ /tmp/p2.$$ /tmp/p3.$$
-
 ```
 
 ### Source code for gmerge and amerge
@@ -151,13 +141,11 @@ rm /tmp/p1.$$ /tmp/p2.$$ /tmp/p3.$$
 ## Usage
 
 ```
-
 -n                  prints the inventory number
 -for_n I:J:K        same as for n = I to J by K
 -for_n I:J          same as for n = I to J by 1
 -for_n I::K         same as for n = I to MAX_INTEGER by K
 -for_n I            same as for n = I to MAX_INTEGER by 1
-
 ```
 
 See also:

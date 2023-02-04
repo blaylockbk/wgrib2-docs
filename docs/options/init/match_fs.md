@@ -11,11 +11,9 @@ Now why would you want to use the "fs" versions? Suppose you want to to
 search for the "2.5 mb" level.
 
 ```
-
 bash-4.1$ wgrib2 -match ":2.5 mb:" junk
 1:0:d=2009060500:HGT:225 mb:180 hour fcst:ENS=+19
 2:46042:d=2009060500:HGT:2.5 mb:180 hour fcst:ENS=+19
-
 ```
 
 What happened? The command matched the 2.5 and 225 mb level! Well the
@@ -23,7 +21,6 @@ period is regular expression metacharacter and matchs any character. To
 only get "2.5 mb" either have to quote the period or change the regex mode.
 
 ```
-
 bash-4.1$ wgrib2 -match ":2\.5 mb:" junk
 2:46042:d=2009060500:HGT:2.5 mb:180 hour fcst:ENS=+19
 
@@ -36,7 +33,6 @@ bash-4.1$ wgrib2 -set_regex 1 -match ":2.5 mb:" junk
 
 bash-4.1$ wgrib2 -set_regex 2 -match ":2.5 mb:" junk
 2:46042:d=2009060500:HGT:2.5 mb:180 hour fcst:ENS=+19
-
 ```
 
 So setting the regex mode to 1 or 2 will work. The "\_fs" options

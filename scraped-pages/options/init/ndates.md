@@ -23,7 +23,6 @@ Combining -ndate and -ndates options
 is more difficult because the default formatting will join the date codes.
 
 ```
-
 -ndates DATE DATE2 DT2
 -ndates DATE DT1 DT2
 
@@ -52,7 +51,6 @@ DT = (integer)(time unit)           "time unit" follows the GrADS convention
                            hr (hour)
                            mn (minute)
                            there is no seconds time unit defined by GrADS
-
 ```
 
 One useful feature of -ndates is the format of the output date is
@@ -60,7 +58,6 @@ appropriate for the input date code and DT2. The format has the most precision f
 both the input date code and DT2.
 
 ```
-
       Priority of the output format of the date codes (high to low)
    output date code: YYYYMMDDHHmmss      if input date code is YYYYMMDDHHmmss  DT2 cannot be in seconds
    output date code: YYYYMMDDHHmm        if input date code is YYYYMMDDHHmm   or DT2 is in minutes (mn)
@@ -68,14 +65,12 @@ both the input date code and DT2.
    output date code: YYYYMMDD            if input date code is YYYYMMDD       or DT2 is in days (dy)
    output date code: YYYYMM              if input date code is YYYYMM         or DT2 is in months (mo)
    output date code: YYYY                if input date code is YYYY           or DT2 is in years (yr)
-
 ```
 
 The -ndates was designed to provide a list of date codes which
 makes scripting easier when processing time series.
 
 ```
-
   OLD sh                                 NEW sh
   date=2001010100                        for date in `wgrib2 /dev/null -ndates 2001010100 1mo 6hr`
   while [ $date -lt 2001020100 ]         do
@@ -85,14 +80,12 @@ makes scripting easier when processing time series.
   done
 
 #    ndate adds an hour offset to a YYYYMMDDHH date code
-
 ```
 
 The variable precision of the output date codes makes processing by days
 and months easy.
 
 ```
-
   for date in `wgrib2 /dev/null -ndates 20010101 1mo 1dy`
   do
      (process date)
@@ -102,35 +95,29 @@ and months easy.
   do
      (process month)
   done
-
 ```
 
 By using the -ndates_fmt option, you can change the
 output from a list of dates to a list of files.
 
 ```
-
   for file in `wgrib2 /dev/null -ndates_fmt "pgb.%s" -ndates 20010101 1mo 1dy`
   do
     echo "process $file"
   done
-
 ```
 
 You can even make scripts.
 
 ```
-
   wgrib2 /dev/null -ndates_fmt "ls -l pgb.%s\n" -ndates 201801 1mo 1dy >cmd.sh
 
       The format contains a backslash followed by an n.
-
 ```
 
 ## Usage
 
 ```
-
 -ndates DATE DATE2 DT2
 -ndates DATE DT1 DT2
 
@@ -158,13 +145,11 @@ You can even make scripts.
     the output date code has the precision necessary for DATE and DT2 and
     is converted into a string.  The date is printed out using the
     "ndates_fmt" format.  The default format is " %s".  (C format)
-
 ```
 
 ### Example
 
 ```
-
         print date codes for 1 month, every day
 
 $ wgrib2 /dev/null -ndates 2019020100 1mo 1dy
@@ -198,7 +183,6 @@ $ wgrib2 /dev/null -ndates 202001 202101 1mo
  202001 202002 202003 202004 202005 202006 202007 202008 202009 202010 202011 202012
 $ wgrib2 /dev/null -ndates 202001 12mo 1mo
  202001 202002 202003 202004 202005 202006 202007 202008 202009 202010 202011 202012
-
 ```
 
 ### Finding the Julian date (ordinal date)
@@ -208,12 +192,10 @@ from 1 and 366. To get the day of the year from YYYYMMDD,
 you can use -ndates.
 
 ```
-
 wgrib2 /dev/null -ndates {YYYY-1}1231 {YYYYMMDD} 1dy | wc -w
 
 ebis@landing2:~$ wgrib2 /dev/null -ndates 20191231 20200120 1dy | wc -w
 20
-
 ```
 
 ### Limitations wgrib2 v2.8.0-v3.0.2

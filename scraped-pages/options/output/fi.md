@@ -7,7 +7,6 @@ It is recommened that version 2 of the IF block be used and
 -fi no longer be used.
 
 ```
-
 Version 1 IF structure:
 
   -if TEST (non-output options) (output option)
@@ -32,7 +31,6 @@ Version 2 IF block:  (wgrib2 v3.0.0+)
 
 
   The new structure can include nested IF blocks.
-
 ```
 
 The -endif option is tne new way to close

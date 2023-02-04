@@ -15,7 +15,6 @@ is written to the current directory.
 The file name convention
 
 ```
-
    NAME = grib name (-var), ex. TEMP, HGT
    LEVEL = level, ex. surface, 2_m_above_ground, 500_mb
    RT = reference time YYYYMMDDHH
@@ -26,7 +25,6 @@ The file name convention
 
    If RT is different than VT
      output = NAME.LEVEL.RT.VT.asc
-
 ```
 
 ### Problems with file name convention
@@ -38,17 +36,13 @@ convention was needed (-AAIGlong).
 ## Usage
 
 ```
-
 -AAIG
-
 ```
 
 ### Example
 
 ```
-
 wgrib2 in_file -match ':HGT:400 mb:' -AAIG
-
 ```
 
 The above line converts all the 400 mb HGT fields into an

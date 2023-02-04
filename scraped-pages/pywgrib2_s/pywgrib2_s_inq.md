@@ -27,14 +27,12 @@ there are no constraints of the fields that match. The call will return the
 number of fields in the file.
 
 ```
-
 >>> import pywgrib2_s
 finished loading libraries
 pywgrib2_s v0.0.10 11-9-2020 w. ebisuzaki
 >>> pywgrib2_s.inq('a.grb')
 9796
 >>>
-
 ```
 
 ### Specifying Fields to Examine

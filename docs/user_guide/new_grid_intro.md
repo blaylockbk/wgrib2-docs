@@ -55,14 +55,12 @@ are weighted average of the 4 surrounding grid points. Suppose
 we take a simple model:
 
 ```
-
    grid_value(i) = LS + e(i)   e(i) = Gaussian random error, mean 0, variance 1
       grib_value are the 4 surrouding grids point from the original grid
 
    new_grid_value = LS + sum(i=1..4) (a(i)*e(i))   where a(i) > 0 and sum of a(i) = 1
                    = LS + a * e             e = Gaussian random error, mean 0, variance 1, '
                                             0.5 <= a <= 1.0
-
 ```
 
 From this simple model, we see that the variance from the LS will vary depending whether the new grid point
@@ -89,13 +87,11 @@ To interpolate integer-valued fields like vegetation type and soil type, you
 add code fragment to wrib2 prior to interpolation;
 
 ```
-
   -new_grid_interpolation bilinear \
       -if ":(VGTYP|SOTYP):" -new_grid_interpolation neighbor -fi \
 
   This code fragment set the interpolation type to bilinear.  For vegitation
    and soil types, the interpolation is changed to nearest neighbor.
-
 ```
 
 ### Answer 2: Scalar vs Vector
@@ -109,9 +105,7 @@ fields will be interpolated using vector interpolation routines in the IPOLATES 
 To conserve the global mean, the interpolation needs to be changed to "budget" by
 
 ```
-
 -new_grid_interpolation budget
-
 ```
 
 This interpolation scheme figures out the size of the grid cell and divides in to
@@ -180,10 +174,8 @@ everyone specify whether the output uses earth or grid relative winds.
 [See](./new_grid_winds.md).
 
 ```
-
 -new_grid_winds earth
 -new_grid_winds grid
-
 ```
 
 ### Example
@@ -192,7 +184,6 @@ The hard part of using the -new_grid option is that meridional component of
 the vector must follow the zonal component of the vector. However,
 
 ```
-
 $ wgrib2 test
 1:0:d=2015101200:UGRD:1 hybrid level:anl:
 2:414580:d=2015101200:PRMSL:mean sea level:anl:
@@ -220,7 +211,6 @@ $ wgrib2 gbl -d 1 -grid
 	lat-lon grid:(360 x 181) units 1e-06 input WE:SN output WE:SN res 48
 	lat -90.000000 to 90.000000 by 1.000000
  Worked, earth relative winds = winds(N/S)
-
 ```
 
 For of the operational NCEP model grib output, the vector fields are in
@@ -233,7 +223,6 @@ gravity wave drag or wind stresses.
 ### Simple Command to Regrid
 
 ```
-
 
  wgrib2 IN.grb -set\_grib\_type PACKING -new\_grid\_winds earth -new\_grid latlon LON0:NLON:DLON LAT0:NLAT:DLAT
 
@@ -256,7 +245,6 @@ gravity wave drag or wind stresses.
          DLAT = spacing of latiudes,
                   if LAT0 is the northern most latitude, DLAT should be negative
                   if LAT0 is the northern most latitude, DLAT should be positive
-
 ```
 
 This ends this introduction. For more information, see

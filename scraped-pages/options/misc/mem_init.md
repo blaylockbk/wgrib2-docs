@@ -24,22 +24,18 @@ metadata and grid from memory.
 ## Usage
 
 ```
-
 -mem_init N FILE
                    N=0..19
                    FILE=file to read
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 -mem\_init 10 gep19.t00z.pgrb2af180 @mem:10
 1:0:d=2009060500:HGT:200 mb:180 hour fcst:ENS=+19
 2:46042:d=2009060500:TMP:200 mb:180 hour fcst:ENS=+19
 ..
-
 ```
 
 The above line reads the file 'gep19.t00z.pgrb2af180' and save it in
@@ -48,9 +44,7 @@ the memory file, @mem:10. This example has no practical application;
 however, the following can be used.
 
 ```
-
 $ wgrib2 IN.grb | sort -t: -k3,7 | wgrib2 -i -mem\_init IN.grb 0 @mem:0 -grib OUT.grb
-
 ```
 
 The above line takes the original file, IN.grb, and writes it out in sorted order. By using

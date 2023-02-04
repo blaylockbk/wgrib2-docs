@@ -19,7 +19,6 @@ your disk with big files, you can easily extract the required fields.
 The first step is to figure what is in the grib file.
 
 ```
-
 -sh-2.05b$ wgrib2 test.grb2 -s
 1:0:d=2005090200:HGT:1000 mb:60 hour fcst
 2:133907:d=2005090200:HGT:975 mb:60 hour fcst
@@ -32,67 +31,54 @@ The first step is to figure what is in the grib file.
 291:37540403:d=2005090200:GPA:1000 mb:60 hour fcst
 292:37677072:d=2005090200:GPA:500 mb:60 hour fcst
 293:37791941:d=2005090200:5WAVA:500 mb:60 hour fcst
-
 ```
 
 Information overload. Lets see if you can find the desired variables.
 
 ```
-
 -sh-2.05b$ wgrib2 test.grb2 -s | grep ':TMP:2 m'
 265:35107588:d=2005090200:TMP:2 m above ground:60 hour fcst
-
 ```
 
 Found the 2-m temperature, can we find the precipitation?
 
 ```
-
 -sh-2.05b$ wgrib2 test.grb2 -s | grep ':PRATE:'
 260:34814859:d=2005090200:PRATE:surface:54-60 hour fcst
-
 ```
 
 Yes. we found the fields. Now we need to combine the above into a
 single command using the or option of egrep; i.e., egrep '(A|B)'.
 
 ```
-
 -sh-2.05b$ wgrib2 test.grb2 -s | egrep '(:TMP:2 m|:PRATE:)'
 260:34814859:d=2005090200:PRATE:surface:54-60 hour fcst
 265:35107588:d=2005090200:TMP:2 m above ground:60 hour fcst
-
 ```
 
 Now that we have selected the records, we can send the output (inventory) back
 into wgrib2 to manipulate.
 
 ```
-
 -sh-2.05b$  wgrib2 test.grb2 -s | egrep '(:TMP:2 m|:PRATE:)' | wgrib2 -i test.grb2 -grib small.grb
 260:34814859:d=2005090200:PRATE:surface:54-60 hour fcst
 265:35107588:d=2005090200:TMP:2 m above ground:60 hour fcst
-
 ```
 
 The above command made a grib2 file consisting of the precipation (PRATE) and 2-m temperature (TMP).
 
 ```
-
 -sh-2.05b$ ls -l test.grb2 small.grb
 -rw-r--r--    1 wd51we   wd5        212429 2006-10-16 15:08 small.grb
 -rwxr-xr-x    1 wd51we   wd5      37862776 2006-05-25 15:16 test.grb2
-
 ```
 
 As you can see, the new file is much smaller than the original file.
 
 ```
-
 -sh-2.05b$  wgrib2 small.grb
 1:0:d=2005090200:PRATE:surface:54-60 hour fcst
 2:110654:d=2005090200:TMP:2 m above ground:60 hour fcst
-
 ```
 
 As expected, the new grib file only has the desired two fields.
@@ -102,7 +88,6 @@ As expected, the new grib file only has the desired two fields.
 Another use of the -i option is to specify the field to decode.
 
 ```
-
 -sh-2.05b$ wgrib2 test.grb2 -s | grep ':PRATE:' | wgrib2 -i test.grb2 -spread field.txt
 260:34814859:d=2005090200:PRATE:surface:54-60 hour fcst
 -sh-2.05b$ head field.txt
@@ -116,7 +101,6 @@ lon,lat,PRATE surface d=2005090200 54-60 hour fcst
 3,-90,5e-06
 3.5,-90,5e-06
 4,-90,5e-06
-
 ```
 
 ### -i_file
@@ -125,22 +109,18 @@ The -i_file MY_FILE option reads the inventory from
 file, MY_FILE. The following 3 lines are equivalent.
 
 ```
-
 cat FILE.inv | grep UGRD | wgrib2 -i FILE.grb -bin data.bin
 
 cat FILE.inv | wgrib2 -i FILE.grb -match UGRD -bin data.bin
 
 wgrib2 -i_file FILE.inv FILE.grb -match UGRD -bin data.bin
-
 ```
 
 ## Usage
 
 ```
-
 -i
 -i_file FILE
-
 ```
 
 ### Speed
@@ -150,20 +130,17 @@ within wgrib2. This speeds up the operation by eliminating
 two program executions and duplicate reads.
 
 ```
-
 wgrib2 gribfile | grep "string" | wgrib2 -i gribfile (other options)
 
 is equivalent to
 
 wgrib2 gribfile -match "string" (other options)
-
 ```
 
 However, the -i option can be more efficient
 when making multiple extractions from a file. For example,
 
 ```
-
 wgrib2 gribfile >gribfile.inv
 grep "string1" gribfile.inv | wgrib2 -i gribfile (other options)
 grep "string2" gribfile.inv | wgrib2 -i gribfile (other options)
@@ -174,7 +151,6 @@ is faster than
 wgrib2 gribfile -match "string1" (other options)
 wgrib2 gribfile -match "string2" (other options)
 wgrib2 gribfile -match "string3" (other options)
-
 ```
 
 See also:

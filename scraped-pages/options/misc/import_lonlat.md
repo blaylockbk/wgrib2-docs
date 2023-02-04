@@ -17,7 +17,6 @@ The -import_lonlat option read the
 longitudes and latitudes in the following format.
 
 ```
-
 8 bytes:                        'wgrib2ll'       text
 (sizeof unsigned int) bytes      ndata           unsigned integer with number of grid points
 (sizeof unsigned int) bytes      0               unsigned integer with value of zero
@@ -26,7 +25,6 @@ ndata*(sizeof double)            latitudes       ndata values of double precisio
 
 (sizeof unsigned int) is usually 4.  By wgrib2 requirements, the value must be 4 or greater.
 (sizeof double) is usually 8.
-
 ```
 
 Prior to wgrib2 v3.1.2, -import_lonlat would always
@@ -50,19 +48,15 @@ the nearest neighbor interpolation will then work.
 ## Usage
 
 ```
-
 -import_lonlat FILE
     FILE = file that has special format with longitude and latitude values.
     The longitude and latitudes replace the internal values.
-
 ```
 
 ### Example
 
 ```
-
    $ wgrib2 IN.grb -ncpu 3 -new_grid_winds grid -new_grid ncep grid 221 - | wgrib2 - -ncpu 1 -set_grib_type j -ncep_uv OUT.grb
-
 ```
 
 The above line uses 3 threads for regridding and one thread for jpeg2000 compression. The jpeg2000

@@ -12,7 +12,6 @@ the option -cyclic.
 ## Usage
 
 ```
-
 -box_ave DX DY CRITICAL_WEIGHT
    DX=width of box (in grid points), DX has to be an odd positive integer
    DY=height of box (in grid points), DY has to be an odd positive integer
@@ -29,7 +28,6 @@ the option -cyclic.
 
 The speed of -box_ave is O(NX*NY*DY). The O(NX*NY) method was slower
 because of poor cache utilization and false sharing.
-
 ```
 
 ### Example

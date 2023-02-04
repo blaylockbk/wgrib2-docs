@@ -8,19 +8,15 @@ field.
 ## Usage
 
 ```
-
 -lev
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 grib2.polar -lev
 1.1:0:500 mb
 1.2:0:850 mb
-
 ```
 
 See also: [-s](./macros.md)

@@ -30,11 +30,9 @@ will be interpolated as vectors. The options are,
 ## Usage
 
 ```
-
 -new_grid_vectors X
     X = none, default, UGRD:VGRD, UV list
     example UV list:   "UGRD:VGRD:UICE:VICE"
-
 ```
 
 See also: [-new_grid](./new_grid.md),

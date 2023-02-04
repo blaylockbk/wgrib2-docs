@@ -8,15 +8,12 @@ in the ensemble (ensemble forecasts only).
 ## Usage
 
 ```
-
 -N_ens
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 in.grb -N\_ens
 1:80:10 ens members
 2:218826:10 ens members
@@ -26,7 +23,6 @@ $ wgrib2 in.grb -N\_ens
 for wgrib2 upto 2.0.7, will print -1 ens members for product definition tables that
 do not support number of ensemble members. For wgrib2 2.0.8 and following, the field
 will be empty.
-
 ```
 
 See also:

@@ -16,9 +16,7 @@ is not recommended.
 ## Usage
 
 ```
-
 -GRIB file_name
-
 ```
 
 See also: [-grib](./grib.md)

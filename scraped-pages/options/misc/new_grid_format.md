@@ -38,18 +38,15 @@ rather than the older iplib library.
 ## Usage
 
 ```
-
 -new_grid_format FORMAT
                  FORMAT = grib, the output format of -new_grid is grib2 (default)
                  FORMAT = bin, the output format is in native single precision format like -bin
                  FORMAT = ieee, the output format is in IEEE single precision like -ieee
-
 ```
 
 ### Example
 
 ```
-
     Creates a grib output file "new.grb"
 
 $ wgrib2 gep19.aec -for 1:5 -new\_grid\_winds earth -new\_grid ncep grid 3 new.grb
@@ -83,7 +80,6 @@ $ wgrib2 new.grb -rpn sto\_0 -import\_bin new.bin -rpn 'raw2:rcl\_0:print\_corr'
    The binary file was written in we:ns, and -import_bin does not change
    the scan order.  Therefore we have to change the order we:sn by raw2.
    rpn_corr=1 .. new.grb == new.bin upto a grib rounding error
-
 ```
 
 See also:

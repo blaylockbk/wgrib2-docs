@@ -12,31 +12,25 @@ could make sure the expected number of records were processed.
 ## Usage
 
 ```
-
 -count
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 fcst.grb2 -count
 -sh-3.00$ wgrib2 fcst.grb2 -count
 1:4:d=2007032600:HGT:1000 mb:anl:
 2:422561:d=2007032600:HGT:1000 mb:3 hour fcst:
 number of records: 2
-
 ```
 
 The above example shows that there were two records in the file.
 
 ```
-
 $ wgrib2 fcst.grb2 -count -match fcst
 2:422561:d=2007032600:HGT:1000 mb:3 hour fcst:
 number of records: 1
-
 ```
 
 The above example shows that only 1 record had the string fcst in it.

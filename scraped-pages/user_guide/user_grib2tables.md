@@ -8,7 +8,6 @@ defined variables as well, update the grib table, and change the names of pre-ex
 variables. Wgrib2 looks for the user defined gribtable in (in order of search)
 
 ```
-
    environment varible: GRIB2TABLE
    environment varible: grib2table
    file: grib2table (in current working directory)
@@ -27,7 +26,6 @@ variables. Wgrib2 looks for the user defined gribtable in (in order of search)
 
    You can also always put the user defined gribtable in the "grib2table" in
    the "current working directory".
-
 ```
 
 The user defined gribtable is searched before the built-in gribtable.
@@ -35,7 +33,6 @@ The user defined gribtable is searched before the built-in gribtable.
 ### Format of the user defined gribtable
 
 ```
-
    Comments
        start with the first column staring with #, *, !
        any line that is not a definition line
@@ -66,7 +63,6 @@ The user defined gribtable is searched before the built-in gribtable.
        for locally defined fields, I5 (center) must not be -1
 
    all other lines are not used.  Warnings will be given when the number of colons suggest an error.
-
 ```
 
 For each variable, there is a master table set, low and high. The master table is a master
@@ -85,18 +81,15 @@ defined for the center. Note: WMO does not not allow the local table to have
 a value of zero.
 
 ```
-
 Locally defined variables: a or b or c
   a) Discipline: 192-254
   b) Parameter Category: 192-254
   c) Parameter Number: 192-254
-
 ```
 
 ### Sample grib2table
 
 ```
-
 /*
  * sample user grib table
  */
@@ -120,7 +113,6 @@ Locally defined variables: a or b or c
 0:1:0:10:8:0:190:190:TEST1:Critcal Fire Weather:??
 0:1:0:10:8:0:190:191:TEST2:Dry lightning:??
 0:1:0:10:0:0:2:2:Utest:utest:m/s
-
 ```
 
 ### Uses

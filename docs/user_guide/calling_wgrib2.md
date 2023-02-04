@@ -12,9 +12,7 @@ between the two processes.
 Calling wgrib2 from C can be as simple as calling the system function
 
 ```
-
     system("wgrib2 IN.grb -match ":TMP:2 m above ground:anl:" -csv tmp2m.csv");
-
 ```
 
 This approach is simple but there is overhead of initializing and running wgrib2
@@ -30,12 +28,10 @@ wgrib2, so that the calling program can encode and decode buffers and avoid usin
 the disk to communicate with wgrib2.
 
 ```
-
     int argc;
     char argv[MAX_ARGC][MAX_STRLEN];
     ...
     ierr = wgrib2(argc, argv);
-
 ```
 
 More information is given in [callable_wgrib2](./callable_wgrib2.md). This
@@ -48,7 +44,6 @@ a pipe. In this example, the main program has grib
 data and it wants the data regridded or converted into netcdf.
 
 ```
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -89,7 +84,6 @@ int main() {
 
    return 0;
 }
-
 ```
 
 A grib encoder was developed using wgrib2 as a process. The main program would write

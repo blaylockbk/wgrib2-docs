@@ -9,7 +9,6 @@ used, all must be satisfied.
 
 ```
 
-
     wgrib2 -not X (...)
 
 is the same as
@@ -27,17 +26,14 @@ is the same as
 where X, and Y are regular expressions.  Note, X and Y will not match
 the second (byte location) field of the short inventory.
 
-
 ```
 
 ## Usage
 
 ```
-
 -not X
 
 X is a POSIX extended regular expression
-
 ```
 
 The -match, and -not selection
@@ -55,12 +51,10 @@ be ":vt=YYYYMMDDHH:". In order to future proof your
 must not include any item before the ":vt=YYYYMMDD:" field.
 
 ```
-
     -match ":vt=2011111500:"                  good
     -not ":vt=2011111500:$"                   good (dollar sign matches the end of the line)
     -not ":n=10:vt=2011111500:"               bad (item before :vt=)
     -match ":RH:975 mb:anl::vt=2010050806:"   bad (item before :vt=)
-
 ```
 
 Some recent changes (as of Nov 2011) to the match inventory include:

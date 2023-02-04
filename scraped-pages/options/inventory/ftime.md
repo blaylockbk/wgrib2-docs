@@ -82,21 +82,17 @@ The -config option will tell which version is the default.
 ## Usage
 
 ```
-
 -ftime
 
 Note: -ftime is called by many other options like -s and -S.
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 grib2.polar -ftime
 1.1:0:24 hour fcst
 1.2:0:24 hour fcst
-
 ```
 
 See also:

@@ -29,29 +29,23 @@ precision IEEE.
 ## Usage
 
 ```
-
 -bin file_name
      "-" sends the output to the terminal/stdout (results are unpredicatable in Windows)
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 test.grb2 -s | grep ":RH:2 m" | wgrib2 -i test.grb2 -bin data.bin
 285:36796469:d=2005090200:RH:2 m above ground:60 hour fcst
-
 ```
 
 ```
-
 
       wgrib               ==>                 wgrib2
 
       -header -bin -o out.bin                 -header -order raw -bin out.bin
       -bin -o out.bin                         -order raw -bin out.bin
-
 
 ```
 

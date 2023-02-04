@@ -19,18 +19,15 @@ with no ensemble information; you need a way to add a ensemble member number.
 ## Usage
 
 ```
-
 -set_ens_num X Y Z
 X = 0..255 type of ensemble member (Code Table 4.6)
 Y = 0..255 perturbation number
 Z = 0..255  number of forecasts in the ensemble
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 ds.td.bin -set\_ens\_num 3 1 10 -grib ds\_ens.grb
 1:80:d=2009062918:DPT:surface:60 hour fcst:ENS=+1
 2:218826:d=2009062918:DPT:surface:66 hour fcst:ENS=+1
@@ -49,7 +46,6 @@ $ wgrib2 ds.td.bin -set\_ens\_num 3 1 10 -grib ds\_ens.grb
 
 -grib ds_ens.grb
    save the new grib file in ds_ens.grb
-
 ```
 
 See also:

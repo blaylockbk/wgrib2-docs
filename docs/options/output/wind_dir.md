@@ -32,17 +32,14 @@ winds are zero. The wind direction for calm winds depends on the implementation.
 ## Usage
 
 ```
-
 -wind_dir output_grib_file
 
    Comment: the -wind_speed option can write to the same file as -wind_dir
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 gep19.t00z.pgrb2af180 -wind\_dir wind.grb -wind\_speed wind.grb -match "(UGRD|VGRD)"
 4.1:86046:d=2009060500:UGRD:200 mb:180 hour fcst:ENS=+19
 4.2:86046:d=2009060500:VGRD:200 mb:180 hour fcst:ENS=+19
@@ -54,7 +51,6 @@ $ wgrib2 wind.grb
 2:97922:d=2009060500:WIND:200 mb:180 hour fcst:ENS=+19
 3:179554:d=2009060500:WDIR:250 mb:180 hour fcst:ENS=+19
 4:277476:d=2009060500:WIND:250 mb:180 hour fcst:ENS=+19
-
 ```
 
 See also: [-match](./match.md),

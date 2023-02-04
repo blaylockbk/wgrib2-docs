@@ -6,13 +6,11 @@ The -spread option writes the grid values to a specified
 file as a comma separated values (text) which can be imported into a spread sheet.
 
 ```
-
    lon,lat,(VARIABLE DESCRIPTION)
    lon-1,lat-1,val-1
    lon-2,lat-2,val-2
    ...
    lon-N,lat-N,val-N
-
 ```
 
 The latitudes and longitudes are only available for supported grids
@@ -24,18 +22,14 @@ specified regions.
 ## Usage
 
 ```
-
 -spread output_file_name
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 test.grb2 -s | grep ":RH:2 m" | wgrib2 -i test.grb2 -spread data.txt
 285:36796469:d=2005090200:RH:2 m above ground:60 hour fcst
-
 ```
 
 The above line extracts the 2 meter RH from file test.grb2 and writes it in data.txt.

@@ -20,17 +20,13 @@ are added
 ## Usage
 
 ```
-
 -fix_ncep
-
 ```
 
 ### Example
 
 ```
-
 wgrib2 -fix_ncep in_grib -grib out_grib
-
 ```
 
 The above line replaces NCEP time ranges by the WMO equivalents

@@ -15,11 +15,9 @@ See [-if](./if.md) for details about the IF block structure.
 ## Usage
 
 ```
-
 -not_if X
    X is a regular expression
    returns true if X is not in the match inventory, false otherwise
-
 ```
 
 See also: [-not](./not.md),

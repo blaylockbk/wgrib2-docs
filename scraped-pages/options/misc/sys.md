@@ -9,11 +9,9 @@ The -sys option runs a shell command.
 ## Usage
 
 ```
-
 -sys STRING
 
 STRING is a shell command
-
 ```
 
 ### Comments

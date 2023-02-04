@@ -14,19 +14,15 @@ is written. The default is -header.
 ## Usage
 
 ```
-
 -header
 -no_header
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 -ens ens.grb -header -ieee data.ieee
 1:0:HGT:ENS=+1
-
 ```
 
 See also:

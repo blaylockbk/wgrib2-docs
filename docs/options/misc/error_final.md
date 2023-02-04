@@ -16,18 +16,15 @@ messages, it tests count to a specified integer and sets the error return.
 ## Usage
 
 ```
-
 -error_final count TEST INTEGER
    TEST = eq, ne, lt, gt, le, ge
    INTEGER integer
    sets return error to one if "count TEST INTEGER" is true
-
 ```
 
 ### Example
 
 ```
-
 -sh-4.2$ wgrib2 LIS.c3
 1:0:d=2014030500:SPRATE:surface:anl:
 2:661778:d=2014030500:RPRATE:surface:anl:
@@ -56,7 +53,6 @@ messages, it tests count to a specified integer and sets the error return.
 7:14925511:d=2014030500:TMP:surface:anl:
 -sh-4.2$ echo $?
 1
-
 ```
 
 See also:

@@ -15,10 +15,8 @@ uses a file. (Opening a file can update the flush mode.)
 ## Usage
 
 ```
-
 -no_flush
   should the last option
-
 ```
 
 ---

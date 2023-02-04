@@ -72,7 +72,6 @@ You can use wgrib2 to convert from ieee grib2 to a more common packing.
 
 ```
 
-
 45x91 grid, 5 fields
 
          simple complex1 complex2 complex3    jpeg
@@ -99,7 +98,6 @@ The commands to change the packing:
 
 wgrib2 in.grb -set_grib_type X -grib_out out.grb
 X=simple, complex1, complex2, complex3, jpeg
-
 
 ```
 

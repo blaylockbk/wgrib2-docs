@@ -10,12 +10,10 @@ sets the grid point so to contends of a binary file (arg2).
 ## Usage
 
 ```
-
 -udf STRING FILE
 
 STRING is a shell command
 FILE is a binary file which contains the contents of grid points
-
 ```
 
 Some functions can be written in RPN and others are more

@@ -24,9 +24,7 @@ option.
 ## Usage
 
 ```
-
 -last FILE
-
 ```
 
 ### Example
@@ -35,12 +33,10 @@ Suppose you want a the grid values (nearest neighbor) for 1000 points. You could
 do something like this,
 
 ```
-
 $ wgrib2 gep19.t00z.pgrb2af180 -s -lon 0 10 > point1.txt
 $ wgrib2 gep19.t00z.pgrb2af180 -s -lon 20 50 > point2.txt
 ...
 $ wgrib2 gep19.t00z.pgrb2af180 -s -lon 250 40 > point1000.txt
-
 ```
 
 This would not be the fastest because you have to read and decode
@@ -48,11 +44,9 @@ the input file 1000 times. You could read and decode the file once
 by using the -last option. Here how to do it using N=2.
 
 ```
-
 wgrib2 gep19.t00z.pgrb2af180 -s -last point1.txt -last point2.txt \
     -print_out ':' point1.txt -lon 0 0 -last point1.txt -nl_out point1.txt \
     -print_out ':' point2.txt  -lon 10 20 -last point2.txt -nl_out point2.txt
-
 ```
 
 The -new_grid option can interpolate to set of

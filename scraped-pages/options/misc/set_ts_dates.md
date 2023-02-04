@@ -17,7 +17,6 @@ date code.
 ## Usage
 
 ```
-
 -set_ts_dates  X:Y:Z
                     X = starting date
                     Y = time increment
@@ -37,20 +36,17 @@ date code.
 
                     Z=# fields / date code (must be one or greater)
 
-
 ```
 
 ### Example
 
 ```
-
 # date code increments by 1 hour
 $ wgrib p.grb -set\_ts\_dates 2010020304:1hour:1
 1:0:d=2010020304:PRMSL:mean sea level:anl:
 2:17960:d=2010020305:PRSML:mean sea level:anl:
 3:34248:d=2010020306:PRMSL:mean sea level:anl:
 4:48055:d=2010020307:PRMSL:mean sea level:anl:
-
 ```
 
 See also:

@@ -37,12 +37,10 @@ right.
 ## Usage
 
 ```
-
 -err_bin file integer
 -err_string file string
 -eof_bin file integer
 -eof_string file string
-
 ```
 
 See also:

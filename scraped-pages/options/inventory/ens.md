@@ -7,15 +7,12 @@ The -ens option prints the ensemble information.
 ## Usage
 
 ```
-
 -ens
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 -var-ens ens.grb
 1:0:HGT:ENS=+1
 2:45932:SPFH:ENS=+1
@@ -27,7 +24,6 @@ $ wgrib2 -var-ens ens.grb
 7.2:258504:VGRD:ENS=+1
 8:380298:SPFH:ENS=+1
 9:441918:SPFH:ENS=+1
-
 ```
 
 See also:

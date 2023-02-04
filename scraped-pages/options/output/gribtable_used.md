@@ -22,16 +22,13 @@ grib table. The option writes grib table entries used by a file.
 ## Usage
 
 ```
-
 -gribtable_used OUTPUT
      OUTPUT is a file with the grib table entries for each field
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 gep19.t00z.pgrb2af180 -gribtable\_used junk
 1:0:d=2009060500:HGT:200 mb:180 hour fcst:ENS=+19
 2:46042:d=2009060500:TMP:200 mb:180 hour fcst:ENS=+19
@@ -55,7 +52,6 @@ $ wgrib2 gep19.t00z.pgrb2af180 -match '(U|V|T)'
 
 Note: U and V will not be treated as vectors in -new_grid.  You have
 to use -new_grid_vectors to get U and V to be vectors.
-
 ```
 
 See also: [-new_grid](./new_grid.md),

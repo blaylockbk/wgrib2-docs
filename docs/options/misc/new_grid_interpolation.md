@@ -23,11 +23,9 @@ It is common practice to use -if and -fi options
 to control the setting of the the interpolation type as shown by the following command.
 
 ```
-
     wgrib2 IN.grb -new_grid_winds earth -new_grid_interpolation bilinear \
       -if ":(VGTYP|SOTYP):" -new_grid_interpolation neighbor -fi \
       -new_grid latlon 0:360:1 90:181:-1 OUT.grb
-
 ```
 
 Budget or neighbor-budget is often used for precipitation in order to
@@ -54,7 +52,6 @@ may need to be compatible with the Fast Fourier Transform (FFT) code used.
 ## Usage
 
 ```
-
 -new_grid_interpolation X
     X = bilinear, bicubic, neighbor, budget, neighbor-budget, spectral-(trun)(num)
          spectral-*  is alpha
@@ -70,7 +67,6 @@ may need to be compatible with the Fast Fourier Transform (FFT) code used.
                           (num) = max zonal wave number
                           The input has to be a global field and contain valid values for all grid points.
                           If undefined values are found, bilinear interpolation is used.
-
 ```
 
 See also: [-new_grid](./new_grid.md),

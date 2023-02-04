@@ -10,12 +10,10 @@ for the -not_if_fs and -not_if options.
 ## Usage
 
 ```
-
 -if_fs X
 -not_if_fs X
 
 X is a fixed string (not a regular expression)
-
 ```
 
 See also: [-if](./if.md),

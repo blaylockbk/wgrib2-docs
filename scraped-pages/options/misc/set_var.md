@@ -35,7 +35,6 @@ used by the -set_var option.
 ## Usage
 
 ```
-
 -set_var X              X=valid grib variable name such
                         1. NCEP-defined text name such as HGT or TMP
                             local variable names have to consistent with the center
@@ -50,13 +49,11 @@ used by the -set_var option.
                            E = parameter
                            F = category
                         formats 2-4 were introduced with wgrib2 v2.0.7
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 p.grb
 1:0:d=2009072100:PRES:mean sea level:anl:
 $ wgrib2 p.grb -set\_var TMP -grib out.grb
@@ -69,7 +66,6 @@ by the appropriate use of the -if option.
 Convert TSOIL (old) to SOILTMP (new)
 
 $ wgrib2 old.grb -if ":TSOIL:" -set\_var SOILTMP -fi -grib new.grb
-
 
 ```
 

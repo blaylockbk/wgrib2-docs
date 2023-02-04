@@ -5,13 +5,11 @@
 The wgrib2 inventory has a fragment that looks like
 
 ```
-
    :d=2014122500:12 hour fcst:vt=2014122512
 
    d=2014122500 is the Reference time, usually the analysis or start of the forecast time.
    12 hour fcst is the "ftime", the time is 12 hours after the reference time
    vt=2014122512 is the verification time (ref time + 12 hours)
-
 ```
 
 Wgrib2 has options to change the reference time (-set_time) and to set the ftime.
@@ -23,7 +21,6 @@ To change the ftime, you add the option -set_ftime FTIME. What are the allowed f
 of FTIME? The formats are the same as ftimes from a wgrib2 inventory.
 
 ```
-
 Original: :d=2014113018:6 hour fcst:
 options:  -set_date 2014122500 -set_ftime "12 hour fcst"
 New:      :d=2014122500:12 hour fcst:
@@ -38,7 +35,6 @@ options:  -set_date 2014122500 -set_ave "124@6 hour ave(0-6 hour ave fcst),missi
 New:      :d=2014122500:124@6 hour ave(0-6 hour ave fcst),missing=0:
 
 After changing the time stamp, you can save the file with -grib NEW.grb
-
 ```
 
 With wgrib2 v2.0.6 or earlier, you have to use -set_ave and -set_ftime.

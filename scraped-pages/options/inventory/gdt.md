@@ -15,18 +15,14 @@ work if g2clib is installed at compile time.
 ## Usage
 
 ```
-
 -gdt
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 -gdt png.grb2
 1:4:GDT Number= 0 GDT= 6 0 0 0 0 0 0 360 181 0 0 90000000 0 48 -90000000 359000000 1000000 1000000 0
-
 ```
 
 See also:

@@ -26,7 +26,6 @@ The date field has been extended from the default d=YYYYMMDDHH. The date
 field can be d=format-N or D=format-N
 
 ```
-
                          Format 1
 
     YYYY, YYYYMM, YYYYMMDD, YYYYMMDDHH, YYYYMMDDHHmm or YYYYMMDDHHmmss
@@ -48,11 +47,9 @@ field can be d=format-N or D=format-N
   -N(units)  N is an integer, units = hr, dy, mo or yr
              this subtracts N units to the reference time
              ex. -6hr, -1dy
-
 ```
 
 ```
-
 		Optional fields
 
     scale=I,J			set decimal scaling (I) and binary scaling (J) for encoding
@@ -85,19 +82,16 @@ field can be d=format-N or D=format-N
     background_process_id=
     analysis_or_forecast_process_id=
     table_M.N=                  only for selected M.N
-
 ```
 
 To change the metadata, you can do
 
 ```
-
 wgrib2 in.grb -s >meta
 (change meta)
 wgrib2 in.grb -set_metadata  meta -grib out.grb
 
 Note: that -grib does not change the grid point data/packing.
-
 ```
 
 The -set_metadata option is used for creating

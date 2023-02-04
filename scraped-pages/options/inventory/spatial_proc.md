@@ -18,21 +18,17 @@ part of the of the standard inventory, -s.
 ## Usage
 
 ```
-
 -spatial_proc
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 file1 -spatial\_proc
 1:0:d=2015101200:CAT:200 mb:12 hour fcst:spatial max:missing interpolation
 
 $ wgrib2 file2 -spatial\_proc
 1:0:d=2015101200:PRMSL:mean sea level:anl:spatial none:bilinear interpolation
-
 ```
 
 See also:

@@ -25,7 +25,6 @@ keep the message size smaller in order not to use up all the free memory.
 ## Usage
 
 ```
-
 -irr_grid LON-LAT-LIST RADIUS OUT
 
 LON-LAT-LIST   = lon-lat list, lon1:lat1:lon2:lat2:...:lon-n:lat-n
@@ -34,13 +33,11 @@ OUT            = output grib file
 
 The -irr_grid option creates an irregular grid using nearest-neighbor interpolation.
 If no input grid point is within RADIUS kms, the resulting grid has a undefined value.
-
 ```
 
 ### Example: make file with grid points at (10W,20N) (30W,40N)
 
 ```
-
 $ wgrib2 flx.grb2 -irr\_grid 10:20:30:40 1000 2pt.grb2
 1:0:d=2009010100:UFLX:surface:0-1 month ave fcst:
 $ wgrib2 -V 2pt.grb2
@@ -53,7 +50,6 @@ $ wgrib2 -V 2pt.grb2
 
 1st point lon=10W lat=20N
 2nd point lon=30W lat=40N
-
 ```
 
 See also:

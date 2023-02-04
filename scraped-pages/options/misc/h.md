@@ -5,7 +5,6 @@
 The -h option lists the common options.
 
 ```
-
 -sh-2.05b$ ./wgrib2 -h
 wgrib2 v0.1.6 1/2008 wesley ebisuzaki, Jaakko Hyvätti, Karl Pfeiffer, Manfred Schwarb, Kristian Nilssen, Sergey Varlamov
  -0xSec           inv  X      Hex dump of section X (0..8)
@@ -34,15 +33,12 @@ wgrib2 v0.1.6 1/2008 wesley ebisuzaki, Jaakko Hyvätti, Karl Pfeiffer, Manfred S
  -nxny            inv         nx and ny of grid
  -packing         inv         data packing mode
 [rest is deleted]
-
 ```
 
 ## Usage
 
 ```
-
 -h
-
 ```
 
 ---

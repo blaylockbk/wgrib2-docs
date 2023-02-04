@@ -17,23 +17,19 @@ all the grib2 documentation uses decimal numbers to specify the byte locations.
 ## Usage
 
 ```
-
 -get_hex SECTION OCTET NUMBER
 SECTION = section to print
 OCTET = starting octet to print
 NUMBER = number of octets/bytes to print
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 f.grb2 -get\_hex 0 1 12
 1:0:0-1=71,52,49,42,00,00,00,02,00,00,00,00
 2:46042:0-1=71,52,49,42,00,00,00,02,00,00,00,00
 3:63079:0-1=71,52,49,42,00,00,00,02,00,00,00,00
-
 ```
 
 See also:

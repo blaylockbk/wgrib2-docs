@@ -17,7 +17,6 @@ calculation and the other options.
 
 ```
 
-
     wgrib2 -match X (...)
 
 is the same as
@@ -36,17 +35,14 @@ where X, Y and Z are regular expressions.
 
 If X, Y and Z are "fixed strings" rather than regular expressions,
 use -match_fs, and -not_fs.
-
 ```
 
 ## Usage
 
 ```
-
 -match X
 
 X is a posix extended regular expression
-
 ```
 
 The -match, and -not selection
@@ -59,11 +55,9 @@ to the end of the inventory in order not the break scripts.
 ### Examples
 
 ```
-
 wgrib2 IN.grb -match ":(UGRD|VGRD|TMP):(200|500) mb:"
 
 selects the UGRD, VGRD and TMP fields at the 200 and 500 mb levels
-
 ```
 
 ### -match vs -if
@@ -80,10 +74,8 @@ and the selection ends at the next
 -fi or output option. For example,
 
 ```
-
 1. wgrib2 IN.grb -match ":UGRD:200 mb:anl:" -csv u200.csv
 2. wgrib2 IN.grb -if ":UGRD:200 mb:anl:" -csv u200.csv
-
 ```
 
 Lines 1 and 2 will produce the same CSV file. However, line 1 will only
@@ -103,12 +95,10 @@ be ":vt=YYYYMMDDHH:". In order to future proof your
 must not include any item before the ":vt=YYYYMMDD:" field.
 
 ```
-
     -match ":vt=2011111500:"                  good
     -not ":vt=2011111500:$"                   good (dollar sign matches the end of the line)
     -not ":n=10:vt=2011111500:"               bad (item before :vt=)
     -match ":RH:975 mb:anl::vt=2010050806:"   bad (item before :vt=)
-
 ```
 
 Some recent changes (as of Nov 2011) to the match inventory include:

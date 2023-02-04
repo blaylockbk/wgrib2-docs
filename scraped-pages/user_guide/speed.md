@@ -12,11 +12,9 @@ optimum complex packing is typically 20% larger than jpeg2000 compression.
 Converting is easy,
 
 ```
-
     wgrib2 IN.grb -set_grib_type c2 -grib_out OUT.grb
       on a 4 core CPU, this is very fast
     wgrib2ms 4 IN.grb -set_grib_type c2 -grib_out OUT.grb
-
 ```
 
 When you make complex packed files, do not uses a bitmap to store
@@ -38,9 +36,7 @@ you use AEC, make sure that any of your essential grib software supports
 this brand new compression (9/2016). Converting is easy,
 
 ```
-
     wgrib2 IN.grb -set_grib_type aec -grib_out OUT.grb
-
 ```
 
 ### Minimize the decoding
@@ -49,7 +45,6 @@ Decoding the grid point values is an expensive operation especially for jpeb2000
 It is useful to count the number of decodes,
 
 ```
-
 Decodes all records:   wgrib2 IN.grb -if "HGT:200 mb:" -csv csv.txt
 Decodes one record:    wgrib2 IN.grb -match "HGT:200 mb:" -csv csv.txt
 
@@ -63,7 +58,6 @@ arguments (5000 v1.9.8).  Other limitations include the number of
 allowed regular expressions (1000 v1.9.8) and any system limitations
 on the length of the command line.  (Cygwin 32K, XP=8K linux=varies
 but 2.5MB on RHEL 6)
-
 ```
 
 ### Don't use the wgrib2 | egrep | wgrib2 -i syntax
@@ -71,13 +65,11 @@ but 2.5MB on RHEL 6)
 The "wgrib2 | egrep | wgrib2" syntax can be optimized.
 
 ```
-
 M sequential reads + N random-access reads, N writes
      wgrib2 file | grep ":TMP:" | wgrib2 -i file -grib tmp.grb
 
 M sequential reads, N writes
      wgrib2 file -match ":TMP:" -grib tmp.grb
-
 ```
 
 ### Making an inventory/index file
@@ -85,7 +77,6 @@ M sequential reads, N writes
 If you process the same grib files many times, an inventory/index file is faster.
 
 ```
-
 3M reads, N writes
      wgrib2 file -match ":TMP:" -grib tmp.grb
      wgrib2 file -match ":HGT:" -grib hgt.grb
@@ -97,7 +88,6 @@ M+N reads, N writes + i/o for file.inv
      grep <file.inv ":HGT:" | wgrib2 -i file -grib hgt.grb
      grep <file.inv ":(UGRD|VGRD):" | wgrib2 -i file -grib winds.grb
 
-
 ```
 
 ### Do alot on one line
@@ -105,13 +95,11 @@ M+N reads, N writes + i/o for file.inv
 The above example can be made faster by doing it all on one command line.
 
 ```
-
 M reads, N writes
      wgrib2 file \
          -if ":TMP:" -grib tmp.grb \
          -if ":HGT:" -grib hgt.grb \
          -if ":(UGRD|VGRD):" -grib winds.grb
-
 ```
 
 ### Use -bin instead of -ieee
@@ -150,9 +138,7 @@ Wgrib2 can read and write through pipes. This is both a programming convenience
 as well as faster.
 
 ```
-
 cat gfs*201201*grb2 | wgrib2 - -match ":HGT:500 mb:" -grib Z500.grb
-
 ```
 
 ---

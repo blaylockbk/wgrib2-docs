@@ -9,18 +9,14 @@ of the standard inventory, -s.
 ## Usage
 
 ```
-
 -aerosol_wavelength
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 wrib2 ngac.t00z.a2df03 -aerosol\_wavelength -d 1
 1:0:aerosol_wavelength <=5.45e-07,>=5.65e-07
-
 ```
 
 See also:

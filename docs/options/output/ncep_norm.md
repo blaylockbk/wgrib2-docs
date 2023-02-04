@@ -7,7 +7,6 @@ hard-to-use time step. If you gathered the precip forecasts
 from the GFS, it would look like,
 
 ```
-
 $ wgrib2 apcp.grb
 1:0:d=2009042400:APCP:surface:0-3 hour acc fcst:
 2:3340:d=2009042400:APCP:surface:0-6 hour acc fcst:
@@ -15,7 +14,6 @@ $ wgrib2 apcp.grb
 4:7239:d=2009042400:APCP:surface:6-12 hour acc fcst:
 5:9304:d=2009042400:APCP:surface:12-15 hour acc fcst:
 6:12378:d=2009042400:APCP:surface:12-18 hour acc fcst:
-
 ```
 
 If you obtained the 6 hourly forecasts, everthing would be
@@ -25,7 +23,6 @@ create 3-hour accumulations, you can use the
 -ncep_norm option.
 
 ```
-
 $ wgrib2 apcp.grb -ncep\_norm new\_apcp.grb
 1:0:d=2009042400:APCP:surface:0-3 hour acc fcst:
 2:3340:d=2009042400:APCP:surface:0-6 hour acc fcst:
@@ -43,7 +40,6 @@ $ wgrib2 new\_apcp.grb
 5:24275:d=2009042400:APCP:surface:12-15 hour acc fcst:
 6:32044:d=2009042400:APCP:surface:15-18 hour acc fcst:
 7:38301:d=2009042400:APCP:surface:18-21 hour acc fcst:
-
 ```
 
 The -ncep_norm option is not limited
@@ -60,9 +56,7 @@ to 3 hour intervals. It can be used with the CFSv2 which has
 ## Usage
 
 ```
-
 -ncep_norm output_file
-
 ```
 
 ### Conditions
@@ -74,7 +68,6 @@ Of course, you can alter the order by the -i
 option. For example,
 
 ```
-
 $ wgrib2 -match ':APCP:' mixed\_up -vt | sort -t: -k3,3 | \
  wgrib2 -i mixed\_up -ncep\_norm new\_apcp.grb
 1:0:d=2009042400:APCP:surface:0-0 day acc fcst:
@@ -95,7 +88,6 @@ $ wgrib2 new\_apcp.grb
 6:32044:d=2009042400:APCP:surface:15-18 hour acc fcst:
 7:38301:d=2009042400:APCP:surface:18-21 hour acc fcst:
 ...
-
 ```
 
 ### Using GFS forecast files
@@ -103,19 +95,16 @@ $ wgrib2 new\_apcp.grb
 The typical GFS forecast file has a name like,
 
 ```
-
 GFS:
     gfs.t(HH)z.(type).(resolution).f(fhour)
 
     gfs.t06z.pgrb2b.0p25.f006
     gfs.t18z.pgrb2.0p25.f006
-
 ```
 
 So to get the "normalized" APCP, you can do
 
 ```
-
    $ test.sh
 
 where test.sh is
@@ -146,7 +135,6 @@ The above script uses several techniques to speed up the processing.
 
 "-match "(regex)"    This avoids decoding grib messages that do not match
              the regular expression
-
 ```
 
 See also:

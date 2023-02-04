@@ -13,10 +13,8 @@ calculations which make them ideal for CW2 applications.
 ## Usage
 
 ```
-
 -rpn_sto N     N=0..9
    saves the memory-copy of the grid values in to register N
-
 ```
 
 See also:

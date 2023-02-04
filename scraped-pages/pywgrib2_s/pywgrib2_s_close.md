@@ -17,26 +17,22 @@ because
 ### Example
 
 ```
-
 >>> pywgrib2_s.mk_inv('a.grb','a.inv',Short=True)
 0
 >>> pywgrib2_s.close('a.grb')
 0
 >>> pywgrib2_s.close('not-a-file')
 1
-
 ```
 
 ## Usage
 
 ```
-
      a=pywgrib2_s.close(file)
          if file is a memory file, the memory file is set to zero length
          if file is open, it closes the file, frees the resources, and returns 0
                 closing the file will flush any write buffers
          if file not open, it returns 1
-
 ```
 
 [overview](./pywgrib2_s.md)

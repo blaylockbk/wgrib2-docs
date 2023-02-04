@@ -28,10 +28,8 @@ However, the current systax will still work.
 ## Usage
 
 ```
-
 -new_grid_winds X
     X = earth, grid
-
 ```
 
 See also: [-new_grid](./new_grid.md),

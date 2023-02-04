@@ -13,14 +13,12 @@ My mistake. That's what you get when you delay writing the documentation.
 ## Usage
 
 ```
-
 -undefine_val value
    grid values within 0.1 percent are set to undefined
 
 -undefine_val "value1:value2"
    grid value that are within the rage are set to undefined
    i.e.,   value1 <= grid_value <= value2
-
 ```
 
 ### Example
@@ -33,9 +31,7 @@ The best way to deal with these files is to convert
 values of -999.9 to undefined values and then write them out.
 
 ```
-
 $ wgrib2 IN.grb2 -undefine\_val -999.9 -set\_grib\_type same -grib\_out OUT.grb
-
 ```
 
 See also:

@@ -9,15 +9,12 @@ is designed to improve speed when used with the -match option
 ## Usage
 
 ```
-
 -end
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 ../example/eta.t00z.awphys18.grb2 -match "HGT:500 mb" -text hgt.txt -end
 
 The above line writes out the first 500 mb HGT field to the file hgt.txt and stops
@@ -27,7 +24,6 @@ $ wgrib2 ../example/eta.t00z.awphys18.grb2 -match "HGT:500 mb" -text hgt.txt -en
 
 The above line writes out all 500 mb HGT fields to the file hgt.txt.  This wastes
 time if you only have one matching field.
-
 
 ```
 

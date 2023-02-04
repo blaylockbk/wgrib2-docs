@@ -7,7 +7,6 @@ the grib sections. The format of the hex dump depends on the
 verbosity level.
 
 ```
-
 $ wgrib2 png.grb2 -0xSec 0
 1:4:Sec0(1..16)=0x4752494200000002000000000000ad9c
 $ wgrib2 png.grb2 -0xSec 0 -v1
@@ -18,16 +17,13 @@ $ wgrib2 png.grb2 -0xSec 0 -v2
 
 The above 3 examples show a hex dump of Section 0 using the different
 verbosity levels.
-
 ```
 
 ## Usage
 
 ```
-
 -0xSec N
 N = Section Number
-
 ```
 
 See also:

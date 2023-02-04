@@ -23,7 +23,6 @@ A Cressman analysis can be computationally expensive so you may want to explore
 ## Usage
 
 ```
-
 -cress_lola LonSW:#lon:dlon LatSW:#lat:dlat file radius1:radius2:..:radiusN
 
 LonSW        Longitude of the South-West point, values from 0 .. 360
@@ -38,13 +37,11 @@ file         name of the output grib file
 
 radiusM      The radius in km for M-th pass.
 
-
 ```
 
 ### Prelim - Cressman Analysis
 
 ```
-
 defintion: input grid = observations = grid from the input grib file
            output grid = grid as defined by  LonSW:#lon:dlon LatSW:#lat:dlat
 
@@ -59,7 +56,6 @@ defintion: input grid = observations = grid from the input grib file
            inc'(i,j) is increment on output grid
            weighted average of obs' depends on the distance between grid point and obsservation
    (d) new background = background + inc'
-
 ```
 
 Warning, this scheme doesn't handle handle rotated winds in a useful manner.

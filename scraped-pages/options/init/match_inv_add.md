@@ -9,9 +9,7 @@ parameters that are exposed by the -match_inv option.
 For example, you cannot check the diameter of the earth by using
 
 ```
-
    wgrib2 IN.grb -if "code table 3.2=6 " -print "oh no code 3.2=6" -fi
-
 ```
 
 because code table 3.2 is not in the match inventory (-match_inv). The match
@@ -27,7 +25,6 @@ The current status is ALPHA and the syntax may be altered.
 ## Usage
 
 ```
-
 -match_inv_add OPTION ARG1 ARG2
   OPTION is an inv option with no parameters
     note that you do not add a dash to the option
@@ -35,13 +32,11 @@ The current status is ALPHA and the syntax may be altered.
   ARG2 is argument 2 to the option, if option does not need a second argument, use a dummy argument
 
   As of v2.0.8, you are allowed to add upto 10 extra functions to the match inventory
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 small.grb2 -match_inv_add code_table_3.2 x x -match_inv
 1:0:d=2009060500:HGT:200 mb:180 hour fcst:ENS=+19:HGT.ENS=+19:n=1:npts=4:var0_2_1_7_3_5:pdt=1: D=20090
 605000000:start_FT=20090612120000:end_FT=20090612120000:scaling ref=1.22666e+06 dec_scale=-2 bin_scale
@@ -49,7 +44,6 @@ $ wgrib2 small.grb2 -match_inv_add code_table_3.2 x x -match_inv
 
 $ wgrib2 small.grb2 -match_inv_add code_table_3.2 x x -if "code table 3.2=6" -print "fount radius=6" -fi
 1:0:fount radius=6
-
 ```
 
 See also:

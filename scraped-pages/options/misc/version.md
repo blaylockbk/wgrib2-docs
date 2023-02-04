@@ -9,23 +9,19 @@ and people who contributed code. The alias,
 ## Usage
 
 ```
-
 -version
 --version
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 -version
 v0.1.7.7h-beta2 11/2008 Wesley Ebisuzaki, Jaakko Hyvätti, Kristian Nilssen
 
 Karl Pfeiffer, Manfred Schwarb, Arlindo da Silva, Niklas Sondell, Sergey
 
 Varlamov
-
 
 ```
 

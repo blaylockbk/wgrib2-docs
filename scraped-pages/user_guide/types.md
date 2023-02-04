@@ -12,7 +12,6 @@ of the IF-ELSE-ENDIF blocks.
 ### Types of Options
 
 ```
-
 wgrib2:      *.c:
 ------       ---
 if           If                For IF/ELSE/ELSEIF/ENDIF type options
@@ -26,7 +25,6 @@ inv          inv               print output to stdout (make an inventory)
 inv>         inv_output        print to a file (make an inventory)
 out          output            write to a file with a non-inventory output, ex binary
 misc         misc              any thing else
-
 ```
 
 ### How "Options" are called
@@ -78,7 +76,6 @@ macro options can only call options that have
 no setup. Here is an example of setting the options.
 
 ```
-
 extern decode, latlon, save_translation;
 ..
     if (mode == -1) {
@@ -87,7 +84,6 @@ extern decode, latlon, save_translation;
         save_tranlation = 1;    /* save the translation from external to internal scan order */
         return 0;
     }
-
 ```
 
 ### Setup: flags
@@ -97,23 +93,19 @@ one if you want the service. Do not set the flag to zero because
 another option may want the service.
 
 ```
-
 extern int decode             grid point values are decoded
 extern int latlon             latitude and longitudes are calculated
 extern int save_translation   save trnsalation from grib file to internal scan order
-
 ```
 
 Some flags are set by other options, and all options are expected
 to obey the flag. These flags may change.
 
 ```
-
 file_append                    Open an file for writing in append mode
 ieee_little_endian             if writing ieee, use little endian
 header                         files use write in "header" mode
 flush_mode                     flush the output after writes (all output files)
-
 ```
 
 ### Grib Processing: mode ≥ 0
@@ -140,7 +132,6 @@ not work correctly. So opening, closing, writing, reading and fseeks
 have to be done by a special set of routines.
 
 ```
-
     fopen_file(..)
     fclose_file(..)
     fread_file(..)
@@ -150,7 +141,6 @@ have to be done by a special set of routines.
     fflush_file(..)
 
     the only difference from the normal I/O is FILE *file is replaced by struct seq_file *file
-
 ```
 
 ### Static Variables
@@ -161,16 +151,13 @@ as the open file handles. The situation is more difficult because an
 option can be used more than once on a command line.
 
 ```
-
  $ wgrib2 IN.grb -if ':TMP:' -bin TMP.bin -endif -if ':HGT:' -bin HGT.bin -endif
-
 ```
 
 So the option routine needs a set static variables for each use of the
 option on the command line.
 
 ```
-
 struct static_vars {
     struct seq_file out;
     int num_run;
@@ -198,7 +185,6 @@ struct static_vars {
         save->num_run += 1;
     }
     return 0;
-
 ```
 
 ### Stdout

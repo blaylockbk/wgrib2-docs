@@ -24,13 +24,11 @@ compilers support this format.
              4-byte little_endian header/trailer (by option)
    CLEN = integer, the length of the character string
    FILE = output file
-
 ```
 
 ### Example
 
 ```
-
   wgrib2 IN.grb -inv_f77 bin 100  inv.dat
 
   character*100  m_inv
@@ -39,7 +37,6 @@ compilers support this format.
   write(*,*) 'first record:',trim(m_inv)
   read(11) m_inv
   write(*,*) 'second record:',trim(m_inv)
-
 ```
 
 The -inv_f77 option was added to facilitate the

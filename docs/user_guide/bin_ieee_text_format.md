@@ -10,7 +10,6 @@ the numbers in big_endian ieee format.
 
 ```
 
-
 			Text Format, with header
 
 
@@ -87,7 +86,6 @@ ABSoft under AmigaOS).  In addition, this is the default GrADs binary format.
 fortrans for their binary files.  Some MS-DOS fortran compilers
 also support this format.  You can use this format with GrADS
 with the "options sequential" line in the control file.
-
 
 ```
 

@@ -18,7 +18,6 @@ Failing to find such a file, you can try the
 ## Usage
 
 ```
-
 -set_lev LEVEL
   LEVEL is either a level or layer description (12/2015)
 
@@ -79,16 +78,13 @@ Failing to find such a file, you can try the
  "%g-%g m below sea level",
  "%gC ocean isotherm%n", NCEP only
  "atmos col"
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 png.grb22 -set\_lev "9.1 mb"
 1:4:d=2009060500:RH:9.1 mb:330 hour fcst:ens std dev
-
 ```
 
 See also:

@@ -8,9 +8,7 @@ variables to a table inspired by TIGGE.
 ## Usage
 
 ```
-
 -tigge
-
 ```
 
 ---

@@ -23,23 +23,18 @@ include scaling\_\* to the wgrib2 distributions.
 ## Usage
 
 ```
-
 -scaling_0001
-
 ```
 
 ### Example
 
 ```
-
 wgrib2 IN.grb -scaling_0001 -set_grib_type c3 -grib_out OUT.grb
-
 ```
 
 ### To add your own Scaling
 
 ```
-
 1) cd (wherever)/grib2/wgrib2
 2) cp Scaling_0001.c Scaling_mymodelv1.c
           (note code needs to start with a capital)
@@ -49,7 +44,6 @@ wgrib2 IN.grb -scaling_0001 -set_grib_type c3 -grib_out OUT.grb
 (compile wgrib2 using directions)
 
 See also:
-
 
 
 ```

@@ -20,35 +20,27 @@ as this the default operation. If N is one, then all the messages are processed 
 will copy from IN.grb to OUT.grb and preserve the submessage structure.
 
 ```
-
 $ wgrib2 IN.grb -submsg 1 -GRIB OUT.grb
-
 ```
 
 This will copy all the 200 mb fields assuming U/V are in the same message and
 keep U/V in the same message.
 
 ```
-
 $ wgrib2 IN.grb -submsg 1 -if ":200 mb:" -GRIB 200mb.grb
-
 ```
 
 ## Usage
 
 ```
-
 -submsg N
 N is an integer, usually 1
-
 ```
 
 ### Example
 
 ```
-
 $ wgrib2 test.grb2 -submsg 1 -if ":200 mb:" -GRIB 200.grb2 -if ":100 mb:" -GRIB 100.grb2
-
 ```
 
 See also: [-ncep_uv](./ncep_uv.md),
