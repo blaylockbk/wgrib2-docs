@@ -91,6 +91,7 @@ html_theme_options = {
         "image_light": "wgrib2-logo.png",
         "image_dark": "wgrib2-logo.png",
     },
+    "announcement": "<p>🏗️ All pages are a <b>Work in Progress</b>.</p>",
 }
 
 html_sidebars = {}
