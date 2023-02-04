@@ -3,9 +3,9 @@
    <img src="_static/wgrib2-logo.png" style="background-color:transparent;">
 
 
-=====================================
-wgrib2 Documentation  (unofficial)
-=====================================
+=======================================
+The unofficial documentation for wgrib2
+=======================================
 
 **🏗️ Work In Progress**
 

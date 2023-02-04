@@ -5,30 +5,35 @@ Command Options
 
 .. toctree::
    :maxdepth: 1
+   :glob:
    :caption: logical options
 
-   logic/*.md
+   ./logic/*
 
 .. toctree::
    :maxdepth: 1
+   :glob:
    :caption: init options
 
-   init/*.md
+   ./init/*
 
 .. toctree::
    :maxdepth: 1
+   :glob:
    :caption: inventory options
 
-   inventory/*.md
+   ./inventory/*
 
 .. toctree::
    :maxdepth: 1
+   :glob:
    :caption: output options
 
-   output/*.md
+   ./output/*
 
 .. toctree::
    :maxdepth: 1
+   :glob:
    :caption: misc options
 
-   misc/*.md
+   ./misc/*
