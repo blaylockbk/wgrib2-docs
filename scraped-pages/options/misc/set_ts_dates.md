@@ -55,8 +55,8 @@ $ wgrib p.grb -set\_ts\_dates 2010020304:1hour:1
 
 See also:
 
-[-grib](grib.html),
-[-grib_out](grib_out.html),
+[-grib](grib.md),
+[-grib_out](grib_out.md),
 
 ---
 

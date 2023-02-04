@@ -59,8 +59,8 @@ D=20090605000000_HGT_500 mb_180 hour fcst_ENS=+19.asc
 The above line converts all the 400 mb HGT fields into an
 arcinfo ascii grid file.
 
-See also: [-AAIG](./AAIG.html)
-[-new_grid](./new_grid.html)
+See also: [-AAIG](./AAIG.md)
+[-new_grid](./new_grid.md)
 
 ---
 

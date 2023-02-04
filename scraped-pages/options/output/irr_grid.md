@@ -57,9 +57,9 @@ $ wgrib2 -V 2pt.grb2
 ```
 
 See also:
-[-grib_out_irr](grib_out_irr.html),
-[-lola](lola.html),
-[-cress_lola](cress_lola.html),
+[-grib_out_irr](grib_out_irr.md),
+[-lola](lola.md),
+[-cress_lola](cress_lola.md),
 
 ---
 

@@ -49,7 +49,7 @@ $ wgrib2 gep19.t00z.pgrb2af180 -cyclic -nl -grid
 ```
 
 See also:
-[-small_grib](./small_grib.html),
+[-small_grib](./small_grib.md),
 
 ---
 

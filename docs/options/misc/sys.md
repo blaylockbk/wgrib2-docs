@@ -23,8 +23,8 @@ The UDF options may not work in windows.
 The use of the UDF options is limited and the UDF options should, IMHO,
 not be enabled unless the UDF options are needed.
 
-See alse: [-udf_arg](./udf_arg.html),
-[-udf](./udf.html),
+See alse: [-udf_arg](./udf_arg.md),
+[-udf](./udf.md),
 
 ---
 

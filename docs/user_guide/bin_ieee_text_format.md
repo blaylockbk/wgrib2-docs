@@ -94,11 +94,11 @@ with the "options sequential" line in the control file.
 Note, the order of the numbers is controled by the
 -order option.
 
-See also: [-text](./text.html),
-[-bin](./bin.html),
-[-ieee](./ieee.html),
-[-lola](./lola.html),
-[-order](./order.html),
+See also: [-text](./text.md),
+[-bin](./bin.md),
+[-ieee](./ieee.md),
+[-lola](./lola.md),
+[-order](./order.md),
 
 ---
 

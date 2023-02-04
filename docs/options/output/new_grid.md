@@ -13,7 +13,7 @@ occur for both the input and output grids.
 
 ## Introduction
 
-Beginners are encouraged to read the [new_grid introduction](./new_grid_intro.html).
+Beginners are encouraged to read the [new_grid introduction](./new_grid_intro.md).
 
 The -new_grid option interpolates the fields to a new
 grid.
@@ -54,7 +54,7 @@ Most people want the the V winds to be in the direction of the North Pole.
 With a verbose wgrib2 inventory, you will seee winds(N/S). However, some
 meteorologists want the V winds to go from grid point (i,j) to (i,j+1).
 The corresponding wgrib2 notation is "winds(grid)". See the
-[-new_grid_winds](./new_grid_winds.html) option for more details.
+[-new_grid_winds](./new_grid_winds.md) option for more details.
 
 ## Usage
 
@@ -351,7 +351,7 @@ to keep in mind.
 
 1. copygb default vectors: UGRD/VGRD
 
-- wgrib2 default vectors: depends on version of wgrib2. See [new_grid_vectors](./new_grid_vectors.html).
+- wgrib2 default vectors: depends on version of wgrib2. See [new_grid_vectors](./new_grid_vectors.md).
 - copygb can have vectors in any order
 - wgrib2 must have V follow U for vectors pairs
 - copygb has bilinear, bicubic, nearest neighbor, budget, neighbor budget, and spectral interpolations.
@@ -416,7 +416,7 @@ more generic.
 
 Converting from a thinned Gaussian grid is a two step process
 using wgrib2. First you convert from the thinned grid to full
-grid using [-reduced_gaussian_grid](./reduced_gaussian_grid.html).
+grid using [-reduced_gaussian_grid](./reduced_gaussian_grid.md).
 Then you can use -new_grid to interpolate to your desired grid.
 
 ### Quilting tiles - Merging files
@@ -505,18 +505,18 @@ Version 1
 A variation of the previous trick can be used to put data in to (WE|EW):SN packing.
 
 See also:
-[-new_grid_format](./new_grid_format.html),
-[new_grid introduction](./new_grid_intro.html),
-[-new_grid_interpolation](./new_grid_interpolation.html),
-[new_grid order](./new_grid_order.html),
-[-new_grid_winds](./new_grid_winds.html),
-[-new_grid_vectors](./new_grid_vectors.html),
-[-lola](./lola.html),
-[-bin](./bin.html),
-[-import_bin](./import_bin.html),
-[-rpn](./rpn.html),
-[-grib_out](./grib_out.html),
-[new_grid multi-core usage](./new_grid_usage.html),
+[-new_grid_format](./new_grid_format.md),
+[new_grid introduction](./new_grid_intro.md),
+[-new_grid_interpolation](./new_grid_interpolation.md),
+[new_grid order](./new_grid_order.md),
+[-new_grid_winds](./new_grid_winds.md),
+[-new_grid_vectors](./new_grid_vectors.md),
+[-lola](./lola.md),
+[-bin](./bin.md),
+[-import_bin](./import_bin.md),
+[-rpn](./rpn.md),
+[-grib_out](./grib_out.md),
+[new_grid multi-core usage](./new_grid_usage.md),
 
 ---
 

@@ -23,7 +23,7 @@ $ wgrib2 f.grb -table
 ```
 
 See also:
-[Sec0](Sec0.html),
+[Sec0](Sec0.md),
 
 ---
 

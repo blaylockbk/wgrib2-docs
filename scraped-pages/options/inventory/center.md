@@ -26,9 +26,9 @@ $ wgrib2 test.grb2 -center
 
 ```
 
-See also: [-set_center](./set_center.html),
-[-set](./set.html),
-[-subcenter](./subcenter.html)
+See also: [-set_center](./set_center.md),
+[-set](./set.md),
+[-subcenter](./subcenter.md)
 
 ---
 

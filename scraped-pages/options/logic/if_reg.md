@@ -66,9 +66,9 @@ X is a list of register names, ex. 1:2 or 2:4:7
 ```
 
 See also:
-[-if](./if.html),
-[-fi](./fi.html).
-[-rpn](./rpn.html),
+[-if](./if.md),
+[-fi](./fi.md).
+[-rpn](./rpn.md),
 
 ---
 

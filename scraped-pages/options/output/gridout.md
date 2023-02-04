@@ -42,7 +42,7 @@ $ cat grid.txt
 ```
 
 See also:
-[-grid](./grid.html),
+[-grid](./grid.md),
 
 ---
 

@@ -43,10 +43,10 @@ can have multiple -if_rec options.
 
 ```
 
-See also: [-match](./match.html)
-[-if_n](./if_n.html)
-[-for](./for.html)
-[-for_n](./for_n.html)
+See also: [-match](./match.md)
+[-if_n](./if_n.md)
+[-for](./for.md)
+[-for_n](./for_n.md)
 
 ---
 

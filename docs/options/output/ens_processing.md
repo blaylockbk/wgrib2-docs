@@ -236,7 +236,7 @@ much larger but so is the block size. If one job takes a large fraction
 of the disk cache, the other jobs will be much more disk inefficient.
 
 A better approach is to adopt the technique used in
-[fast averaging](./ave.html). You may be
+[fast averaging](./ave.md). You may be
 limited by the amount of physical memory on the system.
 
 ```
@@ -320,7 +320,7 @@ can be displayed by atl_g2ctl/alt_gmp/GrADS set of programs.
 ```
 
 See also:
-[-ens_qc](./ens_qc.html)
+[-ens_qc](./ens_qc.md)
 
 ---
 

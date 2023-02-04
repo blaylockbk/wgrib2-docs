@@ -48,10 +48,10 @@ $ wgrib2 /tmp/pgb.f0009031206.g2 -if "^3:" -quit -if
 This forces the quit after the third line. This has the same effect as
 -for 1:3.
 
-See also: [-if](./if.html),
-[-for](./for.html)
-[-alarm](./alarm.html)
-[-limit](./limit.html)
+See also: [-if](./if.md),
+[-for](./for.md)
+[-alarm](./alarm.md)
+[-limit](./limit.md)
 
 ---
 

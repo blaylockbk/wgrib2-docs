@@ -36,11 +36,11 @@ I-M = Mth integer
 ### Example
 
 See also:
-[-get_int](get_int.html)
-[-set_byte](set_byte.html)
-[-set_hex](set_hex.html)
-[-set_ieee](set_ieee.html)
-[-set_int](set_int.html)
+[-get_int](get_int.md)
+[-set_byte](set_byte.md)
+[-set_hex](set_hex.md)
+[-set_ieee](set_ieee.md)
+[-set_int](set_int.md)
 
 ---
 

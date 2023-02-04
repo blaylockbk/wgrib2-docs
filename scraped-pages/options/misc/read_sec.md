@@ -29,7 +29,7 @@ wgrib2 IN.grb -read_sec 0 sec0.dat -read_sec 1 sec1.dat -read_sec 2 sec2.dat -re
 ```
 
 See also:
-[-write_sec](./write_sec.html),
+[-write_sec](./write_sec.md),
 
 ---
 

@@ -41,8 +41,8 @@ bash-4.1$ wgrib2 gep19.t00z.pgrb2af180 -scale -for 13:14 -v -packing
 ```
 
 See also:
-[-scaling](./scaling.html)
-[-set_scaling](./set_scaling.html)
+[-scaling](./scaling.md)
+[-set_scaling](./set_scaling.md)
 
 ---
 

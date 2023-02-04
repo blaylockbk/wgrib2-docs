@@ -33,9 +33,9 @@ start_FT=20200101000000:end_FT=20200101060000:scaling ref=0 dec_scale=0 bin_scal
 
 ```
 
-[overview](./pywgrib2_s.html)
-[back](./pywgrib2_s_mk_inv.html)
-[next](./pywgrib2_s_inq.html)
+[overview](./pywgrib2_s.md)
+[back](./pywgrib2_s_mk_inv.md)
+[next](./pywgrib2_s_inq.md)
 
 ---
 

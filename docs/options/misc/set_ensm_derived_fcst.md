@@ -37,9 +37,9 @@ $ wwgrib2 sst.grb2 -set\_ensm\_derived\_fcst 1 10 -grib newsst.grb
 ```
 
 See also:
-[-set_ens_num](set_ens_num.html),
-[-ens](ens.html),
-[-N_ens](N_ens.html)
+[-set_ens_num](set_ens_num.md),
+[-ens](ens.md),
+[-N_ens](N_ens.md)
 
 ---
 

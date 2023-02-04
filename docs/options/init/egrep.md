@@ -87,14 +87,14 @@ Note: -set_regex does not modify the type of regex for these options
 ```
 
 See also:
-[-match](./match.html),
-[-not](./not.html),
-[-match_inv](./match_inv.html),
-[-end](./end.html),
-[-if](./if.html),
-[-i_file](./i_file.html),
-[-not_if](./not_if.html),
-[-set_regex](./set_regex.html).
+[-match](./match.md),
+[-not](./not.md),
+[-match_inv](./match_inv.md),
+[-end](./end.md),
+[-if](./if.md),
+[-i_file](./i_file.md),
+[-not_if](./not_if.md),
+[-set_regex](./set_regex.md).
 
 ---
 

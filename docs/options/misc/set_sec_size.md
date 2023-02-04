@@ -39,7 +39,7 @@ assuming the size is greater than equal to 5. Some
 sections can be missing.
 
 See also:
-[-set_byte](set_byte.html)
+[-set_byte](set_byte.md)
 
 ---
 

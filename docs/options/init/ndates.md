@@ -228,8 +228,8 @@ to a buffer, so the output of -ndates is unlimited. This has no effect on -last 
 -last0 because this options only work when processing a file, and -ndates works
 prior to processing the file.
 
-See also: [-ndates_fmt](./ndates_fmt.html),
-[-ndate](./ndate.html)
+See also: [-ndates_fmt](./ndates_fmt.md),
+[-ndate](./ndate.md)
 
 ---
 

@@ -40,9 +40,9 @@ $ wgrib2 wind.grb
 
 ```
 
-See also: [-match](./match.html),
-[-wind_dir](./wind_dir.html)
-[-wind_uv](./wind_uv.html)
+See also: [-match](./match.md),
+[-wind_dir](./wind_dir.md)
+[-wind_uv](./wind_uv.md)
 
 ---
 

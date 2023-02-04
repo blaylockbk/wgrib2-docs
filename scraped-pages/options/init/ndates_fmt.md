@@ -67,7 +67,7 @@ The -ndates_fmt option understands three back-slash characters.
 
 ```
 
-See also: [-ndates](./ndates.html)
+See also: [-ndates](./ndates.md)
 
 ---
 

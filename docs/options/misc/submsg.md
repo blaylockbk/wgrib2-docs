@@ -51,9 +51,9 @@ $ wgrib2 test.grb2 -submsg 1 -if ":200 mb:" -GRIB 200.grb2 -if ":100 mb:" -GRIB 
 
 ```
 
-See also: [-ncep_uv](./ncep_uv.html),
-[-GRIB](./GRIB.html),
-[-tosubmsg](./tosubmsg.html)
+See also: [-ncep_uv](./ncep_uv.md),
+[-GRIB](./GRIB.md),
+[-tosubmsg](./tosubmsg.md)
 
 ---
 

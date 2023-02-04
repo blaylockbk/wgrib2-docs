@@ -31,8 +31,8 @@ $ wgrib2 -var-ens ens.grb
 ```
 
 See also:
-[-N_ens.html](N_ens.html)
-[-set_ens_num.html](set_ens_num.html)
+[-N_ens.html](N_ens.md)
+[-set_ens_num.html](set_ens_num.md)
 
 ---
 

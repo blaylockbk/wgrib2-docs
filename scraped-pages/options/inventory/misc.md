@@ -40,7 +40,7 @@ $ wgrib2 percentile\_precip.grib2 -s
 
 ```
 
-See also: [-s](./s.html)
+See also: [-s](./s.md)
 
 ---
 

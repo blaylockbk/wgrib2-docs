@@ -87,13 +87,13 @@ $ wgrib2 new.grb -rpn sto\_0 -import\_bin new.bin -rpn 'raw2:rcl\_0:print\_corr'
 ```
 
 See also:
-[-big_endian](./big_endian.html)
-[-bin](./bin.html)
-[-header](./header.html)
-[-ieee](./ieee.html)
-[-little_endian](./little_endian.html)
-[-new_gridr](./new_grid.html)
-[-no_header](./no_header.html)
+[-big_endian](./big_endian.md)
+[-bin](./bin.md)
+[-header](./header.md)
+[-ieee](./ieee.md)
+[-little_endian](./little_endian.md)
+[-new_gridr](./new_grid.md)
+[-no_header](./no_header.md)
 
 ---
 

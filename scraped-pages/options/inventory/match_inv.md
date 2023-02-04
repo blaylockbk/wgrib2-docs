@@ -26,8 +26,8 @@ uses a reference time of "D=YYYYMMDDmmss" which solves this problem.
 ```
 
 See also:
-[-match_inv](./match_inv.html),
-[-set_metadata](./set_metadata.html),
+[-match_inv](./match_inv.md),
+[-set_metadata](./set_metadata.md),
 
 ---
 

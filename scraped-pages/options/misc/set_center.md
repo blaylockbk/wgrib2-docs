@@ -6,7 +6,7 @@ The -set_center option is deprecated, please use
 the -set center option.
 
 See alse:
-[-set](set.html)
+[-set](set.md)
 
 ---
 

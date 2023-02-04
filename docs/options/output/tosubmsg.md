@@ -65,9 +65,9 @@ $ wgrib2 new.grb2
 ```
 
 See also:
-[-GRIB](./GRIB.html),
-[-ncep_uv](./ncep_uv.html),
-[-submsg](./submsg.html)
+[-GRIB](./GRIB.md),
+[-ncep_uv](./ncep_uv.md),
+[-submsg](./submsg.md)
 
 ---
 

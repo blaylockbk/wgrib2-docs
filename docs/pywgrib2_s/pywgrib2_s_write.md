@@ -149,9 +149,9 @@ Order of setting values 2. template
 - metadata
 - time0, var, lev, ftime, packing
 
-[overview](./pywgrib2_s.html)
-[back](./pywgrib2_s_inq.html)
-[next](./pywgrib2_s_close.html)
+[overview](./pywgrib2_s.md)
+[back](./pywgrib2_s_inq.md)
+[next](./pywgrib2_s_close.md)
 
 ---
 

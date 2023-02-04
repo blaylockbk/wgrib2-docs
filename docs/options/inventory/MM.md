@@ -23,7 +23,7 @@ $ wgrib2 png.grb2 -MM
 
 ```
 
-See also: [-t](./t.html), [-T](./T.html)
+See also: [-t](./t.md), [-T](./T.md)
 
 ---
 

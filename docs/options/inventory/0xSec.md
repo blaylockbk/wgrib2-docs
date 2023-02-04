@@ -31,8 +31,8 @@ N = Section Number
 ```
 
 See also:
-[-Sec_len](Sec_len.html),
-[-checksum](checksum.html),
+[-Sec_len](Sec_len.md),
+[-checksum](checksum.md),
 
 ---
 

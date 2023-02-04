@@ -91,7 +91,7 @@ Here is a sample function.
 > > Climate Prediction Center
 > > 5830 University Research Court
 > > College Park, Maryland 20740
-> > [Climate Prediction Center Web Team](/comment-form.html)
+> > [Climate Prediction Center Web Team](/comment-form.md)
 > > Page last modified: July 27, 2016
 > > | [Disclaimer](https://weather.gov/disclaimer.php) | [Privacy Policy](https://weather.gov/privacy.php) |
 > >

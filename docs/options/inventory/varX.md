@@ -62,7 +62,7 @@ $ wgrib2 test.grb2 -varX
 
 ```
 
-See also: [-var](./var.html)
+See also: [-var](./var.md)
 
 ---
 

@@ -26,7 +26,7 @@ $ wgrib2 -pdt png.grb2
 ```
 
 See also:
-[-Sec4](Sec4.html),
+[-Sec4](Sec4.md),
 
 ---
 

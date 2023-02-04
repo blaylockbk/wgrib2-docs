@@ -36,9 +36,9 @@ compiled with netCDF4.
 ```
 
 See also:
-[-netcdf](./netcdf.html),
-[-nc3](./nc3.html)
-[-nc4](./nc4.html)
+[-netcdf](./netcdf.md),
+[-nc3](./nc3.md)
+[-nc4](./nc4.md)
 
 ---
 

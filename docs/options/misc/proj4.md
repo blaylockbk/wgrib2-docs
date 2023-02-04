@@ -144,7 +144,7 @@ for "keeping the options open".
 ```
 
 See also:
-[-geolocation](./geolocation.html)
+[-geolocation](./geolocation.md)
 
 ---
 

@@ -14,8 +14,8 @@ new:    -set_ext_name 3 -ext_name
 
 ```
 
-See also: [-ext_name](./ext_name.html),
-[-set_ext_name](./set_ext_name.html)
+See also: [-ext_name](./ext_name.md),
+[-set_ext_name](./set_ext_name.md)
 
 ---
 

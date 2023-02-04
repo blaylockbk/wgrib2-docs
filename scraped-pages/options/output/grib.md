@@ -21,11 +21,11 @@ is not recommended.
 
 ```
 
-See also: [-grib](./grib.html)
-[-ncep_uv](./ncep_uv.html)
-[-submsg](./submsg.html)
-[-tosubmsg](./tosubmsg.html)
-[-append](./append.html)
+See also: [-grib](./grib.md)
+[-ncep_uv](./ncep_uv.md)
+[-submsg](./submsg.md)
+[-tosubmsg](./tosubmsg.md)
+[-append](./append.md)
 
 ---
 

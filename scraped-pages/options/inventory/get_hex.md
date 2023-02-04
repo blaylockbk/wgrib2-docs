@@ -37,10 +37,10 @@ $ wgrib2 f.grb2 -get\_hex 0 1 12
 ```
 
 See also:
-[new grib](new_grib.html),
-[-set_byte](set_byte.html)
-[-get_ieee](get_ieee.html)
-[-get_int](get_int.html)
+[new grib](new_grib.md),
+[-set_byte](set_byte.md)
+[-get_ieee](get_ieee.md)
+[-get_int](get_int.md)
 
 ---
 

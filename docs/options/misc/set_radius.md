@@ -45,7 +45,7 @@ $ wgrib2 small.grb2 -set\_radius 1:6300000 -radius
 ```
 
 See also:
-[-radius](./radius.html)
+[-radius](./radius.md)
 
 ---
 

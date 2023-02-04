@@ -64,7 +64,7 @@ $ wgrib2 /dev/null -ndate 2016010212 -6hr
 
 ```
 
-See also: [-ndates](./ndates.html)
+See also: [-ndates](./ndates.md)
 
 ---
 

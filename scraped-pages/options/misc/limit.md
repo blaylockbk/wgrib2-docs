@@ -16,8 +16,8 @@ The newer -alarm option is better suited for stopping jobs web jobs.
 
 ```
 
-See also: [-quit](./quit.html),
-[-alarm](./alarm.html)
+See also: [-quit](./quit.md),
+[-alarm](./alarm.md)
 
 ---
 

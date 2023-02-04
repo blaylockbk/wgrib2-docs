@@ -30,7 +30,7 @@ are the configuration options of pywgrib2_s.
 - names: string, either 'ncep', 'ecmwf' or 'dwd', convention for WMO grib names
 - debug: logical, print debug statements (True)
 
-[overview](./pywgrib2_s.html)
+[overview](./pywgrib2_s.md)
 
 ---
 

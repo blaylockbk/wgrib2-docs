@@ -31,8 +31,8 @@ other software packages.
 ```
 
 See also:
-[-scaling](scaling.html),
-[-set_grib_max_bits](set_grib_max_bits.html),
+[-scaling](scaling.md),
+[-set_grib_max_bits](set_grib_max_bits.md),
 
 ---
 

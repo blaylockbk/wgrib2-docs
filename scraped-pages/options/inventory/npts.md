@@ -20,7 +20,7 @@ in the grid. The total include both defined and undefined grid points.
 
 ```
 
-See also: [-nxny](./nxny.html)
+See also: [-nxny](./nxny.md)
 
 ---
 

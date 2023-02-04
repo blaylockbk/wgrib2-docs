@@ -18,7 +18,7 @@ X is a fixed string (not a regular expression)
 
 ```
 
-See also: [-if](./if.html),
+See also: [-if](./if.md),
 
 ---
 

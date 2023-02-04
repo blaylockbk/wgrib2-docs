@@ -37,8 +37,8 @@ will be interpolated as vectors. The options are,
 
 ```
 
-See also: [-new_grid](./new_grid.html),
-[-new_grid_interpolation](./new_grid_interpolation.html)
+See also: [-new_grid](./new_grid.md),
+[-new_grid_interpolation](./new_grid_interpolation.md)
 
 ---
 

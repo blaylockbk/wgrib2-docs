@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Please see [new grib](./new_grib.html) for the basic
+Please see [new grib](./new_grib.md) for the basic
 concepts of making new grib files.
 
 The -set option changes specific metadata
@@ -97,11 +97,11 @@ specific fields, you will have to use the
 
 See also:
 
-[-fi](fi.html),
-[-grib](grib.html),
-[-grib_out](grib_out.html),
-[-if](if.html)
-[-set_metadata](set_metadata.html)
+[-fi](fi.md),
+[-grib](grib.md),
+[-grib_out](grib_out.md),
+[-if](if.md)
+[-set_metadata](set_metadata.md)
 
 ---
 

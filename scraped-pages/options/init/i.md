@@ -178,9 +178,9 @@ wgrib2 gribfile -match "string3" (other options)
 ```
 
 See also:
-[-match](./match.html),
-[-not](./not.html),
-[-d](./d.html),
+[-match](./match.md),
+[-not](./not.md),
+[-d](./d.md),
 
 ---
 

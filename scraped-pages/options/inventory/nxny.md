@@ -33,7 +33,7 @@ of longitude points.
 
 ```
 
-See also: [-npts](./npts.html)
+See also: [-npts](./npts.md)
 
 ---
 

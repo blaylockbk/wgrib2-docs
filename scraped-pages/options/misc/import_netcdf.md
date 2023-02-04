@@ -233,7 +233,7 @@ file with the grib file obtained from another source.
 The -import_netcdf option is not convenient and
 takes some work to setup. However, it did work and I was able to verify
 that the netcdf NARR file was the same as my grib copy. For lat-lon netcdf files
-that follow the coards convention, using GrADS and the [g2grb.gs](../g2grb.html)
+that follow the coards convention, using GrADS and the [g2grb.gs](../g2grb.md)
 script is easier to use.
 
 ### Warnings
@@ -263,10 +263,10 @@ be transformed to WE:SN.
 
 ### More Examples
 
-See [Converting OSTIA SST in netcdf to grib](./netcdf_2_grib_ostia.html).
+See [Converting OSTIA SST in netcdf to grib](./netcdf_2_grib_ostia.md).
 
 See also:
-[-import_grib](./import_grib.html),
+[-import_grib](./import_grib.md),
 
 ---
 

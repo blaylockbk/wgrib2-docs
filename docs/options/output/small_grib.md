@@ -65,11 +65,11 @@ add the option -set_grib_type same to the wgrib2
 command line.
 
 See also:
-[-ijsmall_grib](./ijsmall_grib.html)
-[-ijundefine](./ijundefine.html),
-[-new_grid](./new_grid.html)
-[-set_grib_type](./set_grib_type.html)
-[-undefine](./undefine.html),
+[-ijsmall_grib](./ijsmall_grib.md)
+[-ijundefine](./ijundefine.md),
+[-new_grid](./new_grid.md)
+[-set_grib_type](./set_grib_type.md)
+[-undefine](./undefine.md),
 
 ---
 

@@ -68,8 +68,8 @@ Using the offset option on a pipe
 ```
 
 See also:
-[-for](./for.html),
-[-i](./i.html),
+[-for](./for.md),
+[-i](./i.md),
 
 ---
 

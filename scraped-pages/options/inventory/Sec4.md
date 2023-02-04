@@ -27,7 +27,7 @@ free=0                        Should be zero, len-size-8*#vert_coordinates
 ```
 
 See also:
-[-pdt](pdt.html),
+[-pdt](pdt.md),
 
 ---
 

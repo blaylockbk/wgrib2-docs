@@ -176,13 +176,13 @@ the number of fields converted and should consider only converting
 a regional domain. Note, I wrote "viable" and not optimal.
 
 See also:
-[-spread](./spread.html),
-[-csv_long](./csv_long.html),
-[-text](./text.html),
-[-bin](./bin.html),
-[-ieee](./ieee.html),
-[-set_ext_name](./set_ext_name.html),
-[-undefine](./undefine.html)
+[-spread](./spread.md),
+[-csv_long](./csv_long.md),
+[-text](./text.md),
+[-bin](./bin.md),
+[-ieee](./ieee.md),
+[-set_ext_name](./set_ext_name.md),
+[-undefine](./undefine.md)
 
 ---
 

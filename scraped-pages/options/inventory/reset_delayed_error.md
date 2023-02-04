@@ -75,7 +75,7 @@ The delayed-error flag is the sum of the following errors (12/8/2020)
 ```
 
 See also:
-[-if_delayed_error](./if_delayed_error.html),
+[-if_delayed_error](./if_delayed_error.md),
 
 ---
 

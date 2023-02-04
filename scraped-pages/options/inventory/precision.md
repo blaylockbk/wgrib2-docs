@@ -49,12 +49,12 @@ $ wgrib2 wind.grb -precision
 ```
 
 See also:
-[-packing](./packing.html),
-[-scale](./scale.html),
-[-set_bin_prec](./set_bin_prec.html),
-[-set_metadata](./set_metadata.html),
-[-set_metadata_str](./set_metadata_str.html),
-[-set_scale](./set_scale.html),
+[-packing](./packing.md),
+[-scale](./scale.md),
+[-set_bin_prec](./set_bin_prec.md),
+[-set_metadata](./set_metadata.md),
+[-set_metadata_str](./set_metadata_str.md),
+[-set_scale](./set_scale.md),
 
 ---
 

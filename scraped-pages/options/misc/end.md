@@ -31,8 +31,8 @@ time if you only have one matching field.
 
 ```
 
-See also: [-match](./match.html),
-[-not](./not.html)
+See also: [-match](./match.md),
+[-not](./not.md)
 
 ---
 

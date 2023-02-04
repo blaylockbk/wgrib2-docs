@@ -94,10 +94,10 @@ the -set_bin_prec option perhaps with the
 ```
 
 See alse:
-[-set_bin_prec](set_bin_prec.html)
-[-set_grib_max_bits](set_grib_max_bits.html)
-[-scale](scale.html)
-[-scaling](scaling.html)
+[-set_bin_prec](set_bin_prec.md)
+[-set_grib_max_bits](set_grib_max_bits.md)
+[-scale](scale.md)
+[-scaling](scaling.md)
 
 ---
 

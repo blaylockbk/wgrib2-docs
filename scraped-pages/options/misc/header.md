@@ -30,13 +30,13 @@ $ wgrib2 -ens ens.grb -header -ieee data.ieee
 ```
 
 See also:
-[-no_header](./no_header.html),
-[-big_endian](./big_endian.html),
-[-little_endian](./little_endian.html),
-[-ieee](./ieee.html),
-[-bin](./bin.html),
-[-import_ieee](./import_ieee.html),
-[-import_bin](./import_bin.html)
+[-no_header](./no_header.md),
+[-big_endian](./big_endian.md),
+[-little_endian](./little_endian.md),
+[-ieee](./ieee.md),
+[-bin](./bin.md),
+[-import_ieee](./import_ieee.md),
+[-import_bin](./import_bin.md)
 
 ---
 

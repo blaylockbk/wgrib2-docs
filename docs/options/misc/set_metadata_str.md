@@ -9,7 +9,7 @@ option is generally more useful as each grib message can have its own
 set of metadata. The former option is only useful for specifying the metadata
 for a single grib message. The -set_metadata_str option
 was added to facilitate the creation of an "callable wgrib2" API for writing grib2.
-See [-set_metadata](./set_metadata.html) for the format of the metadata string.
+See [-set_metadata](./set_metadata.md) for the format of the metadata string.
 
 ## Usage:
 
@@ -31,7 +31,7 @@ sh-4.1$ wgrib2 small.grb2 -set\_metadata\_str "1:0:d=2001020304:TMP:10 mb:anl:"
 ```
 
 See also:
-[-set_metadata](./set_metadata.html),
+[-set_metadata](./set_metadata.md),
 
 ---
 

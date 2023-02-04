@@ -126,7 +126,7 @@ format is ieee.
 ### Fast Averaging
 
 If you are averaging, use
-[fast averaging](https://www.cpc.noaa.gov/products/wesley/wgrib2/ave.html)
+[fast averaging](https://www.cpc.noaa.gov/products/wesley/wgrib2/ave.md)
 
 ### Compile wgrib2 with OpenMP Enabled
 
@@ -141,8 +141,8 @@ with OpenMP turned off or with "OMP_NUM_THREADS" set to one.
 
 ### Use multple cores
 
-See [here](https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/pipes.html)
-and over [there](https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/for_n.html)
+See [here](https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/pipes.md)
+and over [there](https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/for_n.md)
 
 ### Use pipes instead of temporary files
 

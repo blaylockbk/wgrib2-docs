@@ -7,9 +7,9 @@ and -set_ave
 have been replaced by -set_ftime2
 
 See also:
-[-set_ftime](./set_ftime.html)
-[-set_ftime1](./set_ftime1.html)
-[-set_ftime2](./set_ftime2.html)
+[-set_ftime](./set_ftime.md)
+[-set_ftime1](./set_ftime1.md)
+[-set_ftime2](./set_ftime2.md)
 
 ---
 

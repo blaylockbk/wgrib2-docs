@@ -18,7 +18,7 @@ then your interpolated winds will be using the original grid.
 The interpolation to the lola grid is by a Cressman analysis. The Cressman analysis
 is a multipass system which uses a user-specified "radius" for each pass.
 A Cressman analysis can be computationally expensive so you may want to explore
-[multiprocessing techniques](./for_n.html).
+[multiprocessing techniques](./for_n.md).
 
 ## Usage
 
@@ -66,8 +66,8 @@ Warning, this scheme doesn't handle handle rotated winds in a useful manner.
 There will also be problem with analyzing winds near the poles.
 
 See alse:
-[-lon](./lon.html)
-[-lola](./lola.html)
+[-lon](./lon.md)
+[-lola](./lola.md)
 
 ---
 

@@ -38,7 +38,7 @@ In the above example, we converted the file to binary. It consisted
 of a single grid and two records.
 
 See also:
-[count](./count.html)
+[count](./count.md)
 
 ---
 

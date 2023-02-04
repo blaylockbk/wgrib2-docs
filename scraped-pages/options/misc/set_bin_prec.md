@@ -77,10 +77,10 @@ set wgrib2 to encode data using the ECMWF convention.
 ```
 
 See alse:
-[-scale](scale.html)
-[-scaling](scaling.html)
-[-set_grib_max_bits](set_grib_max_bits.html)
-[-set_scaling](set_scaling.html)
+[-scale](scale.md)
+[-scaling](scaling.md)
+[-set_grib_max_bits](set_grib_max_bits.md)
+[-set_scaling](set_scaling.md)
 
 ---
 

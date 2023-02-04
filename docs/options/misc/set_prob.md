@@ -62,7 +62,7 @@ B=10 Upper limit (may not be used depending on Code Table 4.9)
 ```
 
 See also:
-[-prob](./prob.html),
+[-prob](./prob.md),
 
 ---
 

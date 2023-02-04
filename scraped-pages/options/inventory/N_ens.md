@@ -30,8 +30,8 @@ will be empty.
 ```
 
 See also:
-[-ens.html](ens.html)
-[-set_ens_num.html](set_ens_num.html)
+[-ens.html](ens.md)
+[-set_ens_num.html](set_ens_num.md)
 
 ---
 

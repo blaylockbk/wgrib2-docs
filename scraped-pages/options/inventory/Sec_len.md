@@ -36,8 +36,8 @@ $ wgrib2 small.grb2 -Sec\_len
 ```
 
 See also:
-[-0xSec](0xSec.html),
-[-checksum](checksum.html),
+[-0xSec](0xSec.md),
+[-checksum](checksum.md),
 
 ---
 

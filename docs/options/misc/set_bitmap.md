@@ -45,8 +45,8 @@ $ wgrib2 in.grb -set\_bitmap 1 -set\_grib\_type complex3 -grib\_out out.grb
 The above line rewrites a file using complex3 packing and a bitmap.
 A bitmap is not used if all the grid values are defined.
 
-See also: [-grib_out](./grib_out.html),
-See also: [-set_grib_type](./set_grib_type.html),
+See also: [-grib_out](./grib_out.md),
+See also: [-set_grib_type](./set_grib_type.md),
 
 ---
 

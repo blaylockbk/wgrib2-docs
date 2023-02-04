@@ -53,17 +53,17 @@ $ wgrib2 small.grb2 -match_inv_add code_table_3.2 x x -if "code table 3.2=6" -pr
 ```
 
 See also:
-[-if](./if.html),
-[-if_fs](./if_fs.html),
-[-match](./match.html),
-[-match_fs](./match_fs.html),
-[-match_inv](./match_inv.html),
-[-Match_inv](./Match_inv.html),
-[-not](./not.html),
-[-not_fs](./not_fs.html),
-[-not_if](./not_if.html),
-[-not_if_fs](./not_if_fs.html),
-[-set_regex](./set_regex.html).
+[-if](./if.md),
+[-if_fs](./if_fs.md),
+[-match](./match.md),
+[-match_fs](./match_fs.md),
+[-match_inv](./match_inv.md),
+[-Match_inv](./Match_inv.md),
+[-not](./not.md),
+[-not_fs](./not_fs.md),
+[-not_if](./not_if.md),
+[-not_if_fs](./not_if_fs.md),
+[-set_regex](./set_regex.md).
 
 ```
 

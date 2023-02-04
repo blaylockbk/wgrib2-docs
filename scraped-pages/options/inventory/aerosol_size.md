@@ -38,7 +38,7 @@ $ wgrib2 ngac.t00z.a3df03 -for 2:6 -aerosol\_size
 ```
 
 See also:
-[-aerosol_wavelength](aerosol_wavelength.html),
+[-aerosol_wavelength](aerosol_wavelength.md),
 
 ---
 

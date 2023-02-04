@@ -38,8 +38,8 @@ $ wgrib2 small.grb -grid
 
 ```
 
-See also: [-undefine](./undefine.html),
-[-small_grib](./small_grib.html)
+See also: [-undefine](./undefine.md),
+[-small_grib](./small_grib.md)
 
 ---
 

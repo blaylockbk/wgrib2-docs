@@ -28,10 +28,10 @@ already open file during the processing phase.
 ```
 
 See also:
-[-persistent](./persistent.html)
-[-rewind_final](./rewind_final.html)
-[-rewind_init](./rewind_init.html)
-[-transient](./transient.html)
+[-persistent](./persistent.md)
+[-rewind_final](./rewind_final.md)
+[-rewind_init](./rewind_init.md)
+[-transient](./transient.md)
 
 ---
 

@@ -36,8 +36,8 @@ metadata and grid from memory.
 The -mem_del option is intended for the use by callable wgrib2
 so that memory files can be deleted and the memory freed.
 
-See also: [-mem_final](./mem_final.html),
-[-mem_init](./mem_init.html),
+See also: [-mem_final](./mem_final.md),
+[-mem_init](./mem_init.md),
 
 ---
 

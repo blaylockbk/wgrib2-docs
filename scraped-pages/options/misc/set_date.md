@@ -79,11 +79,11 @@ that the command line has no inventory options.
 
 See also:
 
-[-grib](grib.html),
-[-grib_out](grib_out.html),
-[-s](s.html),
-[-t](t.html),
-[-T](T.html),
+[-grib](grib.md),
+[-grib_out](grib_out.md),
+[-s](s.md),
+[-t](t.md),
+[-T](T.md),
 
 ---
 

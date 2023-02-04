@@ -67,12 +67,12 @@ overwrite the IPOPT values with the default values for that interpolation method
 
 ```
 
-See also: [-new_grid](./new_grid.html),
-[-new_grid_winds](./new_grid_winds.html)
-[-new_grid_vectors](./new_grid_vectors.html)
-[new_grid usage](./new_grid_usage.html)
-[-if](./if.html)
-[-fi](./fi.html)
+See also: [-new_grid](./new_grid.md),
+[-new_grid_winds](./new_grid_winds.md)
+[-new_grid_vectors](./new_grid_vectors.md)
+[new_grid usage](./new_grid_usage.md)
+[-if](./if.md)
+[-fi](./fi.md)
 
 ---
 

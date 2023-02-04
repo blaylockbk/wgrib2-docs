@@ -93,10 +93,10 @@ If it isn't, you have to use the option -set_sec_size 3 72. Of course, you canno
 to the grid definition because the number of grid points has to match the grid points in the data section.
 
 See also:
-[-set_byte](set_byte.html)
-[-set_ieee](set_ieee.html)
-[-set_int](set_int.html)
-[-set_int2](set_int2.html)
+[-set_byte](set_byte.md)
+[-set_ieee](set_ieee.md)
+[-set_int](set_int.md)
+[-set_int2](set_int2.md)
 
 ---
 

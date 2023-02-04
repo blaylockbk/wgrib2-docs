@@ -27,7 +27,7 @@ $ wgrib2 grib2.polar -ftime1
 ```
 
 See also:
-[-ftime](./ftime.html)
+[-ftime](./ftime.md)
 
 ---
 

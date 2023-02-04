@@ -36,7 +36,7 @@ the output grid which may be different from the input grid.
 For example, the GFS usually writes the grib files in WE:NS order.
 By default, wgrib2 will read a WE:NS input grid and convert it to
 to a WE:SN (output) grid. This is explained in the page for the
-[-scan](./scan.html) option.
+[-scan](./scan.md) option.
 
 ## Usage
 
@@ -60,8 +60,8 @@ to a WE:SN (output) grid. This is explained in the page for the
 
 ```
 
-See also: [-ilat](./ilat.html),
-[-scan](./scan.html),
+See also: [-ilat](./ilat.md),
+[-scan](./scan.md),
 
 ---
 

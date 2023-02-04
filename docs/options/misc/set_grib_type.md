@@ -74,8 +74,8 @@ $ wgrib2 in.grb -set\_grib\_type complex3 -grib\_out out.grb
 
 The above line rewrites a file using complex3 packing.
 
-See also: [-grib_out](./grib_out.html),
-[-set_bitmap](./set_bitmap.html),
+See also: [-grib_out](./grib_out.md),
+[-set_bitmap](./set_bitmap.md),
 
 ---
 

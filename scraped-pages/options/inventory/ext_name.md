@@ -115,9 +115,9 @@ use the regular name (-var).
 
 ```
 
-See also: [-s](./s.html),
-[-set_ext_name](./set_ext_name.html)
-[-set_ext_name_chars](./set_ext_name_chars.html)
+See also: [-s](./s.md),
+[-set_ext_name](./set_ext_name.md)
+[-set_ext_name_chars](./set_ext_name_chars.md)
 
 ---
 

@@ -23,8 +23,8 @@ The -s option prints out a simple inventory with minutes and seconds.
 
 ```
 
-See also: [macros](./macros.html),
-[-match_inv](./match_inv.html)
+See also: [macros](./macros.md),
+[-match_inv](./match_inv.md)
 
 ---
 

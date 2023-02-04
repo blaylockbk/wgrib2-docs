@@ -33,8 +33,8 @@ $ wgrib2 grib2.polar -ftime2
 ```
 
 See also:
-[-set_ftime](./set_ftime.html)
-[-vt](./vt.html)
+[-set_ftime](./set_ftime.md)
+[-vt](./vt.md)
 
 ---
 

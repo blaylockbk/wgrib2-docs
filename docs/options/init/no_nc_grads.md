@@ -402,12 +402,12 @@ Line 4 (wgrib2), reads the new grid from stdin and writes out a netcdf file (myf
 ```
 
 See also:
-[-bin](./bin.html),
-[-ieee](./ieee.html)
-[-text](./text.html)
-[-spread](./spread.html)
+[-bin](./bin.md),
+[-ieee](./ieee.md)
+[-text](./text.md)
+[-spread](./spread.md)
 
-[-append](./append.html)
+[-append](./append.md)
 
 ---
 

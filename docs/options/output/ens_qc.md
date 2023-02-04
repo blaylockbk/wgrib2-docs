@@ -178,7 +178,7 @@ can be displayed by atl_g2ctl/alt_gmp/GrADS set of programs.
 ```
 
 See also:
-[-ens_processing](./ens_processing.html),
+[-ens_processing](./ens_processing.md),
 
 ---
 

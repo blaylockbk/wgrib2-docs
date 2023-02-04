@@ -76,9 +76,9 @@ $ wgrib2 gep19.badorder -new\_grid\_order - junk | \
 ```
 
 See also:
-[-new_grid](./new_grid.html)
-[-new_grid_vectors](./new_grid_vectors.html)
-[-submsg_uv](./submsg_uv.html)
+[-new_grid](./new_grid.md)
+[-new_grid_vectors](./new_grid_vectors.md)
+[-submsg_uv](./submsg_uv.md)
 
 ---
 

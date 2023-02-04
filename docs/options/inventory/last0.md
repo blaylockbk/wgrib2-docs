@@ -30,7 +30,7 @@ option.
 ```
 
 See also:
-[-last](./last.html)
+[-last](./last.md)
 
 ---
 

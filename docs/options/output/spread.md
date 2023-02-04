@@ -66,12 +66,12 @@ the number of fields converted and should consider only converting
 a regional domain. Note, I wrote "viable" and not optimal.
 
 See also:
-[-csv](./csv.html),
-[-netcdf](./netcdf.html),
-[-text](./text.html),
-[-bin](./bin.html),
-[-ieee](./ieee.html),
-[-undefine](./undefine.html)
+[-csv](./csv.md),
+[-netcdf](./netcdf.md),
+[-text](./text.md),
+[-bin](./bin.md),
+[-ieee](./ieee.md),
+[-undefine](./undefine.md)
 
 ---
 

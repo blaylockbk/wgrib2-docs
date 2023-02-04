@@ -32,11 +32,11 @@ I-M = Mth octet
 ### Example
 
 See also:
-[-set_hex](set_hex.html)
-[-set_ieee](set_ieee.html)
-[-set_int](set_int.html)
-[-set_int2](set_int2.html)
-[-set_ieee](set_ieee.html)
+[-set_hex](set_hex.md)
+[-set_ieee](set_ieee.md)
+[-set_int](set_int.md)
+[-set_int2](set_int2.md)
+[-set_ieee](set_ieee.md)
 
 ---
 

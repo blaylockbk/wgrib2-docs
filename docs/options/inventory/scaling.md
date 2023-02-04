@@ -43,9 +43,9 @@ $ wgrib2 gep19.t00z.pgrb2af180 -scaling -for 13:14 -v -packing
 ```
 
 See also:
-[-scale](./scale.html)
-[-set_scaling](./set_scaling.html)
-[-grib_max_bits](./grib_max_bits.html)
+[-scale](./scale.md)
+[-set_scaling](./set_scaling.md)
+[-grib_max_bits](./grib_max_bits.md)
 
 ---
 

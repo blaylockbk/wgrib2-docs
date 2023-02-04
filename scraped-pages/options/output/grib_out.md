@@ -50,16 +50,16 @@ regional models very very quickly. Imagine just sending
 
 Hint: gzip
 
-See also: [-text](./text.html),
-[-netcdf](./netcdf.html)
-[-spread](./spread.html)
-[-bin](./bin.html)
-[-ieee](./ieee.html)
-[-import_bin, -import_grib, -import_ieee, import_grib](./import_bin.html)
-[-grib](./grib.html)
-[-rpn](./rpn.html)
-[-set_grib_type](./set_grib_type.html)
-[-undefine](./undefine.html)
+See also: [-text](./text.md),
+[-netcdf](./netcdf.md)
+[-spread](./spread.md)
+[-bin](./bin.md)
+[-ieee](./ieee.md)
+[-import_bin, -import_grib, -import_ieee, import_grib](./import_bin.md)
+[-grib](./grib.md)
+[-rpn](./rpn.md)
+[-set_grib_type](./set_grib_type.md)
+[-undefine](./undefine.md)
 
 ---
 

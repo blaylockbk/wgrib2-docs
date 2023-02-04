@@ -35,9 +35,9 @@ $ wgrib p.grb -set\_percentile 50 -grib\_out new.grb
 
 See also:
 
-[-grib](grib.html),
-[-grib_out](grib_out.html),
-[-set_metadata](set_metadata.html),
+[-grib](grib.md),
+[-grib_out](grib_out.md),
+[-set_metadata](set_metadata.md),
 
 ---
 

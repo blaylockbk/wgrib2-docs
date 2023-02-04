@@ -39,11 +39,11 @@ d=2014030500:SNOD:surface:anl: (found snod)
 ```
 
 See also:
-[last](./last.html)
-[last0](./last0.html)
-[print](./print.html)
-[nl_out](./nl_out.html)
-[s_out](./s_out.html)
+[last](./last.md)
+[last0](./last0.md)
+[print](./print.md)
+[nl_out](./nl_out.md)
+[s_out](./s_out.md)
 
 ---
 

@@ -33,9 +33,9 @@ d=2007032600:HGT:1000 mb:3 hour fcst:
 
 ```
 
-See also: [-s](./s.html),
-[-s_f77](./s_f77.html),
-[-inv](./inv.html),
+See also: [-s](./s.md),
+[-s_f77](./s_f77.md),
+[-inv](./inv.md),
 
 ---
 

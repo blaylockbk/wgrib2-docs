@@ -110,16 +110,16 @@ $ wgrib2 gep.grb -set\_regex 1 -match ':UGRD:200 mb:' -match ':ENS=+19:'
 
 See also:
 
-[-egrep](egrep.html)
-[-egrep_v](egrep_v.html)
-[-if](if.html)
-[-if_fs](if_fs.html)
-[-match](match.html),
-[-match_fs](match_fs.html),
-[-not](not.html),
-[-not_fs](not_fs.html),
-[-not_if](not_if.html)
-[-not_if_fs](not_if_fs.html)
+[-egrep](egrep.md)
+[-egrep_v](egrep_v.md)
+[-if](if.md)
+[-if_fs](if_fs.md)
+[-match](match.md),
+[-match_fs](match_fs.md),
+[-not](not.md),
+[-not_fs](not_fs.md),
+[-not_if](not_if.md)
+[-not_if_fs](not_if_fs.md)
 
 ---
 

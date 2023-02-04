@@ -56,8 +56,8 @@ $ wgrib2 IN.grb | sort -t: -k3,7 | wgrib2 -i -mem\_init IN.grb 0 @mem:0 -grib OU
 The above line takes the original file, IN.grb, and writes it out in sorted order. By using
 a memory file, a random access read is replaced by the much faster sequential read.
 
-See also: [-mem_final](./mem_final.html),
-[-rpn](./rpn.html)
+See also: [-mem_final](./mem_final.md),
+[-rpn](./rpn.md)
 
 ---
 

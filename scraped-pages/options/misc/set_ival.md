@@ -34,9 +34,9 @@ $ cat new.csv
 ```
 
 See also:
-[-csv](./csv.html)
-[-grib_out](./grib_out.html)
-[-set_ijval](./set_ijval.html)
+[-csv](./csv.md)
+[-grib_out](./grib_out.md)
+[-set_ijval](./set_ijval.md)
 
 ---
 

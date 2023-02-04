@@ -49,9 +49,9 @@ $ wgrib2 uv.grb
 
 ```
 
-See also: [-match](./match.html),
-[-wind_speed](./wind_speed.html)
-[-wind_dir](./wind_dir.html)
+See also: [-match](./match.md),
+[-wind_speed](./wind_speed.md)
+[-wind_dir](./wind_dir.md)
 
 ---
 

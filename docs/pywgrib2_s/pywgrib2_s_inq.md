@@ -71,7 +71,7 @@ The format of the string is
 ### Optional: inv='inv file name'
 
 The inv file is a human readable index file. With experience,
-the inventory becomes [comprehensible](./default_inv.html).
+the inventory becomes [comprehensible](./default_inv.md).
 If a inv file is specified, the inventory file will be used to find
 the matching messages. This is much faster than reading the grib
 file to find the matching grib messages.
@@ -174,9 +174,9 @@ For the remainder of the sequential reads, "sequential=N" where N is a integer g
 
 Add more text here.
 
-[overview](./pywgrib2_s.html)
-[back](./pywgrib2_s_read_inv.html)
-[next](./pywgrib2_s_write.html)
+[overview](./pywgrib2_s.md)
+[back](./pywgrib2_s_read_inv.md)
+[next](./pywgrib2_s_write.md)
 
 ---
 

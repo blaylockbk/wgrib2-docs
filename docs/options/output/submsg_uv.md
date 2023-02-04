@@ -36,11 +36,11 @@ $ wgrib2 test.grb2 -match ":500 mb:" -submsg\_uv output.grb
 ```
 
 See also:
-[-tosubmsg](./tosubmsg.html)
-[-submsg](./submsg.html)
-[-submsg_uv](./submsg_uv.html)
-[-ncep_uv](./ncep_uv.html)
-[-new_grid_vectors](./new_grid_vectors.html)
+[-tosubmsg](./tosubmsg.md)
+[-submsg](./submsg.md)
+[-submsg_uv](./submsg_uv.md)
+[-ncep_uv](./ncep_uv.md)
+[-new_grid_vectors](./new_grid_vectors.md)
 
 ---
 

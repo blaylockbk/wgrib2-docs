@@ -161,11 +161,11 @@ rm /tmp/p1.$$ /tmp/p2.$$ /tmp/p3.$$
 ```
 
 See also:
-[-if_n](./if_n.html),
-[-for](./for.html),
-[-flush](./flush.html),
-[-n](./n.html),
-[using pipes](./pipes.html),
+[-if_n](./if_n.md),
+[-for](./for.md),
+[-flush](./flush.md),
+[-n](./n.md),
+[using pipes](./pipes.md),
 
 ---
 

@@ -90,7 +90,7 @@ output=WE:SN     the internal registers and output files except for grib
 ```
 
 See also:
-[-order](./order.html),
+[-order](./order.md),
 
 ---
 

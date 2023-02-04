@@ -36,8 +36,8 @@ $ head junk
 ```
 
 See also:
-[-text](./text.html),
-[-ijbox](./ijbox.html)
+[-text](./text.md),
+[-ijbox](./ijbox.md)
 
 ---
 

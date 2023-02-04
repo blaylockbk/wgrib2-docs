@@ -357,8 +357,8 @@ the code, the evaluation of the -if_fs options is done in parallel.
 ```
 
 See also:
-[-merge_fcst](./merge_fcst.html),
-[-time_processing](./time_processing.html)
+[-merge_fcst](./merge_fcst.md),
+[-time_processing](./time_processing.md)
 
 ---
 

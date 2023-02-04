@@ -50,10 +50,10 @@ conditions for a regional model". For this to work well, a module to write the d
 to be written. To work in the (i,j) coordinates, see the -ijundefine option.
 
 See also:
-[-ijundefine](./ijundefine.html),
-[-spread](./spread.html),
-[-stats](./stats.html),
-[-undefine_val](./undefine_val.html),
+[-ijundefine](./ijundefine.md),
+[-spread](./spread.md),
+[-stats](./stats.md),
+[-undefine_val](./undefine_val.md),
 
 ---
 

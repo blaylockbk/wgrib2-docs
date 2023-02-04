@@ -23,7 +23,7 @@ $ wgrib2 png.grb2 -print "VAR is" -var -print "LEV is" -lev
 ```
 
 See also:
-[-nl](./nl.html)
+[-nl](./nl.md)
 
 ---
 

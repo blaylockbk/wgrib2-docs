@@ -57,13 +57,13 @@ $ wgrib2 test.grb2 -s | grep ":RH:2 m" | wgrib2 -i test.grb2 -bin data.bin
 
 The above line extracts the 2 meter RH from file test.grb2 and writes it in data.bin
 
-See also: [-text](./text.html),
-[-netcdf](./netcdf.html),
-[-spread](./spread.html),
-[-ieee](./ieee.html)
-[-no_header](./no_header.html)
-[-header](./header.html)
-[-order](./order.html)
+See also: [-text](./text.md),
+[-netcdf](./netcdf.md),
+[-spread](./spread.md),
+[-ieee](./ieee.md)
+[-no_header](./no_header.md)
+[-header](./header.md)
+[-order](./order.md)
 
 ---
 

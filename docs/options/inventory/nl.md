@@ -28,7 +28,7 @@ $ wgrib2 -gdt png.grb2 -s -nl -stats
 ```
 
 See also:
-[-print](./print.html)
+[-print](./print.md)
 
 ---
 

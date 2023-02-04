@@ -40,12 +40,12 @@ records together into one message.
 ```
 
 See also:
-[-tosubmsg](./tosubmsg.html)
-[-submsg](./submsg.html)
-[-submsg_uv](./submsg_uv.html)
-[-grib](./grib.html)
-[-grib_out](./grib_out.html)
-[-GRIB](./GRIB.html)
+[-tosubmsg](./tosubmsg.md)
+[-submsg](./submsg.md)
+[-submsg_uv](./submsg_uv.md)
+[-grib](./grib.md)
+[-grib_out](./grib_out.md)
+[-GRIB](./GRIB.md)
 
 ---
 

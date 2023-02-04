@@ -34,9 +34,9 @@ However, the current systax will still work.
 
 ```
 
-See also: [-new_grid](./new_grid.html),
-[-new_grid_vectors](./new_grid_vectors.html)
-[-new_grid_interpolation](./new_grid_interpolation.html)
+See also: [-new_grid](./new_grid.md),
+[-new_grid_vectors](./new_grid_vectors.md)
+[-new_grid_interpolation](./new_grid_interpolation.md)
 
 ---
 

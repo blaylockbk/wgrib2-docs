@@ -73,11 +73,11 @@ may need to be compatible with the Fast Fourier Transform (FFT) code used.
 
 ```
 
-See also: [-new_grid](./new_grid.html),
-[-new_grid_winds](./new_grid_winds.html)
-[-new_grid_ipopt](./new_grid_ipopt.html)
-[-if](./if.html)
-[-fi](./fi.html)
+See also: [-new_grid](./new_grid.md),
+[-new_grid_winds](./new_grid_winds.md)
+[-new_grid_ipopt](./new_grid_ipopt.md)
+[-if](./if.md)
+[-fi](./fi.md)
 
 Updated Nov, 2022
 

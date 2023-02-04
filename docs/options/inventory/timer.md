@@ -52,8 +52,8 @@ Writing of the CSV is taking about 0.06 seconds per field.
 ```
 
 See also:
-[-alarm](./alarm.html),
-[-start_timer](./start_timer.html),
+[-alarm](./alarm.md),
+[-start_timer](./start_timer.md),
 
 ---
 

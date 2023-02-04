@@ -30,7 +30,7 @@ in the South-West corner. Note, multiple -ijlat can be on the command line.
 
 ```
 
-See also: [-ij](./ij.html), [-ilat](./ilat.html), [-lon](./lon.html)
+See also: [-ij](./ij.md), [-ilat](./ilat.md), [-lon](./lon.md)
 
 ---
 

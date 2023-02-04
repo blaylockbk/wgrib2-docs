@@ -82,15 +82,15 @@ This commands writes new.bin as a grib2 file as GEOLAT at 12Z Dec 31, 1999 using
 ```
 
 See also:
-[-import_netcdf](./import_netcdf.html),
-[-set_grib_type](./set_grib_type.html),
-[-set_scaling](./set_scaling.html),
-[-undefine](./undefine.html),
-[-grib_out](./grib_out.html),
-[-set_date](./set_date.html),
-[-set_ftime](./set_ftime.html),
-[-set_lev](./set_lev.html),
-[-set_var](./set_var.html),
+[-import_netcdf](./import_netcdf.md),
+[-set_grib_type](./set_grib_type.md),
+[-set_scaling](./set_scaling.md),
+[-undefine](./undefine.md),
+[-grib_out](./grib_out.md),
+[-set_date](./set_date.md),
+[-set_ftime](./set_ftime.md),
+[-set_lev](./set_lev.md),
+[-set_var](./set_var.md),
 
 ---
 

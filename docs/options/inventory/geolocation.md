@@ -71,11 +71,11 @@ $ wgrib2 burned\_area\_20120131\_12\_23\_1km.grib2 -geolocation
 ```
 
 See also:
-[-gctpc](./gctpc.html)
-[-grid_def](./grid_def.html)
-[-import_lonlat](./import_lonlat.html)
-[-proj4](./proj4.html)
-[-rpn](./rpn.html)
+[-gctpc](./gctpc.md)
+[-grid_def](./grid_def.md)
+[-import_lonlat](./import_lonlat.md)
+[-proj4](./proj4.md)
+[-rpn](./rpn.md)
 
 ---
 

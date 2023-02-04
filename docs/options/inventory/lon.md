@@ -155,9 +155,9 @@ $ cat out.csv
 
 ```
 
-See also: [-last](./last.html),
-[-lola](./lola.html),
-[-config](./config.html)
+See also: [-last](./last.md),
+[-lola](./lola.md),
+[-config](./config.md)
 
 ---
 

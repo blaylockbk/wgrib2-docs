@@ -53,8 +53,8 @@ unix_vt is the verification time
 ```
 
 See also:
-[-t (reference time)](./t.html),
-[-vt (verification time)](./vt.html),
+[-t (reference time)](./t.md),
+[-vt (verification time)](./vt.md),
 
 ---
 

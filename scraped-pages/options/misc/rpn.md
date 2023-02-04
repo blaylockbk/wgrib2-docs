@@ -65,7 +65,7 @@ use wgrib2api (Fortran and C) to read the data into a Fortran
 or C program, do the calculation and then write the data out
 using wgrib2. Finally you can use python and one of the pywgrib2
 packages to do the calculation using Python, numpy and
-[pywgrib2](./pywgrib2.html).
+[pywgrib2](./pywgrib2.md).
 
 ### Uses
 
@@ -104,7 +104,7 @@ Pop X, Push Fn(X)
 * exp: e^X
 * floor: largest integer <= X
 * ln: natural logorithm
-* raw2: [convert from input scan order to output scan order](./rpn_raw2_2raw.html)* sin: sine, argument in radians
+* raw2: [convert from input scan order to output scan order](./rpn_raw2_2raw.md)* sin: sine, argument in radians
 * smth9g: smth9 for global fields
 * smth9r: snth9 for regional fields
 * sq: X\*X
@@ -114,7 +114,7 @@ Pop X, Push Fn(X)
 * xdev: for nx-ny grids, remove x average (normally deviation from zonal mean)
 * yrev: for nx-ny grids, changes we:sn to we:ns and vice versa
 * 1/x: 1/X
-* 2raw: [convert from output scan order to input scan order](./rpn_raw2_2raw.html)
+* 2raw: [convert from output scan order to input scan order](./rpn_raw2_2raw.md)
 
 
 Pop Y, Pop X, push Fn(X,Y)
@@ -395,7 +395,7 @@ wgrib2 mask.grb -rpn "1:==" -set_scaling 0 1 -set_grib_type c1 -grib_out land.gr
 
 ### Example 9: Total-total index
 
-An [example](./rpn_non-trivial_example.html) of calculating the dewpoint and
+An [example](./rpn_non-trivial_example.md) of calculating the dewpoint and
 total-total index is more involved. Using an on-line infix to postfix (reverse polish)
 calculator is helpful.
 
@@ -448,12 +448,12 @@ It's only natural that the calculator would be based on reverse
 Polish notation.
 
 See also:
-[-if](./if.html),
-[-if_reg](./if_reg.html),
-[-fi](./fi.html),
-[-grib_out](./grib_out.html),
-[-rpn_rcl](./rpn_rcl.html),
-[-rpn_sto](./rpn_sto.html),
+[-if](./if.md),
+[-if_reg](./if_reg.md),
+[-fi](./fi.md),
+[-grib_out](./grib_out.md),
+[-rpn_rcl](./rpn_rcl.md),
+[-rpn_sto](./rpn_sto.md),
 
 ---
 

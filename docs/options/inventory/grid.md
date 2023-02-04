@@ -133,8 +133,8 @@ the staggering. The storage description was updated in v2.0.8 to be
 ```
 
 See also:
-[-nxny](./nxny.html),
-[-nlons](./nlons.html)
+[-nxny](./nxny.md),
+[-nlons](./nlons.md)
 
 ---
 

@@ -66,11 +66,11 @@ $ wgrib2 IN.grb -if ":pdt=60:" -set\_pdt +1 -fi \
 ```
 
 See also:
-[-fi](fi.html),
-[-grib](grib.html),
-[-if](if.html),
-[-Sec4](Sec4.html),
-[-pdt](pdt.html),
+[-fi](fi.md),
+[-grib](grib.md),
+[-if](if.md),
+[-Sec4](Sec4.md),
+[-pdt](pdt.md),
 
 ---
 

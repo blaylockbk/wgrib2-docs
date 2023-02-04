@@ -43,7 +43,7 @@ to @mem:1. At the end of the grib processing @mem:1 is written to OUT.grb.
 This example shows the contents of the memory file at the end of the grib
 processing.
 
-See also: [-mem_init](./mem_init.html)
+See also: [-mem_init](./mem_init.md)
 
 ---
 

@@ -54,10 +54,10 @@ $ wgrib2 gep19.aec -set\_ext\_name 3 -ext\_name -set\_ext\_name\_chars '=' '~' -
 
 ```
 
-See also: [-s](./s.html)
-[-set_ext_name](./set_ext_name.html).
-[-set_ext_name_chars](./set_ext_name_chars.html).
-[-ext_names](./ext_name.html).
+See also: [-s](./s.md)
+[-set_ext_name](./set_ext_name.md).
+[-set_ext_name_chars](./set_ext_name_chars.md).
+[-ext_names](./ext_name.md).
 
 ---
 

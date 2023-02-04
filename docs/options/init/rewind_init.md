@@ -30,10 +30,10 @@ records.
 ```
 
 See also:
-[-persistent](./persistent.html)
-[-rewind_final](./rewind_final.html)
-[-rewind_proc](./rewind_proc.html)
-[-transient](./transient.html)
+[-persistent](./persistent.md)
+[-rewind_final](./rewind_final.md)
+[-rewind_proc](./rewind_proc.md)
+[-transient](./transient.md)
 
 ---
 

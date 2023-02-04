@@ -46,9 +46,9 @@ done
 ```
 
 See also:
-[-undefine](./undefine.html),
-[-small_grib](./small_grib.html),
-[-text_col](./text_col.html),
+[-undefine](./undefine.md),
+[-small_grib](./small_grib.md),
+[-text_col](./text_col.md),
 
 ---
 

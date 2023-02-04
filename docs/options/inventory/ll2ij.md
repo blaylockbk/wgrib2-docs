@@ -26,8 +26,8 @@ latitude and longitude and prints out the ix and iy of the grid point.
 The -ll2i option uses the gctpc library
 and only supports a grids supported by gctpc.
 
-See also: [-ijlat](./ijlat.html),
-[-ll2i](./ll2i.html)
+See also: [-ijlat](./ijlat.md),
+[-ll2i](./ll2i.md)
 
 ---
 

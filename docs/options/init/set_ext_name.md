@@ -9,7 +9,7 @@ in the distance. A dust storm rolled in from the plains. The new
 power plants started putting sulfar dioxide into the air. All this
 had to added to the grib format. So names had to have modifiers,
 the percentile of some particulates of some chemical between size
-A and B microns. So wgrib2 added ["extended names"](./ext_name.html).
+A and B microns. So wgrib2 added ["extended names"](./ext_name.md).
 So you could
 switch beween the old simpler names and the newer extended names.
 
@@ -18,7 +18,7 @@ switch beween the old simpler names and the newer extended names.
 The extended name includes modifiers like the ensemble information,
 dust information and probabilities. Optionally you can include
 the level and forecast information (wgrib2 v3.0.2+). More details
-are given [here](./ext_name.html).
+are given [here](./ext_name.md).
 
 ## Usage
 
@@ -97,8 +97,8 @@ Many options use the extended name if enabled by -set_ext_name. For example, the
 ```
 
 See also:
-[-ext_name](./ext_name.html)
-[-set_ext_name_chars](./set_ext_name_chars.html).
+[-ext_name](./ext_name.md)
+[-set_ext_name_chars](./set_ext_name_chars.md).
 
 ---
 

@@ -41,7 +41,7 @@ number of records: 1
 
 The above example shows that only 1 record had the string fcst in it.
 
-See also: [-grid_changes](./grid_changes.html)
+See also: [-grid_changes](./grid_changes.md)
 
 ---
 

@@ -101,7 +101,7 @@ add code fragment to wrib2 prior to interpolation;
 ### Answer 2: Scalar vs Vector
 
 Wgrib2 has a built-in list of vector fields. This list can be changed by the
-the [new_grid_vectors](./new_grid_vectors.html) option. The vectors
+the [new_grid_vectors](./new_grid_vectors.md) option. The vectors
 fields will be interpolated using vector interpolation routines in the IPOLATES library.
 
 ### Answer 3: Global Conservation
@@ -166,7 +166,7 @@ angle.
 
 Grib specifies whether the vectors are earth or grid relative. To transform
 to earth or grid relative winds, you use the
-[-new_grid_winds](./new_grid_winds.html) option.
+[-new_grid_winds](./new_grid_winds.md) option.
 
 Strangely
 the grib standard doesn't specify which fields are vectors.
@@ -177,7 +177,7 @@ It seems obvious that the default would to be regrid should write
 earth relative winds. However, I work at NCEP and the default
 at NCEP is to use grid relative winds. The only solution is to make
 everyone specify whether the output uses earth or grid relative winds.
-[See](./new_grid_winds.html).
+[See](./new_grid_winds.md).
 
 ```
 
@@ -237,16 +237,16 @@ gravity wave drag or wind stresses.
 
  wgrib2 IN.grb -set\_grib\_type PACKING -new\_grid\_winds earth -new\_grid latlon LON0:NLON:DLON LAT0:NLAT:DLAT
 
-    [set grib type](./set_grib_type.html) PACKING
+    [set grib type](./set_grib_type.md) PACKING
         PACKING = s simple, fast, poor compression, very large software support
                 = c1  complex 1, large software support
                 = c2  complex 2, large software support
                 = c3  complex 3, large software support
                 = j   jpeg2000, slow, very good compression, very large software support
                 = a   aec, fast, new, small software support
-     [-new\_grid\_winds](./new_grid_winds.html) earth
+     [-new\_grid\_winds](./new_grid_winds.md) earth
                set output vectors to earth relative
-     [-new\_grid](./new_grid.html)
+     [-new\_grid](./new_grid.md)
          latlon = write a lat-lon grid
          LON0 = left longitude, 0..360
          NLON = number of longitude in grid
@@ -260,19 +260,19 @@ gravity wave drag or wind stresses.
 ```
 
 This ends this introduction. For more information, see
-the regular [new_grid documentation](./new_grid.html),
+the regular [new_grid documentation](./new_grid.md),
 
 See also:
-[-new_grid](./new_grid.html),
-[-new_grid_interpolation](./new_grid_interpolation.html),
-[-new_grid_winds](./new_grid_winds.html),
-[-new_grid_vectors](./new_grid_vectors.html),
-[-lola](./lola.html),
-[-bin](./bin.html),
-[-import_bin](./import_bin.html),
-[-rpn](./rpn.html),
-[-grib_out](./grib_out.html),
-[new_grid multi-core usage](./new_grid_usage.html),
+[-new_grid](./new_grid.md),
+[-new_grid_interpolation](./new_grid_interpolation.md),
+[-new_grid_winds](./new_grid_winds.md),
+[-new_grid_vectors](./new_grid_vectors.md),
+[-lola](./lola.md),
+[-bin](./bin.md),
+[-import_bin](./import_bin.md),
+[-rpn](./rpn.md),
+[-grib_out](./grib_out.md),
+[new_grid multi-core usage](./new_grid_usage.md),
 
 ```
 

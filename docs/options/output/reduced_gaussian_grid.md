@@ -111,7 +111,7 @@ INTERPOLATION = linear, neighbor, linear-extrapolate, neighbor-extrapolate
 ```
 
 
-See also: [-grid](./grid.html),
+See also: [-grid](./grid.md),
 
 
 

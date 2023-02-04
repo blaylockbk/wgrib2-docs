@@ -54,8 +54,8 @@ The inventory will change with the version of wgrib2 by the addition of new fiel
 
 ## Usage
 
-[overview](./pywgrib2_s.html)
-[next](./pywgrib2_s_read_inv.html)
+[overview](./pywgrib2_s.md)
+[next](./pywgrib2_s_read_inv.md)
 
 ---
 

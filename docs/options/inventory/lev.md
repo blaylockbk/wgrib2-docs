@@ -23,7 +23,7 @@ $ wgrib2 grib2.polar -lev
 
 ```
 
-See also: [-s](./macros.html)
+See also: [-s](./macros.md)
 
 ---
 

@@ -34,9 +34,9 @@ $ wgrib2 rtgssthr\_grb\_0.083\_awips.grib2 -get\_ieee 5 12 1
 ```
 
 See also:
-[-get_byte](get_byte.html)
-[-get_byte](get_hex.html)
-[-get_int](get_int.html)
+[-get_byte](get_byte.md)
+[-get_byte](get_hex.md)
+[-get_int](get_int.md)
 
 ---
 

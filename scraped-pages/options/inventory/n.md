@@ -54,8 +54,8 @@ to CPU2.)
 ```
 
 See also:
-[-if_n](./if_n.html),
-[-for_n](./for_n.html)
+[-if_n](./if_n.md),
+[-for_n](./for_n.md)
 
 ---
 

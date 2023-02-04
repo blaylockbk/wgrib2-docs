@@ -59,8 +59,8 @@ The -new_grid option can interpolate to set of
 user defined grid points.
 
 See also:
-[-last0](./last0.html)
-[-new_grid](./new_grid.html)
+[-last0](./last0.md)
+[-new_grid](./new_grid.md)
 
 ---
 

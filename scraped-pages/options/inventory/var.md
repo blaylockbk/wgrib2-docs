@@ -74,8 +74,8 @@ To stop using the extended name in -AAIG, -csv and -netcdf, use the option
 ```
 
 See also:
-[-s](./s.html),
-[-varX](./varX.html)
+[-s](./s.md),
+[-varX](./varX.md)
 
 ---
 

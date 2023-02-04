@@ -54,13 +54,13 @@ follows the recommendation of the defining site.
 
 ```
 
- [mk\_inv(grib, inv\_file)](./pywgrib2_s_mk_inv.html)                   makes inventory file
- [read\_inv(inv\_file)](./pywgrib2_s_read_inv.html)                       reads inventory file, returns list
- [inq(grib,...)](./pywgrib2_s_inq.html)                            inquire about grib2 file
+ [mk\_inv(grib, inv\_file)](./pywgrib2_s_mk_inv.md)                   makes inventory file
+ [read\_inv(inv\_file)](./pywgrib2_s_read_inv.md)                       reads inventory file, returns list
+ [inq(grib,...)](./pywgrib2_s_inq.md)                            inquire about grib2 file
                                             read metadata, grid point data,
                                             calculate lat-lon of grid points for common grids
- [write(grib,...)](./pywgrib2_s_write.html)                          write grib2
- [close(file)](./pywgrib2_s_close.html)                              close file, used to flush, free up resources,
+ [write(grib,...)](./pywgrib2_s_write.md)                          write grib2
+ [close(file)](./pywgrib2_s_close.md)                              close file, used to flush, free up resources,
 
 ```
 
@@ -99,7 +99,7 @@ the number of threads can be controlled by -ncpu option.
 
 Pywgrib2_s uses global variables for the
 
-1. [configuration](./pywgrib2_s_global_variables.html)- [output of pywgrib2_s.inq(..)](./pywgrib2_s_global_variables.html)
+1. [configuration](./pywgrib2_s_global_variables.md)- [output of pywgrib2_s.inq(..)](./pywgrib2_s_global_variables.md)
 
 ### Low level Access: wgrib2
 
@@ -115,7 +115,7 @@ The pywgrib2_s.wgrib2(..) will let you directly call wgrib2.
  wgrib2_config()                            returns list of strings with the configuration
                                             of the wgrib2 library. Same as wgrib2 -config
 
- [wgrib2( [ (list of wgrib2 arguments) ] )](./pywgrib2_s_wgrib2.html)   call wgrib2
+ [wgrib2( [ (list of wgrib2 arguments) ] )](./pywgrib2_s_wgrib2.md)   call wgrib2
 
 
 
@@ -160,7 +160,7 @@ Li Xu of CPC has provided some documentation for the
 
 ### Installation:
 
-See [Installation directions](./pywgrib2_s_install.html)
+See [Installation directions](./pywgrib2_s_install.md)
 
 ### Code Timeline
 
@@ -171,7 +171,7 @@ See [Installation directions](./pywgrib2_s_install.html)
 - wgrib2 v3.0.2 with updates for pywgrib2\_\* including Windows support (3/2021)
 
 See also:
-[pywgrib2_s conventions](./pywgrib2_s_conventions.html)
+[pywgrib2_s conventions](./pywgrib2_s_conventions.md)
 
 ---
 

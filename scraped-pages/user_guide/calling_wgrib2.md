@@ -38,7 +38,7 @@ the disk to communicate with wgrib2.
 
 ```
 
-More information is given in [callable_wgrib2](./callable_wgrib2.html). This
+More information is given in [callable_wgrib2](./callable_wgrib2.md). This
 facility was used to create a fortran api to read and write grib2.
 
 ### Wgrib2 as a Process (Filter)
@@ -115,7 +115,7 @@ for writing grib.
 Climate Prediction Center
 5830 University Research Court
 College Park, Maryland 20740
-[Climate Prediction Center Web Team](/comment-form.html)
+[Climate Prediction Center Web Team](/comment-form.md)
 Page last modified: Oct 25, 2016
 | [Disclaimer](https://weather.gov/disclaimer.php) | [Privacy Policy](https://weather.gov/privacy.php) |
 

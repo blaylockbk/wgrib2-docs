@@ -28,7 +28,7 @@ is to mark the file as persistent.
 ```
 
 See also:
-[-transient](./transient.html)
+[-transient](./transient.md)
 
 ---
 

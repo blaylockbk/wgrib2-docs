@@ -31,10 +31,10 @@ I-M = Mth floating point number
 ### Example
 
 See also:
-[-get_int](get_int.html)
-[-set_byte](set_byte.html)
-[-set_hex](set_hex.html)
-[-set_int2](set_int2.html)
+[-get_int](get_int.md)
+[-set_byte](set_byte.md)
+[-set_hex](set_hex.md)
+[-set_int2](set_int2.md)
 
 ---
 

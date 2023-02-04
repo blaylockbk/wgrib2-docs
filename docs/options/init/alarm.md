@@ -28,7 +28,6 @@ connections which will never trigger the
 ## Usage
 
 ```
-
 -alarm N
           N is an integer from 0..65536 (ISO C standard)
           N = 0 will remove any pending alarm
@@ -44,8 +43,8 @@ For Posix systems, the system generates a SIGALRM signal
 to the process after N seconds. The default action is to
 terminate the process (wgrib2).
 
-See also: [-quit](./quit.html),
-[-limit](./limit.html)
+See also: [-quit](./quit.md),
+[-limit](./limit.md)
 
 ---
 

@@ -153,7 +153,7 @@ $ wgrib2 icon.grb icon.grb -if ":GEOLAT:" -rpn sto\_lat -endif -if ":GEOLON:" -r
 ```
 
 See also:
-[-rpn](./rpn.html)
+[-rpn](./rpn.md)
 
 ```
 

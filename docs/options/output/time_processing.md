@@ -363,7 +363,7 @@ running sum and number of times the sum was incremented. So it is
 possible for the fast averaging could use up too much memory.
 
 See also:
-[-merge_fcst](./merge_fcst.html)
+[-merge_fcst](./merge_fcst.md)
 
 ---
 

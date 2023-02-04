@@ -25,7 +25,7 @@ sh-2.05b$ wgrib2 new.grb2 -s -ij 1 1
 
 ```
 
-See also: [-ijlat](./ijlat.html), [-ilat](./ilat.html), [-lon](./lon.html)
+See also: [-ijlat](./ijlat.md), [-ilat](./ilat.md), [-lon](./lon.md)
 
 ---
 

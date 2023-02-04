@@ -31,7 +31,7 @@ in order to get latitude, longitude information.
 ```
 
 See also:
-[-scan](./scan.html),
+[-scan](./scan.md),
 
 ---
 

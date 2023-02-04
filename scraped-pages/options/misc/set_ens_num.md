@@ -53,9 +53,9 @@ $ wgrib2 ds.td.bin -set\_ens\_num 3 1 10 -grib ds\_ens.grb
 ```
 
 See also:
-[-set_ensm_derived_fcst](set_ensm_derived_fcst.html),
-[-ens](ens.html),
-[-N_ens](N_ens.html)
+[-set_ensm_derived_fcst](set_ensm_derived_fcst.md),
+[-ens](ens.md),
+[-N_ens](N_ens.md)
 
 ---
 

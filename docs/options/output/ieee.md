@@ -57,12 +57,12 @@ The above line extracts the 2 meter RH from file test.grb2 and writes it in data
 
 ```
 
-See also: [-text](./text.html),
-[-netcdf](./netcdf.html)
-[-spread](./spread.html)
-[-bin](./bin.html)
-[-big_endian](./big_endian.html)
-[-little_endian](./big_endian.html)
+See also: [-text](./text.md),
+[-netcdf](./netcdf.md)
+[-spread](./spread.md)
+[-bin](./bin.md)
+[-big_endian](./big_endian.md)
+[-little_endian](./big_endian.md)
 
 ---
 

@@ -57,9 +57,9 @@ grib data written using the -grib option because the
 the input grib message.
 
 See alse:
-[-set_scaling](set_scaling.html)
-[-set_bin_prec](set_bin_prec.html)
-[-grib_max_bits](grib_max_bits.html)
+[-set_scaling](set_scaling.md)
+[-set_bin_prec](set_bin_prec.md)
+[-grib_max_bits](grib_max_bits.md)
 
 ---
 

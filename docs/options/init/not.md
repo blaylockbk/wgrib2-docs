@@ -69,15 +69,15 @@ Some recent changes (as of Nov 2011) to the match inventory include:
 - adding the inventory number, ex. n=10
 - adding ensemble/chemical/probability information (-misc)
 
-See also: [-not_if](./not_if.html),
-[-not_fs](./not_fs.html),
-[-match](./match.html),
-[-match_fs](./match_fs.html),
-[-match_inv](./match_inv.html),
-[-end](./end.html),
-[-i](./i.html),
-[-if](./if.html),
-[-set_regex](./set_regex.html).
+See also: [-not_if](./not_if.md),
+[-not_fs](./not_fs.md),
+[-match](./match.md),
+[-match_fs](./match_fs.md),
+[-match_inv](./match_inv.md),
+[-end](./end.md),
+[-i](./i.md),
+[-if](./if.md),
+[-set_regex](./set_regex.md).
 
 ---
 

@@ -39,8 +39,8 @@ because
 
 ```
 
-[overview](./pywgrib2_s.html)
-[back](./pywgrib2_s_write.html)
+[overview](./pywgrib2_s.md)
+[back](./pywgrib2_s_write.md)
 
 ---
 

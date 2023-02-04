@@ -6,14 +6,14 @@ The -else option is part of the
 -if,
 -else,
 -endif structure for conditional execution of wgrib2 options.
-More details are in the [-if](./if.html) documentation.
+More details are in the [-if](./if.md) documentation.
 The -else option was introduced with wgrib2 v3.0.0 to replace
 the older version 1 IF structure.
 
 See also:
-[-if](./if.html),
-[-endif](./endif.html),
-[-match](./match.html),
+[-if](./if.md),
+[-endif](./endif.md),
+[-match](./match.md),
 
 ---
 

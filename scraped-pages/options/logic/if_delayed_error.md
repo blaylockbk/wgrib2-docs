@@ -51,7 +51,7 @@ $ wgrib2 bad_n_header.grb2 -if_delayed_error -s -endif -reset_delayed_error
 ```
 
 See also:
-[-reset_delayed_error](./reset_delayed_error.html),
+[-reset_delayed_error](./reset_delayed_error.md),
 
 ---
 

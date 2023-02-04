@@ -9,8 +9,8 @@ The -ave and
 and -fcst_ave.
 
 See also:
-[-ave](./ave.html),
-[-fcst_ave](./fcst_ave.html)
+[-ave](./ave.md),
+[-fcst_ave](./fcst_ave.md)
 
 ---
 

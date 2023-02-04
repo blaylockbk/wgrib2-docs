@@ -53,7 +53,7 @@ $ wgrib2 reduced\_gaussian\_surface\_jpeg.grib2 -nlons
 ```
 
 See also:
-[-grid](./grid.html)
+[-grid](./grid.md)
 
 ---
 

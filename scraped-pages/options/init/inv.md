@@ -57,7 +57,7 @@ reading a grib2 record from within perl program is easy.
 ```
 
 See also:
-[-text](./text.html)
+[-text](./text.md)
 [-bin](./bin.bin)
 
 ---

@@ -27,7 +27,7 @@ $ wgrib2 -radius png.grb2
 ```
 
 See also:
-[-set_radius_inv](./set_radius.html)
+[-set_radius_inv](./set_radius.md)
 
 ---
 

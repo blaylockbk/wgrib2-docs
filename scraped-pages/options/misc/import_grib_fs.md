@@ -57,7 +57,7 @@ This commands writes new.bin as a grib2 file as TMP2m analysis at 12Z Dec 31, 19
 ```
 
 See also:
-[-import_grib](./import_grib.html),
+[-import_grib](./import_grib.md),
 
 ---
 

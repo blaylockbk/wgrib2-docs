@@ -3,7 +3,7 @@
 ## Introduction
 
 The -append and -no_append options
-sets/clears the append flag. The [out](./types.html) options are
+sets/clears the append flag. The [out](./types.md) options are
 expected to respect this flag when opening output files. So an -append option
 before writing (-text, -bin, etc) should append to a currently existing file.
 The -no_append directs the file to be created before use which is the default.

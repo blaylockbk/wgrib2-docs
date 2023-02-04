@@ -42,7 +42,7 @@ the wgrib2 warning, make sure the decimal scale factor is zero when the field is
 Climate Prediction Center
 5830 University Research Court
 College Park, Maryland 20740
-[Climate Prediction Center Web Team](/comment-form.html)
+[Climate Prediction Center Web Team](/comment-form.md)
 Page last modified: Dec 21, 2015
 | [Disclaimer](https://weather.gov/disclaimer.php) | [Privacy Policy](https://weather.gov/privacy.php) |
 

@@ -45,7 +45,7 @@ a different field separator. (CSV file?).
 ```
 
 See also:
-[-print](./print.html),
+[-print](./print.md),
 
 ---
 

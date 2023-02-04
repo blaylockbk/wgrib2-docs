@@ -43,7 +43,7 @@ run a box_average with 9x9 grid and then use -new_grid to get the cell average v
 This method is, as expected, slightly smoother than the budget interpolation of
 -new_grid. For vectors, you have to use the budget interpolation of the -new_grid option.
 
-See also: [-new_grid](./new_grid.html),
+See also: [-new_grid](./new_grid.md),
 
 ---
 

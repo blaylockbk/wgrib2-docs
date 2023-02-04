@@ -116,13 +116,13 @@ To format of the levels and ftime are
 the same was used by wgrib2 inventories.
 
 See also:
-[-set_ave](./set_ave.html),
-[-set_date](./set_date.html),
-[-set_ftime](./set_ftime.html),
-[-set_lev](./set_lev.html),
-[-set_metadata_str](./set_metadata_str.html),
-[-set_scale](./set_scale.html),
-[set_var](./set_var.html),
+[-set_ave](./set_ave.md),
+[-set_date](./set_date.md),
+[-set_ftime](./set_ftime.md),
+[-set_lev](./set_lev.md),
+[-set_metadata_str](./set_metadata_str.md),
+[-set_scale](./set_scale.md),
+[set_var](./set_var.md),
 
 ---
 

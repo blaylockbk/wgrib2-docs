@@ -23,9 +23,9 @@ X is a fixed string (not a regular expression)
 
 ```
 
-See also: [-if](./if.html),
-See also: [-not_if](./not_if.html),
-See also: [-not_if_fs](./not_if_fs.html),
+See also: [-if](./if.md),
+See also: [-not_if](./not_if.md),
+See also: [-not_if_fs](./not_if_fs.md),
 
 ---
 

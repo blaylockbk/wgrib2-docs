@@ -20,8 +20,8 @@ calculations which make them ideal for CW2 applications.
 ```
 
 See also:
-[-rpn](./rpn.html),
-[-rpn_rcl](./rpn_rcl.html),
+[-rpn](./rpn.md),
+[-rpn_rcl](./rpn_rcl.md),
 
 ---
 

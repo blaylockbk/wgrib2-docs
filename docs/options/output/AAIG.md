@@ -54,8 +54,8 @@ wgrib2 in_file -match ':HGT:400 mb:' -AAIG
 The above line converts all the 400 mb HGT fields into an
 arcinfo ascii grid file.
 
-See also: [-AAIGlong](./AAIGlong.html),
-[-csv](./csv.html)
+See also: [-AAIGlong](./AAIGlong.md),
+[-csv](./csv.md)
 
 ---
 

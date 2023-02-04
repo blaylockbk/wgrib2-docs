@@ -31,11 +31,11 @@ $ wgrib2 f.grb2 -get\_byte 0 1 16
 ```
 
 See also:
-[new grib](new_grib.html),
-[-set_byte](set_byte.html),
-[-get_ieee](get_ieee.html),
-[-get_int](get_int.html),
-[-get_hex](get_hex.html)
+[new grib](new_grib.md),
+[-set_byte](set_byte.md),
+[-get_ieee](get_ieee.md),
+[-get_int](get_int.md),
+[-get_hex](get_hex.md)
 
 ---
 

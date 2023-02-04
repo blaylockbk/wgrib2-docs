@@ -43,8 +43,8 @@ blocks be used because the scripts will be easier to read by future
 users. Note that the old and new IF blocks cannot be mixed.
 
 See also:
-[-if](./if.html),
-[-endif](./endif.html),
+[-if](./if.md),
+[-endif](./endif.md),
 
 ---
 

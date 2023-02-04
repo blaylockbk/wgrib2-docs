@@ -472,13 +472,13 @@ I am sure that Western Digital, Seagate, Hitachi and Toshiba all appreciate
 your support.
 
 See also:
-[-bin](./bin.html),
-[-ieee](./ieee.html),
-[-text](./text.html),
-[-set_ext_name](./set_ext_name.html),
-[-spread](./spread.html),
+[-bin](./bin.md),
+[-ieee](./ieee.md),
+[-text](./text.md),
+[-set_ext_name](./set_ext_name.md),
+[-spread](./spread.md),
 
-[-append](./append.html)
+[-append](./append.md)
 
 ---
 

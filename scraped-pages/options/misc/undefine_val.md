@@ -39,9 +39,9 @@ $ wgrib2 IN.grb2 -undefine\_val -999.9 -set\_grib\_type same -grib\_out OUT.grb
 ```
 
 See also:
-[-undefine](./undefine.html),
-[-ijundefine](./ijundefine.html),
-[-rpn](./rpn.html),
+[-undefine](./undefine.md),
+[-ijundefine](./ijundefine.md),
+[-rpn](./rpn.md),
 
 ---
 

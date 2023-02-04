@@ -58,9 +58,9 @@ to use -new_grid_vectors to get U and V to be vectors.
 
 ```
 
-See also: [-new_grid](./new_grid.html),
-[-new_grid_vectors](./new_grid_vectors.html),
-[user_grib2tables](https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/user_grib2tables.html)
+See also: [-new_grid](./new_grid.md),
+[-new_grid_vectors](./new_grid_vectors.md),
+[user_grib2tables](https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/user_grib2tables.md)
 
 ---
 

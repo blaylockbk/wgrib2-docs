@@ -57,10 +57,10 @@ conditions for a regional model". For this to work well, a module to write the d
 to be written. BTW the binary file will compress to an extremely small file.
 
 See also:
-[-undefine](./undefine.html),
-[-spread](./spread.html),
-[-stats](./stats.html),
-[-undefine_val](./undefine_val.html),
+[-undefine](./undefine.md),
+[-spread](./spread.md),
+[-stats](./stats.md),
+[-undefine_val](./undefine_val.md),
 
 ---
 

@@ -30,10 +30,10 @@ $ wgrib2 f.grb -get\_int2 1 6 1
 ```
 
 See also:
-[new grib](new_grib.html),
-[-get_byte](get_byte.html)
-[-get_int](get_int.html)
-[-get_hex](get_hex.html)
+[new grib](new_grib.md),
+[-get_byte](get_byte.md)
+[-get_int](get_int.md)
+[-get_hex](get_hex.md)
 
 ---
 

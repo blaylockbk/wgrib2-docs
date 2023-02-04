@@ -20,10 +20,10 @@ does not affect the order in which binary numbers are read/written.
 ```
 
 See also:
-[-ieee](./ieee.html),
-[-import_ieee](./import_ieee.html),
-[-header](./header.html),
-[-no_header](./header.html),
+[-ieee](./ieee.md),
+[-import_ieee](./import_ieee.md),
+[-header](./header.md),
+[-no_header](./header.md),
 
 ---
 

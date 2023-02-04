@@ -71,7 +71,7 @@ writing out index
 ```
 
 See also:
-[-ave](./ave.html)
+[-ave](./ave.md)
 
 [https://jonisalonen.com/2013/deriving-welfords-method-for-computing-variance/](https://jonisalonen.com/2013/deriving-welfords-method-for-computing-variance)
 

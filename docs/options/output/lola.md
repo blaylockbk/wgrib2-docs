@@ -58,7 +58,7 @@ lat-lon grids.
 This speeds up the interpolation and paves the way for a bilinear interpolation
 for the special cases.
 
-See alse: [-lon](./lon.html)
+See alse: [-lon](./lon.md)
 
 ---
 

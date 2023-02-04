@@ -41,7 +41,7 @@ inventory functions like -misc and
 -s.
 
 See also:
-[-set_prob](./set_prob.html)
+[-set_prob](./set_prob.md)
 
 ---
 

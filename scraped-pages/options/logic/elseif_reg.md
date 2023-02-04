@@ -16,23 +16,23 @@ The -elseif_reg is the
 -elseif equivalent of the
 -if_reg option.
 
-More details are in the [-if](./if.html) documentation.
+More details are in the [-if](./if.md) documentation.
 The -else option was introduced with wgrib2 v3.0.0 to replace
 the older version 1 IF structure.
 
 See also:
-[-if](./if.html),
-[-if_fs](./if_fs.html),
-[-if_n](./if_n.html),
-[-if_rec](./if_rec.html),
-[-if_reg](./if_reg.html),
-[-else](./else.html),
-[-elseif](./elseif.html),
-[-elseif_fs](./elseif_fs.html),
-[-elseif_n](./elseif_n.html),
-[-elseif_rec](./elseif_rec.html),
-[-endif](./endif.html),
-[-match](./match.html),
+[-if](./if.md),
+[-if_fs](./if_fs.md),
+[-if_n](./if_n.md),
+[-if_rec](./if_rec.md),
+[-if_reg](./if_reg.md),
+[-else](./else.md),
+[-elseif](./elseif.md),
+[-elseif_fs](./elseif_fs.md),
+[-elseif_n](./elseif_n.md),
+[-elseif_rec](./elseif_rec.md),
+[-endif](./endif.md),
+[-match](./match.md),
 
 ---
 

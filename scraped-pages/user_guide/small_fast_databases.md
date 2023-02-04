@@ -119,7 +119,7 @@ X=simple, complex1, complex2, complex3, jpeg
 Climate Prediction Center
 5830 University Research Court
 College Park, Maryland 20740
-[Climate Prediction Center Web Team](/comment-form.html)
+[Climate Prediction Center Web Team](/comment-form.md)
 Page last modified: Aug 7, 2009
 | [Disclaimer](https://weather.gov/disclaimer.php) | [Privacy Policy](https://weather.gov/privacy.php) |
 

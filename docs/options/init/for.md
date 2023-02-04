@@ -34,9 +34,9 @@ selecting the fields.
 ```
 
 See also:
-[-if_rec](./if_rec.html)
-[-match](./match.html)
-[-for_n](./for_n.html)
+[-if_rec](./if_rec.md)
+[-match](./match.md)
+[-for_n](./for_n.md)
 
 ---
 

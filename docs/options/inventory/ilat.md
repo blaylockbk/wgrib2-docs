@@ -33,10 +33,10 @@ output grid may differ from the input grid.
 
 ```
 
-See also: [-ijlat](./ijlat.html),
-[-lon](./lon.html)
-[-ll2i](./ll2i.html)
-[-scan](./scan.html)
+See also: [-ijlat](./ijlat.md),
+[-lon](./lon.md)
+[-ll2i](./ll2i.md)
+[-scan](./scan.md)
 
 ---
 

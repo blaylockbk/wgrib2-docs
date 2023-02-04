@@ -60,8 +60,8 @@ messages, it tests count to a specified integer and sets the error return.
 ```
 
 See also:
-[-if](./if.html)
-[-endif](./endif.html)
+[-if](./if.md)
+[-endif](./endif.md)
 
 ---
 

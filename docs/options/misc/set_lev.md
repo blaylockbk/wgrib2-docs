@@ -92,7 +92,7 @@ $ wgrib2 png.grb22 -set\_lev "9.1 mb"
 ```
 
 See also:
-[-lev](lev.html),
+[-lev](lev.md),
 
 ---
 

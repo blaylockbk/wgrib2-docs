@@ -76,7 +76,7 @@ of zero for the the mean, min and max.
 The -min and -max
 options will yield a text string of "undefined".
 
-See also: [-undefine](./undefine.html)
+See also: [-undefine](./undefine.md)
 
 ---
 
