@@ -1,29 +1,20 @@
+# wgrib2: -ncep_uv
 
-### wgrib2: -ncep\_uv
-
-
-
-### Introduction
-
-
+## Introduction
 
 Operatinal NCEP grib files often have the U and corresponding V fields in the same grib message.
 (U and V are submessages.) Typically wgrib2 converts all the submessages into individual messages.
 In order to combine the U and V fields together, you replace the -grib option
-with -ncep\_uv. Options like
--grib\_out and -new\_grid do not have the capability
+with -ncep_uv. Options like
+-grib_out and -new_grid do not have the capability
 to combine the U and V fields. For theses cases, you run the output through wgrib2.
 
-Note that -ncep\_uv is more like -grib than
--grib\_out. The option
--ncep\_uv uses the compressed grid point values from the original file.
+Note that -ncep_uv is more like -grib than
+-grib_out. The option
+-ncep_uv uses the compressed grid point values from the original file.
 Neither the grid point values nor the packing is changed.
 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -32,9 +23,6 @@ Neither the grid point values nor the packing is changed.
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -51,24 +39,16 @@ records together into one message.
 
 ```
 
-
-See also: 
+See also:
 [-tosubmsg](./tosubmsg.html)
 [-submsg](./submsg.html)
-[-submsg\_uv](./submsg_uv.html)
+[-submsg_uv](./submsg_uv.html)
 [-grib](./grib.html)
-[-grib\_out](./grib_out.html)
+[-grib_out](./grib_out.html)
 [-GRIB](./GRIB.html)
 
+---
 
-
-
-
-
-
-
-----
-
->Description: out   X      combine U and V fields into one message like NCEP operations
+> Description: out X combine U and V fields into one message like NCEP operations
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/ncep_uv.html>_

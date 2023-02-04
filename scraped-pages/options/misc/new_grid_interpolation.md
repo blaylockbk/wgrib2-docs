@@ -1,32 +1,26 @@
+# wgrib2: -new_grid_interpolation
 
-### wgrib2: -new\_grid\_interpolation
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -new\_grid\_interpolation option selects the type of
-interpolation used by the -new\_grid option.
-The possible values are bilinear, bicubic, nearest neighbor, spectral, neighbor-budget and 
-budget. The -new\_grid\_interpolation option must appear before the
--new\_grid option. If the -new\_grid\_interpolation 
-option is not used, the interpolation defaults to bilinear. 
+The -new_grid_interpolation option selects the type of
+interpolation used by the -new_grid option.
+The possible values are bilinear, bicubic, nearest neighbor, spectral, neighbor-budget and
+budget. The -new_grid_interpolation option must appear before the
+-new_grid option. If the -new_grid_interpolation
+option is not used, the interpolation defaults to bilinear.
 
 1. bilinear, interpolate linearly in X and then linearly in Y
- - bicubic,
- - nearest neighbor, value of closest source grid point in X-Y space
- - budget, make 5x5 grid, find the 25 bilinear values and average
- - neighbor-budget, make 5x5 grid, find 25 nearest neighbor values and average
- - spectral, convert to spectral space (user specified) and then to grid values
 
+- bicubic,
+- nearest neighbor, value of closest source grid point in X-Y space
+- budget, make 5x5 grid, find the 25 bilinear values and average
+- neighbor-budget, make 5x5 grid, find 25 nearest neighbor values and average
+- spectral, convert to spectral space (user specified) and then to grid values
 
- Some fields may require different types of interpolation such as the soil type should
+Some fields may require different types of interpolation such as the soil type should
 be found using a nearest neighbor interpolation. (A fractional soil type is meaningless.)
-It is common practice to use -if and -fi options 
+It is common practice to use -if and -fi options
 to control the setting of the the interpolation type as shown by the following command.
-
 
 ```
 
@@ -36,12 +30,11 @@ to control the setting of the the interpolation type as shown by the following c
 
 ```
 
- Budget or neighbor-budget is often used for precipitation in order to
+Budget or neighbor-budget is often used for precipitation in order to
 roughly conserve global averages. The budget interpolations are slower
 because the output grid cell is covered with a 5x5 grid, and interpolations
 are done for each point of the 5x5 grid. So the budget interpolations do
 25 times more interpolations.
-
 
 Spectral interpolation is specialized interpolation scheme. A global field
 is transformed into spherical harmonics (user specified truncation), and
@@ -52,22 +45,20 @@ is based on 4 grid points. The spectral interpolation is based on all
 the grid points. So the interpolation scheme will act as noise reduction
 when projected to a fewer spherical harmonics than the number of grid points.
 
-The limiting zonal wave number is specified and should not be prime as it makes 
+The limiting zonal wave number is specified and should not be prime as it makes
 the Fast Fourier Transform into a slow
 Fourier Transform. The limiting zonal wave number should be a product
 of many 2s, 3s, 5s and other small primes. The limiting zonal wave number
 may need to be compatible with the Fast Fourier Transform (FFT) code used.
 
-### Usage
-
-
+## Usage
 
 ```
 
 -new_grid_interpolation X
     X = bilinear, bicubic, neighbor, budget, neighbor-budget, spectral-(trun)(num)
          spectral-*  is alpha
-          
+
 
         bilinear:          linear interpolation in X and then Y.
         neighbor:          Values from nearest grid point.
@@ -82,28 +73,16 @@ may need to be compatible with the Fast Fourier Transform (FFT) code used.
 
 ```
 
-
-See also: [-new\_grid](./new_grid.html),
-[-new\_grid\_winds](./new_grid_winds.html)
-[-new\_grid\_ipopt](./new_grid_ipopt.html)
+See also: [-new_grid](./new_grid.html),
+[-new_grid_winds](./new_grid_winds.html)
+[-new_grid_ipopt](./new_grid_ipopt.html)
 [-if](./if.html)
 [-fi](./fi.html)
 
 Updated Nov, 2022
 
+---
 
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: misc  X      new_grid interpolation X=bilinear,bicubic,neighbor,budget
+> Description: misc X new_grid interpolation X=bilinear,bicubic,neighbor,budget
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/new_grid_interpolation.html>_

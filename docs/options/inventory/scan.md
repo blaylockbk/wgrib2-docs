@@ -1,18 +1,14 @@
+# wgrib2: -scan
 
-### wgrib2: -scan
-
-
-
-### Introduction:
-
-
+## Introduction:
 
 A grib message contains the grid point values. If you are a C programmer, the grid would
-naturally be in "C" order. A fortran programmer would have the grid in fortran order. 
+naturally be in "C" order. A fortran programmer would have the grid in fortran order.
 Some people would start from the NW corner and others would start from the SW corner.
-In grib1, all these scan orders are possible. The grib1 scan orders are, 
+In grib1, all these scan orders are possible. The grib1 scan orders are,
 
 1. WE:SN
+
 - WE:NS
 - EW:SN
 - EW:NS
@@ -21,10 +17,7 @@ In grib1, all these scan orders are possible. The grib1 scan orders are,
 - SN:EW
 - NS:EW
 
- 
-
 You read the above notation (WE:SN) by first go from W to E then go from S to N.
-
 
 ```
 
@@ -37,16 +30,14 @@ AB:CD
 
 ```
 
-
 Grib2, includes the above 8 scan orders and adds 4 more useful
 scan orders.
 
 1. WE|EW:SN
+
 - WE|EW:NS
 - EW|WE:SN
 - EW|WE:NS
-
-
 
 ```
 
@@ -68,20 +59,13 @@ AB|BA:CD
 
 ```
 
-
 This "plow the field" order reduces the file size when using
 regional grids and saving the increments.
-
-
-
 
 Grib2 has 16 scan orders of which 3 are common: WE:SN, WE:NS and WE|EW:SN.
 Wgrib2 simplfies life by internally converting fields to WE:SN by default.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -90,9 +74,6 @@ Wgrib2 simplfies life by internally converting fields to WE:SN by default.
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -108,21 +89,11 @@ output=WE:SN     the internal registers and output files except for grib
 
 ```
 
-
-See also: 
+See also:
 [-order](./order.html),
 
+---
 
-
-
-
-
-
-
-
-
-----
-
->Description: inv          scan order of grid
+> Description: inv scan order of grid
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/scan.html>_

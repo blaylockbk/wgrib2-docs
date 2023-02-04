@@ -1,9 +1,6 @@
+# wgrib2: -s_out
 
-### wgrib2: -s\_out
-
-
-
- The -s\_out option is obsolete with the introduction of the
+The -s_out option is obsolete with the introduction of the
 -last option.
 
 ```
@@ -13,12 +10,9 @@
 
 ```
 
-### Introduction
+## Introduction
 
-
-
-The -s\_out option prints out a simple inventory (-s) to a file.
-
+The -s_out option prints out a simple inventory (-s) to a file.
 
 ```
 
@@ -31,10 +25,7 @@ d=2007032600:HGT:1000 mb:3 hour fcst:
 
 ```
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -42,20 +33,12 @@ d=2007032600:HGT:1000 mb:3 hour fcst:
 
 ```
 
-
 See also: [-s](./s.html),
-[-s\_f77](./s_f77.html),
+[-s_f77](./s_f77.html),
 [-inv](./inv.html),
 
+---
 
-
-
-
-
-
-
-----
-
->Description: inv>  X      simple inventory written to X
+> Description: inv> X simple inventory written to X
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/s_out.html>_

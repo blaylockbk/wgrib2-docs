@@ -1,15 +1,9 @@
+# wgrib2: -npts
 
-### wgrib2: -npts
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -npts option prints the number of grid points
 in the grid. The total include both defined and undefined grid points.
-
 
 ```
 
@@ -18,10 +12,7 @@ in the grid. The total include both defined and undefined grid points.
 
 ```
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -29,16 +20,10 @@ in the grid. The total include both defined and undefined grid points.
 
 ```
 
-
 See also: [-nxny](./nxny.html)
 
+---
 
-
-
-
-
-----
-
->Description: inv          number of grid points
+> Description: inv number of grid points
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/npts.html>_

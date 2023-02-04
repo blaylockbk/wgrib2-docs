@@ -1,20 +1,12 @@
+# wgrib2: -MM
 
-### wgrib2: -MM
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -MM option prints the month of the
-reference time. The -MM 
+reference time. The -MM
 and -YY options are pretty useless.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -24,9 +16,6 @@ and -YY options are pretty useless.
 
 ### Example
 
-
-
-
 ```
 
 $ wgrib2 png.grb2 -MM
@@ -34,22 +23,10 @@ $ wgrib2 png.grb2 -MM
 
 ```
 
-
-
-
-
-
 See also: [-t](./t.html), [-T](./T.html)
 
+---
 
-
-
-
-
-
-
-----
-
->Description: inv          reference time MM
+> Description: inv reference time MM
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/MM.html>_

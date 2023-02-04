@@ -1,18 +1,10 @@
+# wgrib2: -n
 
-### wgrib2: -n
-
-
-
-### Introduction: message number vs inventory number
-
-
+## Introduction: message number vs inventory number
 
 A grib file is made of messages and each message can contain one or more gridded fields.
 If the message has two or more gridded fields, we say the message has submessages.
 The wgrib2 convention for number the messages/submessages is
-
-
-
 
 ```
 
@@ -35,23 +27,16 @@ Inventory numbering convention:
 
 ```
 
-
 An alternative method for numbering the fields is the inventory number. The inventory number
 is simply the grids starting from one. The inventory number is simply the line number of
 the default wgrib2 inventory. The message number is the first column of the the default
 wgrib2 inventory.
-
-
-
 
 Both the message number and the inventory number are valid ways of numbering the fields in
 a grib file. The message number is the original method and reflects the structure of
 the grib message/submessage structure. The inventory number is a logical numbering scheme
 when trying trying to multitask wgrib2. (For example, send even fields to CPU1 and odd fields
 to CPU2.)
-
-
-
 
 ```
 
@@ -60,10 +45,7 @@ to CPU2.)
 
 ```
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -71,16 +53,12 @@ to CPU2.)
 
 ```
 
+See also:
+[-if_n](./if_n.html),
+[-for_n](./for_n.html)
 
-See also: 
-[-if\_n](./if_n.html),
-[-for\_n](./for_n.html)
+---
 
-
-
-
-----
-
->Description: inv          prints out inventory number
+> Description: inv prints out inventory number
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/n.html>_

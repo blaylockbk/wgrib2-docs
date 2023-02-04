@@ -1,18 +1,11 @@
+# wgrib2: -table
 
-### wgrib2: -table
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -table option prints the values of 
+The -table option prints the values of
 discipline, master table and local table.
-### Usage
 
-
-
+## Usage
 
 ```
 
@@ -22,8 +15,6 @@ discipline, master table and local table.
 
 ### Example
 
-
-
 ```
 
 $ wgrib2 f.grb -table
@@ -31,18 +22,11 @@ $ wgrib2 f.grb -table
 
 ```
 
-
-
- See also: 
+See also:
 [Sec0](Sec0.html),
- 
 
+---
 
-
-
-
-----
-
->Description: inv          parameter table
+> Description: inv parameter table
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/table.html>_

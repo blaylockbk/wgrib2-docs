@@ -1,19 +1,11 @@
+# wgrib2: -subcenter
 
-### wgrib2: -subcenter
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -subcenter option prints out the subcenter.
 For example, within NCEP, the subcenters include NCO, EMC, HPC, MPC, CPC, etc.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -22,9 +14,6 @@ For example, within NCEP, the subcenters include NCO, EMC, HPC, MPC, CPC, etc.
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -37,19 +26,11 @@ $ wgrib2 test.grb2 -subcenter
 
 ```
 
- 
 See also: [-center](./center.html),
- [-set](./set.html)
+[-set](./set.html)
 
+---
 
-
-
-
-
-
-
-----
-
->Description: inv          subcenter
+> Description: inv subcenter
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/subcenter.html>_

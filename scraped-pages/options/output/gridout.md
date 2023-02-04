@@ -1,23 +1,14 @@
+# wgrib2: -gridout
 
-### wgrib2: -gridout
+## Introduction
 
-
-
-### Introduction
-
-
-
-Many grib message contain grids of the following form: grid\_val(NX,NY),
+Many grib message contain grids of the following form: grid_val(NX,NY),
 longitude(NX,NY) and latitude(NX,NY). Common exceptions are spectral
 data, thinned grids and staggered grids. If the grib message is
-of the first form, then you can use the -gribout 
+of the first form, then you can use the -gribout
 option to print out i, j, latitude(i,j), longitude(i,j)
 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -32,8 +23,6 @@ option to print out i, j, latitude(i,j), longitude(i,j)
 ```
 
 ### Example
-
-
 
 ```
 
@@ -52,21 +41,11 @@ $ cat grid.txt
 
 ```
 
-
-See also: 
+See also:
 [-grid](./grid.html),
 
+---
 
-
-
-
-
-
-
-
-
-----
-
->Description: out   X      text file with grid: i j lat lon (1st record)
+> Description: out X text file with grid: i j lat lon (1st record)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/gridout.html>_

@@ -1,41 +1,35 @@
-
-### wgrib2: -time\_processing
-
-
+# wgrib2: -time_processing
 
 ![News](../icons/new.png)
-The -time\_processing option is being
+The -time_processing option is being
 introduced with wgrib2 v2.0.7 and has a superset of the capablities of
--ave and -fcst\_ave.
-The new -ave and -fcst\_ave
-options just call the -time\_processing option.
+-ave and -fcst_ave.
+The new -ave and -fcst_ave
+options just call the -time_processing option.
 
-### Introduction
+## Introduction
 
-
-
-Product Definintion Templates (PDT) come in 3 variaties. Type A is an uncommon PDT 
+Product Definintion Templates (PDT) come in 3 variaties. Type A is an uncommon PDT
 and only has a reference time with no forecast information. Typically they are for observations
 such as radar or satellite data. Type B has a reference time with a forecast time.
-For example, the reference time could be Januay 1, 2000 at 00Z. The forecast time 
+For example, the reference time could be Januay 1, 2000 at 00Z. The forecast time
 could be a 120 hour forecast. Typically the reference time is initial time of the forecast but
 Table 1.2 allows you to specify the significance of the reference time. Type B specifies
 a point in time. Finally Type C is similar to Type B except it is for a continous or
 non-continuous time interval. Some examples of type C PDTs,
 
-* average temperature of a 0-6 hour forecast
-* maximum temperature of 00Z-24Z observations taken every hour
-* maximum temperature of 00Z-24Z observations (as from a min-max thermometer)
-* average 00Z temperature for the month of May (analysis)
-* standard deviation of 00Z temperature of month of May 120 hour forecast
-* 30 year climatalogy of average June temperature analyses
+- average temperature of a 0-6 hour forecast
+- maximum temperature of 00Z-24Z observations taken every hour
+- maximum temperature of 00Z-24Z observations (as from a min-max thermometer)
+- average 00Z temperature for the month of May (analysis)
+- standard deviation of 00Z temperature of month of May 120 hour forecast
+- 30 year climatalogy of average June temperature analyses
 
- The interesting part of Type C PDTs is that the format is in terms of
+The interesting part of Type C PDTs is that the format is in terms of
 a stackable temporal operator. For example, a simple height forecast (ex 12 hour forecast)
-can be thought of as a height(time1, time2) where time1 is the intitial time of the 
+can be thought of as a height(time1, time2) where time1 is the intitial time of the
 forecast and time2 is the forecast time. The possible temporal averaging operators
 can be
-
 
 ```
 
@@ -48,17 +42,15 @@ can be
 
 ```
 
-
 By stacking the averaging operator, a monthly climatology can be described by a 30 year average
 of a monthly average.
 
- The Type C PDTs allow 11 standard temporal operations (code table 4.10) which
+The Type C PDTs allow 11 standard temporal operations (code table 4.10) which
 include the commonly used average, accumulation, maximum, minimum, RMS and standard
 deviation.
 
-
-The -time\_processing option will allow you to calculate the
-average/minimum/maximum/standard\_deviation of a time series of Type B or Type C PDTs.
+The -time_processing option will allow you to calculate the
+average/minimum/maximum/standard_deviation of a time series of Type B or Type C PDTs.
 Only a limited number of operators are supported. The total set is given by
 
 [Code Table 4.10](https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_table4-10.shtml)
@@ -66,10 +58,7 @@ Only a limited number of types of time intervals as defined by
 [Code Table 4.11](https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_table4-11.shtml)
 are supported.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -88,14 +77,11 @@ are supported.
 
 ### Code Table 4.11 = 1 (analyses)
 
-
-
 When Code Table 4.1 is set to 1, the input fields have to be processed in a special order.
 Suppose that you want to make a daily average from 4 analyses spaced at 6 hours. Then
 you process 4 fields with reference times incrementing by 6 hours with the same forecast time, variable,
-level and grid. Whenever the field is unexpected, a new average is made. Note: 
-the -time\_processing option will handle missing fields. For example,
-
+level and grid. Whenever the field is unexpected, a new average is made. Note:
+the -time_processing option will handle missing fields. For example,
 
 ```
 
@@ -116,18 +102,13 @@ Z500 2000-01-02 18Z             end ave
 
 ```
 
-
 Code Table 4.1 = 1 is good for making means of many analyses.
 
-
 ### Code Table 4.11 = 2 (forecast)
-
-
 
 When Code Table 4.1 is set to 1, the input fields have to be processed in a special order.
 Suppose that you want to make a daily average from one forecast with using forecast hour =
 0, 6, 12 and 18. (The forecast for the first day.)
-
 
 ```
 
@@ -148,22 +129,15 @@ T500 start 2000-01-02 00Z fhour=18 hours    end ave
 
 ```
 
-
-
 Code Table 4.11 = 2 is good for processing a single forecast run.
 
-
 ### Code Table 4.11 = 3, 4, 5
-
-
 
 These values of Code Table 4.11 are not commonly used and are not supported.
 
 ### Code Table 4.10 = 0 (average)
 
-
-
-Code Table 4.11 = 0 means the -time\_processing option will compute the mean.
+Code Table 4.11 = 0 means the -time_processing option will compute the mean.
 This is the most common usage. If you are trying to compute the average and some fields are missing,
 then average will be computed from the available fields and the missing field value will reflect the
 number of missing fields. If some grid values are undefined, then the average for the grid value
@@ -171,77 +145,58 @@ will be undefined as there is no mechanism to so show that the average was compu
 
 ### Code Table 4.10 = 2 (maximum)
 
-
-
-Code Table 4.11 = 2 means the -time\_processing option will find the maximum value.
+Code Table 4.11 = 2 means the -time_processing option will find the maximum value.
 If you are trying to find the maximum and some fields are missing, then the maximum will
-be found available fields and the missing field value will reflect the number of missing fields. 
+be found available fields and the missing field value will reflect the number of missing fields.
 If some grid values are undefined, then the maximum for the grid value
 will be undefined as there is no mechanism to so show that the maximum was derived from fewer fields.
 
 ### Code Table 4.10 = 3 (minimum)
 
-
-
-Code Table 4.11 = 3 means the -time\_processing option will find the minimum value.
+Code Table 4.11 = 3 means the -time_processing option will find the minimum value.
 If you are trying to find the minimum and some fields are missing, then the minimum will
-be found available fields and the missing field value will reflect the number of missing fields. 
+be found available fields and the missing field value will reflect the number of missing fields.
 If some grid values are undefined, then the minimum for the grid value
 will be undefined as there is no mechanism to so show that the minimum was derived from fewer fields.
 
 ### Code Table 4.10 = 3 (root mean square)
 
-
-
-Code Table 4.11 = 3 means the -time\_processing option will compute the root mean
+Code Table 4.11 = 3 means the -time_processing option will compute the root mean
 square (rms). The mean of the square of the grid values is computed. Then the square root is
 saved in the grib message. The value is marked as undefined if any of the individual values
 is undefined.
 
 ### Code Table 4.10 = 6 (standard deviation)
 
-
-
-Code Table 4.11 = 6 means the -time\_processing option will find the sample standard
+Code Table 4.11 = 6 means the -time_processing option will find the sample standard
 devation. Welford's method for computing the mean and variance is used because it is a one-pass scheme
 with the accuracy of a two-pass algorithm.
 
 ### Code Table 4.10 = 1, 4, 7 8, 9, ..
-
-
 
 These are not supported. Although adding support for 1, 4, 7, 8 and 11 seems easy.
 However, I have not seen these values used.
 
 ### -ave (dt) (output)
 
+This option has been replaced by a macro that calls "-time_processing 0 1 (dt) (output)".
 
+### -fcst_ave (dt) (output)
 
-This option has been replaced by a macro that calls "-time\_processing 0 1 (dt) (output)".
+This option has been replaced by a macro that calls "-time_processing 0 2 (dt) (output)".
 
-### -fcst\_ave (dt) (output)
-
-
-
-This option has been replaced by a macro that calls "-time\_processing 0 2 (dt) (output)".
-
-###  Minutes and Seconds
-
-
+### Minutes and Seconds
 
 There is no minutes time unit. Wgrib2 uses the standard GrADS
 names for time units which means the "mn" is the unit for minutes.
-Unfortunately it is too easy to confuse "mn" with the month time unit. 
+Unfortunately it is too easy to confuse "mn" with the month time unit.
 When there is a real need for minutes, then "mn" will be added.
 
 ### Fast Averaging
 
-
-
 Suppose we have a month of analyses at 3 hour intervals and want
 to make a monthly mean for Nov. 2014. Using the above approach, the steps
 would be
-
 
 ```
 
@@ -258,23 +213,20 @@ The fourth line makes the average by processing data in the order
 
 ```
 
-
 The above approach processes one average at a time and requires a
 minimal amout of memory. However, if you count the I/O operations,
 you find that there are 4 I/O operations for every field as well as
 the writes of the monthly means. In addition, the read (line 4) is
 random access.
 
- HPC file systems are very fast for large files that are read
-sequentially. On the other hand, HPC file systems are horrible for 
+HPC file systems are very fast for large files that are read
+sequentially. On the other hand, HPC file systems are horrible for
 small random access reads like in the previous example. Making
 monthly means by averaging 3 hourly NARR data was taking about
-three quarters of an hour on a multi-million dollar machine. 
+three quarters of an hour on a multi-million dollar machine.
 The problem was that the file system was optimized for large
 sequential reads rather than small random-access reads.
 The following shows another approach.
-
-
 
 ```
 
@@ -283,7 +235,7 @@ The following shows another approach.
 3.        -if_fs ":HGT:200 mb:" -ave 3hr narr.201411 \
 4.        -if_fs ":UGRD:200 mb:" -ave 3hr narr.201411 \
 5.        -if_fs ":VGRD:200 mb:" -ave 3hr narr.201411 \
-6.        -if_fs ":TMP:200 mb:" -ave 3hr narr.201411 
+6.        -if_fs ":TMP:200 mb:" -ave 3hr narr.201411
 
 The first line copies the data in chronological order and
    writes it to the pipe.
@@ -296,16 +248,14 @@ Lines 4-6 apply the averaging option to other fields.
 
 ```
 
-
-The above approach computes the mean of Z200, U200, V200 and T200 data 
+The above approach computes the mean of Z200, U200, V200 and T200 data
 at the same time with the use of more memory.
 The I/O consists of sequential read of all the files and the
 writes of the monthly means. The above script only creates
-the mean of Z200, U200, V200 and T200 but you could write a 
+the mean of Z200, U200, V200 and T200 but you could write a
 very long command line and compute the mean of all the fields in
-the file. Here are the guts of a 
-bash script, fast\_grib2\_mean.sh, which creates and runs the command line.
-
+the file. Here are the guts of a
+bash script, fast_grib2_mean.sh, which creates and runs the command line.
 
 ```
 
@@ -329,19 +279,15 @@ bash script, fast\_grib2\_mean.sh, which creates and runs the command line.
 
 ```
 
-
 Making the NARR monthly means using the above approach uses large
 sequential reads which is optimal for the HPC file system. The run
 time went from 3/4 of an hour to maybe a minute.
 
 ### Fast Forecast Averaging
 
-
-
 The previous shell script was for a fast averaging of many analyses.
 Sometimes one want to average several forecasts starting from
 the same initial time. An example would producing a week-4 forecast.
-
 
 ```
 
@@ -366,107 +312,61 @@ the same initial time. An example would producing a week-4 forecast.
 
 ```
 
- 
-Using the -merge\_fcst option in a like
-manner to the -fcst\_ave option. in a like
+Using the -merge_fcst option in a like
+manner to the -fcst_ave option. in a like
 
 ### Monthly Climatologies
-
-
 
 Once you can make an average, making a monthly climatology should be easy. Except
 it isn't. Here are some of the problems that I encountered.
 
 1. February has 28 days except when it doesn't. This causes problems because
- wgrib2 -ave will not average 28 and 29 day intervals.
+   wgrib2 -ave will not average 28 and 29 day intervals.
+
 - '116@6 hour ave(anl)' includes a regex metacharacter
 - the process id changed
 - the subcenter changed
 
-
-
 The solutions were:
 
-1. rewrite the grib file with   
+1. rewrite the grib file with
 
- -if\_fs '116@6 hour ave(anl)' -set\_ftime2 '112@6 hour ave(anl)' -fi \  
+-if_fs '116@6 hour ave(anl)' -set_ftime2 '112@6 hour ave(anl)' -fi \
 
- -if\_fs '116@6 hour ave(6 hour fcst)' -set\_ftime2 '112@6 hour ave(6 hour fcst)' -fi \  
+-if_fs '116@6 hour ave(6 hour fcst)' -set_ftime2 '112@6 hour ave(6 hour fcst)' -fi \
 
- -if\_fs '116@6 hour ave(3-6 hour acc fcst)' -set\_ftime2 '112@6 hour ave(3-6 hour acc fcst)' -fi \  
-- Use -if\_fs instead of -if
-- rewrite the file with -set analysis\_or\_forecast\_process\_id 180
+-if_fs '116@6 hour ave(3-6 hour acc fcst)' -set_ftime2 '112@6 hour ave(3-6 hour acc fcst)' -fi \
+
+- Use -if_fs instead of -if
+- rewrite the file with -set analysis_or_forecast_process_id 180
 - rewrite the file with -set subcenter 0
 
-
- 
 Finding items 3 and 4 was a pain. Using undocumented option v98 helps. However, the mismatches can
 now be uncoverted by using a verbose mode (>0) and wgrib v2.0.6.
 
-
-###  Limitations
-
-
+### Limitations
 
 Fast averaging has limits impossed by wgrib2. For example,
-there is a limit in the maximum number of -if/-if\_fs clauses. 
-Wgrib2 v2.0.6 can process up to 2000 -if and 2000 -if\_fs options.
-Wgrib2 v2.0.6 can 
-accept 10000 words on the command line. Since each -if\_fs/-ave clause takes 5 
+there is a limit in the maximum number of -if/-if_fs clauses.
+Wgrib2 v2.0.6 can process up to 2000 -if and 2000 -if_fs options.
+Wgrib2 v2.0.6 can
+accept 10000 words on the command line. Since each -if_fs/-ave clause takes 5
 words on the command line and you need to include the name of the
-input file, you get a limit of 999 -if\_fs/-ave clauses. To speed up
-the code, the evaluation of the -if/-if\_fs options are done in parallel.
-
+input file, you get a limit of 999 -if_fs/-ave clauses. To speed up
+the code, the evaluation of the -if/-if_fs options are done in parallel.
 
 Fast averaging has limits impossed by the computer memory because
-Fast averaging uses multiple calls to the time\_processing option. Each 
-time\_processing option requires computer memory. For
+Fast averaging uses multiple calls to the time_processing option. Each
+time_processing option requires computer memory. For
 example, to compute the average, you need to keep arrays for the
 running sum and number of times the sum was incremented. So it is
 possible for the fast averaging could use up too much memory.
 
+See also:
+[-merge_fcst](./merge_fcst.html)
 
+---
 
-See also: 
-[-merge\_fcst](./merge_fcst.html)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: out   X..Z,A average X=CodeTable 4.10 Y=CodeTable 4.11 Z=time step A=output
+> Description: out X..Z,A average X=CodeTable 4.10 Y=CodeTable 4.11 Z=time step A=output
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/time_processing.html>_

@@ -1,14 +1,9 @@
+# wgrib2: -set_ext_name_chars
 
-### wgrib2: -set\_ext\_name\_chars
+## Introduction
 
-
-
-### Introduction
-
-
- The extended names have a simple format. Options of wgrib2 are executed,
+The extended names have a simple format. Options of wgrib2 are executed,
 and the fields are combined
-
 
 ```
 
@@ -28,14 +23,11 @@ HGT.180_hour_fcst           HGT:180 hour fcst
 
 ```
 
-
 The default field separator and space replacement can may be used
-in the various fields such as "1.5 mb. The -set\_ext\_name\_chars
+in the various fields such as "1.5 mb. The -set_ext_name_chars
 allows you to alter the field separator and space replacement characters.
 
-### Usage
-
-
+## Usage
 
 ```
 
@@ -48,8 +40,6 @@ allows you to alter the field separator and space replacement characters.
 ```
 
 ### Example
-
-
 
 ```
 
@@ -64,19 +54,13 @@ $ wgrib2 gep19.aec -set\_ext\_name 3 -ext\_name -set\_ext\_name\_chars '=' '~' -
 
 ```
 
-
 See also: [-s](./s.html)
-[-set\_ext\_name](./set_ext_name.html).
-[-set\_ext\_name\_chars](./set_ext_name_chars.html).
-[-ext\_names](./ext_name.html).
+[-set_ext_name](./set_ext_name.html).
+[-set_ext_name_chars](./set_ext_name_chars.html).
+[-ext_names](./ext_name.html).
 
+---
 
-
-
-
-
-----
-
->Description: init  X Y    extended name characters X=field Y=space
+> Description: init X Y extended name characters X=field Y=space
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_ext_name_chars.html>_

@@ -1,13 +1,8 @@
+# wgrib2: -ens_qc
 
-### wgrib2: -ens\_qc
+## Introduction (wgrib2 v3.1.1)
 
-
-
-### Introduction (wgrib2 v3.1.1)
-
-
-
-The option -ens\_qc tests the 
+The option -ens_qc tests the
 ensemble members looking for extreme values, values that
 are extreme relative the spread of the ensemble members.
 This test is done for each grid point. An unreasonable
@@ -15,25 +10,23 @@ scaled extreme value provides a simple quality control
 for an egregiously bad ensemble member.
 
 During the production of the Conventional Observations REanalsyis (CORe),
-a glitch was found where the upper-level ozone was two orders of magnitude 
+a glitch was found where the upper-level ozone was two orders of magnitude
 larger than expected. The problem was caused by a single ensemble
 member which had an irreproducible problem which showed up in a single layer
-of a tracer. The -ens\_qc option was written to
-detect extreme values of the ensemble members for quality control. 
-In addition, -ens\_qc 
+of a tracer. The -ens_qc option was written to
+detect extreme values of the ensemble members for quality control.
+In addition, -ens_qc
 can be used to calculate the ensemble mean and spread faster
-than -ens\_processing.
+than -ens_processing.
 
-
-The option -ens\_qc will QC ensemble
+The option -ens_qc will QC ensemble
 members which limits this option to PDTs of 0, 1, 8, and 11.
 PDTs of 1 and 11 are explicity ensemble members. PDTs of 0 and
 8 are often used by the control runs. The code should be updated
-to include other ensemble PDTs. 
+to include other ensemble PDTs.
 
- The contents of the output files will vary depending the qc\_version.
-As of 1/2022, only qc\_version 1 has been defined.
-
+The contents of the output files will vary depending the qc_version.
+As of 1/2022, only qc_version 1 has been defined.
 
 ```
 
@@ -59,15 +52,13 @@ ensemble members are missing clouds.
 
 ```
 
-
-The -ens\_qc is unlike most wgrib2
+The -ens_qc is unlike most wgrib2
 options in that this option can use large amounts of memory. Suppose
 that you have an 80 member ensemble and are processing the tmp500 field.
 This option stores all 80 tmp500 fields in memory. As the size of the grid and the number
-of ensemble member increases, the required memory will increase. 
+of ensemble member increases, the required memory will increase.
 
 ### Code Table 4.7
-
 
 Grib Code Table 4.7 is used to specify whether the field
 is the ensemble mean, spread, min, max or scaled extreme value.
@@ -77,20 +68,16 @@ For the scaled extreme value, wgrib2 is using the locally defined NCEP
 the index, wgrib2 will be using the scaled extreme value. So
 other uses of the "extreme forecast index" will differ.
 
-
-The scaled extreme values are stored in 8 bits precision (two digits), 
+The scaled extreme values are stored in 8 bits precision (two digits),
 and can only be written if the original file is from NCEP because
 there is no equivalent WMO code for extreme value (1/2022).
 
-
 ### Definition of an Ensemble Member
 
-
-
-The -ens\_qc option uses the same defintion of ensemble member as
--ens\_processing. Any grib message which is 
-not identified as an ensemble member is ignored by -ens\_qc.
-So you cannot use -ens\_qc on the ensemble-mean.
+The -ens_qc option uses the same defintion of ensemble member as
+-ens_processing. Any grib message which is
+not identified as an ensemble member is ignored by -ens_qc.
+So you cannot use -ens_qc on the ensemble-mean.
 The wgrib2 code [ed. written 3/2022 v3.1.1] that identifies ensemble member
 is unreasonably simplistic. Ensemble members are identified by having a PDT
 of 0, 1, 8 and 11. As a result, aerosols, chemical tracers, simulated satellite data,
@@ -98,18 +85,11 @@ and post-processing of ensemble members are ignored.
 
 ### Order of Fields
 
+The -ens_qc requires fields to be in a specific order,
+the same order as in -ens_processing. Please
+see the documentation for -ens_processing.
 
-
-The -ens\_qc requires fields to be in a specific order, 
-the same order as in -ens\_processing. Please
-see the documentation for -ens\_processing.
-
-
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -128,8 +108,6 @@ see the documentation for -ens\_processing.
 
 ### Example
 
-
-
 ```
 
 $ gmerge - sfg_2014060500_fhr06_mem0* | wgrib2 - -ens_qc out1 out2 out3 1
@@ -140,7 +118,7 @@ $ gmerge - sfg_2014060500_fhr06_mem0* | wgrib2 - -ens_qc out1 out2 out3 1
 5:733631:d=2014060412:UGRD:0-1 hybrid pressure layer:12 hour fcst:ENS=+5
 ...
   gmerge - (list of ensemble members)
-           The output file is "-" which is a convention for stdin/stdout depending 
+           The output file is "-" which is a convention for stdin/stdout depending
              on the expectation. Since we expecting an output file, the "-" is stdout.
            Takes the 1st grib message from each ensemble member and writes it to stdout.
            Takes the 2nd grib message from each ensemble member and writes it to stdout.
@@ -151,7 +129,7 @@ $ gmerge - sfg_2014060500_fhr06_mem0* | wgrib2 - -ens_qc out1 out2 out3 1
            gmerge is not Windows compatilble.
 
   wgrib2 - -ens_qc out1 out2 out3 1
-           The input file is "-" which is a convention for stdin/stdout depending 
+           The input file is "-" which is a convention for stdin/stdout depending
              on the expectation. Since we expecting an input file, the "-" is stdin.
            writes min, max, mean and spread to out1
            writes scaled extreme values to out2
@@ -185,13 +163,11 @@ UGRD:2-3 hybrid pressure layer:max scaled extreme=7.936052
 
 ### GrADS
 
-
- At the time of writing (1/2021), the files that
+At the time of writing (1/2021), the files that
 are produced by
- -ens\_qc cannot be displayed
+-ens_qc cannot be displayed
 using the g2ctl/gribmap/GrADS set of programs. However, they
-can be displayed by atl\_g2ctl/alt\_gmp/GrADS set of programs.
-
+can be displayed by atl_g2ctl/alt_gmp/GrADS set of programs.
 
 ```
 
@@ -201,35 +177,11 @@ can be displayed by atl\_g2ctl/alt\_gmp/GrADS set of programs.
 
 ```
 
+See also:
+[-ens_processing](./ens_processing.html),
 
-See also: 
-[-ens\_processing](./ens_processing.html),
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: out   X..Z,A simple qc ensemble members X=stats.grb Y=extreme.grb Z=extreme.txt A=1 (qc_version)
+> Description: out X..Z,A simple qc ensemble members X=stats.grb Y=extreme.grb Z=extreme.txt A=1 (qc_version)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/ens_qc.html>_

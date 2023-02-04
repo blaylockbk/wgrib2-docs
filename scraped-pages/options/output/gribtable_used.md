@@ -1,35 +1,25 @@
+# wgrib2: -gribtable_used
 
-### wgrib2: -gribtable\_used
-
-
-
-### Introduction
-
-
+## Introduction
 
 The grib variable table that is built in to wgrib2 is based on the NCEP table
 and entries from other centers. For the WMO-defined entries, NCEP
 names are used. You may want to change the grib table because
 
 1. grib table is incomplete
+
 - you want to use names that make sense
 - the center's names for locally defined fields are not included in wgrib2
 - you want to use an unofficial table
 
-
-
-To solve this problem, you can set up user grib tables. 
-
+To solve this problem, you can set up user grib tables.
 
 <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/user_grib2tables.html>
 
-Now the -gribtable\_used option helps you set up the user
+Now the -gribtable_used option helps you set up the user
 grib table. The option writes grib table entries used by a file.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -39,9 +29,6 @@ grib table. The option writes grib table entries used by a file.
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -71,26 +58,12 @@ to use -new_grid_vectors to get U and V to be vectors.
 
 ```
 
+See also: [-new_grid](./new_grid.html),
+[-new_grid_vectors](./new_grid_vectors.html),
+[user_grib2tables](https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/user_grib2tables.html)
 
-See also: [-new\_grid](./new_grid.html), 
-[-new\_grid\_vectors](./new_grid_vectors.html), 
- [user\_grib2tables](https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/user_grib2tables.html)
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: out   X      write out sample gribtable as derived from grib file, X=file
+> Description: out X write out sample gribtable as derived from grib file, X=file
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/gribtable_used.html>_

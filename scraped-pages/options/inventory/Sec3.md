@@ -1,17 +1,9 @@
+# wgrib2: -Sec3
 
-### wgrib2: -Sec3
+## Introduction:
 
-
-
-### Introduction:
-
-
-
-The -Sec3 option prints a short summary of Section 3, 
+The -Sec3 option prints a short summary of Section 3,
 the Grid Definition Section.
-
-
-
 
 ```
 
@@ -26,10 +18,7 @@ opt arg=0                     optional arguments
 
 ```
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -37,14 +26,10 @@ opt arg=0                     optional arguments
 
 ```
 
+See also:
 
-See also: 
+---
 
-
-
-
-----
-
->Description: inv          contents of section 3 (Grid Definition Section)
+> Description: inv contents of section 3 (Grid Definition Section)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/Sec3.html>_

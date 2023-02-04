@@ -1,36 +1,33 @@
+# wgrib2: -new_grid_ipopt
 
-### wgrib2: -new\_grid\_ipopt
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -new\_grid option interpolates from one grid into another.
-The -new\_grid\_interpolation option selects the interpolation method.
-The -new\_grid\_ipopt option modifies the parameters used by
+The -new_grid option interpolates from one grid into another.
+The -new_grid_interpolation option selects the interpolation method.
+The -new_grid_ipopt option modifies the parameters used by
 the interpolation method.
-The -new\_grid\_ipopt option MUST FOLLOW
-the -new\_grid\_interpolation option because the latter will
+The -new_grid_ipopt option MUST FOLLOW
+the -new_grid_interpolation option because the latter will
 overwrite the IPOPT values with the default values for that interpolation method.
 
 1. bilinear: ipopt is not used
+
 - bicubic:
-	1. ipopt(1) = 0: straight bicubic
-	 - ipopt(1) = 1: constrained to range of 4 neighboring points
-	 - ipopt(2) = %data converage for output point, default=50%- nearest neighbor: ipopt is not used
+  1.  ipopt(1) = 0: straight bicubic
+  - ipopt(1) = 1: constrained to range of 4 neighboring points
+  - ipopt(2) = %data converage for output point, default=50%- nearest neighbor: ipopt is not used
 - budget: ipopt is not used
 - spectral: (alpha)
-	1. ipopt(1) = 0: triangular truncation
-	 - ipopt(1) = 1: rhomboidal truncation
-	 - ipopt(2) = N: truncation number
-	 - ipopt(2) = -1: sensible truncation number, based on grid
-	 (default for now, will be changed)
+  1.  ipopt(1) = 0: triangular truncation
+  - ipopt(1) = 1: rhomboidal truncation
+  - ipopt(2) = N: truncation number
+  - ipopt(2) = -1: sensible truncation number, based on grid
+    (default for now, will be changed)
+
 ```
 
     note: should specify these values by -new_grid_interpolation
- 
+
     when ipopt(2) == -1, sensible trunction number
             IROMB = ipopt(1)
             IDRT=4 FOR GAUSSIAN GRID
@@ -58,12 +55,10 @@ overwrite the IPOPT values with the default values for that interpolation method
           The math hasn't been worked out.
 
 ```
+
 - neighbor-budget: not enabled by wgrib2
 
-
-### Usage
-
-
+## Usage
 
 ```
 
@@ -72,19 +67,15 @@ overwrite the IPOPT values with the default values for that interpolation method
 
 ```
 
-
-See also: [-new\_grid](./new_grid.html),
-[-new\_grid\_winds](./new_grid_winds.html)
-[-new\_grid\_vectors](./new_grid_vectors.html)
-[new\_grid usage](./new_grid_usage.html)
+See also: [-new_grid](./new_grid.html),
+[-new_grid_winds](./new_grid_winds.html)
+[-new_grid_vectors](./new_grid_vectors.html)
+[new_grid usage](./new_grid_usage.html)
 [-if](./if.html)
 [-fi](./fi.html)
 
+---
 
-
-
-----
-
->Description: misc  X      new_grid ipopt values X=i1:i2..:iN N <= 20
+> Description: misc X new_grid ipopt values X=i1:i2..:iN N <= 20
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/new_grid_ipopt.html>_

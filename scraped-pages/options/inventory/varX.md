@@ -1,18 +1,10 @@
+# wgrib2: -varX
 
-### wgrib2: -varX
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -varX option writes a raw variable name. It
 shows the discipline, master table, local table, center, parameter category
-and parameter number. The default format is 
-
-
-
+and parameter number. The default format is
 
 ```
 
@@ -27,11 +19,8 @@ ex.  var0_10_1_57_1_51
 
 ```
 
-
 When you use verbose mode > 0 (-v, -v2, -v98, -v99), then the format
 of -varX changes to
-
-
 
 ```
 
@@ -45,7 +34,6 @@ ex.  var discipline=0 local_table=1 center=7 parmcat=1 parm=195
 
 ```
 
-
 One would use the -varX option when
 the built-in tables have a problem. For example, suppose SGP
 is a new parameter this is not in your version of wgrib2.
@@ -54,14 +42,10 @@ and work with both the
 old and future versions of wgrib2. By using
 -varX, your inventories will have a variable
 name that is the same in both versions of wgrib2. The varX name
-has been added to the match\_inventory (2.0.2 3/2015) and is 
-understood by -set\_var and -set\_metadata (2.0.7 12/2017).
+has been added to the match_inventory (2.0.2 3/2015) and is
+understood by -set_var and -set_metadata (2.0.7 12/2017).
 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -71,9 +55,6 @@ understood by -set\_var and -set\_metadata (2.0.7 12/2017).
 
 ### Example
 
-
-
-
 ```
 
 $ wgrib2 test.grb2 -varX
@@ -81,18 +62,10 @@ $ wgrib2 test.grb2 -varX
 
 ```
 
-
 See also: [-var](./var.html)
 
+---
 
-
-
-
-
-
-
-----
-
->Description: inv          raw variable name - discipline mastertab localtab center parmcat parmnum
+> Description: inv raw variable name - discipline mastertab localtab center parmcat parmnum
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/varX.html>_

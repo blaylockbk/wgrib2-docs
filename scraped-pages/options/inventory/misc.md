@@ -1,11 +1,6 @@
+# wgrib2: -misc
 
-### wgrib2: -misc
-
-
-
-### Introduction
-
-
+## Introduction
 
 We need names to identify objects and people. In the beginning,
 there was variable names (ex. TMP, HGT), the level (ex. surface, 500 mb)
@@ -18,17 +13,13 @@ The -misc will change with time as
 more details are needed to identify the fields. As of 9/2017,
 -misc includes ensemble information
 (ex 10th member), probability (10% forecast), spatial processing,
-wave\_partition, JMA specific, climatology, error, confidence indicator,
+wave_partition, JMA specific, climatology, error, confidence indicator,
 chemical information and aerosol information.
 
-The -misc option is called by the 
+The -misc option is called by the
 -s option and many other similar options.
 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -37,9 +28,6 @@ The -misc option is called by the
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -52,20 +40,10 @@ $ wgrib2 percentile\_precip.grib2 -s
 
 ```
 
-
 See also: [-s](./s.html)
 
+---
 
-
-
-
-
-
-
-
-
-----
-
->Description: inv          variable name qualifiers like chemical, ensemble, probability, etc
+> Description: inv variable name qualifiers like chemical, ensemble, probability, etc
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/misc.html>_

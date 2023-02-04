@@ -1,20 +1,13 @@
-
-### wgrib2: -set\_prob
-
+# wgrib2: -set_prob
 
 ### set values for Product Definition Templates 4.5 and 4.9
 
+## Introduction
 
-
-### Introduction
-
-
-
-The -set\_prob option converts some
+The -set_prob option converts some
 common non-probability Product Definition Template (PDT) to
 a probability PDT. Then it adds the metadata for the probability
 part of the PDT.
-
 
 ```
 
@@ -40,9 +33,7 @@ Step 3:
 
 ```
 
-### Usage
-
-
+## Usage
 
 ```
 
@@ -55,14 +46,11 @@ Step 3:
 
 ### Example
 
-
-
-
 ```
 
-$ wgrib2 test2.grb 
+$ wgrib2 test2.grb
 1:0:d=2009060500:TMP:2 m above ground:180 hour fcst:ENS=+19
-$ wgrib2 -set\_prob 10 20 2 10.1 10.4 test2.grb 
+$ wgrib2 -set\_prob 10 20 2 10.1 10.4 test2.grb
 1:0:d=2009060500:TMP:2 m above ground:180 hour fcst:prob >=10.1 <10.4
 
 X=10 Forecast probabilty number
@@ -73,19 +61,11 @@ B=10 Upper limit (may not be used depending on Code Table 4.9)
 
 ```
 
-
-See also: 
+See also:
 [-prob](./prob.html),
 
+---
 
-
-
-
-
-
-
-----
-
->Description: misc  5 args X/Y forecasts Z=Code Table 4.9 A=lower limit B=upper limit
+> Description: misc 5 args X/Y forecasts Z=Code Table 4.9 A=lower limit B=upper limit
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_prob.html>_

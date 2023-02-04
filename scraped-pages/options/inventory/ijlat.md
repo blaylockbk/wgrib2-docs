@@ -1,21 +1,13 @@
+# wgrib2: -ijlat
 
-### wgrib2: -ijlat
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -ijlat option prints the latitude, longitude and 
-value of the grid point (i,j) where i = 1..nx and j = 1..ny. Note, 
+The -ijlat option prints the latitude, longitude and
+value of the grid point (i,j) where i = 1..nx and j = 1..ny. Note,
 by default the grid is converted to a WE:SN order which puts (1,1)
 in the South-West corner. Note, multiple -ijlat can be on the command line.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -26,9 +18,6 @@ in the South-West corner. Note, multiple -ijlat can be on the command line.
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -41,19 +30,10 @@ in the South-West corner. Note, multiple -ijlat can be on the command line.
 
 ```
 
-
-
 See also: [-ij](./ij.html), [-ilat](./ilat.html), [-lon](./lon.html)
 
+---
 
-
-
-
-
-
-
-----
-
->Description: inv   X Y    lat,lon and grid value at grid(X,Y) X=1,..,nx Y=1,..,ny (WxText enabled)
+> Description: inv X Y lat,lon and grid value at grid(X,Y) X=1,..,nx Y=1,..,ny (WxText enabled)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/ijlat.html>_

@@ -1,22 +1,16 @@
+# wgrib2: -reset_delayed_error
 
-### wgrib2: -reset\_delayed\_error
-
-
-
-### Introduction
-
-
+## Introduction
 
 Wgrib2 (v3.0.1+) has two behaviors for fatal errors. The first behavior is
-to quit immediately. The second behavior (delayed error) is for wgrib2 to 
+to quit immediately. The second behavior (delayed error) is for wgrib2 to
 quit after processing the error-causing grib message. This second behavior
 is useful because it allows you to examine the bad grib message, and to fix
 the grib message.
 
-
-The -reset\_delayed\_error option is an inventory
+The -reset_delayed_error option is an inventory
 option that clears the delayed-error flags. Note that options after the
--reset\_delayed\_error option may also raise delayed
+-reset_delayed_error option may also raise delayed
 errors.
 
 Processing grib files with delayed errors can cause seg faults and other
@@ -26,14 +20,11 @@ and the actual size is smaller than the right size, you could have seg faults.
 
 ### Example
 
-
-
 In this example, a delayed error causes processing to stop at the end of the message.
-
 
 ```
 
-$ wgrib2 sfcu.grb 
+$ wgrib2 sfcu.grb
 
 *** FATAL ERROR, local grib table=255, replaced by 1
 1:0:d=2020120500:var discipline=0 center=74 local_table=1 parmcat=2 parm=192:10 m above ground:3 hour fcst:
@@ -41,7 +32,6 @@ $ wgrib2 sfcu.grb
 *** FATAL ERROR (delayed): local grib table undefined (255)
 
 ```
-
 
 To see the inventory without the error messages (note -s had to be added),
 
@@ -55,7 +45,6 @@ To see the inventory without the error messages (note -s had to be added),
 
 ```
 
-
 To change the locally define field to a standard WMO name which needs no local grib table.
 
 ```
@@ -68,10 +57,7 @@ To change the locally define field to a standard WMO name which needs no local g
 
 ```
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -89,22 +75,10 @@ The delayed-error flag is the sum of the following errors (12/8/2020)
 ```
 
 See also:
- [-if\_delayed\_error](./if_delayed_error.html),
+[-if_delayed_error](./if_delayed_error.html),
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: inv          clear reset_delayed_error flag
+> Description: inv clear reset_delayed_error flag
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/reset_delayed_error.html>_

@@ -1,23 +1,14 @@
+# wgrib2: -vector_dir
 
-### wgrib2: -vector\_dir
-
-
-
-### Introduction
-
-
+## Introduction
 
 Bit 5 of the flag 3.3 indicates whether vector quantities are relative to the
-grid or the North/South poles. 
-The -vector\_dir option writes out "winds(N/S)" or "winds(grids)"
+grid or the North/South poles.
+The -vector_dir option writes out "winds(N/S)" or "winds(grids)"
 depending on the value of the flag. Note there is no flag that indicates whether
 the quantity is a U/V component of a vector.
 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -27,9 +18,6 @@ the quantity is a U/V component of a vector.
 
 ### Example
 
-
-
-
 ```
 
 $wgrib2 png.grb2 -vector\_dir
@@ -37,20 +25,10 @@ $wgrib2 png.grb2 -vector\_dir
 
 ```
 
+See also:
 
-See also: 
+---
 
-
-
-
-
-
-
-
-
-
-----
-
->Description: inv          grid or earth relative winds
+> Description: inv grid or earth relative winds
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/vector_dir.html>_

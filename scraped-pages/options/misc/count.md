@@ -1,11 +1,6 @@
+# wgrib2: -count
 
-### wgrib2: -count
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -count option just counts the number
 of fields. It is very similar to the piping the output of
@@ -14,10 +9,7 @@ wgrib to the "wc -l". The advantage of using
 and the count goes to stderr. By retaining stderr, one
 could make sure the expected number of records were processed.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -26,9 +18,6 @@ could make sure the expected number of records were processed.
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -40,9 +29,7 @@ number of records: 2
 
 ```
 
-
 The above example shows that there were two records in the file.
-
 
 ```
 
@@ -52,20 +39,12 @@ number of records: 1
 
 ```
 
-
 The above example shows that only 1 record had the string fcst in it.
 
-See also: [-grid\_changes](./grid_changes.html)
+See also: [-grid_changes](./grid_changes.html)
 
+---
 
-
-
-
-
-
-
-----
-
->Description: misc         prints count, number times this -count was processed
+> Description: misc prints count, number times this -count was processed
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/count.html>_

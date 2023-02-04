@@ -1,27 +1,19 @@
+# wgrib2: -error_final
 
-### wgrib2: -error\_final
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -error\_final tests the final value
+The -error_final tests the final value
 and can raise an error condition when wgrib2 returns.
 For version 1, the only value that can be tested is the count
 of the number time the option is called in the grib-processing phase.
 
-
-When -error\_final is intialized, the count is set to zero.
-Then -error\_final increments the count whenever it processes
+When -error_final is intialized, the count is set to zero.
+Then -error_final increments the count whenever it processes
 a grib message.
-Finally when -error\_final is run after processing all the grib
+Finally when -error_final is run after processing all the grib
 messages, it tests count to a specified integer and sets the error return.
 
-### Usage
-
-
+## Usage
 
 ```
 
@@ -34,11 +26,9 @@ messages, it tests count to a specified integer and sets the error return.
 
 ### Example
 
-
-
 ```
 
--sh-4.2$ wgrib2 LIS.c3 
+-sh-4.2$ wgrib2 LIS.c3
 1:0:d=2014030500:SPRATE:surface:anl:
 2:661778:d=2014030500:RPRATE:surface:anl:
 3:903352:d=2014030500:SKINT:surface:anl:
@@ -69,20 +59,12 @@ messages, it tests count to a specified integer and sets the error return.
 
 ```
 
-
-
-
-See also: 
+See also:
 [-if](./if.html)
 [-endif](./endif.html)
 
+---
 
-
-
-
-
-----
-
->Description: misc  X Y Z  error if at end X=count Y=ne,eq,le,lt,gt,ge Z=integer
+> Description: misc X Y Z error if at end X=count Y=ne,eq,le,lt,gt,ge Z=integer
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/error_final.html>_

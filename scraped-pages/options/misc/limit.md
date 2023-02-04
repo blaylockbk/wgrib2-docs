@@ -1,23 +1,14 @@
+# wgrib2: -limit
 
-### wgrib2: -limit
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -limit option stops the processing of the grib file after N messages/submessages have been decoded. The purpose of this function
-to limit amount of CPU time that a web server may devote to an individual 
+to limit amount of CPU time that a web server may devote to an individual
 request.
 
- 
 The newer -alarm option is better suited for stopping jobs web jobs.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -25,19 +16,11 @@ The newer -alarm option is better suited for stopping jobs web jobs.
 
 ```
 
-
 See also: [-quit](./quit.html),
 [-alarm](./alarm.html)
 
+---
 
-
-
-
-
-
-
-----
-
->Description: misc  X      stops after X fields decoded
+> Description: misc X stops after X fields decoded
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/limit.html>_

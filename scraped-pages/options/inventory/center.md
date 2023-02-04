@@ -1,20 +1,12 @@
+# wgrib2: -center
 
-### wgrib2: -center
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -center option prints out the center (ex. NCEP, ECMWF) that created 
+The -center option prints out the center (ex. NCEP, ECMWF) that created
 the grib file. If your center is printed as a number rather than a name, feel welcome to send
-an email requesting an update to the tables. 
+an email requesting an update to the tables.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -23,9 +15,6 @@ an email requesting an update to the tables.
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -37,20 +26,12 @@ $ wgrib2 test.grb2 -center
 
 ```
 
+See also: [-set_center](./set_center.html),
+[-set](./set.html),
+[-subcenter](./subcenter.html)
 
- See also: [-set\_center](./set_center.html),
- [-set](./set.html),
- [-subcenter](./subcenter.html)
+---
 
-
-
-
-
-
-
-
-----
-
->Description: inv          center
+> Description: inv center
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/center.html>_

@@ -1,29 +1,19 @@
+# wgrib2: -ave_var
 
-### wgrib2: -ave\_var
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -ave\_var option is based on
+The -ave_var option is based on
 the -ave option. In addition to
-computing the mean, the -ave\_var option 
+computing the mean, the -ave_var option
 computes the sample standard deviation, minimum and maximum
-values for each grid point. Welford's method for computing 
-the mean and variance was used because it is a 
+values for each grid point. Welford's method for computing
+the mean and variance was used because it is a
 one-pass scheme with the accuracy of a two-pass algorithm.
-
 
 The options and expected sequence of fields is the same as
 with the -ave option.
 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -34,9 +24,6 @@ with the -ave option.
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -83,25 +70,13 @@ writing out index
 
 ```
 
-
-See also: 
-[-ave](./ave.html)  
+See also:
+[-ave](./ave.html)
 
 [https://jonisalonen.com/2013/deriving-welfords-method-for-computing-variance/](https://jonisalonen.com/2013/deriving-welfords-method-for-computing-variance)
 
+---
 
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: out   X Y    average/std dev/min/max X=time step, Y=output
+> Description: out X Y average/std dev/min/max X=time step, Y=output
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/ave_var.html>_

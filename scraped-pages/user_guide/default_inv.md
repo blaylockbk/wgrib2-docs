@@ -1,11 +1,6 @@
+# wgrib2: default inventory format
 
-### wgrib2: default inventory format
-
-
-
-### Introduction
-
-
+## Introduction
 
 One of wgrib2 functions is to inventory grib2 files. The inventory
 format is very customizable; at present there are 120 options
@@ -13,18 +8,12 @@ to modify the inventory. However the default inventory (-s)
 is most often used and understanding this format will help you to
 understand the structure of the inventory.
 
-
-
 ### Format
-
-
 
 The format for the wgrib2 invetory is relatively simple. There is one line
 for each gridded field. Usually each grid is in its own grib message
 or record. However, is is possible to store related grids in into
 a single grib message. Below are some examples.
-
-
 
 ```
 
@@ -50,17 +39,10 @@ Output Format:
 
 ```
 
-
 ### NOMADS: point value (text)
-
-
-
 
 The Nomads g2subset/grib-filter software can download point-value text files.
 These text files are simply wgrib2 inventories created with the following options.
-
-
-
 
 ```
 
@@ -76,7 +58,6 @@ These text files are simply wgrib2 inventories created with the following option
    -lon adds the point value to the inventory
 
 ```
-
 
 ```
 
@@ -99,31 +80,18 @@ Output Format:
 
 ```
 
-
 In example 1, the optional attributes is "std dev". In this case, the field is the standard deviation
 of an ensemble. The field cannot be a temporal std dev because the ftime field is "300 hour fcst".
 (A temporal std dev would have been encoded in the ftime field.).
 
-
-
-
 In example 5, we have the first field beind 34.1 and 34.2. In this example, message number 34 has
 two submessages. Notice that the byte location is the same for both sub messages.
-
-
-
 
 The inventory consists of one line per field. The first two fields (record number and byte location) are
 fixed and the other fields will depend on the inventory options that are used. For example, the
 default option (-s) is a macro that runs the -t, -var, -lev -ftime and -misc options.
 
-
-
-
 In the future, the date codes in the nomads point-value text files may be extended to include minutes.
-
-
-
 
 The default option gives the starting but not the ending location of each grib message. The ending
 location is one less than the starting location of the next grib message (assuming no junk bytes).
@@ -131,37 +99,30 @@ The -range option will print out the starting and ending location of each record
 a grib message can be extracted from a grib file. However, submessages are different. It is much
 more difficult to extract a submessage from a grib message.
 
+|
 
-
-
-
-| 
-
-|  |
+|     |
 | --- |
-| 
+
+|
 
 ---
 
- |
+|
 | [NOAA/](https://www.noaa.gov/)
 [National Weather Service](https://www.nws.noaa.gov/)
 [National Centers for Environmental Prediction](https://www.ncep.noaa.gov/)
- Climate Prediction Center
- 5830 University Research Court
- College Park, Maryland 20740
+Climate Prediction Center
+5830 University Research Court
+College Park, Maryland 20740
 [Climate Prediction Center Web Team](/comment-form.html)
- Page last modified: May 15, 2005
-  | [Disclaimer](https://weather.gov/disclaimer.php) |  [Privacy Policy](https://weather.gov/privacy.php) |
+Page last modified: May 15, 2005
+| [Disclaimer](https://weather.gov/disclaimer.php) | [Privacy Policy](https://weather.gov/privacy.php) |
 
- |
+|
 
+---
 
-
-
-
-----
-
->Description: Default Inventory Format
+> Description: Default Inventory Format
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/default_inv.html>_

@@ -1,11 +1,6 @@
+# wgrib2: -nc4, -nc3
 
-### wgrib2: -nc4, -nc3
-
-
-
-### Introduction
-
-
+## Introduction
 
 Wgrib2 can be compiled to use either the netCDF v3 (netCDF3) or netCDF v4 (netCDF4) libraries. If wgrib2 is
 compiled with the netCDF3, you can neither read nor write netCDF4 files. However, if wgrib2 is
@@ -14,18 +9,12 @@ linking in netCDF4 is that the wgrib2 executable is much larger, compiling wgrib
 (1.1 GHz Apollo Lake),
 and problems have been encountered in compiling the latest hdf5 library with newer compilers (12/2018).
 
-
 The -nc4 and
 -nc3 options toggle the type of netcdf file written. The former
-option will have the netcdf file be netcdf-4 format with compression turned on. The latter 
+option will have the netcdf file be netcdf-4 format with compression turned on. The latter
 will have the netcdf file be uncompressed in netcdf-3 format.
 
-
-
 ### Simple usage
-
-
-
 
 ```
 
@@ -35,9 +24,6 @@ will have the netcdf file be uncompressed in netcdf-3 format.
 ```
 
 ### Example 1
-
-
-
 
 ```
 
@@ -49,25 +35,13 @@ compiled with netCDF4.
 
 ```
 
-
 See also:
 [-netcdf](./netcdf.html),
 [-nc3](./nc3.html)
 [-nc4](./nc4.html)
 
+---
 
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: init         use netcdf3 (classic)
+> Description: init use netcdf3 (classic)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/nc3.html>_

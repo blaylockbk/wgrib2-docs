@@ -1,21 +1,14 @@
+# wgrib2: -fi
 
-### wgrib2: -fi
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -fi option is used by the version 1 IF block.
 It is recommened that version 2 of the IF block be used and
 -fi no longer be used.
 
-
-
 ```
 
-Version 1 IF structure:  
+Version 1 IF structure:
 
   -if TEST (non-output options) (output option)
 
@@ -42,7 +35,6 @@ Version 2 IF block:  (wgrib2 v3.0.0+)
 
 ```
 
-
 The -endif option is tne new way to close
 an IF block (wgrib2 v3.0.0+). Wgrib2 v3.0.0 handles both
 the old and new IF blocks. While there is no plans to
@@ -50,19 +42,12 @@ remove the old IF blocks, it is recommended that the new IF
 blocks be used because the scripts will be easier to read by future
 users. Note that the old and new IF blocks cannot be mixed.
 
-
-
-See also: 
+See also:
 [-if](./if.html),
 [-endif](./endif.html),
 
+---
 
-
-
-
-
-----
-
->Description: out          depreceated, used in old IF structure
+> Description: out depreceated, used in old IF structure
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/fi.html>_

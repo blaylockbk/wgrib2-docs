@@ -1,31 +1,20 @@
+# wgrib2: -number_of_coordinate_values_after_template
 
-### wgrib2: -number\_of\_coordinate\_values\_after\_template
-
-
-
-### Introduction
-
-
+## Introduction
 
 Vertical coordinates can be easy like "400 hPa", "2 meters above ground" or
 "sigma=0.4". However, the situation is more complicated with the vertical
 coordinates in the models. In these model coordinates, the
 vertical are usually an integer. You need some extra information to locate
-the level in physical space. This information is stored in the PDT (section
-4) as the "optional list of coordinate values" at the end of the product
+the level in physical space. This information is stored in the PDT (section 4) as the "optional list of coordinate values" at the end of the product
 defintion template.
 
-The -number\_of\_coordinate\_values\_after\_template option 
+The -number_of_coordinate_values_after_template option
 prints the number of values (4 byte) in the "optional list of coordinate values".
 The WMO documentation only specifies the hybrid coordinate values should be
 in pairs of IEEE single precision floats.
 
-
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -37,9 +26,6 @@ in pairs of IEEE single precision floats.
 
 ### Example
 
-
-
-
 ```
 
 $  wgrib2 -number\_of\_coordinate\_values\_after\_template COSMO\_EU\_1rec.grib2 -get\_byte 4 6 2
@@ -47,25 +33,14 @@ $  wgrib2 -number\_of\_coordinate\_values\_after\_template COSMO\_EU\_1rec.grib2
 
 ```
 
-
-
 See also:
 
-
-
 ```
 
 ```
 
+---
 
-
-
-
-
-
-
-----
-
->Description: inv
+> Description: inv
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/number_of_coordinate_values_after_template.html>_

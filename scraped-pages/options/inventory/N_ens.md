@@ -1,19 +1,11 @@
+# wgrib2: -N_ens
 
-### wgrib2: -N\_ens
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -N\_ens option prints the number of members
+The -N_ens option prints the number of members
 in the ensemble (ensemble forecasts only).
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -22,9 +14,6 @@ in the ensemble (ensemble forecasts only).
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -40,20 +29,12 @@ will be empty.
 
 ```
 
-
-See also: 
+See also:
 [-ens.html](ens.html)
-[-set\_ens\_num.html](set_ens_num.html)
+[-set_ens_num.html](set_ens_num.html)
 
+---
 
-
-
-
-
-
-
-----
-
->Description: inv          number of ensemble members
+> Description: inv number of ensemble members
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/N_ens.html>_

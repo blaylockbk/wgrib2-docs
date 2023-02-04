@@ -1,32 +1,22 @@
+# wgrib2: -wind_uv
 
-### wgrib2: -wind\_uv
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -wind\_uv option takes the wind speed and wind
+The -wind_uv option takes the wind speed and wind
 direction and computes the zonal (UGRD) and meridional (VGRD) wind
 components. The wind components are then written out in grib format.
 For this option to work, the corresponding wind direction and speed
 must not be separated by a non-corresponding wind speed or direction.
-If the speed and direction do no have this order, the file must be sorted. 
-
+If the speed and direction do no have this order, the file must be sorted.
 
 If the wind direction is earth (grid) relative, the UGRD and VGRD
-winds are earth (grid) relative. 
+winds are earth (grid) relative.
 
-
-You can save computer time by using the -match option 
+You can save computer time by using the -match option
 to restricting the decoding of records to wind speed (WIND) and
 wind direction (WDIR).
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -35,9 +25,6 @@ wind direction (WDIR).
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -62,26 +49,12 @@ $ wgrib2 uv.grb
 
 ```
 
+See also: [-match](./match.html),
+[-wind_speed](./wind_speed.html)
+[-wind_dir](./wind_dir.html)
 
-See also: [-match](./match.html), 
- [-wind\_speed](./wind_speed.html)
-[-wind\_dir](./wind_dir.html)
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: out   X      calculate UGRD/VGRD from speed/dir, X = output gribfile
+> Description: out X calculate UGRD/VGRD from speed/dir, X = output gribfile
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/wind_uv.html>_

@@ -1,74 +1,61 @@
+# wgrib2: -grid_def
 
-### wgrib2: -grid\_def
+## Introduction
 
-
-
-### Introduction
-
-
- When wgrib2 processes a field, it often calculates the longitude
+When wgrib2 processes a field, it often calculates the longitude
 and latitude (location) of each grid point. Wgrib2 doesn't do the calculation
 when one of the following conditions are true
+
 1. the locations of the grid points are not needed by any of the options
+
 - the grid is the same as the previously processed grib message
 - wgrib2 does not know how to calculate the locations
 
-
-
 For some grids, wgrib2 does not know how to calculate the grid locations
 and the grid locations are available from the center in the form of grib files.
-Then you can use the -grid\_def to add the grid
-locations for wgrib2 processing. 
-The option, -grid\_def checks to see if the grib message
+Then you can use the -grid_def to add the grid
+locations for wgrib2 processing.
+The option, -grid_def checks to see if the grib message
 is a longitude or latitude. If it is, the longitude or latitude is associated
 with the longitude or latitude of the grid points.
 Because of "2", wgrib2 will use these longitudes
 or latitudes for the following fields until wgrib2 encountours a different
 grid.
 
-
 ### wgrib2 up to v2.0.5
 
-
- Bug in the -grid\_def option only allows
+Bug in the -grid_def option only allows
 the option to work with grids with calculated grid locations.
 (Passed testing but not that useful.)
 
 ### wgrib2 v2.0.6, v2.0.7
 
-
 1. LOUV, LOPP or ELON will associate the data with the longitudes
-- LAUV, LAPP or NLAT will associate the data with the latitudes
 
+- LAUV, LAPP or NLAT will associate the data with the latitudes
 
 ### wgrib2 v2.0.8+
 
-
 1. LOUV, LOPP, ELON or GEOLON will associate the data with the longitudes
-- LAUV, LAPP, NLAT or GEOLAT will associate the data with the latitudes
 
+- LAUV, LAPP, NLAT or GEOLAT will associate the data with the latitudes
 
 ### wgrib2 v3.0.0+
 
-
 With wgrib2 v3.0.0 can associated latitudes and longitudes using -rpn
-and the "sto\_lat" and "sto\_lon" options. You can import double precision
-lat and lons using -import\_lonlat.
+and the "sto_lat" and "sto_lon" options. You can import double precision
+lat and lons using -import_lonlat.
 
 ### Precision of the latitudes and longitudes
-
 
 By default, grib2 stores angles to the millionth of a degree. This
 requires the angles to be stored in double precision. Reading the
 latitudes and longitudes in grib format could be done in double
 precision but the current decoder is limited to 25 bits which is
 basically single precision. If you need double precision lat and lon
-values, use -import\_lonlat.
+values, use -import_lonlat.
 
-
-### Usage
-
-
+## Usage
 
 ```
 
@@ -78,25 +65,19 @@ values, use -import\_lonlat.
 
 ```
 
-
-
 ### Example
 
-
-
-For -grid\_def to work, the latitude and longitudes have
+For -grid_def to work, the latitude and longitudes have
 processed prior the to remaining grids. The file, icon.grb, satifies this requirement.
-
 
 ```
 
-$ wgrib2 icon.grb 
+$ wgrib2 icon.grb
 1:0:d=2019040900:GEOLON:surface:anl:
 2:5898409:d=2019040900:GEOLAT:surface:anl:
 3:11796818:d=2019040900:TMP:2 m above ground:0-360 min max fcst:
 
 ```
-
 
 An additional requirement is the grids be the same.
 
@@ -114,9 +95,7 @@ $ wgrib2 icon.grb -grid
 
 ```
 
-
 A more precise method of identifying identical grids is by
-
 
 ```
 
@@ -127,9 +106,7 @@ $ wgrib2 icon.grb -checksum 3     (Section 3 is the grid defininition template)
 
 ```
 
-
 Using wgrib2 v3.0.0+, we can get a 2x2 degree lat-lon grid by,
-
 
 ```
 
@@ -147,12 +124,10 @@ The -not_if is used so that GEOLAT and GEOLON fields are not interpolated.
 
 ```
 
-
-For wgrib2 up to v2.0.6 and, -grid\_def did not recognize GEOLAT and GEOLON.
+For wgrib2 up to v2.0.6 and, -grid_def did not recognize GEOLAT and GEOLON.
 As a result, the location had to be converted to NLAT and ELON which are
 recognized. NLAT and ELON are NCEP local variables, so the center has to
 be changed to 7 which is NCEP by the GRIB standard.
-
 
 ```
 
@@ -167,9 +142,8 @@ $ wgrib2 icon.grb \
 
 ```
 
- With wgrib2 v3.0.0, you can also use -rpn to update the latitude and
-longitudes. 
-
+With wgrib2 v3.0.0, you can also use -rpn to update the latitude and
+longitudes.
 
 ```
 
@@ -178,28 +152,15 @@ $ wgrib2 icon.grb icon.grb -if ":GEOLAT:" -rpn sto\_lat -endif -if ":GEOLON:" -r
 
 ```
 
-
-See also: 
+See also:
 [-rpn](./rpn.html)
 
-
 ```
 
 ```
 
+---
 
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: misc         read lon and lat data from grib file -- experimental
+> Description: misc read lon and lat data from grib file -- experimental
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/grid_def.html>_

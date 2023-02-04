@@ -1,22 +1,14 @@
+# wgrib2: -stats, -max, -min
 
-### wgrib2: -stats, -max, -min
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -stats option writes a statistical summary
-of the field into the inventory. 
+of the field into the inventory.
 The -max option writes the maximum value and
 the -min option writes the minimum.
 These option are useful for quickly determining if the field has reasonable numbers.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -27,9 +19,6 @@ These option are useful for quickly determining if the field has reasonable numb
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -51,11 +40,9 @@ $ wgrib2 test.grb2 -min
 
 ```
 
-
 The -stats option can be combined with
 the -undefine option to produce
-statistics for a box.  
-
+statistics for a box.
 
 ```
 
@@ -65,8 +52,7 @@ $ wgrib2 test.grb2 -stats
 ```
 
 produces the global statistics. By setting grid points to undefined,
-we can produce the statistics for a box.  
-
+we can produce the statistics for a box.
 
 ```
 
@@ -75,40 +61,25 @@ $ wgrib2 test.grb2 -undefine outobx 0:90 -10:10 -stats
 
 ```
 
-
 Note, if we reverse the order of the
 -stats and
 -undefine options, we get the global mean.
 That is because the -stats option is excuted
 before the -undefine options.
 
-
 $ wgrib2 test.grb2 -stats -undefine out-box 0:10 -10:10
-1:4:ndata=10512:undef=0:mean=77.5081:min=-370:max=340.2:cos\_wt\_mean=97.267
+1:4:ndata=10512:undef=0:mean=77.5081:min=-370:max=340.2:cos_wt_mean=97.267
 
- If all the data are undefined, 
+If all the data are undefined,
 the -stats option will produce values
 of zero for the the mean, min and max.
-The -min and -max 
+The -min and -max
 options will yield a text string of "undefined".
-
-
 
 See also: [-undefine](./undefine.html)
 
+---
 
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: inv          statistical summary of data values
+> Description: inv statistical summary of data values
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/stats.html>_

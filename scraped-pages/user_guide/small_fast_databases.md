@@ -1,11 +1,6 @@
-
 ### How to make small fast grib2 databases
 
-
-
-### Introduction
-
-
+## Introduction
 
 The old joke is that an engineer tells his client that he
 can design a gizmo that is fast, cheap and reliable, and
@@ -20,61 +15,60 @@ set-up effort.
 
 ### Making a smaller database
 
+1. Have unneeded fields?
 
-1. Have unneeded fields?  
+Use wgrib2 to remove records
 
-Use wgrib2 to remove records  
-- Smaller grids take less space  
+- Smaller grids take less space
 
-Use wgrib2 or some other program to make regional subsets  
-- Data stored at higher than needed precision?  
+Use wgrib2 or some other program to make regional subsets
 
-Use wgrib2 to reduce the precision  
-- Better compression available?  
+- Data stored at higher than needed precision?
 
-Use wgrib2 or cnvgrib  
-- use submessages  
+Use wgrib2 to reduce the precision
+
+- Better compression available?
+
+Use wgrib2 or cnvgrib
+
+- use submessages
 
 Use wgrib2
 
-
 ### Faster to read
 
+1. Jpeg2000 compression is makes small files but very slow to read.
 
-1. Jpeg2000 compression is makes small files but very slow to read.  
+I am finding that complex packing with spatial differencing is a
 
-I am finding that complex packing with spatial differencing is a   
+good trade off between speed and size. If the field has undefined values
 
-good trade off between speed and size. If the field has undefined values   
+then complex packing is smaller than Jpeg2000 and faster to read.
 
-then complex packing is smaller than Jpeg2000 and faster to read.  
-- Decode routines that have been parallelized are faster. Wgrib2 has   
+- Decode routines that have been parallelized are faster. Wgrib2 has
 
-parallel packing and complex packing without bitmaps routines.  
-- Smaller grids are faster  
-- Reorder the records to maximize sequential access  
+parallel packing and complex packing without bitmaps routines.
 
-Use sort and wgrib2. This is important for optical media.  
-- Use an index/inventory.  
+- Smaller grids are faster
+- Reorder the records to maximize sequential access
+
+Use sort and wgrib2. This is important for optical media.
+
+- Use an index/inventory.
 - Too many submessages can use up available memory.
-
 
 ### Minimizing Effort in Setting up the Database
 
+1. Save grib data as provided
 
-1. Save grib data as provided  
-- Writing grib encoding software?  
+- Writing grib encoding software?
 
- IEEE Grib-2 is the easiest format to write. It's produces
- big files and is not compatible with some grib-2 decoders.
-  
+IEEE Grib-2 is the easiest format to write. It's produces
+big files and is not compatible with some grib-2 decoders.
 
- You can use wgrib2 to convert from ieee grib2 to a more common packing.
-
+You can use wgrib2 to convert from ieee grib2 to a more common packing.
 
 ### Effects of Compression on Sample Files
-
-
 
 ```
 
@@ -109,35 +103,30 @@ X=simple, complex1, complex2, complex3, jpeg
 
 ```
 
+|
 
-
-| 
-
-|  |
+|     |
 | --- |
-| 
+
+|
 
 ---
 
- |
+|
 | [NOAA/](https://www.noaa.gov/)
 [National Weather Service](https://www.nws.noaa.gov/)
 [National Centers for Environmental Prediction](https://www.ncep.noaa.gov/)
- Climate Prediction Center
- 5830 University Research Court
- College Park, Maryland 20740
+Climate Prediction Center
+5830 University Research Court
+College Park, Maryland 20740
 [Climate Prediction Center Web Team](/comment-form.html)
- Page last modified: Aug 7, 2009
-  | [Disclaimer](https://weather.gov/disclaimer.php) |  [Privacy Policy](https://weather.gov/privacy.php) |
+Page last modified: Aug 7, 2009
+| [Disclaimer](https://weather.gov/disclaimer.php) | [Privacy Policy](https://weather.gov/privacy.php) |
 
- |
+|
 
+---
 
-
-
-
-----
-
->Description: How to make small fast grib2 databases
+> Description: How to make small fast grib2 databases
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/small_fast_databases.html>_

@@ -1,33 +1,24 @@
+# wgrib2: -fix_CFSv2_fcst
 
-### wgrib2: -fix\_CFSv2\_fcst
-
-
-
-### Introduction
-
-
+## Introduction
 
 The Climate Forecast System version 2 (CFSv2) is a coupled atmosphere/ocean
-forecast system that was developed at NCEP. CFSv2 produces analyses (CFSR) 
+forecast system that was developed at NCEP. CFSv2 produces analyses (CFSR)
 and daily to seasonal forecats. The seasonal forecasts consists of hindcasts
 (CFSRR) and the real-time forecasts (CFSv2 forecasts).
 
- The monthly-mean forecasts from the CFSRR and CFSv2 are originally
+The monthly-mean forecasts from the CFSRR and CFSv2 are originally
 written in grib1 format and later converted to grib2 format for public
 distribution. In this process, the resulting grib2 files are mangled
 and the metadata no longer correctly describes the contents of the file.
-The -fix\_CFSv2\_fcst option alters the metadata of the
+The -fix_CFSv2_fcst option alters the metadata of the
 CFSRR/CFSv2 monthly forecasts files to make them grib2 compliant and to
 fix the metadata. After the data has been fixed, the files can
 then be read with grib2 decoders such as GrADS.
 
-
 ### CFSRR/CFSv2 Monthly Forecast File Names
 
-
-
 The CFSv2 monthly forecasts have a naming convengtiion.
-
 
 ```
 
@@ -57,7 +48,7 @@ Case 2: contents of [] are present, i.e., .(HH)Z
        HH = 00, 06, 12, 18
        The monthly forecast is for a specific cycle of the day.
        For example the 00Z cycle.  For instantaneous quantities,
-       the monthly forecast will be consist of the mean of all daily forecasts 
+       the monthly forecast will be consist of the mean of all daily forecasts
        that verify on the 00Z hour.  For quantities that are 6 hour
        averages or accumulations, they will be the average of all the
        forecasts with averages/accumulations that end at 00Z hour
@@ -72,11 +63,8 @@ Case 2: contents of [] are present, i.e., .(HH)Z
 
 ### Fixing the CFSRR/CFSv2 monthly forecasts format
 
-
-
 A filter was added to wgrib2 that fixes the metadata in
-the CFSv2 monthly forecasts. To fix the metadata, 
-
+the CFSv2 monthly forecasts. To fix the metadata,
 
 ```
 
@@ -101,8 +89,6 @@ OUT=name of the output grib file
 
 ### Example of Fixing the CFSRR monthly forecast
 
-
-
 ```
 
 bash-3.2$ wgrib2 flxf2009010100.01.200903.avrg.06Z.grb2 -for 1:3 -fix\_CFSv2\_fcst 06 1 1 -grib out.grb
@@ -112,21 +98,18 @@ bash-3.2$ wgrib2 flxf2009010100.01.200903.avrg.06Z.grb2 -for 1:3 -fix\_CFSv2\_fc
 
 flxf2009010100.01.200903.avrg.06Z.grb2   input file
 -for 1:3                                 process records 1..3
--fix_CFSv2_fcst 06 1 1                   fix metadata for 06Z type file, 
+-fix_CFSv2_fcst 06 1 1                   fix metadata for 06Z type file,
 -grib out.grb                            save corrected file in out.grb
 
 ```
 
 ### Examining our corrected file
 
-
-
 The default wgrib2 inventory looks like
-
 
 ```
 
-bash-3.2$ wgrib2 out.grb 
+bash-3.2$ wgrib2 out.grb
 1:0:d=2009010100:UFLX:surface:1422 hour-(1422 hour+30 day) ave@(23 hour fcst)++,missing=0:ENS=+1
 2:66719:d=2009010100:VFLX:surface:1422 hour-(1422 hour+30 day) ave@(23 hour fcst)++,missing=0:ENS=+1
 3:133120:d=2009010100:SHTFL:surface:1422 hour-(1422 hour+30 day) ave@(23 hour fcst)++,missing=0:ENS=+1
@@ -139,10 +122,8 @@ missing=0                                no missing fields in the average
 
 ```
 
-
 Now I can't figure out 1422 hours in my head, so I can print out the start and and of the
 forecast time interval by,
-
 
 ```
 
@@ -153,16 +134,13 @@ bash-3.2$ wgrib2 out.grb -start\_ft -end\_ft
 
 ```
 
-
-Notice the start\_ft has a 06 hour as you would have expected from the original file,
-flxf2009010100.01.200903.avrg.06Z.grb2. 
+Notice the start_ft has a 06 hour as you would have expected from the original file,
+flxf2009010100.01.200903.avrg.06Z.grb2.
 
 ### Adding Ocean Metadata
 
-
- In the NCDC archives, the DBSS variable has bad level information.
+In the NCDC archives, the DBSS variable has bad level information.
 For example, the time series of N degree isotherm is not encoded correctly
-
 
 ```
 
@@ -177,9 +155,7 @@ The level should be 5C ocean isotherm as indicated by the file name.
 
 ```
 
-
 To fix this time series, you need to rewrite the level information.
-
 
 ```
 
@@ -192,8 +168,7 @@ bash-3.2$ wgrib2 dt5c.ensm.apr.cfsv2.data.grb2 -set\_lev "5C ocean isotherm" -gr
 
 ```
 
-
-In monthly ocean forecasts @ NCDC, we can find bad level data.  For example,
+In monthly ocean forecasts @ NCDC, we can find bad level data. For example,
 one file had bad level metadata for messages 216-222.
 
 ```
@@ -204,10 +179,9 @@ one file had bad level metadata for messages 216-222.
 219:11360222:d=1999052200:DBSS:0C ocean isotherm:2-3 month ave fcst:
 220:11392818:d=1999052200:DBSS:0C ocean isotherm:2-3 month ave fcst:
 221:11419935:d=1999052200:DBSS:0C ocean isotherm:2-3 month ave fcst:
-222:11440970:d=1999052200:DBSS:0C ocean isotherm:2-3 month ave fcst: 
+222:11440970:d=1999052200:DBSS:0C ocean isotherm:2-3 month ave fcst:
 
 ```
-
 
 The following code snippet will fix the level data for the above file.
 
@@ -225,42 +199,30 @@ wgrib2 $f \
 
 ```
 
-
-
-
 ### Making GrADS control files
 
-
-
-Once you have converted the files using the -fix\_CFSv2\_fcst option,
+Once you have converted the files using the -fix_CFSv2_fcst option,
 you have to use the -b option in g2ctl/gribmap to get the target times to line up correctly.  
-The -b option sets the start of the target month as the GrADS time.  If you use the default option,
-you will get the end of the forecast period.  For the ordinary forecast files, that will be
-at 18Z of the last month.  Definately not as friendly.
-
+The -b option sets the start of the target month as the GrADS time. If you use the default option,
+you will get the end of the forecast period. For the ordinary forecast files, that will be
+at 18Z of the last month. Definately not as friendly.
 
 ```
 
 bash-3.2$ g2ctl -b out.grb >out.ctl
 bash-3.2$ gribmap -b -i out.ctl
 grib2map: scanning GRIB2 file: out.grb
-grib2map: Writing out the index file 
+grib2map: Writing out the index file
 
 ```
 
-
-
 ### A Real Example
-
-
-
 
 The previous examples were the conversion, inventory and display of a single file.
 Most of the time, people would want to examine the entire forecast run. In this
 followring example, we look at a forecast run. Here we cannot include
 the file with the target month which is the same as the starting month
 because this file does not start on the 1st of the month like the other files.
-
 
 ```
 
@@ -273,9 +235,7 @@ CFSRR files:
 
 ```
 
-
 Fixing the metadata in the bash shell on a linux box.
-
 
 ```
 
@@ -289,28 +249,23 @@ fix_CFSRv2_fcst 524 fields fixed
 
 ```
 
-
 Making the GrADS ctl and idx files. Note the -b options to both g2ctl and gribmap.
 Note that gribmap v2 and grads v2 have to be used. Note the use of the template (%m2) in
 the g2ctl line.
-
-
 
 ```
 
 bash-3.2$ g2ctl -b pgbf2009081500.01.2009%m2.avrg.grb2.new >pgb.ctl
 bash-3.2$ gribmap -b -i pgb.ctl
-grib2map: scanning GRIB2 file: pgbf2009081500.01.200909.avrg.grb2.new 
-grib2map: scanning GRIB2 file: pgbf2009081500.01.200910.avrg.grb2.new 
-grib2map: scanning GRIB2 file: pgbf2009081500.01.200911.avrg.grb2.new 
+grib2map: scanning GRIB2 file: pgbf2009081500.01.200909.avrg.grb2.new
+grib2map: scanning GRIB2 file: pgbf2009081500.01.200910.avrg.grb2.new
+grib2map: scanning GRIB2 file: pgbf2009081500.01.200911.avrg.grb2.new
 grib2map: reached end of files
-grib2map: Writing out the index file 
+grib2map: Writing out the index file
 
 ```
 
-
 Running grads v2 with the new ctl/idx file.
-
 
 ```
 
@@ -325,55 +280,42 @@ See file COPYRIGHT for more information
 Config: v2.0.a9 little-endian readline printim grib2 netcdf hdf4-sds hdf5 opendap-grids,stn geotiff shapefile
 Issue 'q config' command for more detailed configuration information
 Landscape mode? ('n' for portrait):
-GX Package Initialization: Size = 11 8.5 
+GX Package Initialization: Size = 11 8.5
 ga-> open pgb.ctl
 Scanning description file:  pgb.ctl
 Data file pgbf2009081500.01.2009%m2.avrg.grb2.new is open as file 1
-LON set to 0 360 
-LAT set to -90 90 
-LEV set to 1000 1000 
-Time values set: 2009:8:15:0 2009:8:15:0 
-E set to 1 1 
+LON set to 0 360
+LAT set to -90 90
+LEV set to 1000 1000
+Time values set: 2009:8:15:0 2009:8:15:0
+E set to 1 1
 ga-> set lev 500
-LEV set to 500 500 
+LEV set to 500 500
 ga-> d hgtprs
-Contouring: 4900 to 5900 interval 100 
-ga-> 
+Contouring: 4900 to 5900 interval 100
+ga->
 
 ```
 
-
 ### Encoding the Ensemble Information
 
-
-
-The -fix\_CFSv2\_fcst option adds enesemble information. The directions
+The -fix_CFSv2_fcst option adds enesemble information. The directions
 suggest that you number the runs using the same numbers as suggested by the CFSv2 filename convention.
 That will minimize confusion. However, you are allowed to give any ensemble number
 up to 254. Usiog unique ensemble member numbers would be useful GrADS.
 
-
-
-
 ### Caveats
 
-
-
-The filtering action of -fix\_CFSv2\_fcst assumes that the fields
+The filtering action of -fix_CFSv2_fcst assumes that the fields
 that were averaged were instantaneous fields (ex. Z500 at a specific time). This
 is not true as some fields are 6-hour accumulations or averages. Grib2 can describe
 averages of accumulations/averages. However, this nuance was ignored.
 
-
 The instructions suggest that you encode the CFSRR enemble member number as 1 to be consistent
 with the CFSv2 file name convention. For CFSRR, there is only one ensemble member (01) which
-by would be considered the high-resolution control run. 
+by would be considered the high-resolution control run.
 
-### Usage
-
-
-
-
+## Usage
 
 ```
 
@@ -384,32 +326,12 @@ Z=number of ensemble members
 
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ```
 
 ```
 
+---
 
-
-
-
-
-
-
-----
-
->Description: misc  X Y Z  fixes CFSv2 monthly fcst X=daily or 00/06/12/18 Y=pert no. Z=number ens fcsts v1.0
+> Description: misc X Y Z fixes CFSv2 monthly fcst X=daily or 00/06/12/18 Y=pert no. Z=number ens fcsts v1.0
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/fix_CFSv2_fcst.html>_

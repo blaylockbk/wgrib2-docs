@@ -1,41 +1,28 @@
+# wgrib2: -if_rec
 
-### wgrib2: -if\_rec
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -if\_rec option is an -if for a range of record numbers.
-The -if\_rec option uses the same syntax as the "for" option.
-If you want to operate on 
-records 10 to 20, you would use the parameter 10:20. 
-If you want to operate on all the even records from 10 to 20, you would 
-use 10:20:2. The restrictions are the start value must be less than 
+The -if_rec option is an -if for a range of record numbers.
+The -if_rec option uses the same syntax as the "for" option.
+If you want to operate on
+records 10 to 20, you would use the parameter 10:20.
+If you want to operate on all the even records from 10 to 20, you would
+use 10:20:2. The restrictions are the start value must be less than
 the ending value and the step has to be greater than zero.
 
-
-
-
-The -if\_rec option is similar to the
--for option in that they both select a range of records. 
+The -if_rec option is similar to the
+-for option in that they both select a range of records.
 The difference is that the -for option selects the range
 of records that wgrib2 will process. With the
-the -if\_rec option, all the records will be processed
+the -if_rec option, all the records will be processed
 but only the additional processing within the -if block will be only
-done for the selected records. The -for option can be much 
+done for the selected records. The -for option can be much
 faster if the field has to be decoded. With the -for option,
 only the selected records need to be docoded whereas all the records would be decoded
-when using the -if\_rec option. The command line, however,
-can have multiple -if\_rec options.
+when using the -if_rec option. The command line, however,
+can have multiple -if_rec options.
 
-
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -48,9 +35,6 @@ can have multiple -if\_rec options.
 
 ### Example
 
-
-
-
 ```
 
  $ wgrib2 file.grb2 -if\_rec 4:5 -s -fi
@@ -59,19 +43,13 @@ can have multiple -if\_rec options.
 
 ```
 
-
 See also: [-match](./match.html)
-[-if\_n](./if_n.html)
+[-if_n](./if_n.html)
 [-for](./for.html)
-[-for\_n](./for_n.html)
+[-for_n](./for_n.html)
 
+---
 
-
-
-
-
-----
-
->Description: if    X      if (record numbers in range), X=(start:end:step)
+> Description: if X if (record numbers in range), X=(start:end:step)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/if_rec.html>_

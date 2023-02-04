@@ -1,23 +1,13 @@
+# wgrib2: -nlons
 
-### wgrib2: -nlons
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -nlons option prints the number
 of grid points for each row of the grid. This
 is necessary for a thinned grid where the number of
 grid points per row decreases as you approach the poles.
 
-
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -26,8 +16,6 @@ grid points per row decreases as you approach the poles.
 ```
 
 ### Example
-
-
 
 ```
 
@@ -64,15 +52,11 @@ $ wgrib2 reduced\_gaussian\_surface\_jpeg.grib2 -nlons
 
 ```
 
-
-See also: 
+See also:
 [-grid](./grid.html)
 
+---
 
-
-
-----
-
->Description: inv          number of longitudes for each latitude
+> Description: inv number of longitudes for each latitude
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/nlons.html>_

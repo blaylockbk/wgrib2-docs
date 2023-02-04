@@ -1,21 +1,13 @@
+# wgrib2: -Sec4
 
-### wgrib2: -Sec4
+## Introduction:
 
-
-
-### Introduction:
-
-
-
-The -Sec4 option prints a short summary of Section 4, the 
+The -Sec4 option prints a short summary of Section 4, the
 product definition section.
-
-
-
 
 ```
 
-$ wgrib2 -Sec4 png.grb2 
+$ wgrib2 -Sec4 png.grb2
 1:4:Sec4 len=36 #vert coordinate=0 Product Defn Template=4.2 size=36 free=0
 
 len=36                        Section 4 is 36 octets/bytes in length
@@ -26,10 +18,7 @@ free=0                        Should be zero, len-size-8*#vert_coordinates
 
 ```
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -37,15 +26,11 @@ free=0                        Should be zero, len-size-8*#vert_coordinates
 
 ```
 
-
-See also: 
+See also:
 [-pdt](pdt.html),
 
+---
 
-
-
-----
-
->Description: inv          Sec 4 values (Product definition section)
+> Description: inv Sec 4 values (Product definition section)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/Sec4.html>_

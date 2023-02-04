@@ -1,22 +1,13 @@
+# wgrib2: -udf
 
-### wgrib2: -udf
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -udf option is only available when the UDF
-(User Defined Function) extension is installed. 
+(User Defined Function) extension is installed.
 The -udf option runs a shell command (arg1) and then
 sets the grid point so to contends of a binary file (arg2).
 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -26,7 +17,6 @@ STRING is a shell command
 FILE is a binary file which contains the contents of grid points
 
 ```
-
 
 Some functions can be written in RPN and others are more
 conveniently writen is a language like C for Fortran.
@@ -39,34 +29,16 @@ defined function otherwise -udf is used.
 
 ### Comments
 
-
-
 The UDF options may not work in windows.
-
 
 The use of the UDF options is limited and the UDF options should, IMHO,
 not be enabled unless the UDF options are needed.
 
-
-
-See alse: [-udf\_arg](./udf_arg.html),
+See alse: [-udf_arg](./udf_arg.html),
 [-udf](./udf.html),
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: misc  X Y    run UDF, X=program+optional_args, Y=return file
+> Description: misc X Y run UDF, X=program+optional_args, Y=return file
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/udf.html>_

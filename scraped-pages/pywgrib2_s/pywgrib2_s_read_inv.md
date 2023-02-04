@@ -1,19 +1,12 @@
+### pywgrib2: read_inv
 
-### pywgrib2: read\_inv
+## Introduction
 
-
-
-### Introduction
-
-
-
-The routine pywgrib2\_s.read\_inv(inv) reads an inventory file, inv. It
+The routine pywgrib2_s.read_inv(inv) reads an inventory file, inv. It
 returns a list of the entries of the inventory file. The
 inventory file can be a memory file or regular file.
 
 ### Example
-
-
 
 ```
 
@@ -29,31 +22,23 @@ start_FT=20200101000000:end_FT=20200101060000:scaling ref=0 dec_scale=0 bin_scal
 
 ```
 
-### Usage
-
-
+## Usage
 
 ```
 
      a=pywgrib2_s.read_inv(inv_file)
-         if inv_file cannot be read, returns an empty list.  Otherwise 
-         returns the inventory file as a list.  The length the list 
+         if inv_file cannot be read, returns an empty list.  Otherwise
+         returns the inventory file as a list.  The length the list
          (len(a)) is the number of lines in inv_file.
 
 ```
-
 
 [overview](./pywgrib2_s.html)
 [back](./pywgrib2_s_mk_inv.html)
 [next](./pywgrib2_s_inq.html)
 
+---
 
-
-
-
-
-----
-
->Description: reads inventory file, returns list
+> Description: reads inventory file, returns list
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/pywgrib2_s_read_inv.html>_

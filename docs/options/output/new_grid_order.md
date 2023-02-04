@@ -1,44 +1,31 @@
+# wgrib2: -new_grid_order
 
-### wgrib2: -new\_grid\_order
+## Introduction
 
-
-
-### Introduction
-
-
-
-The option -new\_grid requires that the grib
+The option -new_grid requires that the grib
 file be processed in a certain order. When vector fields are encountered,
 the specifications are that the U field must be followed by the corresponding V field.
-(The -new\_grid implementation allows any number of scalars to in between the U and
+(The -new_grid implementation allows any number of scalars to in between the U and
 corresponding V fields.) If you do not follow the specification, some U or V
 fields may not be interpolated.
 
-
-Regridding grib files by the -new\_grid is very common, and
+Regridding grib files by the -new_grid is very common, and
 a technique have been developed to speed up this task. Basically you put scalar
 fields in its own grib message, and corresponding vector fields in their own grib
 message (U and V are in submessages). Then you can regrid each grib message independantly.
 If you have N cores, you run N copies of wgrib2 that regrids 1/N of the file.
-The -new\_grid\_order is designed to put the data in this structure.
+The -new_grid_order is designed to put the data in this structure.
 
-
-
-The option -new\_grid\_order rearranges the file so that
-the fields follow the specification for use by -new\_grid\_order.
+The option -new_grid_order rearranges the file so that
+the fields follow the specification for use by -new_grid_order.
 Note that the order depends on the fields that are specified as vectors by
-the -new\_grid\_vector option.
-The output of -new\_grid\_order puts the U and corresponding V
-grib message into the same grib message, like -submsg\_uvr.
+the -new_grid_vector option.
+The output of -new_grid_order puts the U and corresponding V
+grib message into the same grib message, like -submsg_uvr.
 The vector fields that cannot be pair with the corrsponding U or V fields are written
 to a secondary file.
 
-
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -50,9 +37,6 @@ to a secondary file.
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -91,25 +75,13 @@ $ wgrib2 gep19.badorder -new\_grid\_order - junk | \
 
 ```
 
+See also:
+[-new_grid](./new_grid.html)
+[-new_grid_vectors](./new_grid_vectors.html)
+[-submsg_uv](./submsg_uv.html)
 
-See also: 
-[-new\_grid](./new_grid.html)
-[-new\_grid\_vectors](./new_grid_vectors.html)
-[-submsg\_uv](./submsg_uv.html)
+---
 
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: out   X Y    put in required order for -new_grid, X=out Y=out2 no matching vector
+> Description: out X Y put in required order for -new_grid, X=out Y=out2 no matching vector
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/new_grid_order.html>_

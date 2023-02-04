@@ -1,11 +1,6 @@
+# wgrib2: -ftime1
 
-### wgrib2: -ftime1
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -ftime1 option calls the old ftime1 routine.
 The ftime1 routines have been replace by the ftime2 routine because they
@@ -13,10 +8,7 @@ could not handle more complicated time stamps correctly. One should
 not use -ftime1. The ftime2 routines will work with
 more complicated time stamps and are more powerful.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -26,9 +18,6 @@ more complicated time stamps and are more powerful.
 
 ### Example
 
-
-
-
 ```
 
 $ wgrib2 grib2.polar -ftime1
@@ -37,20 +26,11 @@ $ wgrib2 grib2.polar -ftime1
 
 ```
 
-
-
-See also: 
+See also:
 [-ftime](./ftime.html)
 
+---
 
-
-
-
-
-
-
-----
-
->Description: inv          forecast time
+> Description: inv forecast time
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/ftime1.html>_

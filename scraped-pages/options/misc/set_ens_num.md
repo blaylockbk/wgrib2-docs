@@ -1,32 +1,22 @@
+# wgrib2: -set_ens_num
 
-### wgrib2: -set\_ens\_num
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -set\_ens\_num option changes PDT 0,1 -> 1 and
+The -set_ens_num option changes PDT 0,1 -> 1 and
 8,11 -> 11. PDT 1 and 11 are for "forecasts from a specified member of an ensemble.
 Effectively this option add an "ensemble member ID" to the forecast.
 
- With wgrib2 v3.1.1, more PDTs can be promoted to ensemble-member PDTs.
+With wgrib2 v3.1.1, more PDTs can be promoted to ensemble-member PDTs.
 
 ### Merging ensembles, Adding New Members
 
-
- When ensembles are made, each member has a unique perturbation/member 
+When ensembles are made, each member has a unique perturbation/member
 number. When you want to merge ensembles, the member numbers
 may no longer be unique. You would want to renumber the forecasts
 sp that they would be unique. Sometimes you would want to add a forecast
 with no ensemble information; you need a way to add a ensemble member number.
 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -38,8 +28,6 @@ Z = 0..255  number of forecasts in the ensemble
 ```
 
 ### Example
-
-
 
 ```
 
@@ -64,24 +52,13 @@ $ wgrib2 ds.td.bin -set\_ens\_num 3 1 10 -grib ds\_ens.grb
 
 ```
 
-
-
-See also: 
-[-set\_ensm\_derived\_fcst](set_ensm_derived_fcst.html),
+See also:
+[-set_ensm_derived_fcst](set_ensm_derived_fcst.html),
 [-ens](ens.html),
-[-N\_ens](N_ens.html)
+[-N_ens](N_ens.html)
 
+---
 
-
-
-
-
-
-
-
-
-----
-
->Description: misc  X Y Z  ensemble member info, X=code table 4.6 Y=pert num Z=num ens members -1=No Change
+> Description: misc X Y Z ensemble member info, X=code table 4.6 Y=pert num Z=num ens members -1=No Change
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_ens_num.html>_

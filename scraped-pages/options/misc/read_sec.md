@@ -1,24 +1,16 @@
+# wgrib2: -read_sec
 
-### wgrib2: -read\_sec
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -read\_sec option will replace the section (0-8) of the current grib message 
-with the contents from a file. The only options that applies to the file are the -header 
-and -no\_header options. 
+The -read_sec option will replace the section (0-8) of the current grib message
+with the contents from a file. The only options that applies to the file are the -header
+and -no_header options.
 The default -header option put a 4-byte unsigned integer header and trailer around the section data.
 The header and trailer are the number of bytes of the section.
 
+The -read_sec option is used to create grib files where you do not an appropriate template.
 
-The -read\_sec option is used to create grib files where you do not an appropriate template.
-
-### Usage
-
-
+## Usage
 
 ```
 
@@ -29,8 +21,6 @@ The -read\_sec option is used to create grib files where you do not an appropria
 
 ### Example 1
 
-
-
 ```
 
 wgrib2 IN.grb -read_sec 0 sec0.dat -read_sec 1 sec1.dat -read_sec 2 sec2.dat -read_sec 3 sec3.dat \
@@ -38,19 +28,11 @@ wgrib2 IN.grb -read_sec 0 sec0.dat -read_sec 1 sec1.dat -read_sec 2 sec2.dat -re
 
 ```
 
+See also:
+[-write_sec](./write_sec.html),
 
-See also: 
-[-write\_sec](./write_sec.html),
+---
 
-
-
-
-
-
-
-
-----
-
->Description: misc  X Y    read grib message section (0-8) X from binary file (Y)
+> Description: misc X Y read grib message section (0-8) X from binary file (Y)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/read_sec.html>_

@@ -1,19 +1,13 @@
+# wgrib2: -lon
 
-### wgrib2: -lon
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -lon option prints the value of the grid point
 closest to the specified longitude latitude. The latitude-longitude of the grid
 point are also printed. If you use the verbose mode, the grid
 coordinates (i,j) and the number of the element are also printed.
 The -lon option can be repeated to save processing
-time. 
-
+time.
 
 ```
 
@@ -26,18 +20,14 @@ lon=254.964,lat=32.9671,val=101668
 
 ```
 
-
 In the latter example, the verbose mode has been set and
-the inventory includes both the value, location and its 
-grid coordinates; i.e., the 220037th element in the array and 
+the inventory includes both the value, location and its
+grid coordinates; i.e., the 220037th element in the array and
 its coordinates are (72,206). Note that these coordinates
 are after the data has been converted into a WE:SN scan order.
 Both the i, ix and iy start with a value of one.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -60,9 +50,6 @@ Both the i, ix and iy start with a value of one.
 
 ### Example
 
-
-
-
 ```
 
 $ wgrib2 test.grb2 -s -lon -90 20
@@ -76,8 +63,7 @@ $ wgrib2 test.grb2 -s -lon -90 20
 
 ### Old vs New
 
-
- The original code for the 
+The original code for the
 -lon option used the internal geolocation package.
 This package could compute the lat/lon of the grid points but
 nothing else. To find the grid point closest to a specified
@@ -94,17 +80,15 @@ even if the point were outside of the grid domain. The
 gctpc-based closest will return a lat=lon=999 to signal an
 intial point outside of the domain.
 
-
 ### Want Speed?
 
-
- You want extract the values for a 1000 different points.
+You want extract the values for a 1000 different points.
 So you call wgrib2 1000 times and complain that wgrib2 is slow.
 Well decoding a jpeg2000 compressed file 1000 times does take time.
-It's better to add a 1000 -lon options to the 
+It's better to add a 1000 -lon options to the
 command line and only decode the file once.
 
- The number of -lon options on a 
+The number of -lon options on a
 command line is limited by a compile-time option. Try
 running wgrib2 -config and look for the line
 "maximum number of arguments on command line:". The current
@@ -116,13 +100,11 @@ length or maximum number of continuations may stop you first.
 
 ### Text, Binary and CSV Output
 
-
- The -lon option writes the grid value
+The -lon option writes the grid value
 to the inventory. What happens if you want the output written
-to a file. You could write the output of 
+to a file. You could write the output of
 -lon to a file by using the
 -last option.
-
 
 ```
 
@@ -137,10 +119,8 @@ lon=10.000000,lat=20.000000,val=85
 
 ```
 
-
 You can also use the -lola option which can
 write a 1x1 grid to binary, text or a grib file.
-
 
 ```
 
@@ -155,10 +135,8 @@ $ cat out.txt
 
 ```
 
-
-You can make a CSV file by first converting the grib file and running wgrib2 on that 
+You can make a CSV file by first converting the grib file and running wgrib2 on that
 grib file.
-
 
 ```
 
@@ -177,32 +155,12 @@ $ cat out.csv
 
 ```
 
-
 See also: [-last](./last.html),
 [-lola](./lola.html),
 [-config](./config.html)
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: inv   X Y    value at grid point nearest lon=X lat=Y (WxText enabled)
+> Description: inv X Y value at grid point nearest lon=X lat=Y (WxText enabled)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/lon.html>_

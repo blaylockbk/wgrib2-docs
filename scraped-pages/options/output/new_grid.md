@@ -1,78 +1,62 @@
-
-### wgrib2: -new\_grid
-
-
+# wgrib2: -new_grid
 
 ![New!](../icons/new.png)
 
-Recently discovered bug in IPOLATES. To avoid the bug, all grids should have a size of greater 
-than 1 degree longitude. For example, delta\_longitude = 0.1 degree, then number of longitude points
-needs to be ≥ 11 to make grid > 1 degree. 
-The IPOLATES library wanted to handle the case of a global grid going from 
+Recently discovered bug in IPOLATES. To avoid the bug, all grids should have a size of greater
+than 1 degree longitude. For example, delta_longitude = 0.1 degree, then number of longitude points
+needs to be ≥ 11 to make grid > 1 degree.
+The IPOLATES library wanted to handle the case of a global grid going from
 xE to (x+360)E which is be encoded as going from xE to xE. To allow for rounding errors,
 a grid from xE to yE (y-x ≤ 1) was condsidered to be a grid from xE to (360+x)E.
 This causes a problem when the grids are ≤ than 1 degree in longitude. This bug will occur
 occur for both the input and output grids.
 
+## Introduction
 
+Beginners are encouraged to read the [new_grid introduction](./new_grid_intro.html).
 
-
-### Introduction
-
-
- Beginners are encouraged to read the [new\_grid introduction](./new_grid_intro.html).
-
-
-
-The -new\_grid option interpolates the fields to a new
+The -new_grid option interpolates the fields to a new
 grid.
 The default interpolation is bilinear but that can be changed using the
--new\_grid\_interpolation option. This option uses
+-new_grid_interpolation option. This option uses
 scalar and vector interpolation as appropriate. In order for the vector
 interpolation to work, the vector quantities must be in a (U,V) order.
 For example: Z200, U200, V200, Z500, U500, V500 is good. If the data
 are not in (U,V) order, the inventory can be sorted into (U,V) order
 and the inventory can then be used to control the order of processing.
-If the vector quanties are not in (U,V) order, the vector quantites will 
+If the vector quanties are not in (U,V) order, the vector quantites will
 not be interpolated. (See example 3 for converting the file into a (U,V) order.)
-
 
 The option is not part of the default configuration but it included with many distributions.
 The interpolation code is written
-in fortran and combining fortran and C code can require some work. (gcc/gfortran and 
-clang/gfortran are already handled by the makefile.) Getting the C and Fortran code to cooperate 
-requires some system-specific knowledge and may not be possible in all cases. Consequently 
-you are on your own in getting the -new\_grid option installed. 
+in fortran and combining fortran and C code can require some work. (gcc/gfortran and
+clang/gfortran are already handled by the makefile.) Getting the C and Fortran code to cooperate
+requires some system-specific knowledge and may not be possible in all cases. Consequently
+you are on your own in getting the -new_grid option installed.
 
-
-Operations often has to use the -new\_grid option to produce a large number 
+Operations often has to use the -new_grid option to produce a large number
 of user grids. Fortunately the interpolation can be made embarrassingly parallel. A
 portable single-node solution is described in here. A
 multi-node solution is possible using MPI and the wgrib2 library.
 
 ### Caution
 
-
- The -new\_grid option works in raw scan mode, so data are not
+The -new_grid option works in raw scan mode, so data are not
 converted to sn:we order. Conequently options that only work in sn:we order cannot
-work at the same time as the -new\_grid option. Any option
+work at the same time as the -new_grid option. Any option
 that uses geolocation (ex. -rpn, -lon)
-is incompatible with -new\_grid.
+is incompatible with -new_grid.
 
 ### Winds
-
-
 
 Before you do an interpolation, you need to define the wind directions.
 Most people want the the V winds to be in the direction of the North Pole.
 With a verbose wgrib2 inventory, you will seee winds(N/S). However, some
 meteorologists want the V winds to go from grid point (i,j) to (i,j+1).
-The corresponding wgrib2 notation is "winds(grid)". See the 
-[-new\_grid\_winds](./new_grid_winds.html) option for more details.
+The corresponding wgrib2 notation is "winds(grid)". See the
+[-new_grid_winds](./new_grid_winds.html) option for more details.
 
-### Usage
-
-
+## Usage
 
 ```
 
@@ -86,20 +70,16 @@ The corresponding wgrib2 notation is "winds(grid)". See the
 
 ```
 
-Grid description format
------------------------
-
-
+## Grid description format
 
 The nx and ny parameters are integers such that nx\*ny < 2147483648.
 Angles and delta-angles are in degrees, and are rounded to micro-degrees unless
-otherwise specified. Dx and Dy are in meters and are usually rounded 
+otherwise specified. Dx and Dy are in meters and are usually rounded
 to the nearest mm.
 
- The interpolation library does not handle non-spherical grids. The library
+The interpolation library does not handle non-spherical grids. The library
 also has problems with grid smaller than 1 degree in longitudinal width. It assumes
 that the calculations are not precise, and the grid is global.
-
 
 ```
 
@@ -126,7 +106,7 @@ that the calculations are not precise, and the grid is global.
 
 
 -new_grid latlon lon0:nlon:dlon lat0:nlat:dlat outfile		  	  lat-lon grid
-									  lat0, lon0 = degrees of lat/lon for 1st grid point 
+									  lat0, lon0 = degrees of lat/lon for 1st grid point
 									  nlon = number of longitudes
 									  nlat = number of latitudes
 									  dlon = grid cell size in degrees of longitude
@@ -142,7 +122,7 @@ that the calculations are not precise, and the grid is global.
                                                                           sp_lat = latitude of the South pole (for rotation)
                                                                           sp_rot = angle of rotation (degrees)
                                                                            The grid is defined in the rotated coordinates.
-									  eat0, lon0 = degrees of lat/lon for 1st grid point 
+									  eat0, lon0 = degrees of lat/lon for 1st grid point
 									  nlat = number of longitudes
 									  nlon = number of latitudes
 									  dlon = grid cell size in degrees of longitude
@@ -159,7 +139,7 @@ that the calculations are not precise, and the grid is global.
 									  latin1 = first latitude from pole which cuts the secant cone
 									  latin2 = second latitude from pole which cuts the secant cone
 									  lad = latitude (degrees) where dx and dy are specified
-									  lat0, lon0 = degrees of lat/lon for 1st grid point 
+									  lat0, lon0 = degrees of lat/lon for 1st grid point
 									  nx = number of grid points in X direction
 									  ny = number of grid points in Y direction
 									  dx = grid cell size in meters in x direction
@@ -181,12 +161,12 @@ that the calculations are not precise, and the grid is global.
 
 -new_grid nps:lov:lad lon0:nx:dx lat0:ny:dy outfile                       north polar stereographic
 -new_grid sps:lov:lad lon0:nx:dx lat0:ny:dy outfile			  south polar stereographic
-									  lov = longitude (degrees) where y axis is parallel 
+									  lov = longitude (degrees) where y axis is parallel
                                                                             to meridian
 									  lad = latitude (degrees) where dx and dy are specified
                                                                             note: grib1 uses lad = 60N (nps) or 60S (sps)
                                                                             lad must be 60 (nps) or -60 (sps) (library limitation)
-									  lat0, lon0 = degrees of lat/lon for 1st grid point 
+									  lat0, lon0 = degrees of lat/lon for 1st grid point
 									  nx = number of grid points in X direction
 									  ny = number of grid points in Y direction
 									  dx = grid cell distance meters in x direction at lad
@@ -205,7 +185,7 @@ that the calculations are not precise, and the grid is global.
                                                                           dlon = degrees of longitude between adjacent grid points
 
                                                                           note: wgrib2 supports regional Gaussian grids, but
-                                                                          the interpolation library doesn't. 
+                                                                          the interpolation library doesn't.
 
 ### Mercator Grid
 
@@ -251,23 +231,22 @@ latlon, gaussian only support we:sn and we:ns ordering
                                                                           UUID = UUID for this grid, 0 if none
 
                                                                           note: wind rotation is set to earth
-                                                                          The locations are saved to the grib file as the first 
+                                                                          The locations are saved to the grib file as the first
                                                                           and second grib messages. (3 decimal digits precision)
 
 
 ```
 
-
 Sometimes one wants to convert grib files to a common grid. You already
 have a sample grib file and you have to figure out the grid format.
-For common grids, you can use the perl script 
-[grid\_defn.pl](https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2.scripts/grid_defn.pl) 
-to determine the grid format. 
+For common grids, you can use the perl script
+[grid_defn.pl](https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2.scripts/grid_defn.pl)
+to determine the grid format.
 
 ```
 
 $ grid_defn.pl small.grb2
-latlon 0.000000:2:10.000000 20.000000:2:8$ 
+latlon 0.000000:2:10.000000 20.000000:2:8$
 
 grid_defn.pl does not add a newline at the end of its output.
 Not all grids are supported.
@@ -275,8 +254,6 @@ Not all grids are supported.
 ```
 
 ### Examples
-
-
 
 ```
 
@@ -311,20 +288,16 @@ shows a sorting to the required order for -new_grid to work.
 
 ### Type of Interpolation
 
-
-
-The IPOLATES library (either iplib or ip2lib\_d) supports a number of interpolation schemes including bilinear (default),
-bicubic, neighbor and budget. (In addition, ip2lib\_d will support spectral.) 
-The interpolation method can be selected by using the -new\_grid\_interpolation 
-option before the -new\_grid option. Some of the interpolation
+The IPOLATES library (either iplib or ip2lib_d) supports a number of interpolation schemes including bilinear (default),
+bicubic, neighbor and budget. (In addition, ip2lib_d will support spectral.)
+The interpolation method can be selected by using the -new_grid_interpolation
+option before the -new_grid option. Some of the interpolation
 options need numeric parameters which are set by the
--new\_grid\_ipopt option. IPOPT is defined in the iplib library documentation.
-
+-new_grid_ipopt option. IPOPT is defined in the iplib library documentation.
 
 You can use different interpolations for different variables. For example, a
 bilinear interpolation of soil or vegetation type is meaningless. So
 nearest neighbor interpolation is used instead.
-
 
 ```
 
@@ -339,7 +312,6 @@ nearest neighbor interpolation is used instead.
 
 ```
 
-
 Comments (4/2018): When you convert from a high resolution grid
 to a lower resolution grid, you have to be consider changing from
 the default interpolation (bilinear) to a budget interpolation.
@@ -348,11 +320,8 @@ is 25 bilinear interpolations).
 
 ### Changing from grid-relative to Earth-relative winds and vice versa
 
-
-
-Most NCEP grib files use grid-relative winds. If you want to convert to Earth-relative winds 
-or grid-relative winds, you can use the -new\_grid option. 
-
+Most NCEP grib files use grid-relative winds. If you want to convert to Earth-relative winds
+or grid-relative winds, you can use the -new_grid option.
 
 ```
 
@@ -370,20 +339,19 @@ or grid-relative winds, you can use the -new\_grid option.
 
 ```
 
-
 The limitations of the above command are
-* IN.grb can only have one grid type
-* OUT.grb will have any submessages converted into messages
 
+- IN.grb can only have one grid type
+- OUT.grb will have any submessages converted into messages
 
 ### Changes from copygb
 
-
-
-People may want to convert from copygb and copygb2 to wgrib2's -new\_grid. Some differences
+People may want to convert from copygb and copygb2 to wgrib2's -new_grid. Some differences
 to keep in mind.
+
 1. copygb default vectors: UGRD/VGRD
-- wgrib2 default vectors: depends on version of wgrib2. See [new\_grid\_vectors](./new_grid_vectors.html).
+
+- wgrib2 default vectors: depends on version of wgrib2. See [new_grid_vectors](./new_grid_vectors.html).
 - copygb can have vectors in any order
 - wgrib2 must have V follow U for vectors pairs
 - copygb has bilinear, bicubic, nearest neighbor, budget, neighbor budget, and spectral interpolations.
@@ -398,29 +366,25 @@ to keep in mind.
 - copygb2 does grib2.
 - wgrib2 does grib2.
 
-
 ### Speed: Interpolation Weights
 
-
- The first step of the -new\_grid interpolation is
+The first step of the -new_grid interpolation is
 to calculate the interpolation weights. (Each grid point on the new grid
 is a weighted average of a small set of the old grid points.)
 To save time for future interpolations, the last set of weights is saved.
 Consequently interpolation is fastest when the input and output grids remain
-don't change. While one can have multiple -new\_grid options on
+don't change. While one can have multiple -new_grid options on
 the command line, it is not recommended because the caching of the weights
 wouldn't work and weights would have to be recalculated every time.
 
 ### Installation
-
-
 
 ```
 
 With wgrib2 v2.0.8+, you have an option of compiling with the old iplib or
 the new ip2lib_d library.  With the older versions of wgrib2, you are limited
 to the old iplib or an hwrf version of that library.  It is recommended that
-you use the newer ip2lib_d because it support latitude and longitudes to 
+you use the newer ip2lib_d because it support latitude and longitudes to
 micro-degrees and the WMO definition of rotated lat-lon grids.  However,
 the new library doesn't suport the NCEP local grids such as 32769 as used
 by the NAM native files.
@@ -435,40 +399,35 @@ don't want the -new\_grid options, you can set USE\_IPOLATES to 0.
 
 ### Converting from WE:SN to WE:NS Grids
 
-
 Many of wgrib2 grib2 writing options will write the grid
 in WE:SN order. This natural because geolocation is
 only enabled when the internal grids are in WE:SN order.
 However, some codes need the grid in WE:NS order. To
 convert a grib file from WE:SN order to WE:NS order, the
-simplest way is to use -new\_grid. Lat0 and lon0 need
+simplest way is to use -new_grid. Lat0 and lon0 need
 to be lat/lon of the top left corner of the grid. Dlon
 will a positive number and dlat will be negative.
 
- If you want to be tricky, you can do a variation of the
-"NDFD work arounds" technique. It will be faster and 
+If you want to be tricky, you can do a variation of the
+"NDFD work arounds" technique. It will be faster and
 more generic.
 
 ### Thinned Gaussian Grids to other Grids
 
-
 Converting from a thinned Gaussian grid is a two step process
 using wgrib2. First you convert from the thinned grid to full
-grid using [-reduced\_gaussian\_grid](./reduced_gaussian_grid.html).
-Then you can use -new\_grid to interpolate to your desired grid.
+grid using [-reduced_gaussian_grid](./reduced_gaussian_grid.html).
+Then you can use -new_grid to interpolate to your desired grid.
 
 ### Quilting tiles - Merging files
 
-
- Yes, it has been done using -new\_grid, -import\_grib -rpn/merge, and
-the -grib\_out options. Yes, at least 3 people have done it. The best
-application combined a global oceanic and various regional oceanic forecasts. 
+Yes, it has been done using -new_grid, -import_grib -rpn/merge, and
+the -grib_out options. Yes, at least 3 people have done it. The best
+application combined a global oceanic and various regional oceanic forecasts.
 Priority was given to the model with the highest resolution. This is convenient
 for the user who is on a route that covers different model domains.
 
 ### Limitations of the iplib library
-
-
 
 The iplib library has its limitations.
 Grids types used by NCEP get supported and others don't. The library has a grib1 interface, so
@@ -478,13 +437,14 @@ values are limited to millidegrees instead of microdegrees. Note: during
 the installation of ip2, I noticed that the longitude was reduced when
 reducing the range to [0,360). (longitude = amod(longitude + 3600.0, 360.0))
 For single precision numbers, this reduces the precision to about two digits after
-the decimal place. 
+the decimal place.
 
 1. not all grid types are supported by iplib
+
 - only common grids are supported by the wgrib2 "wrapper" for iplib
 - latitude, longitude values are nomially in millidegrees (affects interpolation)
 - Single precision reals are used. The effective precision of the
- longitudes is to a hunderdth of a degree.
+  longitudes is to a hunderdth of a degree.
 - only grib1 scan order are supported (i.e., WE:SN and WE:NS)
 - NDFD/Glahn scan order is not supported (i.e., WE|EW:SN)
 - Earth is assumed to be spherical
@@ -494,120 +454,72 @@ the decimal place.
 - Spectral interpolation is not supported.
 - grids should be at least 1 degree by 1 degree.
 
+### Limitations of the ip2lib_d library
 
-### Limitations of the ip2lib\_d library
-
-
-
-As of wgrib2 v2.0.8, ip2lib\_d is the default interpolation library.
-Ip2lib\_d is the double-precision grib2-interface IPOLATES library. The
+As of wgrib2 v2.0.8, ip2lib_d is the default interpolation library.
+Ip2lib_d is the double-precision grib2-interface IPOLATES library. The
 old ip2lib will remain a compile time option. The advantages of
-ip2lib\_d that it supports grib2 precision (one millionth of a degree),
+ip2lib_d that it supports grib2 precision (one millionth of a degree),
 at rotated lat-lon grids (Grid Definition Template 3.1).
 
- The speed of the single precision iplib was originally faster than
-the double precision ip2lib\_d. To remove this objection from converting
+The speed of the single precision iplib was originally faster than
+the double precision ip2lib_d. To remove this objection from converting
 to the new library, a effort was made to increase the OpenMP threading.
-Consequently the run time of ip2lib\_d will be similar (bilinear) to much 
+Consequently the run time of ip2lib_d will be similar (bilinear) to much
 faster (budget) than iplib in a multiprocessor environment.
 
- Wgrib2 v3.0.0 adds an optional spectral interpolation.
+Wgrib2 v3.0.0 adds an optional spectral interpolation.
 
 1. supports more grids than iplib including WMO defined rotated lat-lon.
+
 - latitude, longitude values are in microdegrees (affects interpolation)
 - Double precision reals are used. (Wgrib2 stores is grid point values
- as single precision.)
+  as single precision.)
 - grib1 polar stereographic projection, LaD = 60N or 60S has been removed
 - NDFD/Glahn scan order (i.e., WE|EW:SN) may be supported in the future.
 - staggering will be supported unlike iplib
 - Some interpolations support an ellipical earth.
 - Lambert conformal: LatD must follow grib1 conventions
 - nx, ny, npts must be ≤ 2147483647. (Grib2 standard is 4294967295.)
- This is a limitation of compiling using 4 byte integers.
+  This is a limitation of compiling using 4 byte integers.
 - Does not support local NCEP grid definitions such as 32769
 - Spectral interpolation is limited to global fields with no undefined values.
 - grids should be at least 1 degree by 1 degree.
 
-
 ### NDFD work arounds
 
-
- NDFD files are often written (WE|EW):SN order. This means that the odd rows 
-are in WE order and the even rows are EW order. The rows go from south to north. 
+NDFD files are often written (WE|EW):SN order. This means that the odd rows
+are in WE order and the even rows are EW order. The rows go from south to north.
 If you are using wgrib2 that is using iplib, the simplest solution
 to convert the grid to WE:SN order is
 
- Version 0
-2. for data in input=WE|EW:SN scan order (wgrib2 IN -scan)
+Version 0 2. for data in input=WE|EW:SN scan order (wgrib2 IN -scan)
+
 - read data, change order scan order of data, change flag table 3.4, save data
-- wgrib2 IN.grb -rpn alt\_x\_scan -set table\_3.4 64 -grib\_out OUT.grb
+- wgrib2 IN.grb -rpn alt_x_scan -set table_3.4 64 -grib_out OUT.grb
 
+Version 1 2. Read trick 55 in [wgrib2 tricks](https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/tricks.wgrib2)
 
- Version 1
-2. Read trick 55 in [wgrib2 tricks](https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/tricks.wgrib2)
-
- Version 1
+Version 1
 
 A variation of the previous trick can be used to put data in to (WE|EW):SN packing.
 
-See also: 
-[-new\_grid\_format](./new_grid_format.html),
-[new\_grid introduction](./new_grid_intro.html),
-[-new\_grid\_interpolation](./new_grid_interpolation.html),
-[new\_grid order](./new_grid_order.html),
-[-new\_grid\_winds](./new_grid_winds.html),
-[-new\_grid\_vectors](./new_grid_vectors.html),
+See also:
+[-new_grid_format](./new_grid_format.html),
+[new_grid introduction](./new_grid_intro.html),
+[-new_grid_interpolation](./new_grid_interpolation.html),
+[new_grid order](./new_grid_order.html),
+[-new_grid_winds](./new_grid_winds.html),
+[-new_grid_vectors](./new_grid_vectors.html),
 [-lola](./lola.html),
 [-bin](./bin.html),
-[-import\_bin](./import_bin.html),
+[-import_bin](./import_bin.html),
 [-rpn](./rpn.html),
-[-grib\_out](./grib_out.html),
-[new\_grid multi-core usage](./new_grid_usage.html),
+[-grib_out](./grib_out.html),
+[new_grid multi-core usage](./new_grid_usage.html),
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: out   X..Z,A bilinear interpolate: X=projection Y=x0:nx:dx Z=y0:ny:dy A=grib_file alpha
+> Description: out X..Z,A bilinear interpolate: X=projection Y=x0:nx:dx Z=y0:ny:dy A=grib_file alpha
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/new_grid.html>_

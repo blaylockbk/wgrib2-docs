@@ -1,34 +1,26 @@
+# wgrib2: -d
 
-### wgrib2: -d
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -d N option specifies the grib message number (N) to 
+The -d N option specifies the grib message number (N) to
 process. (The -d N option comes from wgrib where "d" stood fom "dump".)
 If Nth message has submessage, then the first submessage is chosen (N.1).
 For messages with submessages, use -d N.M to select the
 Mth submessage of the Nth message. If M is missing, only the first submessage is selected.
 
-
-With wgrib2 v3.0.0, you can add an optional offset. For example, -d N:OFFSET 
+With wgrib2 v3.0.0, you can add an optional offset. For example, -d N:OFFSET
 will skip OFFSET bytes (must be positive), find the next grib message, give it a label N, and dump it.
 The other form, -d N.M:OFFSET will skip OFFSET bytes (must be positive),
 find the next grib message and dump the Mth submessage of that grib message.
 Using the offset option can be faster for large files, and can be used to skip sections of a grib
-file that stop wgrib2 processing. 
+file that stop wgrib2 processing.
 The -d option works for files and pipes.
 
-
 If there are more than one -d on a command line, only
-the last one is used. 
+the last one is used.
 
- The form, -d all, is not valid in wgrib2. This
+The form, -d all, is not valid in wgrib2. This
 is the default action.
-
 
 The -d should be used with caution. The order of
 messages records within grib files can change without notice (ex. today's forecast
@@ -36,10 +28,7 @@ may have a different order from tomorrow's forecast). I use
 -d interactively but this option should not be used
 in scripts unless you are 100% certain of the order of the records.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -52,9 +41,6 @@ where N is an integer larger than 0, M is an positive integer, OFFSET is a posit
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -81,30 +67,12 @@ Using the offset option on a pipe
 
 ```
 
+See also:
+[-for](./for.html),
+[-i](./i.html),
 
-See also: 
-[-for](./for.html), 
-[-i](./i.html), 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: init  X      dump message X = n, n.m, n:offset, n.m:offset, only 1 -d allowed
+> Description: init X dump message X = n, n.m, n:offset, n.m:offset, only 1 -d allowed
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/d.html>_

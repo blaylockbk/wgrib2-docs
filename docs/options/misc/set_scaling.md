@@ -1,14 +1,8 @@
+# wgrib2: -set_scaling
 
-### wgrib2: -set\_scaling
-
-
-
-### Introduction
-
-
+## Introduction
 
 The values at the grid points points are usually stored in in this format,
-
 
 ```
 
@@ -23,9 +17,7 @@ The values at the grid points points are usually stored in in this format,
 
 ```
 
-
 There are 3 sytems for storing the number which I call
-
 
 ```
 
@@ -50,11 +42,10 @@ NCEP convention: B = parameter, D = parameter
 
 ```
 
-
 Both the ECMWF and NCEP conventions have their advantages and
 disadvantages. The ECMWF method is easier to use, you just
 set the binary precision to N bits (12? 16?) for all variables
-and you are done. With the NCEP convention, you have to 
+and you are done. With the NCEP convention, you have to
 set the scaling for each variable separately. For some variables
 such as specific humidity, the scaling should be pressure
 dependent. On the other hand, if you are trying to get the smallest
@@ -67,17 +58,15 @@ involved with more than my share of projects were disk space
 has been the critical issue.
 
 By default, wgrib2 will encode using the ECMWF convention using 12 bits.
-The number of bits can be changed by the -set\_bin\_prec option.
-The -set\_grib\_max\_bits option will have to be
+The number of bits can be changed by the -set_bin_prec option.
+The -set_grib_max_bits option will have to be
 used if the binary precision is set to more than 16.
 
 ### Default Scaling
 
-
-
 When you read a field, the scaling of the field (B, D) are saved as
-the scaling parameter. However, Some options such as 
-the -rpn option can 
+the scaling parameter. However, Some options such as
+the -rpn option can
 change the magnitude of the field and scaling from the
 input field may not longer be appropriate. So these
 options will revert to the default scaling (ECMWF-style using
@@ -85,19 +74,16 @@ the N bits). However, in some cases such as time-interpolation
 or smoothing, the original scaling is appropriate. In this
 case you can set the B and D scaling to text string, same.
 
-### Usage
+## Usage
 
-
-The -set\_scaling option is used to
+The -set_scaling option is used to
 change the binary and decimal scaling parameters for the next
 write. (The binary and decimal scaling parameters will be
 reset by reads and calls to RPN.) This will set wgrib2 to
 to encode data using the NCEP convention. If you want to
 encode data using the ECMWF convention, you need to use
-the -set\_bin\_prec option perhaps with the
--set\_grib\_max\_bits option.
-
-
+the -set_bin_prec option perhaps with the
+-set_grib_max_bits option.
 
 ```
 
@@ -107,28 +93,14 @@ the -set\_bin\_prec option perhaps with the
 
 ```
 
-
-See alse: 
-[-set\_bin\_prec](set_bin_prec.html)
-[-set\_grib\_max\_bits](set_grib_max_bits.html)
+See alse:
+[-set_bin_prec](set_bin_prec.html)
+[-set_grib_max_bits](set_grib_max_bits.html)
 [-scale](scale.html)
 [-scaling](scaling.html)
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: misc  X Y    set decimal scaling=X/same binary scaling=Y/same new grib messages
+> Description: misc X Y set decimal scaling=X/same binary scaling=Y/same new grib messages
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_scaling.html>_

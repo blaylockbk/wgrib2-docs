@@ -1,16 +1,10 @@
+# wgrib2: -merge_fcst
 
-### wgrib2: -merge\_fcst
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -merge\_fcst option will try to combine
+The -merge_fcst option will try to combine
 adjacent messages by increasing the time period for forecast average,
 accumulation, minimum and maximum. For example,
-
 
 ```
 
@@ -23,27 +17,25 @@ $ wgrib2 prate.l.gdas.201404.ts -for 1:4
 $ wgrib2 preas.201404.ts -for 1:4 -merge_fcst 4 /tmp/all.grb
 (listing of input)
 
-$ wgrib2 /tmp/all.grb 
+$ wgrib2 /tmp/all.grb
 1:0:d=2014040100:PRATE:surface:0-4 hour ave fcst:
 
 $wgrib2 prate.l.gdas.201404.ts -for 1:4 -merge_fcst 2 /tmp/all2.grb
 (iisting of input)
 
-$ wgrib2 /tmp/all2.grb 
+$ wgrib2 /tmp/all2.grb
 1:0:d=2014040100:PRATE:surface:0-2 hour ave fcst:
 2:29531:d=2014040100:PRATE:surface:2-4 hour ave fcst:
 
 ```
 
-
-The -merge\_fcst option needs the fields to be processed
+The -merge_fcst option needs the fields to be processed
 in order. Fields that are not fcst averages/accumlations are ignored. In
 the previous example, the input data was a time series of one varianble, and
 the fields were in order. The more common case is that you have the fhr06
 (0-6 hour forecast), fhr12 (6-12 hour forecast), fhr18 (12-18 hour forecast)
-and fhr24 (18-24 hour forecast) files and you want the 0-24 hour mean. Each of the 
+and fhr24 (18-24 hour forecast) files and you want the 0-24 hour mean. Each of the
 forecast files contain hundreds of fields.
-
 
 ```
 
@@ -57,12 +49,12 @@ $ cat fhr06 fhr12 fhr18 fhr24 | \
 ```
 
 The above command works by
+
 1. The first line writes the grib to stdout in chrnological order
+
 - The second line has wgrib2 read from stdin and sets the packing and precision
-- The third line process the PRATE, the -merge\_fcst sees the data in the proper order
+- The third line process the PRATE, the -merge_fcst sees the data in the proper order
 - The 4-6 lines process the APCP, ACPCP and BGRUN fields
-
-
 
 You can use the old and slow way which is
 
@@ -74,10 +66,7 @@ $ wgrib2 OUT.grb -merge_fcst 4 OUT
 
 ```
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -91,37 +80,22 @@ When N == 0, then there is no limit to the number of fields to be merged
 
 ```
 
-
-The most common use would be get the 12-hour, daily, N-day average 
-precipation forecasts from the N hour to N+6 hour precipitation 
+The most common use would be get the 12-hour, daily, N-day average
+precipation forecasts from the N hour to N+6 hour precipitation
 forecasts.
 
 ### Restrictions
 
-
-
 1. Only 1 time range specificaion is allowed in the PDS (no nested time ranges)
+
 - Forecast time units must be the same between message to be merged.
 - The various metadata in the grib messages to be merged must be identical except for
- the averaging/accumulation interval.
+  the averaging/accumulation interval.
 
+See also:
 
+---
 
-See also: 
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: out   X Y    merge forecast ave/acc/min/max X=number to intervals to merge (0=every) Y=output grib file
+> Description: out X Y merge forecast ave/acc/min/max X=number to intervals to merge (0=every) Y=output grib file
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/merge_fcst.html>_

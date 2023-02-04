@@ -1,63 +1,54 @@
+# wgrib2: -rpn
 
-### wgrib2: -rpn
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -rpn option runs a reverse polish notation 
+The -rpn option runs a reverse polish notation
 ([RPN](https://en.wikipedia.org/wiki/Reverse_Polish_notation))
 calculator. Having a built-in calculator is quite handy. We use it to convert
-units (ex. geopotential to geopotential meters, accumulations to rates), 
+units (ex. geopotential to geopotential meters, accumulations to rates),
 compute simple quantities (net flux from downward and upward fluxes),
 and even compute the plant hardiness index from the 2 m temperatures. The goal
 of the calculator is to reduce the need to write simple grib programs that
 do simple calculations.
 
- The "hardware" of the rpn calculator consists of 20 registers
-and a stack (10 entries deep). (Wgrib2 prior to 2.0.6 has 10 registers.) 
+The "hardware" of the rpn calculator consists of 20 registers
+and a stack (10 entries deep). (Wgrib2 prior to 2.0.6 has 10 registers.)
 Stack entries and registers are arrays rather floating point numbers on
 your store-bought calculator.
 
- 
 The conceptual model of the >-rpn calculator is the
 grid values array is the top of the stack. The calculator has
 a statck that is 10 entries deep and 20 registers. When
 ever you enter rpn mode, the stack is cleared except for the
 top of the stack. The registers are only clears when you
 "turn on" the calculator; that is start the wgrib2 utility
-or the first call to wgrib2 if you are using calling wgrib2 
+or the first call to wgrib2 if you are using calling wgrib2
 through wgrib2api or pywgrib2.
 
- To save the calculations, you can save them in a register 
-or write them out by -grib\_out, -bin, -ieee, -text, etc.
-
+To save the calculations, you can save them in a register
+or write them out by -grib_out, -bin, -ieee, -text, etc.
 
 ### Callable wgrib2, wgrib2api
 
-
- Callable Wgrib2 and wgrib2api use the -rpn registers to transfer
+Callable Wgrib2 and wgrib2api use the -rpn registers to transfer
 gridded data between the calling program and the wgrib2 subroutine. A Fortran or C
 program can read and write the wgrib2's RPN registers. For example, if a program
 wants to write a grib2 file, it would first place the grid values into a register.
-The calling program would then call the wgrib2 subroutine with instructions to 
-read a template, replace the grid values with the register values, and then 
-write a grib message. 
+The calling program would then call the wgrib2 subroutine with instructions to
+read a template, replace the grid values with the register values, and then
+write a grib message.
 
 ### Implementation Details
 
-
- The size of a registers may differ as the size of grids can also vary in a grib file.
+The size of a registers may differ as the size of grids can also vary in a grib file.
 However the size of the register has to match the size of the stack entry in order
 "recall" the register.
 
- Wgrib2 always reads a grib message before processing it using commmands like -rpn.
+Wgrib2 always reads a grib message before processing it using commmands like -rpn.
 This sets the size of the data array. Thus the size of the stack entries is always
 the size of the grib message that is being processed.
 
- The conceptual moddel is the data array (grid values) is the
+The conceptual moddel is the data array (grid values) is the
 top of the stack. The implmentation is that the data array is copied
 to the top of the stack when -rpn is run, and the top of the stack is
 copied to the data array when -rpn is finished. An error message
@@ -65,8 +56,6 @@ will occur if the top of the stack is empty when -rpn finishes.
 
 ### Limitations of -rpn
 
-
- 
 The -rpn option was designed for
 simple calculations. For more complicated calculations, you
 should use a real programming language. You can do the
@@ -76,26 +65,21 @@ use wgrib2api (Fortran and C) to read the data into a Fortran
 or C program, do the calculation and then write the data out
 using wgrib2. Finally you can use python and one of the pywgrib2
 packages to do the calculation using Python, numpy and
- [pywgrib2](./pywgrib2.html).
+[pywgrib2](./pywgrib2.html).
 
 ### Uses
 
+- change of units when importing data (gribifying data)
+- computations: ex, U,V -> wind speed, wind direction, potential temperature
+- merging data
+- complex masking of data
+- changing units before writing text/ieee files
+- removing extreme data values
+- finding min and max values
+- finding the globally averaged precipitation
+- comparing fields
 
-* change of units when importing data (gribifying data)
-* computations: ex, U,V -> wind speed, wind direction, potential temperature
-* merging data
-* complex masking of data
-* changing units before writing text/ieee files
-* removing extreme data values
-* finding min and max values
-* finding the globally averaged precipitation
-* comparing fields
-
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -103,7 +87,6 @@ packages to do the calculation using Python, numpy and
     A,B,C,.. = number, rpn function, or rpn operator
 
 ```
-
 
 Operators and Functions:
 
@@ -157,9 +140,6 @@ Note: an operation involving an UNDEFINED is UNDEFINED
 
 ```
 
-
-
-
 Stack Operators:
 
 ```
@@ -172,7 +152,7 @@ Stack Operators:
 
 
 ```
- 
+
 Register Operators: (note: CW2 v2.0.6+ uses registers 7,8,9 prior versions 0,1,2)
 
 ```
@@ -190,7 +170,6 @@ Register Operators: (note: CW2 v2.0.6+ uses registers 7,8,9 prior versions 0,1,2
 
 ```
 
-
 Variables and Constants: put on the top of the stack
 
 ```
@@ -204,7 +183,6 @@ Variables and Constants: put on the top of the stack
 
 
 ```
-
 
 Printing Operators:
 
@@ -224,8 +202,6 @@ Printing Operators:
 
 ### Example 1
 
-
-
 The standard units of grib temperature is K but you want the text output in Celcius.
 
 ```
@@ -233,7 +209,6 @@ The standard units of grib temperature is K but you want the text output in Celc
 $ wgrib2 a.grb -match ":TMP:850 mb:" -rpn "273.15:-" -text C.dat
 
 ```
-
 
 Fahrenheit is easy too (F = (K-273.15)\*9/5+32).
 
@@ -244,8 +219,6 @@ $ wgrib2 a.grb -match ":TMP:850 mb:" -rpn "273.15:-:9:\*:5:/:32:+" -text F.dat
 ```
 
 ### Example 2
-
-
 
 Suppose you want to limit the relative humidity values to 100. This example only
 affect the RH fields. All submessages will be converted into messages.
@@ -258,11 +231,8 @@ $ wgrib2 a.grb -if ":RH:" -rpn "100:min" -fi -grib\_out out.grb -not\_if ":RH:" 
 
 ### Example 3
 
-
-
 Suppose that you wanted the 500 to 1000 mb thickness, and the file only contained
 one field of Z1000 and one field of Z500.
-
 
 ```
 
@@ -288,8 +258,6 @@ $ wgrib2 IN.grb -match ":HGT:" -match ":(500|1000) mb:" \
 ```
 
 ### Example 4
-
-
 
 Write out the 500 mb wind speed.
 
@@ -320,10 +288,7 @@ $ wgrib2 IN.grb -match ":[UV]grd:500 mb:" \
 
 ### Example 5
 
-
-
 Suppose someone made a mistake and the latent heat flux (LHTFL) had the wrong sign. RPN to the rescue.
-
 
 ```
 
@@ -331,10 +296,8 @@ $ wgrib2 IN.grb -match ":LHTFL:" -rpn "-1:\*" -grib\_out new\_lhtfl.grb
 
 ```
 
-
-The file, new\_lhtfl, only contained the LHTFL fields. You duplicate the file with the
+The file, new_lhtfl, only contained the LHTFL fields. You duplicate the file with the
 fixed LHTFL fields by
-
 
 ```
 
@@ -342,10 +305,8 @@ $ wgrib2 IN.grb -if ":LHTFL:" -rpn "-1:\*" -fi -grib\_out new.grb
 
 ```
 
-
 It would be faster if you only compressed the LHTFL fields. (-grib uses the
-original compressed data and -grib\_out uses the "data" register.)
-
+original compressed data and -grib_out uses the "data" register.)
 
 ```
 
@@ -354,10 +315,7 @@ $ wgrib2 IN.grb -set\_grib\_type jpeg \
 
 ```
 
-
-
 If both the latent and sensible heat fluxes needed a sign reversal, you could do,
-
 
 ```
 
@@ -367,14 +325,12 @@ $ wgrib2 IN.grb -if ":(LHTFL|SHTFL):" -rpn "-1:\*" -fi -grib\_out new.grb
 
 ### Example 6
 
-
-If you want to set certain values to undefined, you define a mask and then 
+If you want to set certain values to undefined, you define a mask and then
 apply the mask. In this example, values below 20 are set to undefined.
-
 
 ```
 
-$ wgrib2 a.grb -rpn "dup:20:>=:mask" -grib\_out -set\_grib\_type c3 new.grb 
+$ wgrib2 a.grb -rpn "dup:20:>=:mask" -grib\_out -set\_grib\_type c3 new.grb
 
 The RPN calculator is used:
     dup       the data is duplicated
@@ -386,7 +342,6 @@ The RPN calculator is used:
 -grib_out new.grb    writes a grib message using the decoded data
 
 ```
-
 
 Don't forget to enclose the argument to rpn in quotes because the shell can do unexpect things.
 
@@ -403,15 +358,12 @@ Printing operators
 
 ### Example 7: Merging
 
-
-
 Suppose that we have a nested model, we have a low resolution TMP2m from the
 the outer model and a high-resolution TMP2m from the nested model. Now we
 want a field that uses the TMP2m in the nested-model domain and the TMP2m from
 the outer model elsewhere. To do this, you need to convert both fields to a
-common grid. Then you use "-rpn merge". Make sure that both domains are 
+common grid. Then you use "-rpn merge". Make sure that both domains are
 contained in the common grid as this is a requirement of the interpolation library.
-
 
 ```
 
@@ -424,10 +376,8 @@ contained in the common grid as this is a requirement of the interpolation libra
 
 ### Example 8: Land Mask
 
-
 The file mask.grb contains the values 0 for water, 1 for land and
 2 for sea ice. I wanted a small file with 0 for water+sea-ice and 1 for land.
-
 
 ```
 
@@ -445,16 +395,13 @@ wgrib2 mask.grb -rpn "1:==" -set_scaling 0 1 -set_grib_type c1 -grib_out land.gr
 
 ### Example 9: Total-total index
 
-
-
-An [example](./rpn_non-trivial_example.html) of calculating the dewpoint and 
+An [example](./rpn_non-trivial_example.html) of calculating the dewpoint and
 total-total index is more involved. Using an on-line infix to postfix (reverse polish)
 calculator is helpful.
 
 ### Example 10: global precipitation
 
-
- The model has the precipitation in the variable PRATE
+The model has the precipitation in the variable PRATE
 which has units of mm/sec (assuming 1 gm H2O = 1cc). Suppose
 I wanted the globally averaged precip in the non-metric unit
 of mm/day. It's one command away
@@ -467,8 +414,7 @@ of mm/day. It's one command away
 
 ### Changes
 
-
- Wgrib2 v3.0.0+ adds error chechking to floating point values,
+Wgrib2 v3.0.0+ adds error chechking to floating point values,
 
 ```
 
@@ -486,90 +432,31 @@ of mm/day. It's one command away
 
 ### Comments
 
-
-
 Warning: Reverse Polish notation can cause headaches if you try something
 too complicated. An infix -> postfix calculator is the suggested
-remedy. Another approach is to use pywgrib2\_s, pywgrib2\_xy, or pywgrib2\_lite.
-
-
+remedy. Another approach is to use pywgrib2_s, pywgrib2_xy, or pywgrib2_lite.
 
 The -rpn option is a piece of easy to
 understand and modify code (RPN.c). If you want to add
 a specialized function (ex. wind chill calculation), you many
 consider adding it to the RPN calculator. The another method
-is to code your calculation in python and use pywgrib2\_s,
-pywgrib2\_xy or pywgrib2\_lite.
-
+is to code your calculation in python and use pywgrib2_s,
+pywgrib2_xy or pywgrib2_lite.
 
 Why an RPN calculator? Well, wgrib2 is heavily influenced by the stack language Forth.
 It's only natural that the calculator would be based on reverse
-Polish notation. 
+Polish notation.
 
-
-See also: 
+See also:
 [-if](./if.html),
-[-if\_reg](./if_reg.html),
+[-if_reg](./if_reg.html),
 [-fi](./fi.html),
-[-grib\_out](./grib_out.html),
-[-rpn\_rcl](./rpn_rcl.html),
-[-rpn\_sto](./rpn_sto.html),
+[-grib_out](./grib_out.html),
+[-rpn_rcl](./rpn_rcl.html),
+[-rpn_sto](./rpn_sto.html),
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: misc  X      reverse polish notation calculator
+> Description: misc X reverse polish notation calculator
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/rpn.html>_

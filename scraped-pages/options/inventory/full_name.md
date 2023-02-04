@@ -1,15 +1,9 @@
+# wgrib2: full_name is idepreciated for wgrib2 3.0.2+
 
-### wgrib2: full\_name is idepreciated for wgrib2 3.0.2+
+## Introduction
 
-
-
-### Introduction
-
-
- With the expansion of "Extended Names", the full name is now
+With the expansion of "Extended Names", the full name is now
 a subset of the new Extended Names.
-
-
 
 ```
 
@@ -20,16 +14,11 @@ new:    -set_ext_name 3 -ext_name
 
 ```
 
+See also: [-ext_name](./ext_name.html),
+[-set_ext_name](./set_ext_name.html)
 
+---
 
-See also: [-ext\_name](./ext_name.html),
- [-set\_ext\_name](./set_ext_name.html)
-
-
-
-
-----
-
->Description: inv          extended name, var+misc+lev (depreciated)
+> Description: inv extended name, var+misc+lev (depreciated)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/full_name.html>_

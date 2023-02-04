@@ -1,27 +1,19 @@
+# wgrib2: -grid_changes
 
-### wgrib2: -grid\_changes
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -grid\_changes option is a safety option.
+The -grid_changes option is a safety option.
 Normally we don't expect the grid to change within a grib file, and many
 programs would fail if the grid did change. Wgrib2 will work if the
 grid changes but it would work much slower. (Each grid change would
-require a recalculation of the grid parameters such as the the 
-grid point locations if needed.) 
-The -grid\_changes option prints
+require a recalculation of the grid parameters such as the the
+grid point locations if needed.)
+The -grid_changes option prints
 to stderr, the number of times the grid changed during processing
 of the file. Only grib (sub-)messages that were processed and not
 skipped by a -match or similar option will count.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -30,9 +22,6 @@ skipped by a -match or similar option will count.
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -45,25 +34,14 @@ number of records: 2
 
 ```
 
-
 In the above example, we converted the file to binary. It consisted
 of a single grid and two records.
-
 
 See also:
 [count](./count.html)
 
+---
 
-
-
-
-
-
-
-
-
-----
-
->Description: misc         prints number of grid changes
+> Description: misc prints number of grid changes
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/grid_changes.html>_

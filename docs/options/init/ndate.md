@@ -1,46 +1,34 @@
+# wgrib2: -ndate (v2.0.8)
 
-### wgrib2: -ndate (v2.0.8)
-
-
-
-### Introduction
-
-
+## Introduction
 
 The NCEP utility, ndate, will add or subtract hours from a date code.
 Wgrib2 already has routines to do these calculations. So instead of
-porting the ndate fortran code and the NCEP libraries, how about 
-a simple-to-write option that would allow wgrib2 to do the same 
+porting the ndate fortran code and the NCEP libraries, how about
+a simple-to-write option that would allow wgrib2 to do the same
 calculation (and more)? In my case, installing wgrib2 is a probably a given.
-So adding -ndate saves me time. 
-
-
+So adding -ndate saves me time.
 
 The ndate utility allows you to add or subtract a integer number of hours
-from a YYYYMMDDHH date code, 
+from a YYYYMMDDHH date code,
 The -ndate option allows you to add or
 subtract an integer number of minutes, hours, days, months or years from
 a date code. The output format has the precision necessary for the input date code
 and offset. Sure you could do all this with the gnu date program but
 the -ndate option is easier to use.
 
-
 The feature of the ndate utility that is not in wgrib2, is the ability
 to print the current UTC date code when there is no argument. Of course, you
 can do the same by "date -u +%Y%m%d%H". For users of the ndate utility, note that
 the order of arguments are reversed between the utility and wgrib2 option.
 
-
-The -ndate option is an odd 
+The -ndate option is an odd
 option because it does its output in the initialization phase.
 In order to to trigger an "missing input file" error, you need
 to run wgrib2 on a valid file. For linux/unix systems, using
 the file /dev/null is a convenient, always present file.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -54,7 +42,7 @@ the file /dev/null is a convenient, always present file.
                 hr = hour  (00..23)
                 mn = minute (not to be confused with month)  (00..59)
 
-      The output format has the precision to reflects the maximum precision of 
+      The output format has the precision to reflects the maximum precision of
       the date code and the offset
 
      Priority of the output format of the date code
@@ -69,9 +57,6 @@ the file /dev/null is a convenient, always present file.
 
 ### Example
 
-
-
-
 ```
 
 $ wgrib2 /dev/null -ndate 2016010212 -6hr
@@ -79,26 +64,10 @@ $ wgrib2 /dev/null -ndate 2016010212 -6hr
 
 ```
 
-
 See also: [-ndates](./ndates.html)
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: init  X Y    X=date Y=dt print date + dt
+> Description: init X Y X=date Y=dt print date + dt
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/ndate.html>_

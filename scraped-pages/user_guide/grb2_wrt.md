@@ -1,37 +1,26 @@
+### wgrib2api: grb2_wrt(..)
 
-### wgrib2api: grb2\_wrt(..)
+## Introduction
 
+Writing grib using wgrib2api is simple. You need
 
-
-### Introduction
-
-
-
-Writing grib using wgrib2api is simple. You need 
 1. gridded data you want to write
+
 - sample grib2 message with the same grid as (1) and unchanging
- metadata such as center/subcenter/process-id
-- the changing metadata in a wgrib2-style string such as  
+  metadata such as center/subcenter/process-id
+- the changing metadata in a wgrib2-style string such as
 
- 'd=1999123100:HGT:500 mb:anl:', 'D=20170102123000:UGRD:2 m above ground:15 minute fcst:'
+'d=1999123100:HGT:500 mb:anl:', 'D=20170102123000:UGRD:2 m above ground:15 minute fcst:'
 
-
-
-The grb2\_wrt(..) function will
+The grb2_wrt(..) function will
 take the template, change the grid values, change the grib headers based
 on the metadata string and write out the grib message.
 
-
-
-Optional parameters that are in the grb2\_wrt source code that
+Optional parameters that are in the grb2_wrt source code that
 are not documented here are to be considered to be alpha
-code. 
-
-
+code.
 
 ### A simple fortran program to write grib2
-
-
 
 ```
 
@@ -48,8 +37,6 @@ end
 ```
 
 ### A simple program to write out the 10 m wind speed
-
-
 
 ```
 
@@ -78,8 +65,6 @@ end
 
 ### Code fragment to write surface hgt from ss2grb2.f90
 
-
-
 ```
 
   metadata='d=' // datecode // ':HGT:surface:' // trim(ftime) // ':'
@@ -89,16 +74,14 @@ end
 
 ```
 
- The grib template, grib\_template, is created on the fly by using wgrib2
+The grib template, grib_template, is created on the fly by using wgrib2
 to alter the grid.
 
- In ss2grb2, the grids are stored in we:ns order and we want the output grids
+In ss2grb2, the grids are stored in we:ns order and we want the output grids
 to be in we:ns order. So the order parameter is set to raw. The order could
 have been set to we:ns but raw is slightly faster.
 
 ### Code fragment to write hgt(pres) from ss2grb2.f90
-
-
 
 ```
 
@@ -112,18 +95,15 @@ have been set to we:ns but raw is slightly faster.
 
 ```
 
- The pressure levels are defined by both a numeric value (plevs(n\_plevs) 
-and a text string (plevs\_txt(n\_plevs)). Note that the loop that writes
-calls grb2\_wrt(..) is not multithreaded (no !$OMP PARALLEL DO) because
+The pressure levels are defined by both a numeric value (plevs(n_plevs)
+and a text string (plevs_txt(n_plevs)). Note that the loop that writes
+calls grb2_wrt(..) is not multithreaded (no !$OMP PARALLEL DO) because
 the wgrib2api is not thread safe.
 
- You may notice that both code fragments use the old style where you modify
+You may notice that both code fragments use the old style where you modify
 the metadata. The new style wasn't available for ss2grb2.f90.
 
-
-###  Usage
-
-
+### Usage
 
 ```
 
@@ -185,24 +165,8 @@ the metadata. The new style wasn't available for ss2grb2.f90.
 
 ```
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: grib2_wrt(..)
+> Description: grib2_wrt(..)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/grb2_wrt.html>_

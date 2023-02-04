@@ -1,14 +1,9 @@
+# wgrib2: -inv_f77
 
-### wgrib2: -inv\_f77
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -inv\_f77 option writes the match inventory
-(see the -match\_inv option) to a file
+The -inv_f77 option writes the match inventory
+(see the -match_inv option) to a file
 that is readable by a fortran unformatted I/O statement. The
 format is more or less standand and consistes of a 4-byte integer
 of number of bytes in the character string,
@@ -18,14 +13,11 @@ than the character string, it is padded with blanks. If the
 match inventory is longer, it simply truncated. Not all fortran
 compilers support this format.
 
-### Usage
-
-
-
+## Usage
 
 ```
  -inv_f77 OPTION CLEN FILE
-   
+
    OPTION = "ieee" or "bin"
       bin = native format
       ieee = 4-byte big_endian header/trailer (default)
@@ -36,9 +28,6 @@ compilers support this format.
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -53,24 +42,14 @@ compilers support this format.
 
 ```
 
-
-The -inv\_f77 option was added to facilitate the
+The -inv_f77 option was added to facilitate the
 writing of fortran codes that can read wgrib2 output.
 
 See also:
--match\_inv
+-match_inv
 
+---
 
-
-
-
-
-
-
-
-
-----
-
->Description: inv>  X Y Z  match inventory written to Z with character*(Y) and X=(bin,ieee)
+> Description: inv> X Y Z match inventory written to Z with character\*(Y) and X=(bin,ieee)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/inv_f77.html>_

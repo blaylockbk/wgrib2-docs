@@ -1,19 +1,11 @@
+# wgrib2: -config
 
-### wgrib2: -config
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -config option shows the configuration of wgrib2
 and then ends the program.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -22,9 +14,6 @@ and then ends the program.
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -44,11 +33,7 @@ g2clib is the default decoder
 
 ```
 
-
 Here is the config four years later.
-
-
-
 
 ```
 
@@ -79,20 +64,10 @@ ULONG_MAX: 18446744073709551615
 
 ```
 
+See also:
 
-See also: 
+---
 
-
-
-
-
-
-
-
-
-
-----
-
->Description: misc         shows the configuration
+> Description: misc shows the configuration
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/config.html>_

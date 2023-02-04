@@ -1,14 +1,8 @@
+# wgrib2: -scale
 
-### wgrib2: -scale
+## Introduction
 
-
-
-### Introduction
-
-
-
-In grib, grid values are usually stored as 
-
+In grib, grid values are usually stored as
 
 ```
 
@@ -20,16 +14,12 @@ In grib, grid values are usually stored as
 
 ```
 
-
 This is not an absolute as the grid point values can be stored as
 a spectral coefficients, IEEE floating point values and other formats.
 The -scale option prints the binary and
 scaling factors.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -38,9 +28,6 @@ scaling factors.
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -53,22 +40,12 @@ bash-4.1$ wgrib2 gep19.t00z.pgrb2af180 -scale -for 13:14 -v -packing
 
 ```
 
-
 See also:
 [-scaling](./scaling.html)
-[-set\_scaling](./set_scaling.html)
+[-set_scaling](./set_scaling.html)
 
+---
 
-
-
-
-
-
-
-
-
-----
-
->Description: inv          scale for packing
+> Description: inv scale for packing
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/scale.html>_

@@ -1,11 +1,6 @@
+# wgrib2: -spatial_proc
 
-### wgrib2: -spatial\_proc
-
-
-
-### Introduction
-
-
+## Introduction
 
 Product Definition Template 4.15 is used to describe spatial processing
 of a forecast or analysis. For example, you interpolate a model
@@ -16,19 +11,11 @@ for surface and near surface fields. Another use of PDT 15 is in
 aviation. You might want the maximum clear air turbulence when
 the interpolate from a fine grid to a coarse grid.
 
-
-
-
-The option, -spatial\_proc, prints the
+The option, -spatial_proc, prints the
 spatial properties that are encoded in PDT 4.15. This output is
 part of the of the standard inventory, -s.
 
-
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -37,8 +24,6 @@ part of the of the standard inventory, -s.
 ```
 
 ### Example
-
-
 
 ```
 
@@ -50,18 +35,10 @@ $ wgrib2 file2 -spatial\_proc
 
 ```
 
+See also:
 
+---
 
-See also: 
-
-
-
-
-
-
-
-----
-
->Description: inv          show spacial processing, pdt=4.15
+> Description: inv show spacial processing, pdt=4.15
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/spatial_proc.html>_

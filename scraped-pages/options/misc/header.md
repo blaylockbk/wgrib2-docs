@@ -1,26 +1,17 @@
+# wgrib2: -header, -no_header
 
-### wgrib2: -header, -no\_header
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -header and
--no\_header options
+-no_header options
 sets and clears the header flag. When the
 header flag is set, binary and ieee is read and written
-using f77-style header and trailers. 
+using f77-style header and trailers.
 When a text file (as opposed to spread sheet or csv) is written,
 a preliminary line with the grid dimension, "nx ny",
 is written. The default is -header.
 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -31,9 +22,6 @@ is written. The default is -header.
 
 ### Example
 
-
-
-
 ```
 
 $ wgrib2 -ens ens.grb -header -ieee data.ieee
@@ -41,25 +29,17 @@ $ wgrib2 -ens ens.grb -header -ieee data.ieee
 
 ```
 
-
-See also: 
-[-no\_header](./no_header.html),
-[-big\_endian](./big_endian.html),
-[-little\_endian](./little_endian.html),
+See also:
+[-no_header](./no_header.html),
+[-big_endian](./big_endian.html),
+[-little_endian](./little_endian.html),
 [-ieee](./ieee.html),
 [-bin](./bin.html),
-[-import\_ieee](./import_ieee.html),
-[-import\_bin](./import_bin.html)
+[-import_ieee](./import_ieee.html),
+[-import_bin](./import_bin.html)
 
+---
 
-
-
-
-
-
-
-----
-
->Description: misc         f77 header or nx-ny header in text output (default)
+> Description: misc f77 header or nx-ny header in text output (default)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/header.html>_

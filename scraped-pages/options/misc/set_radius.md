@@ -1,33 +1,24 @@
+# wgrib2: -set_radius
 
-### wgrib2: -set\_radius
-
-
-
-### Introduction
-
-
+## Introduction
 
 Most grib2 Grid Definition Templates (PDT) include the
 shape and size of Earth. Such information is
 necessary for finding the latitude and longitude of
 the grid points in various projections. The
--set\_radius option sets the
-shape and size of Earth and the -radius option 
+-set_radius option sets the
+shape and size of Earth and the -radius option
 shows the the shape and size.
-
 
 The geolocation of the grid points is done prior to the execution of
 the run-time options. So the
--set\_radius will not affect calculations of
+-set_radius will not affect calculations of
 the lat-lon of the grid points. To get the correction locations
 after using the
--set\_radius option, you must write the file
+-set_radius option, you must write the file
 with the new shape of the Earth. Then you can use this new file.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -44,8 +35,6 @@ with the new shape of the Earth. Then you can use this new file.
 
 ### Example
 
-
-
 ```
 
 $ wgrib2 small.grb2 -set\_radius 0 -radius
@@ -55,20 +44,11 @@ $ wgrib2 small.grb2 -set\_radius 1:6300000 -radius
 
 ```
 
-
-
-See also: 
+See also:
 [-radius](./radius.html)
 
+---
 
-
-
-
-
-
-
-----
-
->Description: misc  X      set radius of Earth X= 0,2,4,5,6,8,9 (Code Table 3.2), X=1:radius , X=7:major:minor
+> Description: misc X set radius of Earth X= 0,2,4,5,6,8,9 (Code Table 3.2), X=1:radius , X=7:major:minor
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_radius.html>_

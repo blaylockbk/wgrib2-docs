@@ -1,19 +1,11 @@
+# wgrib2: -disc
 
-### wgrib2: -disc
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -disc option prints the discipline. Use the 
+The -disc option prints the discipline. Use the
 -v option to get the name of the discipline.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -23,9 +15,6 @@ The -disc option prints the discipline. Use the
 
 ### Example
 
-
-
-
 ```
 
 $ wgrib2 grib2.polar -disc
@@ -33,7 +22,6 @@ $ wgrib2 grib2.polar -disc
 1.2:0:disciple=0
 
 ```
-
 
 ```
 
@@ -43,18 +31,10 @@ $ wgrib2 grib2.polar -v -disc
 
 ```
 
+See also:
 
-See also: 
+---
 
-
-
-
-
-
-
-
-----
-
->Description: inv          discipline (code table 0.0)
+> Description: inv discipline (code table 0.0)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/disc.html>_

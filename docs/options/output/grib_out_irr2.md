@@ -1,17 +1,12 @@
+# wgrib2: -grib_out_irr2
 
-### wgrib2: -grib\_out\_irr2
+## Introduction
 
-
-
-### Introduction
-
-
-
-The option -grib\_out\_irr2 replaces
--grib\_out\_irr. The former uses Grid
+The option -grib_out_irr2 replaces
+-grib_out_irr. The former uses Grid
 Definition Template (GDT) 101 which is part of the grib
 standard. The latter uses GDT 130 which was was not adopted.
-The -grib\_out\_irr2 allows you to define
+The -grib_out_irr2 allows you to define
 an unstructured grids which allows the locations of the grid
 points to be arbitrary. For example, you can define an
 unstructured grid to be the locations of the all the US
@@ -24,15 +19,12 @@ at 00Z January 1, 2017 and a different grid for any other
 observation time. With the UUID feature of GDT 101, one
 can store observational data in grib.
 
-
 The locations of are not part of the metadata in grib message,
 and the locations have to be provided another means such as
 documentation at the center's web site or by including grib
 mesages with the latitudes (NLAT) ane longitudes (ELON).
 
-### Usage
-
-
+## Usage
 
 ```
 
@@ -48,8 +40,7 @@ OUTFILE            = output grib file
 
 ```
 
-
-The option, -grib\_out\_irr2, can generate a grid with any number
+The option, -grib_out_irr2, can generate a grid with any number
 of grid points. The data for the new grid is taken from the DATA register which is
 usually the input data. If NPNTS is less than the size of the data register (NDATA),
 then the first NPNTS of DATA are written out. If NPNTS is greater or equal to NDATA,
@@ -59,33 +50,17 @@ this point, the latitudes and longitudes have not been specified.)
 
 ### Is GDT 101 Useful?
 
-
-
 GDT 101 is useful! I can define a UUID, and make a grib files with 3 grib messages,
 NLAT, ELON, TMP2m. Using wgrib2, I can interpolate TMP2m to a lat-lon grid.
 
-
 I have a netcdf file with latitude(x,y), longitude(x,y) and TMP2m(t,latitude,longitude).
-Using -import\_netcdf, I can make grib message with ELON, NLAT and TMP2m. I can now
+Using -import_netcdf, I can make grib message with ELON, NLAT and TMP2m. I can now
 interpolate TMP2m to a lat-lon grid.
 
+See also:
 
-See also: 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: out   5 args writes irregular grid grib GDT 101 X=npnts Y=grid_no Z=grid_ref A=UUID B=(output file)
+> Description: out 5 args writes irregular grid grib GDT 101 X=npnts Y=grid_no Z=grid_ref A=UUID B=(output file)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/grib_out_irr2.html>_

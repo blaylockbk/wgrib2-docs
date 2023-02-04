@@ -1,16 +1,10 @@
+# wgrib2: -ncep_norm
 
-### wgrib2: -ncep\_norm
-
-
-
-### Introduction
-
-
+## Introduction
 
 The GFS model, for example, produces precipitation with a
 hard-to-use time step. If you gathered the precip forecasts
 from the GFS, it would look like,
-
 
 ```
 
@@ -24,13 +18,11 @@ $ wgrib2 apcp.grb
 
 ```
 
-
 If you obtained the 6 hourly forecasts, everthing would be
 quite useful. But if you obtained the 3 hourly forecasts, you
 would notice the averaging period is either 3 or 6 hours. To
-create 3-hour accumulations, you can use the 
--ncep\_norm option.
-
+create 3-hour accumulations, you can use the
+-ncep_norm option.
 
 ```
 
@@ -54,21 +46,18 @@ $ wgrib2 new\_apcp.grb
 
 ```
 
- The -ncep\_norm option is not limited
+The -ncep_norm option is not limited
 to 3 hour intervals. It can be used with the CFSv2 which has
 1 hour intervals. Some restrictions are:
 
 1. time units of forecast time and statistical processing must be the same
+
 - only works with averages and accumulations (Code Table 4.10)
 - the grid must be the same
 - the meta-data must be the same except for the forecast timing.
 - Does not work for CRAIN, CSNOW, CICEP, CFRZR
 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -78,14 +67,11 @@ to 3 hour intervals. It can be used with the CFSv2 which has
 
 ### Conditions
 
-
-
 The input grib file must have a very specific format.
 Each field must be grouped together in time series format.
 That is because the program scans the file in sequential order.
 Of course, you can alter the order by the -i
 option. For example,
-
 
 ```
 
@@ -114,8 +100,6 @@ $ wgrib2 new\_apcp.grb
 
 ### Using GFS forecast files
 
-
-
 The typical GFS forecast file has a name like,
 
 ```
@@ -129,7 +113,6 @@ GFS:
 ```
 
 So to get the "normalized" APCP, you can do
-
 
 ```
 
@@ -161,29 +144,15 @@ The above script uses several techniques to speed up the processing.
 
 "wgrib2 -"   This reads the grib file from stdin
 
-"-match "(regex)"    This avoids decoding grib messages that do not match 
+"-match "(regex)"    This avoids decoding grib messages that do not match
              the regular expression
 
 ```
 
+See also:
 
-See also: 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: out   X      normalize NCEP-type ave/acc X=output grib file
+> Description: out X normalize NCEP-type ave/acc X=output grib file
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/ncep_norm.html>_

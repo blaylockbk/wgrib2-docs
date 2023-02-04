@@ -1,20 +1,12 @@
+# wgrib2: -YY
 
-### wgrib2: -YY
-
-
-
-### Introduction
-
-
+## Introduction
 
 The - option prints the year of the
-reference time. The -MM 
+reference time. The -MM
 and -YY options are pretty useless.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -24,9 +16,6 @@ and -YY options are pretty useless.
 
 ### Example
 
-
-
-
 ```
 
 $ wgrib2 png.grb2 -YY
@@ -34,20 +23,10 @@ $ wgrib2 png.grb2 -YY
 
 ```
 
-
-
-
 See also: [-t](./t.html), [-T](./T.html)
 
+---
 
-
-
-
-
-
-
-----
-
->Description: inv          reference time YYYY
+> Description: inv reference time YYYY
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/YY.html>_

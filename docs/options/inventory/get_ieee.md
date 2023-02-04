@@ -1,22 +1,12 @@
+# wgrib2: -get_ieee
 
-### wgrib2: -get\_ieee
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -get\_ieee option prints 
+The -get_ieee option prints
 the selected parts of the grib message as an IEEE floating
 point number.
 
-
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -28,8 +18,6 @@ N = number of IEEE float to print (4 octets per IEEE number)
 ```
 
 ### Example
-
-
 
 ```
 
@@ -45,16 +33,13 @@ $ wgrib2 rtgssthr\_grb\_0.083\_awips.grib2 -get\_ieee 5 12 1
 
 ```
 
-See also: 
-[-get\_byte](get_byte.html)
-[-get\_byte](get_hex.html)
-[-get\_int](get_int.html)
+See also:
+[-get_byte](get_byte.html)
+[-get_byte](get_hex.html)
+[-get_int](get_int.html)
 
+---
 
-
-
-----
-
->Description: inv   X Y Z  get ieee float in Section X, Octet Y, number of floats Z
+> Description: inv X Y Z get ieee float in Section X, Octet Y, number of floats Z
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/get_ieee.html>_

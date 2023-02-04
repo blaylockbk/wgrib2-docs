@@ -1,14 +1,9 @@
+# wgrib2: -unmerge_fcst (v3.0.0+)
 
-### wgrib2: -unmerge\_fcst (v3.0.0+)
-
-
-
-### Introduction
-
+## Introduction
 
 Prior to GFS-FV3, the precipitation was stored in the "old-style". This style
 handled 6 hour accumulations in a simple manner.
-
 
 ```
 
@@ -16,15 +11,11 @@ handled 6 hour accumulations in a simple manner.
 
 ```
 
-
-
 Eventually someone wanted to store 3 hour accumulations. However, people who had code
 that read the 6 hour accumulations said that they couldn't change the code. So the
 the file still had to contain the 6 hour accumulations. So the code to read the
 3 hour accumulations had to a subtraction for some of the interval. They stored
 the accumulations like this.
-
-
 
 ```
 
@@ -32,10 +23,8 @@ the accumulations like this.
 
 ```
 
-
 Now the FV3-GFS model developers agreed to store precipitation accumulations in
 the easy-to-use format,
-
 
 ```
 
@@ -43,29 +32,23 @@ the easy-to-use format,
 
 ```
 
-
 However, people who had code that read the accumulation in the old style said that
 they could not change their code. So they had put old style and new style accumulated
 precipitation in the files.
-
 
 To process the precip with wgrib2, you want to eliminate the old-style precip.
 It is surprisingly difficult because the old style can have to same name as
 the new style (ex. 3 hour forecast). You have to eliminate the old style but
 not the new style even though they have the same name.
 
-
- The -unmerge\_fcst option helps deal with the
+The -unmerge_fcst option helps deal with the
 FV3-GFS precip problem when trying to make time series.
-
 
 ### Example usage
 
-
-
 ```
 
-# make a file with the APCP from cat gfs.t00z.pgrb2.0p25.f(N) N=000..029 
+# make a file with the APCP from cat gfs.t00z.pgrb2.0p25.f(N) N=000..029
 $ cat gfs.t00z.pgrb2.0p25.f00? gfs.t00z.pgrb2.0p25.f01? gfs.t00z.pgrb2.0p25.f02? | wgrib2 - -match APCP -grib $stmp/all_apcpc.grb
 
 
@@ -110,11 +93,9 @@ $ wgrib2 all_apcpc.grb -match ':0-'
 
 ```
 
-
 As you can see, 0-1, 0-2, 0-3, 0-4, 0-5 and 0-6 accumulations are duplicated.
 
-The -unmerge\_fcst option is used to find the precipitation time series.
-
+The -unmerge_fcst option is used to find the precipitation time series.
 
 ```
 
@@ -129,15 +110,13 @@ $ wgrib2 all_apcpc.grb -unmerge_fcst precip_ts.grb 0hr 1
 
 ```
 
-
 The first argument is the output file. The second argument is
 the start of the accumulations to start, i.e., 0hr. Finally the
 third argument is 1 to include the 0-1 accumulation. The output is
 
-
 ```
 
-$ wgrib2 precip_ts.grb 
+$ wgrib2 precip_ts.grb
 1:0:d=2020101600:APCP:surface:0-1 hour acc fcst:
 2:225707:d=2020101600:APCP:surface:1-2 hour acc fcst:
 3:2302390:d=2020101600:APCP:surface:2-3 hour acc fcst:
@@ -151,10 +130,7 @@ $ wgrib2 precip_ts.grb
 
 ```
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -164,28 +140,14 @@ $ wgrib2 precip_ts.grb
    time unit:  the forecast time unit, hr, dy, mo, etc
       If you want to process A-B hour acc fcst
       then N=1, time unit = hr
-  I = 1 
+  I = 1
 
 ```
 
+See also:
 
-See also: 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: out   X Y Z  unmerge_fcst X=output Y=fcst_time_0 Z: 0->result 1->+init 2->+all
+> Description: out X Y Z unmerge_fcst X=output Y=fcst_time_0 Z: 0->result 1->+init 2->+all
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/unmerge_fcst.html>_

@@ -1,27 +1,14 @@
+# wgrib2: -pdt
 
-### wgrib2: -pdt
+## Introduction
 
-
-
-### Introduction
-
-
-
-Section 4 contains the product definition template (PDT) 
+Section 4 contains the product definition template (PDT)
 and the -pdt option prints the PDT.
 
+The -pdt option is an alias to
+-code_table_4.0t.
 
-
-
-The -pdt option is an alias to 
- -code\_table\_4.0t.
-
-
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -31,8 +18,6 @@ The -pdt option is an alias to
 
 ### Example
 
-
-
 ```
 
 $ wgrib2 -pdt png.grb2
@@ -40,16 +25,11 @@ $ wgrib2 -pdt png.grb2
 
 ```
 
-
-
-See also: 
+See also:
 [-Sec4](Sec4.html),
 
+---
 
-
-
-----
-
->Description: inv          Product Definition Table (Code Table 4.0)
+> Description: inv Product Definition Table (Code Table 4.0)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/pdt.html>_

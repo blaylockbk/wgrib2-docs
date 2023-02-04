@@ -1,11 +1,6 @@
+# wgrib2: -ndates (v2.0.8+)
 
-### wgrib2: -ndates (v2.0.8+)
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -ndates option creates a list of date codes
 using a do-loop syntax. This option has nothing to do with grib, but
@@ -14,25 +9,22 @@ in scripting. Anyways, if a Swiss army knife can have a
 bottle opener, wgrib2 can have a date code routine. Anyways one less
 program to port is helpful.
 
- Note that until wgrib2 v3.0.3, the number of date codes was limited
+Note that until wgrib2 v3.0.3, the number of date codes was limited
 by a buffer size.
 
-
-The -ndate and -ndates options 
+The -ndate and -ndates options
 are initialization routines. They are run when all the options are
 initialized. Therefore they are run before reading the grib file.
-The -ndates\_fmt option has to preceed the 
+The -ndates_fmt option has to preceed the
 -ndates option to alter the output format.
 
 The wgrib2 command line can have multple -ndates options.
-Combining -ndate and -ndates options 
+Combining -ndate and -ndates options
 is more difficult because the default formatting will join the date codes.
-
-
 
 ```
 
--ndates DATE DATE2 DT2 
+-ndates DATE DATE2 DT2
 -ndates DATE DT1 DT2
 
 If DT1 is given, then DATE2=DATE+DT1
@@ -63,11 +55,9 @@ DT = (integer)(time unit)           "time unit" follows the GrADS convention
 
 ```
 
-
 One useful feature of -ndates is the format of the output date is
 appropriate for the input date code and DT2. The format has the most precision for
 both the input date code and DT2.
-
 
 ```
 
@@ -81,10 +71,8 @@ both the input date code and DT2.
 
 ```
 
-
 The -ndates was designed to provide a list of date codes which
 makes scripting easier when processing time series.
-
 
 ```
 
@@ -100,10 +88,8 @@ makes scripting easier when processing time series.
 
 ```
 
-
 The variable precision of the output date codes makes processing by days
 and months easy.
-
 
 ```
 
@@ -119,10 +105,8 @@ and months easy.
 
 ```
 
-
-By using the -ndates\_fmt option, you can change the
+By using the -ndates_fmt option, you can change the
 output from a list of dates to a list of files.
-
 
 ```
 
@@ -133,8 +117,7 @@ output from a list of dates to a list of files.
 
 ```
 
- You can even make scripts.
-
+You can even make scripts.
 
 ```
 
@@ -144,10 +127,7 @@ output from a list of dates to a list of files.
 
 ```
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -175,29 +155,27 @@ output from a list of dates to a list of files.
                    date = date + DT2
                endwhile
 
-    the output date code has the precision necessary for DATE and DT2 and 
-    is converted into a string.  The date is printed out using the 
+    the output date code has the precision necessary for DATE and DT2 and
+    is converted into a string.  The date is printed out using the
     "ndates_fmt" format.  The default format is " %s".  (C format)
 
 ```
 
 ### Example
 
-
-
 ```
 
         print date codes for 1 month, every day
 
 $ wgrib2 /dev/null -ndates 2019020100 1mo 1dy
- 2019020100 2019020200 2019020300 2019020400 2019020500 2019020600 2019020700 2019020800 
-2019020900 2019021000 2019021100 2019021200 2019021300 2019021400 2019021500 2019021600 
-2019021700 2019021800 2019021900 2019022000 2019022100 2019022200 2019022300 2019022400 
+ 2019020100 2019020200 2019020300 2019020400 2019020500 2019020600 2019020700 2019020800
+2019020900 2019021000 2019021100 2019021200 2019021300 2019021400 2019021500 2019021600
+2019021700 2019021800 2019021900 2019022000 2019022100 2019022200 2019022300 2019022400
 2019022500 2019022600 2019022700 2019022800
 
 $ wgrib2 /dev/null -ndates 201902 1mo 1dy
- 20190201 20190202 20190203 20190204 20190205 20190206 20190207 20190208 20190209 20190210 
-20190211 20190212 20190213 20190214 20190215 20190216 20190217 20190218 20190219 20190220 
+ 20190201 20190202 20190203 20190204 20190205 20190206 20190207 20190208 20190209 20190210
+20190211 20190212 20190213 20190214 20190215 20190216 20190217 20190218 20190219 20190220
 20190221 20190222 20190223 20190224 20190225 20190226 20190227 20190228
 
         print date codes for 1 day, every 6 hours
@@ -225,12 +203,9 @@ $ wgrib2 /dev/null -ndates 202001 12mo 1mo
 
 ### Finding the Julian date (ordinal date)
 
-
-
 The ordinal date is the year and day of the year ranging
 from 1 and 366. To get the day of the year from YYYYMMDD,
 you can use -ndates.
-
 
 ```
 
@@ -243,8 +218,6 @@ ebis@landing2:~$ wgrib2 /dev/null -ndates 20191231 20200120 1dy | wc -w
 
 ### Limitations wgrib2 v2.8.0-v3.0.2
 
-
- 
 By default, the text output of options is stored in a buffer and written
 after the option is finished. This speeds up processing because only
 one large write is done rather than many smaller writes and allows you
@@ -255,34 +228,11 @@ to a buffer, so the output of -ndates is unlimited. This has no effect on -last 
 -last0 because this options only work when processing a file, and -ndates works
 prior to processing the file.
 
-
-
-See also: [-ndates\_fmt](./ndates_fmt.html),
+See also: [-ndates_fmt](./ndates_fmt.html),
 [-ndate](./ndate.html)
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: init  X Y Z  X=date0 Y=(date1|dt1) Z=dt2 for (date=date0; date<(date1|date0+dt1); date+=dt2) print date
+> Description: init X Y Z X=date0 Y=(date1|dt1) Z=dt2 for (date=date0; date<(date1|date0+dt1); date+=dt2) print date
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/ndates.html>_

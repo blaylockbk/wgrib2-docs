@@ -1,21 +1,11 @@
+# wgrib2: -nl
 
-### wgrib2: -nl
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -nl option prints a new-line
 into the inventory. It is used to make the inventory prettier.
 
-
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -24,8 +14,6 @@ into the inventory. It is used to make the inventory prettier.
 ```
 
 ### Example
-
-
 
 ```
 
@@ -39,16 +27,11 @@ $ wgrib2 -gdt png.grb2 -s -nl -stats
 
 ```
 
-
-
-See also: 
+See also:
 [-print](./print.html)
 
+---
 
-
-
-----
-
->Description: inv          inserts new line into inventory
+> Description: inv inserts new line into inventory
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/nl.html>_

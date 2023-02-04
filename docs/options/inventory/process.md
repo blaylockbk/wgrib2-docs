@@ -1,13 +1,8 @@
+# wgrib2: -process
 
-### wgrib2: -process
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -process option prints out 
+The -process option prints out
 [Code Table 4.3](https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_table4-3.shtml). Code Table 4.3 is important because it defines
 the product such as analysis, forecast, or forecast error. The
 table also change the units of the field as in a probabilty forecast.
@@ -16,12 +11,7 @@ except for this table (analysis vs analysis error). In the default
 wgrib2 inventory, values of Code Table 4.3 which are not
 probabiity forecasts, analysis errors or forecast errors are noted.
 
-
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -31,8 +21,6 @@ probabiity forecasts, analysis errors or forecast errors are noted.
 
 ### Example
 
-
-
 ```
 
 $ wgrib2 -process png.grb2
@@ -40,15 +28,10 @@ $ wgrib2 -process png.grb2
 
 ```
 
+See also:
 
-See also: 
+---
 
-
-
-
-
-----
-
->Description: inv          Process type (code table 4.3)
+> Description: inv Process type (code table 4.3)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/process.html>_

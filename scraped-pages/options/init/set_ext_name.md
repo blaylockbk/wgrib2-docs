@@ -1,12 +1,8 @@
+# wgrib2: -set_ext_name
 
-### wgrib2: -set\_ext\_name
+## Introduction
 
-
-
-### Introduction
-
-
- In the beginning, grib fields were identified by a name, a level
+In the beginning, grib fields were identified by a name, a level
 and some timing information. Life was simple and the people were
 happy. This was soon to pass. A hoard of ensemble members appeared
 in the distance. A dust storm rolled in from the plains. The new
@@ -17,26 +13,21 @@ A and B microns. So wgrib2 added ["extended names"](./ext_name.html).
 So you could
 switch beween the old simpler names and the newer extended names.
 
-
 ### Extended Names
-
-
 
 The extended name includes modifiers like the ensemble information,
 dust information and probabilities. Optionally you can include
 the level and forecast information (wgrib2 v3.0.2+). More details
 are given [here](./ext_name.html).
 
-### Usage
-
+## Usage
 
 To select between the regular and extended name, you use
-
 
 ```
 
    -set_ens_name N
-      
+
       N == 0                 default
       N == 1                 add misc terms like ensemble or probability
                                extension for wgrib2 v3.0.2+
@@ -53,17 +44,14 @@ To select between the regular and extended name, you use
 
 ### Extended Extended Names
 
-
 The extended name facility was extended with wgrib2 v3.0.2 in order
 to fix a problem with converting grib to netcdf with some of the newer
-NCEP files. When wgrib2 writes netcdf files, the -netcdf concatinates 
-the level information to the extended name to produce the netcdf name 
-for the field. For some of the newer NCEP forecast files, this name 
+NCEP files. When wgrib2 writes netcdf files, the -netcdf concatinates
+the level information to the extended name to produce the netcdf name
+for the field. For some of the newer NCEP forecast files, this name
 wasn't unique. So the extended name needs to optionally include
 the forecast time information. With this extension, the level
 information was added as another option field to the extended name.
-
-
 
 ```
 
@@ -75,22 +63,15 @@ information was added as another option field to the extended name.
 
 ```
 
-
 The final modification to the extended name, was to make the field and space
-character a run-time parameter by the option, -set\_ext\_name\_chars. The default
+character a run-time parameter by the option, -set_ext_name_chars. The default
 values are '.' and '\_' for backwards compatibilty. The modification was needed
 we now are seeing level-info and misc-info with periods in them like "0.5 mb".
 
-
-
-
-
 ### -match, -if, and other string matches
 
-
- The extended names also applies the match inventory. So string matches will have
+The extended names also applies the match inventory. So string matches will have
 to be rewritten. Fortunately the process is mechanical.
-
 
 ```
 
@@ -99,16 +80,10 @@ to be rewritten. Fortunately the process is mechanical.
 
 ```
 
-
-
-Many options use the extended name if enabled by -set\_ext\_name. For example, the
+Many options use the extended name if enabled by -set_ext_name. For example, the
 -netcdf uses the extended name if enabled.
 
-
-
 ### Examples
-
-
 
 ```
 
@@ -121,26 +96,12 @@ Many options use the extended name if enabled by -set\_ext\_name. For example, t
 
 ```
 
+See also:
+[-ext_name](./ext_name.html)
+[-set_ext_name_chars](./set_ext_name_chars.html).
 
+---
 
-
-See also: 
-[-ext\_name](./ext_name.html)
-[-set\_ext\_name\_chars](./set_ext_name_chars.html).
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: init  X      X=type ext_name (1*misc+2*level+4*ftime)
+> Description: init X X=type ext_name (1*misc+2*level+4\*ftime)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_ext_name.html>_

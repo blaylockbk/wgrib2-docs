@@ -1,27 +1,19 @@
+# wgrib2: -GRIB
 
-### wgrib2: -GRIB
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -GRIB option is used to copy an entire
 GRIB2 message (including all the submessages) to a specified file.
 This is useful if you want to preserve to keep the submessages.
 This is in contrast to the -grib option which writes
-submessages into its own grib message. 
+submessages into its own grib message.
 
- The -GRIB option should only be used
+The -GRIB option should only be used
 to copy the original grib message to another file. Unlike the
 the -grib option, changing the metadata
-is not recommended. 
+is not recommended.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -29,22 +21,14 @@ is not recommended.
 
 ```
 
-
 See also: [-grib](./grib.html)
-[-ncep\_uv](./ncep_uv.html)
+[-ncep_uv](./ncep_uv.html)
 [-submsg](./submsg.html)
 [-tosubmsg](./tosubmsg.html)
 [-append](./append.html)
 
+---
 
-
-
-
-
-
-
-----
-
->Description: out   X      writes entire GRIB record (all submessages)
+> Description: out X writes entire GRIB record (all submessages)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/GRIB.html>_

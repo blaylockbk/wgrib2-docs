@@ -1,17 +1,9 @@
+# wgrib2: -Sec0
 
-### wgrib2: -Sec0
+## Introduction:
 
-
-
-### Introduction:
-
-
-
-The -Sec0 option prints a short summary of Section 0, 
+The -Sec0 option prints a short summary of Section 0,
 the Indicator Section.
-
-
-
 
 ```
 
@@ -26,10 +18,7 @@ len=44444                     length in octets/bytes of entire grib message
 
 ```
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -37,14 +26,10 @@ len=44444                     length in octets/bytes of entire grib message
 
 ```
 
+See also:
 
-See also: 
+---
 
-
-
-
-----
-
->Description: inv          contents of section0
+> Description: inv contents of section0
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/Sec0.html>_

@@ -1,18 +1,10 @@
+# wgrib2: -ens
 
-### wgrib2: -ens
+## Introduction
 
+The -ens option prints the ensemble information.
 
-
-### Introduction
-
-
-
-The -ens option prints the ensemble information. 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -21,9 +13,6 @@ The -ens option prints the ensemble information.
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -41,20 +30,12 @@ $ wgrib2 -var-ens ens.grb
 
 ```
 
+See also:
+[-N_ens.html](N_ens.html)
+[-set_ens_num.html](set_ens_num.html)
 
-See also: 
-[-N\_ens.html](N_ens.html)
-[-set\_ens\_num.html](set_ens_num.html)
+---
 
-
-
-
-
-
-
-
-----
-
->Description: inv          ensemble information
+> Description: inv ensemble information
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/ens.html>_

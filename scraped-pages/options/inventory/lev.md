@@ -1,18 +1,11 @@
+# wgrib2: -lev
 
-### wgrib2: -lev
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -lev option prints the level of the
 field.
-### Usage
 
-
-
+## Usage
 
 ```
 
@@ -22,9 +15,6 @@ field.
 
 ### Example
 
-
-
-
 ```
 
 $ wgrib2 grib2.polar -lev
@@ -33,18 +23,10 @@ $ wgrib2 grib2.polar -lev
 
 ```
 
-
 See also: [-s](./macros.html)
 
+---
 
-
-
-
-
-
-
-----
-
->Description: inv          level (code table 4.5)
+> Description: inv level (code table 4.5)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/lev.html>_

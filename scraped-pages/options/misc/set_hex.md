@@ -1,16 +1,9 @@
+# wgrib2: -set_hex
 
-### wgrib2: -set\_hex
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -set\_hex option sets 1 octets (byte) to a
+The -set_hex option sets 1 octets (byte) to a
 a specified hex value. The hex value ranges from 0 to ff.
-
-
 
 ```
 
@@ -18,7 +11,7 @@ a specified hex value. The hex value ranges from 0 to ff.
   I = section number = 1..7
   J = location in the section = 1..(section length)
   K = 00 .. ff
-would set 
+would set
   Section I, Octet J to hex value K
 
 -set_hex I J K1:K2:K3:..KN
@@ -40,11 +33,7 @@ would set
 
 ```
 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -58,11 +47,9 @@ I-M = Mth octet as 2 digit hex number
 
 ### Example
 
-
-
 This examples requires wgrib2 v2.0.8+
 
-The file, template\_512.grb, was converted from grib1, and the
+The file, template_512.grb, was converted from grib1, and the
 delta-lon, and the extreme latitudes were only to the nearest
 millidegree (grib1 precision).
 
@@ -77,10 +64,8 @@ wgrib2 template_512.grb -grid
 
 ```
 
-
-The grid with full precision can be obtained by using -new\_grid,
+The grid with full precision can be obtained by using -new_grid,
 and the contents of sec3 (grid definition) can be obtained by -0xSec 3.
-
 
 ```
 
@@ -94,9 +79,7 @@ and the contents of sec3 (grid definition) can be obtained by -0xSec 3.
 
 ```
 
-
 The script to change the precision of the Gaussian grid is given by
-
 
 ```
 
@@ -105,35 +88,18 @@ wgrib2 $1 -set_hex 3 1 "$sec3" -grid -grib $1.new
 
 ```
 
-
 The above script assumes that the size of the original section 3 is greater or equal to the size of the new section 3.
-If it isn't, you have to use the option -set\_sec\_size 3 72. Of course, you cannot make arbitrary changes
+If it isn't, you have to use the option -set_sec_size 3 72. Of course, you cannot make arbitrary changes
 to the grid definition because the number of grid points has to match the grid points in the data section.
 
+See also:
+[-set_byte](set_byte.html)
+[-set_ieee](set_ieee.html)
+[-set_int](set_int.html)
+[-set_int2](set_int2.html)
 
-See also: 
-[-set\_byte](set_byte.html)
-[-set\_ieee](set_ieee.html)
-[-set\_int](set_int.html)
-[-set\_int2](set_int2.html)
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: misc  X Y Z  set bytes in Section X, Octet Y, bytes Z (a|a:b:c|abc) in hexadecimal
+> Description: misc X Y Z set bytes in Section X, Octet Y, bytes Z (a|a:b:c|abc) in hexadecimal
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_hex.html>_

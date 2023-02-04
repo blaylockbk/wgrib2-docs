@@ -1,27 +1,17 @@
+# wgrib2: -ilat
 
-### wgrib2: -ilat
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -ilat option prints the latitude, longitude and 
+The -ilat option prints the latitude, longitude and
 value of ith grid point. For example, you get a text output and you
 were curious about the lat-lon of the fifth grid on the list. You
 would use this option to get the value and its location.
 
- The -ilat option uses the Fortran convention 
+The -ilat option uses the Fortran convention
 which has the index starting from one. In addition, the index is for the
 output grid may differ from the input grid.
 
-
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -31,9 +21,6 @@ output grid may differ from the input grid.
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -46,24 +33,13 @@ output grid may differ from the input grid.
 
 ```
 
-
-
-See also: [-ijlat](./ijlat.html), 
+See also: [-ijlat](./ijlat.html),
 [-lon](./lon.html)
 [-ll2i](./ll2i.html)
 [-scan](./scan.html)
 
+---
 
-
-
-
-
-
-
-
-
-----
-
->Description: inv   X      lat,lon and grid value at Xth grid point, X=1,..,npnts (WxText enabled)
+> Description: inv X lat,lon and grid value at Xth grid point, X=1,..,npnts (WxText enabled)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/ilat.html>_

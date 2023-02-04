@@ -1,11 +1,6 @@
+# wgrib2: -persistent
 
-### wgrib2: -persistent
-
-
-
-### Introduction
-
-
+## Introduction
 
 When wgrib2 opens a file, the file may be marked as persistent or
 transient. If a file is marked as transient, wgrib2 will close
@@ -23,10 +18,7 @@ The -transient option marks an already
 open file as transient. When opening a file, the default
 is to mark the file as persistent.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -35,17 +27,11 @@ is to mark the file as persistent.
 
 ```
 
-
 See also:
 [-transient](./transient.html)
 
+---
 
-
-
-
-
-----
-
->Description: init  X      makes file X persistent if already opened (default on open), CW2
+> Description: init X makes file X persistent if already opened (default on open), CW2
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/persistent.html>_

@@ -1,22 +1,15 @@
-### 
+###
 
-wgrib2: -big\_endian -little\_endian
+wgrib2: -big_endian -little_endian
 
+## Introduction
 
-### Introduction
-
-
-
-The -big\_endian and the 
--little\_endian 
+The -big_endian and the
+-little_endian
 options changes the order that IEEE numbers are read and written. This
 does not affect the order in which binary numbers are read/written.
 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -26,21 +19,14 @@ does not affect the order in which binary numbers are read/written.
 
 ```
 
+See also:
+[-ieee](./ieee.html),
+[-import_ieee](./import_ieee.html),
+[-header](./header.html),
+[-no_header](./header.html),
 
+---
 
-See also: 
-[-ieee](./ieee.html), 
-[-import\_ieee](./import_ieee.html), 
-[-header](./header.html), 
-[-no\_header](./header.html), 
-
-
-
-
-
-
-----
-
->Description: misc         sets ieee output to little endian (default is big endian)
+> Description: misc sets ieee output to little endian (default is big endian)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/little_endian.html>_

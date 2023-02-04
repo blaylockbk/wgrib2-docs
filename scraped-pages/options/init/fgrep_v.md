@@ -1,14 +1,8 @@
+# wgrib2: -egrep, -egrep_v, -fgrep, -fgrep_v
 
-### wgrib2: -egrep, -egrep\_v, -fgrep, -fgrep\_v
-
-
-
-### Introduction
-
-
+## Introduction
 
 When you use wgrib2 extensively, common sequences keep occuring, such as,
-
 
 ```
 
@@ -19,10 +13,8 @@ When you use wgrib2 extensively, common sequences keep occuring, such as,
 
 ```
 
-
-Using the various -grep, -inv and the -i\_file option, the above example can
+Using the various -grep, -inv and the -i_file option, the above example can
 be written as
-
 
 ```
 
@@ -33,20 +25,16 @@ be written as
 
 ```
 
-
 The first version is easier to read. So why were the extra options added?
 
 1. Some shells have problems with pipes.
-	* Some versions of Windows dos-prompt have problems with pipes.
-	* RNomads: solved Windows 7 problem by using these options- More efficient when you avoid multiple processes and pipes.
-	* Every millisecond and K byte of RAM usage counts!- Used by callable wgrib2.
-	* A subroutine (wgrib2) can read a field using the index file!
-
-
+   - Some versions of Windows dos-prompt have problems with pipes.
+   - RNomads: solved Windows 7 problem by using these options- More efficient when you avoid multiple processes and pipes.
+   - Every millisecond and K byte of RAM usage counts!- Used by callable wgrib2.
+   - A subroutine (wgrib2) can read a field using the index file!
 
 The options were added for the third reason, but one and two are some
 nice side effects. The 4 examples can be coded in fortran as,
-
 
 ```
 
@@ -59,8 +47,7 @@ nice side effects. The 4 examples can be coded in fortran as,
 
 ```
 
- The -grep options are used in wgrib2api's grb2\_inq(..) function.
-
+The -grep options are used in wgrib2api's grb2_inq(..) function.
 
 ```
 
@@ -68,7 +55,7 @@ Definition of grep options:
 
     (...) | wgrib2 -OP1 X (...)
       behaves like
-    (...) | OP2 X | wgrib2 (...) 
+    (...) | OP2 X | wgrib2 (...)
 
       if OP1 == egrep       then OP2 = egrep
       if OP1 == fgrep       then OP2 = fgrep
@@ -84,10 +71,7 @@ Definition of grep options:
 
 ```
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -102,28 +86,18 @@ Note: -set_regex does not modify the type of regex for these options
 
 ```
 
-
-See also: 
-[-match](./match.html), 
-[-not](./not.html), 
-[-match\_inv](./match_inv.html), 
-[-end](./end.html), 
+See also:
+[-match](./match.html),
+[-not](./not.html),
+[-match_inv](./match_inv.html),
+[-end](./end.html),
 [-if](./if.html),
-[-i\_file](./i_file.html),
-[-not\_if](./not_if.html),
-[-set\_regex](./set_regex.html).
+[-i_file](./i_file.html),
+[-not_if](./not_if.html),
+[-set_regex](./set_regex.html).
 
+---
 
-
-
-
-
-
-
-
-
-----
-
->Description: init  X      fgrep -v X | wgrib2
+> Description: init X fgrep -v X | wgrib2
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/fgrep_v.html>_

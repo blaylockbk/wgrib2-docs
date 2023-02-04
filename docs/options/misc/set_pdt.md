@@ -1,32 +1,24 @@
+# wgrib2: -set_pdt
 
-### wgrib2: -set\_pdt
+## Introduction
 
-
-
-### Introduction
-
-
-
-Section 4 of a grib message 
+Section 4 of a grib message
 contains the product definition and the product is
-defined through the Product Definition Template (PDT). 
+defined through the Product Definition Template (PDT).
 There are many different PDTs but only some are in common usage. The
--set\_pdt option changes the current PDT to
+-set_pdt option changes the current PDT to
 another. For example, you want to add ensemble information to a
 forecast with no ensemble information. To do this, you have
 to change the template to one that has ensemble information
 and then fill in the various parts of the PDT.
-Another use of the -set\_pdt option is 
+Another use of the -set_pdt option is
 when you have a PDT that is unsupported by a program such
-as GrADS. You can use this option to 
+as GrADS. You can use this option to
 convert an unsupported PDT to a supported PDT.
-To retain metadata, prefix the PDT with a plus sign. The amount of 
+To retain metadata, prefix the PDT with a plus sign. The amount of
 metadata copied depends on the version of wgrib2.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -42,8 +34,6 @@ metadata copied depends on the version of wgrib2.
 ```
 
 ### Example
-
-
 
 ```
 
@@ -63,7 +53,6 @@ $ wgrib2 png.grb -set\_pdt +0 -grib OUT.grb
 
 ```
 
-
 Suppose a program has problems with pdt 60 and 61. Changing the pdt to
 1 and 11 will solve the incompatibility with only a little loss of metadata.
 
@@ -76,24 +65,15 @@ $ wgrib2 IN.grb -if ":pdt=60:" -set\_pdt +1 -fi \
 
 ```
 
-
-
-See also: 
+See also:
 [-fi](fi.html),
 [-grib](grib.html),
 [-if](if.html),
 [-Sec4](Sec4.html),
 [-pdt](pdt.html),
 
+---
 
-
-
-
-
-
-
-----
-
->Description: misc  X      makes new pdt, X=(+)PDT_number or X=(+)PDT_number:size of PDT in octets, +=copy metadata
+> Description: misc X makes new pdt, X=(+)PDT_number or X=(+)PDT_number:size of PDT in octets, +=copy metadata
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_pdt.html>_

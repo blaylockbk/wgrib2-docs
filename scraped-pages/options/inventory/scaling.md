@@ -1,14 +1,8 @@
+# wgrib2: -scaling
 
-### wgrib2: -scaling
+## Introduction
 
-
-
-### Introduction
-
-
-
-In grib, grid values are usually stored as 
-
+In grib, grid values are usually stored as
 
 ```
 
@@ -20,10 +14,9 @@ In grib, grid values are usually stored as
     number_of_bits = the smallest N such that I < 2**N
       note: WMO does not place a maximum value of the number of bits
             however, implementations do have limits.  The limits will
-            vary by software package and procedure.  
+            vary by software package and procedure.
 
 ```
-
 
 This is not an absolute as the grid point values can be stored as
 a spectral coefficients, IEEE floating point values and other formats.
@@ -31,10 +24,7 @@ The -scaling option
 prints the binary and scaling factors, the reference value and the number
 of bits used for the integer I.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -44,9 +34,6 @@ of bits used for the integer I.
 
 ### Example
 
-
-
-
 ```
 
 $ wgrib2 gep19.t00z.pgrb2af180 -scaling -for 13:14 -v -packing
@@ -55,23 +42,13 @@ $ wgrib2 gep19.t00z.pgrb2af180 -scaling -for 13:14 -v -packing
 
 ```
 
-
 See also:
 [-scale](./scale.html)
-[-set\_scaling](./set_scaling.html)
-[-grib\_max\_bits](./grib_max_bits.html)
+[-set_scaling](./set_scaling.html)
+[-grib_max_bits](./grib_max_bits.html)
 
+---
 
-
-
-
-
-
-
-
-
-----
-
->Description: inv          scaling for packing (old format)
+> Description: inv scaling for packing (old format)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/scaling.html>_

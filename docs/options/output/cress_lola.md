@@ -1,38 +1,26 @@
+# wgrib2: -cress_lola
 
-### wgrib2: -cress\_lola
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -cress\_lola option is similar to the
+The -cress_lola option is similar to the
 -lola option in that it creates a regular LOngitude-LAtitude grid.
 The former uses a Cressman analysis and the latter option uses a nearest-neighbor interpolation.
 
 You need to specify the lower
 left corner of the grid, the number of points in the zonal and meridional directions
-and the latitude/longitude increments. Finally you need to specify the output file 
+and the latitude/longitude increments. Finally you need to specify the output file
 and the format. WARNING: winds and other vector fields will not be
 rotated. If the vector fields use a grid relative orientation,
 then your interpolated winds will be using the original grid.
 
-
 ### Interpolation scheme
 
-
-
 The interpolation to the lola grid is by a Cressman analysis. The Cressman analysis
-is a multipass system which uses a user-specified "radius" for each pass. 
-A Cressman analysis can be computationally expensive so you may want to explore 
+is a multipass system which uses a user-specified "radius" for each pass.
+A Cressman analysis can be computationally expensive so you may want to explore
 [multiprocessing techniques](./for_n.html).
 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -55,8 +43,6 @@ radiusM      The radius in km for M-th pass.
 
 ### Prelim - Cressman Analysis
 
-
-
 ```
 
 defintion: input grid = observations = grid from the input grib file
@@ -76,30 +62,15 @@ defintion: input grid = observations = grid from the input grib file
 
 ```
 
-
-Warning, this scheme doesn't handle handle rotated winds in a useful manner. 
+Warning, this scheme doesn't handle handle rotated winds in a useful manner.
 There will also be problem with analyzing winds near the poles.
 
-
-See alse: 
+See alse:
 [-lon](./lon.html)
 [-lola](./lola.html)
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: out   X..Z,A lon-lat grid values X=lon0:nlon:dlon Y=lat0:nlat:dlat Z=file A=radius1:radius2:..:radiusN
+> Description: out X..Z,A lon-lat grid values X=lon0:nlon:dlon Y=lat0:nlat:dlat Z=file A=radius1:radius2:..:radiusN
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/cress_lola.html>_

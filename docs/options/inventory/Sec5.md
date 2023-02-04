@@ -1,17 +1,9 @@
+# wgrib2: -Sec5
 
-### wgrib2: -Sec5
+## Introduction:
 
-
-
-### Introduction:
-
-
-
-The -Sec5 option prints a short summary of Section 5, the 
+The -Sec5 option prints a short summary of Section 5, the
 Data Representation Section.
-
-
-
 
 ```
 
@@ -24,10 +16,7 @@ Data Repr. Template=5.41     Data Represenation Template is 5.41
 
 ```
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -35,14 +24,10 @@ Data Repr. Template=5.41     Data Represenation Template is 5.41
 
 ```
 
+See also:
 
-See also: 
+---
 
-
-
-
-----
-
->Description: inv          Sec 5 values (Data representation section)
+> Description: inv Sec 5 values (Data representation section)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/Sec5.html>_

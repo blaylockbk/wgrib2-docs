@@ -1,29 +1,21 @@
+# wgrib2: -set_percentile
 
-### wgrib2: -set\_percentile
-
-
-
-### Introduction
-
-
+## Introduction
 
 Probabilistic forecasts can be presented as percentiles. For example, 10% forecast
 of temperature means that 1 time out of 10, the expected temperature will less than
-the forecasted temperature. 
-The -set\_percentile option adds or changes the percentile of
+the forecasted temperature.
+The -set_percentile option adds or changes the percentile of
 a forecast.
 
-
 Percentile forecasts use product definition templates (PDT) of 6 or 10 depending
-whether the forecast is for a single time or a time interval. 
-The -set\_percentile option converts pdt 0..6 -> 6 and 8..15 -> 10.
+whether the forecast is for a single time or a time interval.
+The -set_percentile option converts pdt 0..6 -> 6 and 8..15 -> 10.
 
- Percentiles are also supported by the
--set\_metadata option.
-### Usage
+Percentiles are also supported by the
+-set_metadata option.
 
-
-
+## Usage
 
 ```
 
@@ -33,8 +25,6 @@ The -set\_percentile option converts pdt 0..6 -> 6 and 8..15 -> 10.
 
 ### Example
 
-
-
 ```
 
 $ wgrib p.grb -set\_percentile 50 -grib\_out new.grb
@@ -43,24 +33,14 @@ $ wgrib p.grb -set\_percentile 50 -grib\_out new.grb
 
 ```
 
-
-See also: 
+See also:
 
 [-grib](grib.html),
-[-grib\_out](grib_out.html),
-[-set\_metadata](set_metadata.html),
+[-grib_out](grib_out.html),
+[-set_metadata](set_metadata.html),
 
+---
 
-
-
-
-
-
-
-
-
-----
-
->Description: misc  X      convert PDT 0..6 -> 6, 8..15 -> 10, X=percentile (0..100)
+> Description: misc X convert PDT 0..6 -> 6, 8..15 -> 10, X=percentile (0..100)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_percentile.html>_

@@ -1,47 +1,33 @@
+# wgrib2: Calling wgrib2 from C
 
-### wgrib2: Calling wgrib2 from C
-
-
-
-### Introduction
-
-
+## Introduction
 
 There 3 basic ways to call wgrib2 from a C program. The simpler way is to call
 wgrib2 and when wgrib2 finishes execution, control is returned to the calling
 program. A more complicated way to run wgrib2 in another process and communicate
-between the two processes. 
+between the two processes.
 
-###  Simple: system call
-
-
+### Simple: system call
 
 Calling wgrib2 from C can be as simple as calling the system function
 
+```
+
+    system("wgrib2 IN.grb -match ":TMP:2 m above ground:anl:" -csv tmp2m.csv");
 
 ```
 
-    system("wgrib2 IN.grb -match ":TMP:2 m above ground:anl:" -csv tmp2m.csv"); 
-
-```
-
-
-This approach is simple but there is overhead of initializing and running wgrib2 
+This approach is simple but there is overhead of initializing and running wgrib2
 as well as opening and closing of the files for every call to wgrib2. All
 the communication with wgrib2 is through the file system.
 
-###  Wgrib2 as a subroutine, CW2
-
-
+### Wgrib2 as a subroutine, CW2
 
 Wgrib2 v2.0.2 introduced the ability to call wgrib2 as a subroutine (CW2). This avoids
 the overhead of loading wgrib2 into memory every time you run wgrib2. Time is
 also saved by keeping the files open between calls. Memory files were introduced to
 wgrib2, so that the calling program can encode and decode buffers and avoid using
 the disk to communicate with wgrib2.
-
-
-
 
 ```
 
@@ -52,19 +38,14 @@ the disk to communicate with wgrib2.
 
 ```
 
-More information is given in [callable\_wgrib2](./callable_wgrib2.html). This
+More information is given in [callable_wgrib2](./callable_wgrib2.html). This
 facility was used to create a fortran api to read and write grib2.
 
-
-
-###  Wgrib2 as a Process (Filter)
-
-
+### Wgrib2 as a Process (Filter)
 
 A program can run wgrib2 as a process and communicate to wgrib2 by
 a pipe. In this example, the main program has grib
 data and it wants the data regridded or converted into netcdf.
-
 
 ```
 
@@ -74,7 +55,7 @@ data and it wants the data regridded or converted into netcdf.
 /*
  * how to call wgrib2 from a C program.
  *
- * in this example, the main program writes grib data to a pipe, 
+ * in this example, the main program writes grib data to a pipe,
  * wgrib2 reads from the pipe, regrids the data and saves in a file.
  *
  * This example shows how to call wgrib2 from a C program
@@ -118,36 +99,30 @@ it was difficult to develop a grib reader using this approach. Eventually CW2 wa
 developed to solve the grib reader problem and CW2 became the appropriate approach
 for writing grib.
 
+|
 
-
-
-| 
-
-|  |
+|     |
 | --- |
-| 
+
+|
 
 ---
 
- |
+|
 | [NOAA/](https://www.noaa.gov/)
 [National Weather Service](https://www.nws.noaa.gov/)
 [National Centers for Environmental Prediction](https://www.ncep.noaa.gov/)
- Climate Prediction Center
- 5830 University Research Court
- College Park, Maryland 20740
+Climate Prediction Center
+5830 University Research Court
+College Park, Maryland 20740
 [Climate Prediction Center Web Team](/comment-form.html)
- Page last modified: Oct 25, 2016
-  | [Disclaimer](https://weather.gov/disclaimer.php) |  [Privacy Policy](https://weather.gov/privacy.php) |
+Page last modified: Oct 25, 2016
+| [Disclaimer](https://weather.gov/disclaimer.php) | [Privacy Policy](https://weather.gov/privacy.php) |
 
- |
+|
 
+---
 
-
-
-
-----
-
->Description: calling wgrib2 from C
+> Description: calling wgrib2 from C
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/calling_wgrib2.html>_

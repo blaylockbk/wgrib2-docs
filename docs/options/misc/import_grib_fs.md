@@ -1,24 +1,16 @@
+# wgrib2: -import_grib_fs (wgrib2 v3.0.0+)
 
-### wgrib2: -import\_grib\_fs (wgrib2 v3.0.0+)
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -import\_grib\_fs option sets the file pointer
+The -import_grib_fs option sets the file pointer
 to the beginning of the file, and reads sequentially until it finds
-a record that matches the search string. It like a 
--if\_fs for reading a grib file.
+a record that matches the search string. It like a
+-if_fs for reading a grib file.
 
+The -import_grib_fs option is more useful
+verion of -import_grib.
 
-The -import\_grib\_fs option is more useful
-verion of -import\_grib.
-
-### Usage
-
-
+## Usage
 
 ```
 
@@ -36,8 +28,6 @@ Note: grid size (if it can be determined) must match the current grid.
 
 ### Example 1
 
-
-
 ```
 
 wgrib2 IN.grb -bin dump.bin              .. make a binary sequential file of the fields
@@ -47,12 +37,10 @@ wgrib2 IN.grb -set_grib_type same -import_bin dump.bin.new -set_scaling same sam
 ```
 
 The -import options reads the data for one field and overwrites
-the current grid point values. The -grib\_out option writes a new
+the current grid point values. The -grib_out option writes a new
 grib message with the new grid point values.
 
 ### Example 2: using import to write a grib file
-
-
 
 ```
 
@@ -68,19 +56,11 @@ This commands writes new.bin as a grib2 file as TMP2m analysis at 12Z Dec 31, 19
 
 ```
 
+See also:
+[-import_grib](./import_grib.html),
 
-See also: 
-[-import\_grib](./import_grib.html),
+---
 
-
-
-
-
-
-
-
-----
-
->Description: misc  X Y    read grib2 file (Y) sequentially for record that matches X (fixed string)
+> Description: misc X Y read grib2 file (Y) sequentially for record that matches X (fixed string)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/import_grib_fs.html>_

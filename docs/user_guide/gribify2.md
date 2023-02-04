@@ -1,19 +1,14 @@
-
 ### gribify using import and a template
 
+## Introduction
 
-
-### Introduction
-
-
- Here is another way of writing a grib2 file. Create a template
+Here is another way of writing a grib2 file. Create a template
 grib2 file. In our example, we already created one in grib1 and then
 converted it to grib2 using cnvgrib. Once we have a template file, we can
 replace the data using one of the import options, adjust the
-date code, handle the undefined grid point and write it out using 
-the -grib\_out option. Here is
+date code, handle the undefined grid point and write it out using
+the -grib_out option. Here is
 an example script.
-
 
 ```
 
@@ -46,12 +41,8 @@ wgrib2 conustemplate.grb2 -no_header -import_bin PRCP_CU_GAUGE_V1.0CONUS_0.25deg
 
 ```
 
+---
 
-
-
-
-----
-
->Description: gribify using import and a template
+> Description: gribify using import and a template
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/gribify2.html>_

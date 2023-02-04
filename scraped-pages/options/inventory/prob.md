@@ -1,30 +1,19 @@
+# wgrib2: -prob
 
-### wgrib2: -prob
-
-
-
-### Introduction
-
-
+## Introduction
 
 The TMP (temperature) field usually contains the temperature
 in Kelvin. However, with the right options, the TMP field
-could contain the probability of the temperature being 
+could contain the probability of the temperature being
 
-* below a specified value
-* above or a specified value
-* between a two limits (lower limit <= V < upper limit)
-
-
+- below a specified value
+- above or a specified value
+- between a two limits (lower limit <= V < upper limit)
 
 The -prob option prints out the probability
-field, if any. 
+field, if any.
 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -33,9 +22,6 @@ field, if any.
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -50,25 +36,15 @@ sh-2.05b$ wgrib2 sref.t03z.pgrb243.prob.grib2 -prob
 
 ```
 
-
 Normally -prob in invoked by other
 inventory functions like -misc and
 -s.
 
 See also:
-[-set\_prob](./set_prob.html)
+[-set_prob](./set_prob.html)
 
+---
 
-
-
-
-
-
-
-
-
-----
-
->Description: inv          probability information
+> Description: inv probability information
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/prob.html>_

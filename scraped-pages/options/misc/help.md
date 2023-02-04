@@ -1,11 +1,6 @@
+# wgrib2: -help
 
-### wgrib2: -help
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -help options list the commands that match your query. For example,
 suppose you want options that deal with time, then you would use the "-help time" option.
@@ -13,7 +8,7 @@ suppose you want options that deal with time, then you would use the "-help time
 ```
 
 $ wgrib2 -help time
-wgrib2 v0.2.0.3beta3 10/2015 Wesley Ebisuzaki, Reinoud Bokhorst, John Howard, Jaakko Hyvätti, Dusan Jovic, 
+wgrib2 v0.2.0.3beta3 10/2015 Wesley Ebisuzaki, Reinoud Bokhorst, John Howard, Jaakko Hyvätti, Dusan Jovic,
 Kristian Nilssen, Karl Pfeiffer, Pablo Romero, Manfred Schwarb, Arlindo da Silva, Niklas Sondell, Sergey Varlamov
    stock build
  -code_table_1.2  inv         code table 1.2 significance of reference time
@@ -49,10 +44,7 @@ Kristian Nilssen, Karl Pfeiffer, Pablo Romero, Manfred Schwarb, Arlindo da Silva
 
 ```
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -63,13 +55,11 @@ Kristian Nilssen, Karl Pfeiffer, Pablo Romero, Manfred Schwarb, Arlindo da Silva
 
 ### Example
 
-
-
 ```
 
 $ wgrib2 -help speed
-wgrib2 v0.2.0.5beta5 6/2016  Wesley Ebisuzaki, Reinoud Bokhorst, John Howard, Jaakko Hyvätti, Dusan Jovic, Daniel Lee, 
-Kristian Nilssen, Karl Pfeiffer, Pablo Romero, Manfred Schwarb, Gregor Schee, Arlindo da Silva, Niklas Sondell, 
+wgrib2 v0.2.0.5beta5 6/2016  Wesley Ebisuzaki, Reinoud Bokhorst, John Howard, Jaakko Hyvätti, Dusan Jovic, Daniel Lee,
+Kristian Nilssen, Karl Pfeiffer, Pablo Romero, Manfred Schwarb, Gregor Schee, Arlindo da Silva, Niklas Sondell,
 Sam Trahan, Sergey Varlamov
    stock build
  -mysql_speed     out  7 args H=[host] U=[user] P=[password] D=[db] T=[table] W=[western_lons:0|1] PV=[remove unlikely:0|1]
@@ -77,18 +67,10 @@ Sam Trahan, Sergey Varlamov
 
 ```
 
+See also:
 
-See also: 
+---
 
-
-
-
-
-
-
-
-----
-
->Description: misc  X      help [search string|all], -help all, shows all options
+> Description: misc X help [search string|all], -help all, shows all options
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/help.html>_

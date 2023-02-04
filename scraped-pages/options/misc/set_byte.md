@@ -1,16 +1,9 @@
+# wgrib2: -set_byte
 
-### wgrib2: -set\_byte
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -set\_byte option sets 1 octet (byte) to a
+The -set_byte option sets 1 octet (byte) to a
 a specified integer value. The integer value ranges from 0 to 255.
-
-
 
 ```
 
@@ -18,18 +11,14 @@ a specified integer value. The integer value ranges from 0 to 255.
   I = section number = 1..7
   J = location in the section = 1..(section length)
   K = 0 .. 255
-would set 
+would set
   Section I, Octet J to the value K
 
 ```
 
-
 Multiple octets can be set by making the third argument a colon seperated list.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -42,26 +31,15 @@ I-M = Mth octet
 
 ### Example
 
+See also:
+[-set_hex](set_hex.html)
+[-set_ieee](set_ieee.html)
+[-set_int](set_int.html)
+[-set_int2](set_int2.html)
+[-set_ieee](set_ieee.html)
 
+---
 
-See also: 
-[-set\_hex](set_hex.html)
-[-set\_ieee](set_ieee.html)
-[-set\_int](set_int.html)
-[-set\_int2](set_int2.html)
-[-set\_ieee](set_ieee.html)
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: misc  X Y Z  set bytes in Section X, Octet Y, bytes Z (a|a:b:c)
+> Description: misc X Y Z set bytes in Section X, Octet Y, bytes Z (a|a:b:c)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_byte.html>_

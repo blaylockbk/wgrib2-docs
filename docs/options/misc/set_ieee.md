@@ -1,16 +1,10 @@
+# wgrib2: -set_ieee
 
-### wgrib2: -set\_ieee
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -set\_ieee option sets 4 octets to a
+The -set_ieee option sets 4 octets to a
 single precision IEEE floating point value. The IEEE floating point standard
 is often used grib2.
-
 
 ```
 
@@ -21,13 +15,9 @@ is often used grib2.
 
 ```
 
-
 Multiple floats can be set by making the third argument a colon seperated list.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -40,25 +30,14 @@ I-M = Mth floating point number
 
 ### Example
 
+See also:
+[-get_int](get_int.html)
+[-set_byte](set_byte.html)
+[-set_hex](set_hex.html)
+[-set_int2](set_int2.html)
 
+---
 
-See also: 
-[-get\_int](get_int.html)
-[-set\_byte](set_byte.html)
-[-set\_hex](set_hex.html)
-[-set\_int2](set_int2.html)
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: misc  X Y Z  set ieee float in Section X, Octet Y, floats Z (a|a:b:c)
+> Description: misc X Y Z set ieee float in Section X, Octet Y, floats Z (a|a:b:c)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_ieee.html>_

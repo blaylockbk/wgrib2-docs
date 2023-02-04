@@ -1,19 +1,12 @@
+### pywgrib2_s: mk_inv
 
-### pywgrib2\_s: mk\_inv
+## Introduction
 
-
-
-### Introduction
-
-
-
-The routine pywgrib2\_s.mk\_inv(grib\_file, inv\_file) reads a grib\_file and writes
-the inventory to inv\_file. Both the grib\_file and inv\_file can be memory files.
+The routine pywgrib2_s.mk_inv(grib_file, inv_file) reads a grib_file and writes
+the inventory to inv_file. Both the grib_file and inv_file can be memory files.
 The inventory will change with the version of wgrib2 by the addition of new fields.
 
 ### Example 1
-
-
 
 ```
 
@@ -29,8 +22,6 @@ The inventory will change with the version of wgrib2 by the addition of new fiel
 
 ### Example 2
 
-
-
 ```
 
 >>> pywgrib2_s.mk_inv('a.grb','a.inv',Short=True)
@@ -43,9 +34,7 @@ The inventory will change with the version of wgrib2 by the addition of new fiel
 
 ```
 
-### Usage
-
-
+## Usage
 
 ```
 
@@ -63,20 +52,13 @@ The inventory will change with the version of wgrib2 by the addition of new fiel
 
 ```
 
-### Usage
-
-
+## Usage
 
 [overview](./pywgrib2_s.html)
 [next](./pywgrib2_s_read_inv.html)
 
+---
 
-
-
-
-
-----
-
->Description: Makes inventory file
+> Description: Makes inventory file
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/pywgrib2_s_mk_inv.html>_

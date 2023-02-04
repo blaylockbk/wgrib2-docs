@@ -1,18 +1,12 @@
+# wgrib2: -match_inv_add
 
-### wgrib2: -match\_inv\_add
-
-
-
-### Introduction !!ALPHA!!
-
-
+## Introduction !!ALPHA!!
 
 Wgrib2's command line is a simple language that allows you
 to process selected fields using, for example, the -if option.
 The -if option is limited as it only works on
-parameters that are exposed by the -match\_inv option.
+parameters that are exposed by the -match_inv option.
 For example, you cannot check the diameter of the earth by using
-
 
 ```
 
@@ -20,21 +14,17 @@ For example, you cannot check the diameter of the earth by using
 
 ```
 
-
-because code table 3.2 is not in the match inventory (-match_inv).  The match
-inventory has been expanding with time.  However, there will alway be new needs
-that need an expanded match inventory.  
-
+because code table 3.2 is not in the match inventory (-match_inv). The match
+inventory has been expanding with time. However, there will alway be new needs
+that need an expanded match inventory.
 
 You cannot add functions that depend on the grid point values (ex. -max, -min) or
 the locations of the grid points because these calculations are done after the
 match inventory is generated.
 
- The current status is ALPHA and the syntax may be altered.
+The current status is ALPHA and the syntax may be altered.
 
-### Usage
-
-
+## Usage
 
 ```
 
@@ -50,9 +40,6 @@ match inventory is generated.
 
 ### Example
 
-
-
-
 ```
 
 $ wgrib2 small.grb2 -match_inv_add code_table_3.2 x x -match_inv
@@ -65,40 +52,25 @@ $ wgrib2 small.grb2 -match_inv_add code_table_3.2 x x -if "code table 3.2=6" -pr
 
 ```
 
-
 See also:
 [-if](./if.html),
-[-if\_fs](./if_fs.html),
+[-if_fs](./if_fs.html),
 [-match](./match.html),
-[-match\_fs](./match_fs.html),
-[-match\_inv](./match_inv.html),
-[-Match\_inv](./Match_inv.html),
+[-match_fs](./match_fs.html),
+[-match_inv](./match_inv.html),
+[-Match_inv](./Match_inv.html),
 [-not](./not.html),
-[-not\_fs](./not_fs.html),
-[-not\_if](./not_if.html),
-[-not\_if\_fs](./not_if_fs.html),
-[-set\_regex](./set_regex.html).
-
-
-
-
-
-
-
-
-
-
-
+[-not_fs](./not_fs.html),
+[-not_if](./not_if.html),
+[-not_if_fs](./not_if_fs.html),
+[-set_regex](./set_regex.html).
 
 ```
 
 ```
 
+---
 
-
-
-----
-
->Description: init  X Y Z  add new options to match_inventory
+> Description: init X Y Z add new options to match_inventory
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/match_inv_add.html>_

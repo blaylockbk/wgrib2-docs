@@ -1,66 +1,52 @@
+# wgrib2: -names
 
-### wgrib2: -names
+## Introduction (alpha)
 
-
-
-### Introduction (alpha)
-
-
-
-WMO has defined how fields like temperature 
+WMO has defined how fields like temperature
 are encoded into grib. For example, temperature has to have
-(discipline, category, and parameter) to be (0, 0, 0). However, WMO never 
+(discipline, category, and parameter) to be (0, 0, 0). However, WMO never
 defined a name for like "t" or "TMP" for the temperature.
 Of course saying "discipline=0, category=0, and parameter=0"
 is unwieldy, so the centers have adopted names for the various
-fields. 
-
+fields.
 
 The -names option changes the names of
 the WMO defined fields to either the DWD, ECMWF or NCEP names or convention.
 The grib format allows for locally defined fields. Centers can make extensions
 to the grib table which apply to their file from that center. These fields
-will use the names as defined by the originating center. The default naming 
+will use the names as defined by the originating center. The default naming
 convention being set at compile time.
 
-
-The -names 
+The -names
 option is in an alpha stage of development. Our use of the ECMWF and DWD grib table
 needs more work. The ECMWF and DWD names often mix the variable
 (discipline, category, parameter) with other orthogonal parameters
 such as
 
 1. level, ex 2 meters above ground
+
 - statistical processing (in time), ex average over last 24 hours
 - grid, latitude on F grid
 - satellite information (instrument type)
 - aerosol type
 - MRMS (NSSL Mult-Radar/Multi-Sensor) adds probability to the grib name
 
-
-
 For wgrib2 v3.0.1, if the ECMWF or DWD grib name depends on any of the above parameters, the
 name is not included in the wgrib2's grib table. This causes some problem because some of
 the ECMWF grib names don't apply when the orthogonal parameter is not defined.
-As I said before, this approach is in alpha testing. 
+As I said before, this approach is in alpha testing.
 
-
-The geometrical height has the names "dist" and "h" in the ECMWF table. Wgrib2 v3.0.1-v3.0.3 
+The geometrical height has the names "dist" and "h" in the ECMWF table. Wgrib2 v3.0.1-v3.0.3
 is using "dist". Using "dist" versus "h" may change in
 later versions of wgrib2, depending on which is more commonly used. (Feedback please)
 
-
 The use of the ECMWF and DWD grib has not been finalized. So use -names at your own risk.
 
-
- Wgrib2 has options that are dependent on the grib names such as 
-vector interpolation in -new\_grid. At present, there is no automatic
+Wgrib2 has options that are dependent on the grib names such as
+vector interpolation in -new_grid. At present, there is no automatic
 conversion of the names.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -79,8 +65,6 @@ To see the default, run "wgrib2 -config" and look for "default WMO names:".
 
 ### Example
 
-
-
 ```
 
  wgrib2 wind.grb -names ecmwf
@@ -97,19 +81,15 @@ To see the default, run "wgrib2 -config" and look for "default WMO names:".
 
 ### NCEP Names
 
-
-
 The NCEP grib names are unique, a name refers to a unique quantity.
 However, the same grib name may be defined both locally and by the WMO.
 Since WMO approval of a new field may take several months, NCEP usually makes
 a local definition in order to speed up development.
-NCEP considers duplicate names to be a mistake (same name but different quantities). 
-When the wgrib2 sets the variable name (ex. -set\_var, -set\_metadata), the WMO definition
+NCEP considers duplicate names to be a mistake (same name but different quantities).
+When the wgrib2 sets the variable name (ex. -set_var, -set_metadata), the WMO definition
 is used if local and WMO definition exists.
 
-
 ### DWD Names
-
 
 The DWD grib names are unique except for a few cases (wgrib2 v3.0.1)
 which were probably an oversights. There are WMO defined fields
@@ -118,18 +98,15 @@ which do not have a DWD name.
 Some DWD names are not orthogonal because the names include information about
 the level or timing. They are not included in the wgrib2 tables.
 
-
 ### ECMWF Names
-
 
 The ECMWF grib names are not unique. Names may refer to
 different quantities. For example, uv could have units of
 m^2/s^2 or m/s^2. For decoding grib, the duplicate
 names do not pose a problem. However, using
-the -set\_var or -set\_metadata option will have problems
+the -set_var or -set_metadata option will have problems
 with names that are duplicated. Wgrib2 will use the
 first definition that it finds.
-
 
 Some ECMWF names are not orthogonal, they include information about
 the level or timing. The some non-orthogonal variable names
@@ -147,38 +124,10 @@ ECMWF database indicates this parameter doesn't depend on the level or any proba
 or level information. Since this variable is not conditional on the level or
 probability templates, this variable is added to wgrib2's tables.
 
+See also:
 
-See also: 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: init  X      grib name convention, X=DWD, dwd, ECMWF, ecmwf, NCEP, ncep
+> Description: init X grib name convention, X=DWD, dwd, ECMWF, ecmwf, NCEP, ncep
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/names.html>_

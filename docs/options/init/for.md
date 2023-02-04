@@ -1,31 +1,18 @@
+# wgrib2: -for
 
-### wgrib2: -for
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -for option selects the range of record numbers 
-upon which to operate using the "for" syntax. If you want to operate on 
-records 10 to 20, you would use the parameter 10:20. 
-If you want to operate on all the even records from 10 to 20, you would 
-use 10:20:2. The restrictions are the start value must be less than 
+The -for option selects the range of record numbers
+upon which to operate using the "for" syntax. If you want to operate on
+records 10 to 20, you would use the parameter 10:20.
+If you want to operate on all the even records from 10 to 20, you would
+use 10:20:2. The restrictions are the start value must be less than
 the ending value and the step has to be greater than zero.
-
-
-
 
 The -for option ignores the submessage number when
 selecting the fields.
 
-
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -38,9 +25,6 @@ selecting the fields.
 
 ### Example
 
-
-
-
 ```
 
  $ wgrib2 file.grb2 -for 4:5
@@ -49,19 +33,13 @@ selecting the fields.
 
 ```
 
-
-See also: 
-[-if\_rec](./if_rec.html)
+See also:
+[-if_rec](./if_rec.html)
 [-match](./match.html)
-[-for\_n](./for_n.html)
+[-for_n](./for_n.html)
 
+---
 
-
-
-
-
-----
-
->Description: init  X      process record numbers in range, X=(start:end:step), only one -for allowed
+> Description: init X process record numbers in range, X=(start:end:step), only one -for allowed
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/for.html>_

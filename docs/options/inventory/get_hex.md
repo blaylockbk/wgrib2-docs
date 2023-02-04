@@ -1,33 +1,20 @@
+# wgrib2: -get_hex
 
-### wgrib2: -get\_hex
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -get\_hex option is identical to the
--get\_byte option excepts it prints the
+The -get_hex option is identical to the
+-get_byte option excepts it prints the
 bytes in hexidecimal format.
 see the 20 and 21 octet (byte in WMO speak) of section 4, you would
-use -get\_byte 4 20 2. The first argument
+use -get_byte 4 20 2. The first argument
 is the section number. The second is the byte (octet) number starting
 from 1 (consistent with WMO documentation) and the third is the number
-of octets to display. 
-
-
-
+of octets to display.
 
 The input arguments to the option are in decimal rather than in hexidecimal because
 all the grib2 documentation uses decimal numbers to specify the byte locations.
 
-
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -40,8 +27,6 @@ NUMBER = number of octets/bytes to print
 
 ### Example
 
-
-
 ```
 
 $ wgrib2 f.grb2 -get\_hex 0 1 12
@@ -51,19 +36,14 @@ $ wgrib2 f.grb2 -get\_hex 0 1 12
 
 ```
 
-
-
-See also: 
+See also:
 [new grib](new_grib.html),
-[-set\_byte](set_byte.html)
-[-get\_ieee](get_ieee.html)
-[-get\_int](get_int.html)
+[-set_byte](set_byte.html)
+[-get_ieee](get_ieee.html)
+[-get_int](get_int.html)
 
+---
 
-
-
-----
-
->Description: inv   X Y Z  get bytes in Section X, Octet Y, number of bytes Z (bytes in hexadecimal format)
+> Description: inv X Y Z get bytes in Section X, Octet Y, number of bytes Z (bytes in hexadecimal format)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/get_hex.html>_

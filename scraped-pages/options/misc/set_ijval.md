@@ -1,22 +1,14 @@
+# wgrib2: -set_ijval
 
-### wgrib2: -set\_ijval
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -set\_ijval option is used to change one grid point value
-of the decoded grid. After changing the grid value, one usually writes out the grid using 
--grib\_out FILE. 
-The -set\_ijval option only works when the grid is
+The -set_ijval option is used to change one grid point value
+of the decoded grid. After changing the grid value, one usually writes out the grid using
+-grib_out FILE.
+The -set_ijval option only works when the grid is
 a rectangular array. For example, staggered and thinned grids are not stored an an array.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -28,8 +20,6 @@ a rectangular array. For example, staggered and thinned grids are not stored an 
 ```
 
 ### Example
-
-
 
 ```
 
@@ -45,21 +35,13 @@ $ cat new.csv
 
 ```
 
-
-See also: 
+See also:
 [-csv](./csv.html)
-[-grib\_out](./grib_out.html)
-[-set\_ival](./set_ival.html)
+[-grib_out](./grib_out.html)
+[-set_ival](./set_ival.html)
 
+---
 
-
-
-
-
-
-
-----
-
->Description: misc  X Y Z  sets grid point value X=ix Y=iy Z=val
+> Description: misc X Y Z sets grid point value X=ix Y=iy Z=val
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_ijval.html>_

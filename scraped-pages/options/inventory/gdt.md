@@ -1,31 +1,18 @@
+# wgrib2: -gdt
 
-### wgrib2: -gdt
+## Introduction
 
-
-
-### Introduction
-
-
-
-Section 3 contains the grid definition template (GDT) 
+Section 3 contains the grid definition template (GDT)
 and the -gdt option prints the
 parameters used to define the grid as
 used by g2clib/g2lib (NCEP libraries). This option is
 only useful finding the grid parameters for later use
-by g2clib/g2lib. 
-
-
-
+by g2clib/g2lib.
 
 The -gdt option will only
 work if g2clib is installed at compile time.
 
-
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -35,8 +22,6 @@ work if g2clib is installed at compile time.
 
 ### Example
 
-
-
 ```
 
 $ wgrib2 -gdt png.grb2
@@ -44,16 +29,10 @@ $ wgrib2 -gdt png.grb2
 
 ```
 
+See also:
 
+---
 
-See also: 
-
-
-
-
-
-----
-
->Description: inv          contents of Grid Definition Template (g2c)
+> Description: inv contents of Grid Definition Template (g2c)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/gdt.html>_

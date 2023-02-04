@@ -1,11 +1,6 @@
-
 ### wgrib2 geolocation: -gctpc, -proj4
 
-
-
-### Introduction
-
-
+## Introduction
 
 Wgrib2 has 3 sets of geolocation libraries. Geolocation libraries
 can convert the grid points (i,j) to (lon,lat).
@@ -13,9 +8,10 @@ Some geolocation libraries can convert (lon,lat) to (lat,lon).
 There is no "best" set of routines. Some grids can only be handled
 by a one library. Some calculations are a specific library.
 
-
 Internal Routines
+
 1. Spherical Earth only
+
 - Very fast and multithreaded, 3.5/12.7 sec on test case 1\*
 - Very fast and multithreaded, 3.5/12.7 sec on test case 2\*
 - Needed for NWP grids such as Gaussian grids and rotated lat-lon
@@ -24,10 +20,10 @@ Internal Routines
 - Can transform (i,j) to (lon,lat)
 - Many of the codes trace their origins to operational codes at NCEP
 
-
-
 GCTPC library
+
 1. Handles ellipsoidal Earth
+
 - Slow and multithreaded (OpenMP), 5.5/19.5 sec on test case 1\*
 - Slow and multithreaded (OpenMP), 15.7/58.7 sec on test case 2\*
 - More projections than internal routines but not the NWP grids
@@ -38,10 +34,10 @@ GCTPC library
 - Library is old but working, no recent development
 - Support for library is unknown
 
-
-
 Proj4 library
+
 1. Handles ellipsoidal Earth
+
 - Slow and no support for OpenMP, 17.8/19.7 sec on test case 1\*
 - Slow and no support for OpenMP, 62.8/64.7 sec on test case 2\*
 - Proj4 supports pthreads, wgrib2 uses OpenMP
@@ -54,15 +50,13 @@ Proj4 library
 - Support for library is good
 - The first choice by many people.
 
-
-
 ```
 
-* test case 1 - read large Lambert conformal grid (6887 x 6610) and 
+* test case 1 - read large Lambert conformal grid (6887 x 6610) and
 calculate lon/lat for the entire grid and print lon/lat for 1 grid point.
 This uses a spherical Earth.
 
-* test case 2 - read large Lambert conformal grid (6887 x 6610) and 
+* test case 2 - read large Lambert conformal grid (6887 x 6610) and
 calculate lon/lat for the entire grid and print lon/lat for 1 grid point.
 This uses a ellipsoidal Earth.
 
@@ -86,27 +80,24 @@ Earth:
   case 1: code3.2=0 sphere predefined radius=6367470.0 m
   case 2: code3.2=4 IAG-GRS80 ave radius=6367444.5 m
 
-Packing: grid point data - complex packing,c1 
+Packing: grid point data - complex packing,c1
 
 ```
 
-
-The internal routines are fast, multithreaded but only handle 
+The internal routines are fast, multithreaded but only handle
 a spherical earth and cannot transform from (lon,lat) -> (X,Y).
 The internal routines include grids not included with GCTPC.
-
 
 The GCTPC routines can handle an ellipsoidal Earth. They are
 50% slower than the internal routines for a spherical earth and
 are acceptable for NOMADs. For an ellipsoidal Earth, the speed is
-probably adequate for NOMADS. The lack of support is not a major factor 
-because the codes are tested and relatively simple. By supporting 
-both GCTPC and Proj4, I am comfortable that the codes can be 
+probably adequate for NOMADS. The lack of support is not a major factor
+because the codes are tested and relatively simple. By supporting
+both GCTPC and Proj4, I am comfortable that the codes can be
 adequately tested.
 
-
 Proj4 is the Gold standard; it used by many projects, it has
-good support and updates appear on a regular basis. Proj4 supports 
+good support and updates appear on a regular basis. Proj4 supports
 more projections than GCTPC. Unfortunately Proj4 is slow. For a
 spherical Earth, Proj4 is probably adequate (slower than gctpc
 for a spherical earth). For an ellipsoidal Earth, Proj4 is
@@ -115,22 +106,14 @@ thread safe. Another difficulty with Proj4 is that compiling
 uses a config script. Config scripts can cause problems
 when cross-compiling for compute nodes (some HPC computers).
 
-
-
-
 Wgrib2 needs the internal routines for grids not supported by
 GCTPC/Proj4. Wgrib2 needs GCTPC/Proj4 for handling ellipsoidal
 Earths. The current policy is that Proj4 will be an optional
-package and GCTPC will be come the default package in the 
+package and GCTPC will be come the default package in the
 near future. Support for Proj4 is useful for debugging and
 for "keeping the options open".
 
-
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -146,12 +129,12 @@ for "keeping the options open".
    Priority up to wgrib2 v3.1.1:
      Try Proj4 if Proj4 is enabled (not default) and installed (not default)
      Try gctpc if gctpc is enabled (default)
-     try internal routines  
+     try internal routines
 
    Priority wgrib2 v3.1.2+:
      ?? Try gctpc if gctpc is enabled (default)
      ?? Try Proj4 if Proj4 is enabled (not default) and installed (not default)
-     ?? try internal routines  
+     ?? try internal routines
 
 
      note: older version of the priority was wrong.
@@ -160,29 +143,11 @@ for "keeping the options open".
 
 ```
 
-
-
-
-See also: 
+See also:
 [-geolocation](./geolocation.html)
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: misc  X      X=0,1 use proj4 library for geolocation (testing)
+> Description: misc X X=0,1 use proj4 library for geolocation (testing)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/proj4.html>_

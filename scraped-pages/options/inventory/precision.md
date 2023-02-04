@@ -1,21 +1,15 @@
-
-### wgrib2: -precision
-
-
+# wgrib2: -precision
 
 ### Precision
 
-
-
 Except for grid values stored in IEEE format, grid values are
 stored with user-defined precision. By having a variable precision,
-the space required can be reduced. For having the temperature 
+the space required can be reduced. For having the temperature
 stored to a thousandth of a degree would be wasteful as thermometers
 typically give a result to a tenth of a degree.
 
- Grid point values are stored as scaled integers, the scaling
+Grid point values are stored as scaled integers, the scaling
 determines the precision.
-
 
 ```
 
@@ -26,17 +20,13 @@ val = (base+i*2^bin_scaling)*10^dec_scaling
 
 ```
 
- The -precision option prints the bin\_scaling
-and dec\_scaling values.
+The -precision option prints the bin_scaling
+and dec_scaling values.
 The -precision output can be read by
--set\_metadata and
--set\_metadata\_str options to set the precision.
+-set_metadata and
+-set_metadata_str options to set the precision.
 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -45,8 +35,6 @@ The -precision output can be read by
 ```
 
 ### Examples
-
-
 
 ```
 
@@ -60,28 +48,16 @@ $ wgrib2 wind.grb -precision
 
 ```
 
-
-See also: 
+See also:
 [-packing](./packing.html),
 [-scale](./scale.html),
-[-set\_bin\_prec](./set_bin_prec.html),
-[-set\_metadata](./set_metadata.html),
-[-set\_metadata\_str](./set_metadata_str.html),
-[-set\_scale](./set_scale.html),
+[-set_bin_prec](./set_bin_prec.html),
+[-set_metadata](./set_metadata.html),
+[-set_metadata_str](./set_metadata_str.html),
+[-set_scale](./set_scale.html),
 
+---
 
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: inv          precision of packing
+> Description: inv precision of packing
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/precision.html>_

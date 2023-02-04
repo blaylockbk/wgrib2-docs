@@ -1,23 +1,15 @@
+# wgrib2: -Sec_len
 
-### wgrib2: -Sec\_len
-
-
-
-### Introduction
-
-
+## Introduction
 
 Grib2 messages (records) are comprised of 9 sections (0-8). Sections 0 and 8
 are 16 and 4 bytes long, respectively. When the message contains submessages,
 each submessage contains 9 sections but some of the sections can be shared
 with the other submessages.
-The -Set\_late option shows the length of each section
-except for sections 0 and 8. 
+The -Set_late option shows the length of each section
+except for sections 0 and 8.
 
-
-### Usage
-
-
+## Usage
 
 ```
 
@@ -26,8 +18,6 @@ except for sections 0 and 8.
 ```
 
 ### Examples
-
-
 
 ```
 
@@ -45,16 +35,12 @@ $ wgrib2 small.grb2 -Sec\_len
 
 ```
 
-
-See also: 
+See also:
 [-0xSec](0xSec.html),
 [-checksum](checksum.html),
 
+---
 
-
-
-----
-
->Description: inv          length of various grib sections
+> Description: inv length of various grib sections
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/Sec_len.html>_

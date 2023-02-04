@@ -1,11 +1,6 @@
+# wgrib2: -t -T -vt -VT
 
-### wgrib2: -t -T -vt -VT
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -t -T -vt -VT options prints various time flags.
 The -t -T prints the reference time
@@ -15,9 +10,7 @@ and the lower case options print the time with out the seconds.
 In conjuntion with -v2 verbose mode, the
 format of the time will change to be GrADS compatible.
 
-### Usage
-
-
+## Usage
 
 ```
 
@@ -29,9 +22,6 @@ format of the time will change to be GrADS compatible.
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -50,16 +40,10 @@ $ wgrib2 g720\_360.grb2 -VT
 
 ```
 
+See also:
 
-See also: 
+---
 
-
-
-
-
-
-----
-
->Description: inv          verf time = reference_time + forecast_time (YYYYMMDDHHMMSS)
+> Description: inv verf time = reference_time + forecast_time (YYYYMMDDHHMMSS)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/VT.html>_

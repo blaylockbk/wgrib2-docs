@@ -1,29 +1,20 @@
+# wgrib2: -set_ts_dates
 
-### wgrib2: -set\_ts\_dates
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -set\_ts\_dates and -set\_date options
-changes the reference date of the in-memory grib (sub-)message. You can write out the message 
+The -set_ts_dates and -set_date options
+changes the reference date of the in-memory grib (sub-)message. You can write out the message
 with the new date by the -grib (fast) and
--grib\_out (slow) options. Of course if the in-memory 
+-grib_out (slow) options. Of course if the in-memory
 grid values have changed, you have to use the latter option.
 
-
-The -set\_date X option changes the date code to X. 
+The -set_date X option changes the date code to X.
 For time series, you want the date code to increment, and you use the
--set\_ts\_dates X:Y:Z option. Here, X is the date code,
+-set_ts_dates X:Y:Z option. Here, X is the date code,
 Y is the time increment and Z is number of fields to have the same
 date code.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -51,8 +42,6 @@ date code.
 
 ### Example
 
-
-
 ```
 
 # date code increments by 1 hour
@@ -64,21 +53,13 @@ $ wgrib p.grb -set\_ts\_dates 2010020304:1hour:1
 
 ```
 
-
-See also: 
+See also:
 
 [-grib](grib.html),
-[-grib\_out](grib_out.html),
+[-grib_out](grib_out.html),
 
+---
 
-
-
-
-
-
-
-----
-
->Description: misc  X Y Z  changes date code for time series X=YYYYMMDDHH(mmss) Y=dtime Z=#msgs/date
+> Description: misc X Y Z changes date code for time series X=YYYYMMDDHH(mmss) Y=dtime Z=#msgs/date
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_ts_dates.html>_

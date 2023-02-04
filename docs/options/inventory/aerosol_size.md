@@ -1,21 +1,13 @@
+# wgrib2: -aerosol_size
 
-### wgrib2: -aerosol\_size
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -aerosol\_size option prints the
+The -aerosol_size option prints the
 size of the aerosol particle if applicable. This applies
 to Product Definition Template 4.44 - 4.48. This option is
 part of the standard inventory, -s.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -24,8 +16,6 @@ part of the standard inventory, -s.
 ```
 
 ### Example
-
-
 
 ```
 
@@ -47,17 +37,11 @@ $ wgrib2 ngac.t00z.a3df03 -for 2:6 -aerosol\_size
 
 ```
 
+See also:
+[-aerosol_wavelength](aerosol_wavelength.html),
 
-See also: 
-[-aerosol\_wavelength](aerosol_wavelength.html),
+---
 
-
-
-
-
-
-----
-
->Description: inv          optical properties of an aerosol
+> Description: inv optical properties of an aerosol
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/aerosol_size.html>_

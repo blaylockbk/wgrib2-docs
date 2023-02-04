@@ -1,14 +1,8 @@
+# wgrib2: -h
 
-### wgrib2: -h
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -h option lists the common options.
-
 
 ```
 
@@ -43,10 +37,7 @@ wgrib2 v0.1.6 1/2008 wesley ebisuzaki, Jaakko Hyvätti, Karl Pfeiffer, Manfred S
 
 ```
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -54,14 +45,8 @@ wgrib2 v0.1.6 1/2008 wesley ebisuzaki, Jaakko Hyvätti, Karl Pfeiffer, Manfred S
 
 ```
 
+---
 
-
-
-
-
-
-----
-
->Description: misc         help, shows common options
+> Description: misc help, shows common options
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/h.html>_

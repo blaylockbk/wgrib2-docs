@@ -1,22 +1,13 @@
+# wgrib2: -quit
 
-### wgrib2: -quit
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -quit option forces a quit and the
 end of the processing of the current line. You would use
 the -quit option to save time (see
 2nd example).
 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -26,9 +17,6 @@ the -quit option to save time (see
 
 ### Examples
 
-
-
-
 ```
 
 $ wgrib2 /tmp/pgb.f0009031206.g2 -quit
@@ -37,8 +25,6 @@ $ wgrib2 /tmp/pgb.f0009031206.g2 -quit
 ```
 
 This has the same effect as -d 1.
-
-
 
 ```
 
@@ -50,8 +36,6 @@ $ wgrib2 /tmp/pgb.f0009031206.g2 -match ":RH:1000 mb:" -quit
 This forces a quit after the first "RH:1000 mb" is processed. This can save time
 when there is only one match.
 
-
-
 ```
 
 $ wgrib2 /tmp/pgb.f0009031206.g2 -if "^3:" -quit -if
@@ -61,31 +45,16 @@ $ wgrib2 /tmp/pgb.f0009031206.g2 -if "^3:" -quit -if
 
 ```
 
-
-This forces the quit after the third line. This has the same effect as 
+This forces the quit after the third line. This has the same effect as
 -for 1:3.
-
 
 See also: [-if](./if.html),
 [-for](./for.html)
 [-alarm](./alarm.html)
 [-limit](./limit.html)
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: misc         stop after first (sub)message (save time)
+> Description: misc stop after first (sub)message (save time)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/quit.html>_

@@ -1,24 +1,15 @@
+# wgrib2: -ijsmall_grib
 
-### wgrib2: -ijsmall\_grib
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -ijsmall\_grib option writes the grid values 
+The -ijsmall_grib option writes the grid values
 to a grib2 file with the same grid spacing but a smaller domain.
-It is similar to the -small\_grib option 
-except it uses i,j values rather than lat-lon values. The grid point 
-locations are unchanged. This option is used to make a regional subset 
+It is similar to the -small_grib option
+except it uses i,j values rather than lat-lon values. The grid point
+locations are unchanged. This option is used to make a regional subset
 and only works for certain grids such as the lat-lon, rotated lat-lon, Mercator and Lambert conformal.
 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -28,14 +19,11 @@ Where, 1 <= ix0 < ix1 < nx
 Where, 1 <= iy0 < iy1 < ny
 By default, (i,j) is the South-West corner
 
-File_name is the output grib2 file 
+File_name is the output grib2 file
 
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -50,21 +38,11 @@ $ wgrib2 small.grb -grid
 
 ```
 
+See also: [-undefine](./undefine.html),
+[-small_grib](./small_grib.html)
 
-See also: [-undefine](./undefine.html), 
-[-small\_grib](./small_grib.html)
+---
 
-
-
-
-
-
-
-
-
-
-----
-
->Description: out   X Y Z  make small domain grib file X=ix0:ix1 Y=iy0:iy1 Z=file
+> Description: out X Y Z make small domain grib file X=ix0:ix1 Y=iy0:iy1 Z=file
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/ijsmall_grib.html>_

@@ -1,11 +1,6 @@
+# wgrib2: -spread
 
-### wgrib2: -spread
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -spread option writes the grid values to a specified
 file as a comma separated values (text) which can be imported into a spread sheet.
@@ -20,18 +15,13 @@ file as a comma separated values (text) which can be imported into a spread shee
 
 ```
 
-
 The latitudes and longitudes are only available for supported grids
 and only the default WE:SN order is supported. The undefined value is 9.999e20.
-
 
 Use the -undefine option to limit the output to
 specified regions.
 
-
-### Usage
-
-
+## Usage
 
 ```
 
@@ -41,9 +31,6 @@ specified regions.
 
 ### Example
 
-
-
-
 ```
 
 $ wgrib2 test.grb2 -s | grep ":RH:2 m" | wgrib2 -i test.grb2 -spread data.txt
@@ -51,26 +38,21 @@ $ wgrib2 test.grb2 -s | grep ":RH:2 m" | wgrib2 -i test.grb2 -spread data.txt
 
 ```
 
-
 The above line extracts the 2 meter RH from file test.grb2 and writes it in data.txt.
 
 ### Warning #1
 
-
-
 The options -csv,
--csv\_long,
+-csv_long,
 -spread and
 -text do not support memory files.
 You can blame sloth or lack of need. I like to think that
 text files with grid point values are are insanely large
 and shouldn't be saved in memory.
 
-
 ### Warning #2
 
-
- It may be tempting to take a grib file, convert it into a CSV file
+It may be tempting to take a grib file, convert it into a CSV file
 and then deal with the CSV file. After all, everybody can read
 a CSV file. Sure there is a litte overhead of reading a CSV file
 but who cares. Suppose you want to read some GFS forecasts files
@@ -83,33 +65,16 @@ viable strategy if the conversion is limited. You need to restrict
 the number of fields converted and should consider only converting
 a regional domain. Note, I wrote "viable" and not optimal.
 
-
-
-See also: 
+See also:
 [-csv](./csv.html),
 [-netcdf](./netcdf.html),
 [-text](./text.html),
-[-bin](./bin.html), 
+[-bin](./bin.html),
 [-ieee](./ieee.html),
 [-undefine](./undefine.html)
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: out   X      write text - spread sheet format into X (WxText enabled)
+> Description: out X write text - spread sheet format into X (WxText enabled)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/spread.html>_

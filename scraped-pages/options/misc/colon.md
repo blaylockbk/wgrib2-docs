@@ -1,14 +1,8 @@
+# wgrib2: -colon
 
-### wgrib2: -colon
-
-
-
-### Introduction:
-
-
+## Introduction:
 
 The wgrib2 inventory consists of many fields separated by a colon (:). For example,
-
 
 ```
 
@@ -17,9 +11,7 @@ The wgrib2 inventory consists of many fields separated by a colon (:). For examp
 
 ```
 
-
 You can change the field separator from a colon to any string. For example,
-
 
 ```
 
@@ -35,10 +27,7 @@ You may want to use the -colon option because
 you are going to be parsing the inventory with another program that uses
 a different field separator. (CSV file?).
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -48,8 +37,6 @@ a different field separator. (CSV file?).
 
 ### Example
 
-
-
 ```
 
     $ wgrib2 small.grb2 -colon ':,"' -t -colon '","' -var -lev -ftime -misc -colon '' -print '"'
@@ -57,17 +44,11 @@ a different field separator. (CSV file?).
 
 ```
 
-
-See also: 
+See also:
 [-print](./print.html),
 
+---
 
-
-
-
-
-----
-
->Description: misc  X      replace item deliminator (:) with X
+> Description: misc X replace item deliminator (:) with X
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/colon.html>_

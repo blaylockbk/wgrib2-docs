@@ -1,15 +1,10 @@
+# wgrib2: -checksum
 
-### wgrib2: -checksum
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -checksum option writes the checksum (32 bit CRC)
-for the entire grib message, the decoded grid-point data or any 
-specified section. Two sections or messages with the same checksum are 
+for the entire grib message, the decoded grid-point data or any
+specified section. Two sections or messages with the same checksum are
 very probably the same. If the grid-point data has the same
 checksum, they are very probably bitwise identical. This option
 can be used to check the integrity of a grib message or to check for
@@ -21,12 +16,7 @@ faster if B\*C was previously calculated. While
 mathematically the expressions are the same, the final results may
 be slightly different.
 
-
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -38,9 +28,6 @@ data for the checksum of the decoded gridded data
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -60,9 +47,6 @@ $ wgrib2 png.grb2 -checksum -1
 
 ```
 
-
-
-
 ```
 
 $ wgrib2 test.grb2 -checksum 3 | cut -f3 -d: | sort -u | wc -l
@@ -70,13 +54,12 @@ $ wgrib2 test.grb2 -checksum 3 | cut -f3 -d: | sort -u | wc -l
 
 ```
 
-The above example prints out the number of grid defintion sections in the 
+The above example prints out the number of grid defintion sections in the
 file by (1) creating the checksum for the GDS, (2) extracting the GDS checksum,
 (3) finding the unique checksums and finally counting them.
 
-
 Space can be saved by putting combining like grib messages. For example,
-if a 100 messages share the same bitmap and discipline, then the 
+if a 100 messages share the same bitmap and discipline, then the
 100 messages could be combined into one message with a hundred
 submessages. By combining the message, only one copy of the
 bitmap is needed. This saves 99 copies of the bitmap.
@@ -97,27 +80,14 @@ Submessage statistics:
 
 ```
 
-
-
-
-
 See also:
 
-
-
-
-
 ```
 
 ```
 
+---
 
-
-
-
-
-----
-
->Description: inv   X      CRC checksum of section X (0..8), whole message (X = -1/message) or (X=data)
+> Description: inv X CRC checksum of section X (0..8), whole message (X = -1/message) or (X=data)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/checksum.html>_

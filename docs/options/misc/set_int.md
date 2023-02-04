@@ -1,16 +1,10 @@
+# wgrib2: -set_int
 
-### wgrib2: -set\_int
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -set\_int option sets 4 octets to an
+The -set_int option sets 4 octets to an
 signed integer value as commonly use by grib for signed integers.
 The integer must range from -2147483647 to 2147483647,
-
 
 ```
 
@@ -18,7 +12,7 @@ The integer must range from -2147483647 to 2147483647,
   I = 1..7
   J = 1..(section length-3)
   K = -(2**23-1) .. (2**23-1)
-would set 
+would set
   Section I, Octet J+0:  if (K >= 0) (K >> 24) & 255
   Section I, Octet J+0:  if (K < 0) ((abs(K) >> 24) && 255) | 128
   Section I, Octet J+1:  (abs(K) >> 16) & 255
@@ -28,13 +22,9 @@ would set
 
 ```
 
-
 Multiple integers can be set by making the third argument a colon seperated list.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -47,26 +37,15 @@ I-M = Mth integer
 
 ### Example
 
+See also:
+[-get_int](get_int.html)
+[-set_byte](set_byte.html)
+[-set_hex](set_hex.html)
+[-set_ieee](set_ieee.html)
+[-set_int2](set_int2.html)
 
+---
 
-See also: 
-[-get\_int](get_int.html)
-[-set\_byte](set_byte.html)
-[-set\_hex](set_hex.html)
-[-set\_ieee](set_ieee.html)
-[-set\_int2](set_int2.html)
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: misc  X Y Z  set 4-byte ints in Section X, Octet Y, signed integers Z (a|a:b:c)
+> Description: misc X Y Z set 4-byte ints in Section X, Octet Y, signed integers Z (a|a:b:c)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_int.html>_

@@ -1,48 +1,38 @@
+# wgrib2: -set_var
 
-### wgrib2: -set\_var
-
-
-
-### Introduction
-
-
+## Introduction
 
 Please see [new grib](./new_grib.html) for the basic
 concepts of making new grib files.
 
-
-
-The -set\_var option changes the variable
+The -set_var option changes the variable
 name of the in-memory grib (sub-)message. You can write
-out the message with the new name by the 
+out the message with the new name by the
 -grib (fast) and
--grib\_out (slow) options. Of course
+-grib_out (slow) options. Of course
 if the in-memory grid values have changed, you have to use
 the latter option.
 
- You can set the name to a locally defined variable name only if
+You can set the name to a locally defined variable name only if
 the center is set correctly. For example, you can use an NCEP-defined
 variable name only if the center is already defined as NCEP. If the
 center is undefined, you cannot use any locally defined names.
 
- The search order is for WMO definitions and then the locally
+The search order is for WMO definitions and then the locally
 defined definitions. The search order has implications for NCEP
 users. NCEP often have WMO and NCEP definitions for the same
 variable name/type.
-The -set\_var option will choose
+The -set_var option will choose
 the WMO definition. This will cause problems with programs that
 expect the NCEP definition.
 
- The -set\_var option will alter the master table.
+The -set_var option will alter the master table.
 The grib2 standard says that variable definitions are only valid for
 specified master tables. Wgrib2 keeps track of range of tables for which each
 variable name is valid. In addition, there is an entry for the master table
-used by the -set\_var option.
+used by the -set_var option.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -52,7 +42,7 @@ used by the -set\_var option.
                         2. varA_B_C_D_E_F
                         3. var discipline=A master_table=B parmcat=D parm=E
                         4. var siscipline=A local_table=C parmcat=D parm=E
-                           use 3 for WMO defined variables, 4 for locally defined variables 
+                           use 3 for WMO defined variables, 4 for locally defined variables
                            A = discipline
                            B = version of master table
                            C = version of local table
@@ -64,8 +54,6 @@ used by the -set\_var option.
 ```
 
 ### Example
-
-
 
 ```
 
@@ -85,35 +73,21 @@ $ wgrib2 old.grb -if ":TSOIL:" -set\_var SOILTMP -fi -grib new.grb
 
 ```
 
-
-The -set\_var option will rename
+The -set_var option will rename
 all the fields in a grib file. If you only want to rename
 specific fields, you will have to use the
 -if and -fi options.
 
-See also: 
+See also:
 
 [-fi](fi.html),
 [-grib](grib.html),
-[-grib\_out](grib_out.html),
+[-grib_out](grib_out.html),
 [-if](if.html)
-[-set\_metadata](set_metadata.html)
+[-set_metadata](set_metadata.html)
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: misc  X      changes variable name
+> Description: misc X changes variable name
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_var.html>_

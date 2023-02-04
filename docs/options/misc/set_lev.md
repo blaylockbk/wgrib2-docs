@@ -1,30 +1,21 @@
+# wgrib2: -set_lev
 
-### wgrib2: -set\_lev
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -set\_lev option changes the level/layer
- of field. By design, the level/layer used by
--set\_lev option is the same level/layer as used
+The -set_lev option changes the level/layer
+of field. By design, the level/layer used by
+-set_lev option is the same level/layer as used
 in the inventory.
 
- The code used to set the level/layer are used by
--set\_lev,
--set\_metadata, and
--set\_metadata\_str. So if you are unsure of the format
+The code used to set the level/layer are used by
+-set_lev,
+-set_metadata, and
+-set_metadata_str. So if you are unsure of the format
 of the level description, you first look for a file with the same or similar level.
-Failing to find such a file, you can try the 
--set\_lev option or look at the tables in level.c source code.
+Failing to find such a file, you can try the
+-set_lev option or look at the tables in level.c source code.
 
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -85,15 +76,13 @@ Failing to find such a file, you can try the
  "%g-%g m below ground"
  "%g-%g m above ground"
  "%g-%g sigma layer",
- "%g-%g m below sea level", 
+ "%g-%g m below sea level",
  "%gC ocean isotherm%n", NCEP only
  "atmos col"
 
 ```
 
 ### Example
-
-
 
 ```
 
@@ -102,20 +91,11 @@ $ wgrib2 png.grb22 -set\_lev "9.1 mb"
 
 ```
 
-
-
- See also: 
+See also:
 [-lev](lev.html),
- 
 
+---
 
-
-
-
-
-
-----
-
->Description: misc  X      changes level code .. not complete
+> Description: misc X changes level code .. not complete
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_lev.html>_

@@ -1,18 +1,12 @@
-
-### wgrib2: bin, ieee, text formats
-
-
+# wgrib2: bin, ieee, text formats
 
 ### The bin, text and ieee formats
 
-
-
-The -bin, -text, -ieee 
+The -bin, -text, -ieee
 and -lola options create bin/text/ieee format files. The
 format doesn't change from that used by wgrib. The difference between bin and ieee
 is that bin writes the numbers in the machine's native format and ieee writes
-the numbers in big\_endian ieee format. 
-
+the numbers in big_endian ieee format.
 
 ```
 
@@ -65,10 +59,10 @@ could easily read too many or few grid points.
 		(binary float value)		nx*ny values
 		etc
 
-	The no-header format is not a recommended format to use.  
-The format does not indicate the size of the grid. If your program 
-makes a mistake on the grid dimension, you could get interesting results.  
-However, some fortran compilers require this format for binary files (Cray, 
+	The no-header format is not a recommended format to use.
+The format does not indicate the size of the grid. If your program
+makes a mistake on the grid dimension, you could get interesting results.
+However, some fortran compilers require this format for binary files (Cray,
 ABSoft under AmigaOS).  In addition, this is the default GrADs binary format.
 
 
@@ -89,7 +83,7 @@ ABSoft under AmigaOS).  In addition, this is the default GrADs binary format.
 		(binary integer)	nx*ny*sizeof(float)
 
 
-    The binary-with-header format is commonly used by UNIX 
+    The binary-with-header format is commonly used by UNIX
 fortrans for their binary files.  Some MS-DOS fortran compilers
 also support this format.  You can use this format with GrADS
 with the "options sequential" line in the control file.
@@ -97,27 +91,17 @@ with the "options sequential" line in the control file.
 
 ```
 
-
 Note, the order of the numbers is controled by the
 -order option.
 
+See also: [-text](./text.html),
+[-bin](./bin.html),
+[-ieee](./ieee.html),
+[-lola](./lola.html),
+[-order](./order.html),
 
+---
 
-See also: [-text](./text.html), 
-[-bin](./bin.html), 
-[-ieee](./ieee.html), 
-[-lola](./lola.html), 
-[-order](./order.html), 
-
-
-
-
-
-
-
-
-----
-
->Description: bin, ieee, text formats
+> Description: bin, ieee, text formats
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/bin_ieee_text_format.html>_

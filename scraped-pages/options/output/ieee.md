@@ -1,42 +1,33 @@
-### wgrib2: -ieee
+# wgrib2: -ieee
 
-
-### Introduction
-
-
+## Introduction
 
 The -ieee option writes the grid values to a specified
 file in IEEE format (C: float, Fortran: real). The default endian is "big",
 but that can be changed by the
- -big\_endian and
- -little\_endian options.
+-big_endian and
+-little_endian options.
 
-
-
-
-By default, the data are written out in 
-WE:SN order (see -order option) with f77 header/trailer (see -no\_header option). The
+By default, the data are written out in
+WE:SN order (see -order option) with f77 header/trailer (see -no_header option). The
 undefined value is 9.999e20. The output format is unchanged from wgrib except
 the order can now be specified.
 
- The default is to write a 4 byte header and trailer with the record size in bytes.
+The default is to write a 4 byte header and trailer with the record size in bytes.
 No header and trailer are written if the header flag is off by
-the -no\_header option.
+the -no_header option.
 
- The default is write the grid point data in WE:SN order. The ordering of the data
+The default is write the grid point data in WE:SN order. The ordering of the data
 can be changed to raw or WE:NS by the -order option.
 
- The default endian of the header, trailer and data are in big endian order. This can
-be changed to little endian by the -little\_endian option.
+The default endian of the header, trailer and data are in big endian order. This can
+be changed to little endian by the -little_endian option.
 
- The -ieee option is slower than the -bin option and may not be exact on an ieee
+The -ieee option is slower than the -bin option and may not be exact on an ieee
 machine because all grid point data is converted from the native format into ieee format
 by a software routine.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -46,9 +37,6 @@ by a software routine.
 
 ### Example
 
-
-
-
 ```
 
 $ wgrib2 test.grb2 -s | grep ":RH:2 m" | wgrib2 -i test.grb2 -ieee data.bin
@@ -56,9 +44,7 @@ $ wgrib2 test.grb2 -s | grep ":RH:2 m" | wgrib2 -i test.grb2 -ieee data.bin
 
 ```
 
-
 The above line extracts the 2 meter RH from file test.grb2 and writes it in data.bin
-
 
 ```
 
@@ -71,33 +57,15 @@ The above line extracts the 2 meter RH from file test.grb2 and writes it in data
 
 ```
 
-
-See also: [-text](./text.html), 
+See also: [-text](./text.html),
 [-netcdf](./netcdf.html)
 [-spread](./spread.html)
 [-bin](./bin.html)
-[-big\_endian](./big_endian.html)
-[-little\_endian](./big_endian.html)
+[-big_endian](./big_endian.html)
+[-little_endian](./big_endian.html)
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: out   X      write (default:big-endian) IEEE data to X
+> Description: out X write (default:big-endian) IEEE data to X
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/ieee.html>_

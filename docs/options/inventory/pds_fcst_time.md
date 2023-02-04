@@ -1,44 +1,34 @@
+# wgrib2: -pds_fcst_time
 
-### wgrib2: -pds\_fcst\_time
-
-
-
-### Introduction
-
-
+## Introduction
 
 Most grib messages include a forecast time which is stored
-in the Product Definition Templates (PDT). When the PDT 
+in the Product Definition Templates (PDT). When the PDT
 has a forecast time, it stores the number as a 4 byte
 integer and the units in Code Table 4.4. For example,
 a 12 hour forecast could be stored with the number 12
 and the units of 1 which corresponds hour. Note that
 the same forecast time can be stored in several ways.
 For example, 12 hours can be stored as
-* value=720 , units = 0 (minutes)
-* value=12 , units = 1 (hours)
-* value=4 , units = 10 (3-hours)
-* value=2 , units = 11 (6-hours)
-* value=1 , units = 12 (12-hours)
-* value=43299, units = 13 (seconds)
 
-
+- value=720 , units = 0 (minutes)
+- value=12 , units = 1 (hours)
+- value=4 , units = 10 (3-hours)
+- value=2 , units = 11 (6-hours)
+- value=1 , units = 12 (12-hours)
+- value=43299, units = 13 (seconds)
 
 The unusual 3-hour, 6-hour and 12-hour time units are a legacy
 of the grib version 1 standard. Note that the value is
- a signed integer because the grib standard allows negative
+a signed integer because the grib standard allows negative
 forecast hours which can make sense in data assimilation.
 
-
-The -pds\_fcst\_time option prints out the
+The -pds_fcst_time option prints out the
 value of the forecast time and the
--code\_table\_4.4 option prints out the
+-code_table_4.4 option prints out the
 units of the forecast time.
 
-
-### Usage
-
-
+## Usage
 
 ```
 
@@ -48,8 +38,6 @@ units of the forecast time.
 
 ### Example
 
-
-
 ```
 
 $ wgrib2 percentile\_precip.grib2 -s -pds\_fcst\_time -code\_table\_4.4
@@ -58,18 +46,10 @@ $ wgrib2 percentile\_precip.grib2 -s -pds\_fcst\_time -code\_table\_4.4
 
 ```
 
+See also:
 
-See also: 
+---
 
-
-
-
-
-
-
-
-----
-
->Description: inv          fcst_time(1) in units given by pds
+> Description: inv fcst_time(1) in units given by pds
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/pds_fcst_time.html>_

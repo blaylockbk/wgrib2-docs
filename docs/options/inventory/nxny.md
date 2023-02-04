@@ -1,15 +1,9 @@
+# wgrib2: -nxny
 
-### wgrib2: -nxny
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -nxny option prints the size of a "rectangular" grid.
-Of course not all grids are rectangular. 
-
+Of course not all grids are rectangular.
 
 ```
 
@@ -20,23 +14,18 @@ $ ./wgrib2 test.grb2 -s -nxny -d 1
 
 The above grid is a 0.5 x 0.5 degree global grid.
 
-
 ```
 
 $ ./wgrib2 ../ecmwf/gaussian\_reduced.grib2 -s -nxny -d 1
-1:0:d=2006081712:var discipline=0 master_table=4 parmcat=0 parm=0:500 mb:12 hour 
+1:0:d=2006081712:var discipline=0 master_table=4 parmcat=0 parm=0:500 mb:12 hour
 fcst:(-1 x 800)
 
 ```
 
-
 Here, the thinned Gaussian grid has 800 latitudes and a varying number
 of longitude points.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -44,16 +33,10 @@ of longitude points.
 
 ```
 
-
 See also: [-npts](./npts.html)
 
+---
 
-
-
-
-
-----
-
->Description: inv          nx and ny of grid
+> Description: inv nx and ny of grid
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/nxny.html>_

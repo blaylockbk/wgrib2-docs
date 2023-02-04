@@ -1,27 +1,18 @@
+# wgrib2: -wind_speed
 
-### wgrib2: -wind\_speed
+## Introduction
 
-
-
-### Introduction
-
-
-
-The -wind\_speed option takes the zonal and meridional winds,
+The -wind_speed option takes the zonal and meridional winds,
 computes the wind speed and writes it out in grib format. For this option to
 work, the meridional wind must follow the corresponding zonal wind for that
 level, time and forecast hour. If the U and V in your grib file do not have
 this order, the file must be sorted. However, many NCEP forecast files already
 have this order.
 
-
-You can save computer time by using the -match option 
+You can save computer time by using the -match option
 to restricting the decoding of records to U and V.
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -32,9 +23,6 @@ to restricting the decoding of records to U and V.
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -52,24 +40,12 @@ $ wgrib2 wind.grb
 
 ```
 
+See also: [-match](./match.html),
+[-wind_dir](./wind_dir.html)
+[-wind_uv](./wind_uv.html)
 
-See also: [-match](./match.html), 
- [-wind\_dir](./wind_dir.html)
-[-wind\_uv](./wind_uv.html)
+---
 
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: out   X      calculate wind speed, X = output gribfile (U then V in datafile)
+> Description: out X calculate wind speed, X = output gribfile (U then V in datafile)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/wind_speed.html>_

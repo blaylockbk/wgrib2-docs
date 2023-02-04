@@ -1,39 +1,28 @@
+# wgrib2: -set_metadata
 
-### wgrib2: -set\_metadata
+## Introduction
 
-
-
-### Introduction
-
-
-
-Whenever -set\_metadata option is "executed", one
-line of the data file is read, the metadata is then applied to the current 
+Whenever -set_metadata option is "executed", one
+line of the data file is read, the metadata is then applied to the current
 (sub-)message. For example, your grib file has 3 messages and you
 want to alter the metadata. Here is a metadata file
 that could be used to alter the grib file.
 
-
-> 
-> 0:0:d=2009010100:HGT:500 mb:anl:scale=0,0:  
-> 
-> 0:0:d=2009010100:TMP:2 m above ground:anl  
-> 
-> 0:0:d=2009010106:HGT:500 mb:12 hour forecast:scale=0,0  
-> 
-> 
-
-
+> 0:0:d=2009010100:HGT:500 mb:anl:scale=0,0:
+>
+> 0:0:d=2009010100:TMP:2 m above ground:anl
+>
+> 0:0:d=2009010106:HGT:500 mb:12 hour forecast:scale=0,0
 
 The format of the metadata file resembles the wgrib2 inventory by design.
-The first and second fields are ignored by by -set\_metadata.
+The first and second fields are ignored by by -set_metadata.
 In practice, the first first is the record number and the second field
 is the byte location of the template to be used. (A template file
 could be a collection of templates.) The third through sixth fields
 are the date code, variable name, level and ftime. Finally the remaining
-fields are optional and order independent. 
+fields are optional and order independent.
 
- The date field has been extended from the default d=YYYYMMDDHH. The date
+The date field has been extended from the default d=YYYYMMDDHH. The date
 field can be d=format-N or D=format-N
 
 ```
@@ -61,7 +50,6 @@ field can be d=format-N or D=format-N
              ex. -6hr, -1dy
 
 ```
-
 
 ```
 
@@ -100,9 +88,7 @@ field can be d=format-N or D=format-N
 
 ```
 
-
 To change the metadata, you can do
-
 
 ```
 
@@ -114,52 +100,32 @@ Note: that -grib does not change the grid point data/packing.
 
 ```
 
- The -set\_metadata option is used for creating 
-grib2 files. Note that both 
--set\_metadata and the various
+The -set_metadata option is used for creating
+grib2 files. Note that both
+-set_metadata and the various
 -import options will change the output
 precision. Consequently the
 -import option should preceed the
--set\_metadatda option.
+-set_metadatda option.
 
- Note: only a subset of levels and ftime parameters is currently implemented.
-The -set\_metadatda option 
-does not support all metadata. 
+Note: only a subset of levels and ftime parameters is currently implemented.
+The -set_metadatda option
+does not support all metadata.
 
- To format of the levels and ftime are
- the same was used by wgrib2 inventories.
-
+To format of the levels and ftime are
+the same was used by wgrib2 inventories.
 
 See also:
-[-set\_ave](./set_ave.html),
-[-set\_date](./set_date.html),
-[-set\_ftime](./set_ftime.html),
-[-set\_lev](./set_lev.html),
-[-set\_metadata\_str](./set_metadata_str.html),
-[-set\_scale](./set_scale.html),
-[set\_var](./set_var.html),
+[-set_ave](./set_ave.html),
+[-set_date](./set_date.html),
+[-set_ftime](./set_ftime.html),
+[-set_lev](./set_lev.html),
+[-set_metadata_str](./set_metadata_str.html),
+[-set_scale](./set_scale.html),
+[set_var](./set_var.html),
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: misc  X      read meta-data for grib writing from file X
+> Description: misc X read meta-data for grib writing from file X
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_metadata.html>_

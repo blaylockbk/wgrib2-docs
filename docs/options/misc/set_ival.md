@@ -1,20 +1,12 @@
+# wgrib2: -set_ival
 
-### wgrib2: -set\_ival
+## Introduction
 
+The -set_ival option is used to change one or more the grid point values
+of the decoded grid. After changing values, one usually writes out the grid using
+-grib_out FILE.
 
-
-### Introduction
-
-
-
-The -set\_ival option is used to change one or more the grid point values
-of the decoded grid. After changing values, one usually writes out the grid using 
--grib\_out FILE.
-
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -26,8 +18,6 @@ of the decoded grid. After changing values, one usually writes out the grid usin
 ```
 
 ### Example
-
-
 
 ```
 
@@ -43,21 +33,13 @@ $ cat new.csv
 
 ```
 
-
-See also: 
+See also:
 [-csv](./csv.html)
-[-grib\_out](./grib_out.html)
-[-set\_ijval](./set_ijval.html)
+[-grib_out](./grib_out.html)
+[-set_ijval](./set_ijval.html)
 
+---
 
-
-
-
-
-
-
-----
-
->Description: misc  X Y    sets grid point value X=i1:i2:.. Y=va1:val2:.. grid[i1] = val1,etc i>0
+> Description: misc X Y sets grid point value X=i1:i2:.. Y=va1:val2:.. grid[i1] = val1,etc i>0
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_ival.html>_

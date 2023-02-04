@@ -1,20 +1,15 @@
+# wgrib2: -cyclic
 
-### wgrib2: -cyclic
-
-
-
-### Introduction
-
-
+## Introduction
 
 Sometimes it is useful to know whether the domain is cyclic.
 For example, the large domain goes from 0E to 359W by steps
 of 1 degree. Now there is a request for a subdomain that goes
 from 350E (left) to 10E (right). Knowing that the domain is cyclic
-is useful in this case. The -small\_grib option 
+is useful in this case. The -small_grib option
 calls the cyclic code.
 
- The -cyclic option will only detect cyclic
+The -cyclic option will only detect cyclic
 grids that are either lat-lon, Gaussian or Mercator. All other
 grids will return a not-cyclic response. In addition,
 staggered and thinned grids will also return a not-cyclic response.
@@ -24,9 +19,7 @@ nearest microdegree. (Reason 1: grib1 only stored the lon and dlon to the
 nearest millidegree. Reason 2: most NCEP codes use single precision
 for the longitudes and latitudes.)
 
-### Usage
-
-
+## Usage
 
 ```
 
@@ -35,9 +28,6 @@ for the longitudes and latitudes.)
 ```
 
 ### Example
-
-
-
 
 ```
 
@@ -58,21 +48,11 @@ $ wgrib2 gep19.t00z.pgrb2af180 -cyclic -nl -grid
 
 ```
 
+See also:
+[-small_grib](./small_grib.html),
 
-See also: 
-[-small\_grib](./small_grib.html),
+---
 
-
-
-
-
-
-
-
-
-
-----
-
->Description: inv          is grid cyclic? (not for thinned grids)
+> Description: inv is grid cyclic? (not for thinned grids)
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/cyclic.html>_

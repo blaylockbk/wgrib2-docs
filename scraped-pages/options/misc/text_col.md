@@ -1,19 +1,12 @@
+# wgrib2: -text_col
 
-### wgrib2: -text\_col
-
-
-
-### Introduction
-
-
+## Introduction
 
 Wgrib2's -text and -ijbox options
 will/can write text files. The default is to write one number per line of output.
-By using -text\_col option, you can write N numbers per line.
+By using -text_col option, you can write N numbers per line.
 
-### Usage
-
-
+## Usage
 
 ```
 
@@ -24,11 +17,9 @@ By using -text\_col option, you can write N numbers per line.
 
 ### Example
 
-
-
 ```
 
-$ wgrib2 cdas.t00z.sfluxgrbf06.grib2 -d 1 -text\_col 3 -text junk 
+$ wgrib2 cdas.t00z.sfluxgrbf06.grib2 -d 1 -text\_col 3 -text junk
 1:0:d=2016122700:UFLX:surface:0-6 hour ave fcst:
 $ head junk
 192 94
@@ -44,17 +35,12 @@ $ head junk
 
 ```
 
-
-
 See also:
 [-text](./text.html),
 [-ijbox](./ijbox.html)
 
+---
 
-
-
-----
-
->Description: misc  X      number of columns on text output
+> Description: misc X number of columns on text output
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/text_col.html>_

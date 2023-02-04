@@ -1,16 +1,10 @@
+# wgrib2: -inv
 
-### wgrib2: -inv
-
-
-
-### Introduction
-
-
+## Introduction
 
 The -inv option redirects the inventory to
 a file. This option could be used with an option to send decoded
 data to STDOUT.
-
 
 ```
 
@@ -23,10 +17,8 @@ $ wgrib2 file -inv my.inv -text - -no_header  -match ':HGT:500 mb:' |  JOB
 
 ```
 
-
 The -inv option is similar but different from saving
 stdout.
-
 
 ```
 
@@ -35,12 +27,9 @@ $ wgrib2 file >my.inv2
 
 ```
 
-
-
-In the above example, my.inv and my2.inv will be the same. However, 
+In the above example, my.inv and my2.inv will be the same. However,
 wgrib2 can be used as a grib filter. In this case, grib data is read
 from stdin and written to stdout.
-
 
 ```
 
@@ -49,11 +38,9 @@ $ cat FILE1 FILE2 | wgrib2 - -match ':HGT:500 mb:' -grib - -inv /dev/null | \
 
 ```
 
-
 The -inv option is very specialized and helps
 when you want to imbed wgrib2 within another program. For example,
 reading a grib2 record from within perl program is easy.
-
 
 ```
 
@@ -61,10 +48,7 @@ reading a grib2 record from within perl program is easy.
 
 ```
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -72,24 +56,12 @@ reading a grib2 record from within perl program is easy.
 
 ```
 
-
 See also:
 [-text](./text.html)
 [-bin](./bin.bin)
 
+---
 
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: init  X      write inventory to X
+> Description: init X write inventory to X
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/inv.html>_

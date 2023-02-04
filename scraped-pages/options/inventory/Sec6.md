@@ -1,17 +1,9 @@
+# wgrib2: -Sec6
 
-### wgrib2: -Sec6
+## Introduction:
 
-
-
-### Introduction:
-
-
-
-The -Sec6 option prints a short summary of Section 6, the 
+The -Sec6 option prints a short summary of Section 6, the
 Bit Map Section.
-
-
-
 
 ```
 
@@ -23,10 +15,7 @@ bitmap indicator 255          Table 6.0 has a value of 255, (no bitmap)
 
 ```
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -34,14 +23,10 @@ bitmap indicator 255          Table 6.0 has a value of 255, (no bitmap)
 
 ```
 
+See also:
 
-See also: 
+---
 
-
-
-
-----
-
->Description: inv          show bit-map section
+> Description: inv show bit-map section
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/Sec6.html>_

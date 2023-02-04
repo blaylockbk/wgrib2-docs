@@ -1,14 +1,8 @@
+# wgrib2: -set_bin_prec
 
-### wgrib2: -set\_bin\_prec
-
-
-
-### Introduction
-
-
+## Introduction
 
 The values at the grid points points are stared in a general format,
-
 
 ```
 
@@ -23,9 +17,7 @@ The values at the grid points points are stared in a general format,
 
 ```
 
-
 There are 3 sytems for storing the number which I have called
-
 
 ```
 
@@ -50,11 +42,10 @@ NCEP convention: B = parameter, D = parameter
 
 ```
 
-
 Both the ECMWF and NCEP conventions have their advantages and
 disadvantages. The ECMWF method is easier to use, you just
 set the binary precision to N bits (12? 16?) for all variables
-and you are done. With the NCEP convention, you have to 
+and you are done. With the NCEP convention, you have to
 set the scaling for each variable separately. For some variables
 such as specific humidity, the scaling should be pressure
 dependent. On the other hand, if you are trying to get the smallest
@@ -67,15 +58,12 @@ involved with more than my share of projects were disk space
 has been the critical issue.
 
 By the way, the wgrib2 default for encoding grib is 12-bits using
-the ECMWF convention. 
+the ECMWF convention.
 
-### Usage
+## Usage
 
-
-The -set\_bin\_prec option is used to
+The -set_bin_prec option is used to
 set wgrib2 to encode data using the ECMWF convention.
-
-
 
 ```
 
@@ -88,26 +76,14 @@ set wgrib2 to encode data using the ECMWF convention.
 
 ```
 
-
-See alse: 
+See alse:
 [-scale](scale.html)
 [-scaling](scaling.html)
-[-set\_grib\_max\_bits](set_grib_max_bits.html)
-[-set\_scaling](set_scaling.html)
+[-set_grib_max_bits](set_grib_max_bits.html)
+[-set_scaling](set_scaling.html)
 
+---
 
-
-
-
-
-
-
-
-
-
-
-----
-
->Description: misc  X      X use X bits and ECMWF-style grib encoding
+> Description: misc X X use X bits and ECMWF-style grib encoding
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_bin_prec.html>_

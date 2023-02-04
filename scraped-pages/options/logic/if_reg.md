@@ -1,11 +1,6 @@
+# wgrib2: -if_reg
 
-### wgrib2: -if\_reg
-
-
-
-### Introduction
-
-
+## Introduction
 
 The reverse polish notation calculator (-rpn) allows you
 to manipulate the grid values and save the results in registers. The values in
@@ -15,17 +10,11 @@ fields. For example, to calculate the wind speed, you have to save the zonal
 wind in a register and the meridional wind in another register. When both
 registers have values (U and V), you can then proceed with the wind speed
 calculation.
-The -if\_reg option tests to see if specified registers have
+The -if_reg option tests to see if specified registers have
 been set. If the register have been set, then the options up to and including the
 next output option are executed like with an -if option.
 
-
-
-
 Here is an example of computing the 500 mb wind speed.
-
-
-
 
 ```
 
@@ -51,11 +40,8 @@ $ wgrib2 a.grb -match ":[UV]grd:500 mb:anl:" \
 
 ```
 
- With operational NCEP files, the V field immediately follows the corresponding U field.
+With operational NCEP files, the V field immediately follows the corresponding U field.
 If we assume that this is always true, then the following computes all the wind speeds.
-
-
-
 
 ```
 
@@ -69,10 +55,7 @@ $ wgrib2 a.grb -match ":[UV]grd:" \
 
 ```
 
-### Usage
-
-
-
+## Usage
 
 ```
 
@@ -82,19 +65,13 @@ X is a list of register names, ex. 1:2 or 2:4:7
 
 ```
 
-
 See also:
- [-if](./if.html), 
+[-if](./if.html),
 [-fi](./fi.html).
- [-rpn](./rpn.html), 
+[-rpn](./rpn.html),
 
+---
 
-
-
-
-
-----
-
->Description: if    X      if rpn registers defined, X = A, A:B, A:B:C, etc A = register number
+> Description: if X if rpn registers defined, X = A, A:B, A:B:C, etc A = register number
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/if_reg.html>_

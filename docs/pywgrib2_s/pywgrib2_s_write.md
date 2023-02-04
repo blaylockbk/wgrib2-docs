@@ -1,37 +1,27 @@
-
 ### pywgrib2: write
 
+## Introduction
 
-
-### Introduction
-
-
-
-The routine pywgrib2\_s.write(..) writes a grib message to a file or memory file.
+The routine pywgrib2_s.write(..) writes a grib message to a file or memory file.
 To write a grib message, you need a "template", a grib message with
 the correct grid and most of the metadata. Often these templates are created interactively
-using wgrib2. The procedure is to take an existing grib message, and then modify it to 
-have the correct grid and metadata. 
+using wgrib2. The procedure is to take an existing grib message, and then modify it to
+have the correct grid and metadata.
 
-
-Once you have a template, pywgrib2\_s writes grib files by modifying the template by
-adding grid point data, changing the date codes, and other metadata. Pywgrib2\_s can
+Once you have a template, pywgrib2_s writes grib files by modifying the template by
+adding grid point data, changing the date codes, and other metadata. Pywgrib2_s can
 not write a grib file from scratch, you always need a template. Templates are
 quite small when you replace the grib point values with zero, with a size often less
 than 200 bytes.
 
 ### Example
 
-
-
 ```
 
 
 ```
 
-### Usage
-
-
+## Usage
 
 ```
 
@@ -126,7 +116,7 @@ than 200 bytes.
                                  Codes written using the NCEP's g2lib and g2clib do not
                                    handle AEC packing.
                                  Codes written using the NCEP's g2lib and g2clib will have
-                                   problems with complex packing if they haven't been 
+                                   problems with complex packing if they haven't been
                                    programmed to handle undefined grid points without a bitmap.
      pdt     = None (default)
                integer           Product Definition Template (code table 4.0) is set to integer
@@ -152,28 +142,19 @@ than 200 bytes.
 
 ```
 
-Order of setting values
-2. template
+Order of setting values 2. template
+
 - secN
 - pdt
 - metadata
 - time0, var, lev, ftime, packing
 
-
-
 [overview](./pywgrib2_s.html)
 [back](./pywgrib2_s_inq.html)
 [next](./pywgrib2_s_close.html)
 
+---
 
-
-
-
-
-
-
-----
-
->Description: write grib2
+> Description: write grib2
 
 _Docs derived from <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/pywgrib2_s_write.html>_
