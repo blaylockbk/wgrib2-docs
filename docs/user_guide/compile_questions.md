@@ -1,104 +1,103 @@
-### Compiling wgrib2 v3.0.2+
+# Install with Conda
+
+The easiest way to install **wgrib2** for linux computers is with conda.
+
+[![Conda-version](https://img.shields.io/conda/v/conda-forge/wgrib2)
+![Conda-platform](https://img.shields.io/conda/pn/conda-forge/wgrib2)](https://anaconda.org/conda-forge/wgrib2)
 
 ```
-1) Download ftp://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz
-        or https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz
-2) remove pre-existing grib2 directory if exists: rm -r grib2
-3) untar wgrib2.tgz:  tar -xzvf wgrib2.tgz   (use gnu tar)
-4) cd to main directory:  cd grib2
-
-
-The makefile uses two and one optional environment variables that have to be set.
-  With wgrib2 v3.0.2, you need to set $CC and $FC, and the makefile tries to identify
-    $COMP_SYS from "uname -a".  However, if the makefile cannot identify your system,
-    $COMP_SYS will not be set.  If your compilers are gcc and gfortran, you can
-    try compiling wgrib2 with COMP_SYS=gnu_linux.
-
-
-  linux, bsd-type OS, gcc/gfortran compilers:  COMP_SYS=gnu_linux
-                                               CC=gcc
-                                               FC=gfortran
-  linux, AOCC:                                 COMP_SYS=clang_linux
-                                               CC=clang
-                                               FC=flang
-  linux, icc and ifort:                        COMP_SYS=intel_linux
-                                               CC=icc
-                                               FC=ifort
-  linux, icx and ifx:                          COMP_SYS=oneapi_linux
-                                               CC=icx
-                                               FC=ifx
-  linux, Nvidia HPC SDK                        COMP_SYS=nvidia_linux
-                                               CC=nvc
-                                               FC=nvfortran
-
-  Windows, cygwin gcc and gfortran:            COMP_SYS=cygwin_win
-                                               CC=gcc
-                                               FC=gfortran
-
-  MacOS, real gcc and gfortran:                COMP_SYS=gnu_mac
-                                               CC=gcc
-                                               FC=gfortran
-
-
-
-  not recently tested AIX, gnu_linux_g95, open64
-  If COMP_SYS is not defined, the makefile will attempt to determine the COMP_SYS.
-
-6) set environment variables and make, example
-
-   export CC=gcc                    (bash version)
-   export FC=gfortran
-   export COMP_SYS=gnu_linux        (optional in linux)
-   make                             (to make wgrib2)
-   make lib                         (to make wgrib2 library)
-
-   For NCEP's WCOSS-2.  see the question on lib64, and WCOSS-2.
+conda install -c conda-forge wgrib2
 ```
 
-### Intel Compilers
+# Compile from source
 
-The Intel C compiler will not compile the Jasper library (jpeg2000 support).
-To get jpeg2000 support, you will either have to use OpenJPEG or compile
-Jasper with the gnu compiler. The makefile will automatically use gcc when
+These instructions are for compiling wgrib2 `v3.0.2+`.
+
+[![](https://img.shields.io/badge/Download%20latest%20via-FTP-blue)](ftp://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz)
+[![](https://img.shields.io/badge/Download%20latest%20via-HTTP-blue)](https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz)
+
+> Get old versions at https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/
+
+1. Download wgrib2 source code.
+1. If it exists, remove the pre-existing `grib2/` directory.
+1. Untar the `wgrib2.tgz` file.
+1. Change into the newly created `grib2/` directory
+
+```bash
+wget https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz
+rm -rf grib2
+tar -xzvf wgrib2.tgz
+cd grib2
+```
+
+The makefile uses two and one optional environment variables that have to be set. With wgrib2 v3.0.2, you need to set `$CC` and `$FC`, and the makefile tries to identify `$COMP_SYS` from `uname -a`. However, if the makefile cannot identify your system, `$COMP_SYS` will not be set. If your compilers are _gcc_ and _gfortran_, you can try compiling wgrib2 with `COMP_SYS=gnu_linux`.
+
+| Computer System                            | Environment Variables                                 |
+| ------------------------------------------ | ----------------------------------------------------- |
+| linux, bsd-type OS, gcc/gfortran compilers | `COMP_SYS=gnu_linux`<br>`CC=gcc`<br>`FC=gfortran`     |
+| linux, AOCC                                | `COMP_SYS=clang_linux`<br>`CC=clang`<br>`FC=flang`    |
+| linux, icc and ifort                       | `COMP_SYS=intel_linux`<br>`CC=icc`<br>`FC=ifort`      |
+| linux, icx and ifx                         | `COMP_SYS=oneapi_linux`<br>`CC=icx`<br>`FC=ifx`       |
+| linux, Nvidia HPC SDK                      | `COMP_SYS=nvidia_linux`<br>`CC=nvc`<br>`FC=nvfortran` |
+| Windows, cygwin gcc and gfortran           | `COMP_SYS=cygwin_win`<br>`CC=gcc`<br>`FC=gfortran`    |
+| MacOS, real gcc and gfortran               | `COMP_SYS=gnu_mac`<br>`CC=gcc`<br>`FC=gfortran`       |
+
+> ⚠️ Note: Not recently tested AIX, gnu_linux_g95, and open64
+
+The below is an example of setting environment variables and running make in a **BASH** shell.
+
+```bash
+export CC=gcc
+export FC=gfortran
+export COMP_SYS=gnu_linux
+
+make        # to make wgrib2
+make lib    # to make wgrib2 library
+```
+
+> ⚠️ Note: If `COMP_SYS` is not defined, the makefile will attempt to determine the `COMP_SYS`.
+
+> ⚠️ Note: For NCEP's WCOSS-2. see the question on lib64, and WCOSS-2.
+
+## Intel Compilers
+
+The Intel C compiler will not compile the Jasper library (jpeg2000 support). To get jpeg2000 support, you will either have to use OpenJPEG or compile Jasper with the gnu compiler. The makefile will automatically use `gcc` when
 trying to build the Jasper library when the classic Intel compilers are used.
-Compiling wgrib2 using the Intel compilers on Windows is possible but is
-not supported. (Grib files will be limited to 2 GB, and I have no way to test.)
 
 To compile with the intel compilers on linux,
 
-```
-Classic compilers
-   export CC=icc
-   export FC=ifort
-   export COMP_SYS=intel_linux
-   make
-
-LLVM compilers (wgrib2 v3.1.2+)
-   export CC=icx
-   export FC=ifx
-   export COMP_SYS=oneapi_linux
-   make
+```bash
+# Classic compilers
+export CC=icc
+export FC=ifort
+export COMP_SYS=intel_linux
+make
 ```
 
-### Compiling with Cygwin (Windows)
+```bash
+#LLVM compilers (wgrib2 v3.1.2+)
+export CC=icx
+export FC=ifx
+export COMP_SYS=oneapi_linux
+make
+```
+
+> Note: Compiling wgrib2 using the Intel compilers on Windows is possible but is not supported. (Grib files will be limited to 2 GB, and I have no way to test.)
+
+## Compiling with Cygwin (Windows)
 
 The only Windows C compiler supported is Cygwin's gcc.
 The other Windows C compilers follow Microsoft's lead where
-a "long int" is 32-bits on a 64 bit operating system. Wgrib2
-will work with a 32-bit long int but will limit a grib file
-to barely acceptable 2GB size. Cygwin's gcc also supports POSIX
-which means that you don't have to turn off features that require POSIX.
+a "long int" is 32 bits on a 64-bit operating system. Wgrib2 will work with a 32-bit long int but will limit a grib file to barely acceptable 2 GB size. Cygwin's gcc also supports POSIX which means that you don't have to turn off features that require POSIX.
 
-### Compiling in MacOS
+## Compiling in MacOS
 
-You need to use compile with gcc and gfortran. The default MacOS
-installation has gcc pointing to clang. You can get the real deal
-from homebrew.
+You need to use compile with `gcc` and `gfortran`. The default MacOS installation has gcc pointing to clang. You can get the real deal from homebrew.
 
 With wgrib2 v3.0.0, MacOS support is now builtin. For prior
 releases, there have been nice pages which detail the compiling process.
 
-### Compiling with other compilers
+## Compiling with other compilers
 
 There is no support for other compilers. At one time, AIX was
 supported until our machines were scraped (2012). Use to support
@@ -114,14 +113,14 @@ feature is an optional optimization to replace a loop with a \_\_builtin_clz()
 which works when GNUC >= 4. The main difficulties with porting to another
 system should be in the libraries and disabling POSIX features.
 
-### Makefile Options
+## Makefile Options
 
 There are many options that are documented in the makefile (grib2/makefile).
 There are options to remove features that require POSIX support. There are
 options to remove libraries that are not public domain or not under a GNU license.
 There are options for code that may be difficult to cross-compile.
 
-### Python Support, make a shared library
+## Python Support, make a shared library
 
 Python support requires a shared wgrib2 library. This option
 only works for gnu/linux, gnu/MacOS, gnu/Windows, nvidia/linux AOCC/linux, icx/ifx.
@@ -133,7 +132,7 @@ only works for gnu/linux, gnu/MacOS, gnu/Windows, nvidia/linux AOCC/linux, icx/i
                                     shared library will be in lib/
 ```
 
-### Grib names
+## Grib names
 
 With wgrib2 v3.0.2, the grib variable names are shown using the
 DWD, ECMWF or NCEP tables. The locally defined variable names are
@@ -151,7 +150,7 @@ and timing information in the variable names.
   USE_NAMES=DWD1          use DWD names, DWD has two center ids.
 ```
 
-### NetCDF
+## NetCDF
 
 - Option 1: No NetCDF support
   - fastest compile
@@ -194,7 +193,7 @@ Probably every OS includes precompiled netcdf4 and hdf5 libraries. Modifying the
 wgrib2 makefile to use the system netcdf4 files will depend on the system and
 the source of the netcdf4 libraries.
 
-### JPEG2000: Jasper, OpenJPEG
+## JPEG2000: Jasper, OpenJPEG
 
 With wgrib2 v3.0.0, jpeg2000 compression can be handled by either the
 Jasper or OpenJPEG library. Both libraries are equally slow and files are
@@ -206,7 +205,7 @@ The advantage with OpenJPEG is the support is ongoing. The disadvantage is that 
 cmake to build. Consequently I cannot build and test the OpenJPEG version on my linux
 workstation at work. Eventually OpenJPEG will be the default option.
 
-### Some libraries are being created in grib2/lib64
+## Some libraries are being created in grib2/lib64
 
 Normally the libraries created by the wgrib2 build are stored in
 grib2/lib. However, I found one machine that put some libraries in grib2/lib64.
@@ -225,7 +224,7 @@ $ make
   (builds wgrib2/wgrib2)
 ```
 
-### Missing zlib.h
+## Missing zlib.h
 
 I haven't been able to reproduce this compiling problem. The png compression requires
 both the zlib library and the zlib.h include. I suspect that the libpng configure program
@@ -235,7 +234,7 @@ is to remove the system zlib and let libpng use the wgrib2-supplied zlib. The th
 fix is to diable png compression in the make file. PNG compression
 is not very good and I have only seen it used by RADAR files from ESRL.
 
-### wgrib2 compile questions
+## wgrib2 compile questions
 
 ```
 Question: Warnings about parameter type mismatch in fftpack.f"?
