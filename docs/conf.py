@@ -13,8 +13,8 @@ from datetime import datetime
 utc_now = datetime.utcnow().strftime("%H:%M UTC %d %b %Y")
 
 project = "wgrib2-docs"
-copyright = f"{datetime.utcnow():%Y}, Brian K. Blaylock.    ♻ Updated: {utc_now}"
-author = f"Brian K. Blaylock"
+#copyright = f"{datetime.utcnow():%Y}, Brian K. Blaylock.    ♻ Updated: {utc_now}" ## I don't think I can really copyright this content
+author = f"Brian K. Blaylock      ♻ Updated: {utc_now}"
 
 # ---- General configuration ---------------------------------------------------
 

@@ -32,7 +32,7 @@ other7 = "https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/tricks.cheap"
 "pywgrib2_s_global_variables" = ""
 # Missing page: output of pywgrib2_s.ing(...)
 
-[documentation]
+[user_guide]
 "problems" = "Error Messages"
 "default_inv" = "Default Inventory Format"
 "convert_wgrib2" = "wgrib -> wgrib2"
