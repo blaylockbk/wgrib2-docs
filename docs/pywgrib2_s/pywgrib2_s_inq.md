@@ -1,4 +1,4 @@
-### pywgrib2: inq(..)
+# pywgrib2: inq(..)
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-### pywgrib2_s: calling wgrib2 subroutine
+# pywgrib2_s: calling wgrib2 subroutine
 
 ## Introduction
 

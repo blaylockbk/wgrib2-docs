@@ -1,4 +1,4 @@
-### pywgrib2: global variables
+# pywgrib2: global variables
 
 ## Introduction
 

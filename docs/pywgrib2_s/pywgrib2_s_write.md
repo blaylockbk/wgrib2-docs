@@ -1,4 +1,4 @@
-### pywgrib2: write
+# pywgrib2: write
 
 ## Introduction
 

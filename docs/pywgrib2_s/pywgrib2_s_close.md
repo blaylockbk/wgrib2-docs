@@ -1,4 +1,4 @@
-### pywgrib2: close(file)
+# pywgrib2: close(file)
 
 ## Introduction
 

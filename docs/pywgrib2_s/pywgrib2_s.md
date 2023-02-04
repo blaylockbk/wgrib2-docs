@@ -1,4 +1,4 @@
-### pywgrib2_s: Home Page
+# pywgrib2_s: Home Page
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-### pywgrib2: read_inv
+# pywgrib2: read_inv
 
 ## Introduction
 

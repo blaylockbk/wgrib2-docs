@@ -1,4 +1,4 @@
-### pywgrib2_s: conventions
+# pywgrib2_s: conventions
 
 ### Conventions
 

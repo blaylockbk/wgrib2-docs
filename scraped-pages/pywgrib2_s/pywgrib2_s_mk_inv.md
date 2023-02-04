@@ -1,4 +1,4 @@
-### pywgrib2_s: mk_inv
+# pywgrib2_s: mk_inv
 
 ## Introduction
 
