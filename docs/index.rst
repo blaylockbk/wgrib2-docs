@@ -14,11 +14,10 @@ This is a remake of the `wgrib2 documentation <https://www.cpc.ncep.noaa.gov/pro
 .. toctree::
    :maxdepth: 1
 
-   /user_guide/index
-   /options/index
-   /pywgrib2_s/index
-   /release_notes/index
-   /misc/index
+   user_guide/index
+   .. options/index
+   .. pywgrib2_s/index
+   release_notes/index
 
 
 Goals

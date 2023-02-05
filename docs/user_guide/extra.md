@@ -1,8 +1,4 @@
-=============
-Miscellaneous
-=============
-
-Other links and resources
+# Extra Resources
 
 - https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/grib1-grib2v3.pptx
 - https://www.ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/intro_grib2.pdf
@@ -15,4 +11,3 @@ Other links and resources
 - https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/Windows10/
 - https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/Changes
 - https://www.cpc.ncep.noaa.gov/products/wesley/g2grb.html
-
