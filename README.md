@@ -2,7 +2,14 @@
 <img src="./wgrib2-logo.png" width=300>
 </div>
 
-# Documentation for wgrib2 (unofficial)
+# Unofficial documentation for wgrib2
+
+Wgrib2 is a utility for processing and manipulating GRIB2 files.
+
+# [📕 Read the **wgrib2** Docs](https://wgrib2-docs.readthedocs.io/en/latest/index.html)
+
+
+## Project Description
 
 This is a remake of the original [wgrib2 documentation](https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/) . I scrapped the documentation HTML pages, converted them to Markdown, rebuilt the pages with Sphinx, and hosted them on readthedocs. These, of course, are **unofficial** documentation for wgrib2. I primarily did this because it's sometimes hard to find the right page I'm looking for in the official docs and remade the docs for mainly my own benefit. Plus, this project gave me some experience with Sphinx.
 
@@ -14,6 +21,7 @@ The projects goals are to
 - Logically organize the pages so things are easier to find.
 - Provide more examples. Lots of examples with pictures, diagrams, and videos.
 - Be open source and invite others to contribute.
+
 
 ## Help wanted.
 

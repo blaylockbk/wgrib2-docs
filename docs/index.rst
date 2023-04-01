@@ -7,7 +7,7 @@
 The unofficial documentation for wgrib2
 =======================================
 
-Wgrib2 is a processor for grib2 files. It is a utility and library for manipulating grib files, The utility was designed to be used to reduce the need for custom Fortran programs to read, write and manipulate grib files.
+Wgrib2 is a utility for processing and manipulating grib files. The utility was designed to be used to reduce the need for custom Fortran programs to read, write and manipulate grib files.
 
 Wgrib2 has the following abilities.
 
