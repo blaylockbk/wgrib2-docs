@@ -7,4 +7,5 @@ Release Notes
    :maxdepth: 1
    :glob:
 
-   ./*
+   ./release-notes
+   ./changelog*

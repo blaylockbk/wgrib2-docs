@@ -9,7 +9,7 @@ The unofficial documentation for wgrib2
 
 **🏗️ Work In Progress**
 
-This is a remake of the `wgrib2 documentation <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/>`_. I scrapped the documentation HTML pages, converted them to Markdown, rebuilt the pages with Sphinx, and hosted them on readthedocs. These, of course, are **unofficial** documentation for wgrib2. I primarily did this because it's sometimes hard to find the right page I'm looking for in the official docs and remade the docs for mainly my own benefit.
+This is a remake of the original `wgrib2 documentation <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/>`_. I scrapped the documentation HTML pages, converted them to Markdown, rebuilt the pages with Sphinx, and hosted them on readthedocs. These, of course, are **unofficial** documentation for wgrib2. I primarily did this because it's sometimes hard to find the right page I'm looking for in the official docs and remade the docs for mainly my own benefit.
 
 .. toctree::
    :maxdepth: 1

@@ -11,6 +11,15 @@ User Guide
    compile.md
    compile-questions.md
 
+
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+   :caption: Common Usage
+
+   selecting-messages.md
+
 .. toctree::
    :maxdepth: 1
    :glob:
