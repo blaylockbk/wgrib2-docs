@@ -4,9 +4,17 @@
 
 # Documentation for wgrib2 (unofficial)
 
-The [wgrib2 documentation](https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/) is hard to follow. I would like to scrape those pages and rebuilt the documentation using Sphinx and hosting on readthedocs. These, of course, would be **unofficial** documents.
+This is a remake of the original [wgrib2 documentation](https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/) . I scrapped the documentation HTML pages, converted them to Markdown, rebuilt the pages with Sphinx, and hosted them on readthedocs. These, of course, are **unofficial** documentation for wgrib2. I primarily did this because it's sometimes hard to find the right page I'm looking for in the official docs and remade the docs for mainly my own benefit. Plus, this project gave me some experience with Sphinx.
 
-- [ ] Get original docs (what are all the links)
-- [ ] Convert to Markdown
-- [ ] Edit the docs as needed
-- [ ] Build new docs with Sphinx (use pyData theme)
+The projects goals are to
+
+- Scrape the original wgrib2 docs and rehost on readthedocs.
+- Correct any wrong information, grammar, and improve the visual presentation with additional formatting.
+- Make searchable wgrib2 documentation using Sphinx.
+- Logically organize the pages so things are easier to find.
+- Provide more examples. Lots of examples with pictures, diagrams, and videos.
+- Be open source and invite others to contribute.
+
+## Help wanted.
+
+**_If you would like to get involved_**, I would love your help to make _the best wgrib2 documentation ever!_ To get started, submit an Issue or Pull Request.

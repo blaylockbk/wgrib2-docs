@@ -7,9 +7,11 @@
 The unofficial documentation for wgrib2
 =======================================
 
-**🏗️ Work In Progress**
+.. note::
 
-This is a remake of the original `wgrib2 documentation <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/>`_. I scrapped the documentation HTML pages, converted them to Markdown, rebuilt the pages with Sphinx, and hosted them on readthedocs. These, of course, are **unofficial** documentation for wgrib2. I primarily did this because it's sometimes hard to find the right page I'm looking for in the official docs and remade the docs for mainly my own benefit.
+   This is a remake of the original `wgrib2 documentation <https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/>`_. I scrapped the documentation HTML pages, converted them to Markdown, rebuilt the pages with Sphinx, and hosted them on readthedocs. These, of course, are **unofficial** documentation for wgrib2. I primarily did this because it's sometimes hard to find the right page I'm looking for in the official docs and remade the docs for mainly my own benefit. Plus, this project gave me some experience with Sphinx.
+
+   If you would like to get involved, I would love your help to make *the best wgrib2 documentation ever*. Just start with submitting and Issue or Pull Request in the `wgrib2-docs GitHub repo <https://github.com/blaylockbk/wgrib2-docs>`_.
 
 .. toctree::
    :maxdepth: 1
@@ -18,16 +20,6 @@ This is a remake of the original `wgrib2 documentation <https://www.cpc.ncep.noa
    options/index
    .. pywgrib2_s/index
    release_notes/index
-
-
-Goals
------
-- Searchable documentation
-- More logical organization, easier to find
-- Provide more examples
-- Make open source and invite others to contribute.
-- Correct any wrong information
-- Improve the visual presentation with additional formatting
 
 
 ======

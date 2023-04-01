@@ -5,6 +5,7 @@ Release Notes
 
 .. toctree::
    :maxdepth: 1
+   :caption: What's New
    ./release-notes
 
 .. toctree::
