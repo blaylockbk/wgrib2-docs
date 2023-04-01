@@ -1,4 +1,4 @@
-# wgrib2: -inv_f77
+# -inv_f77
 
 ## Introduction
 

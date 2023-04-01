@@ -1,4 +1,4 @@
-# wgrib2: -irr_grid
+# -irr_grid
 
 ## Introduction
 

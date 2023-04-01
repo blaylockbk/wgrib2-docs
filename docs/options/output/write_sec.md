@@ -1,4 +1,4 @@
-# wgrib2: -write_sec
+# -write_sec
 
 ## Introduction
 

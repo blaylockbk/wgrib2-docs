@@ -1,4 +1,4 @@
-# wgrib2: -if_reg
+# -if_reg
 
 ## Introduction
 

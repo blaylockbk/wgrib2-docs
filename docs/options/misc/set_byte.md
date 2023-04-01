@@ -1,4 +1,4 @@
-# wgrib2: -set_byte
+# -set_byte
 
 ## Introduction
 

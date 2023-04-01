@@ -1,4 +1,4 @@
-# wgrib2: -undefine_val
+# -undefine_val
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# wgrib2: -set_grib_max_bits
+# -set_grib_max_bits
 
 ## Introduction
 

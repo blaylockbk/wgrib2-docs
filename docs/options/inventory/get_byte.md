@@ -1,4 +1,4 @@
-# wgrib2: -get_byte
+# -get_byte
 
 ## Introduction
 

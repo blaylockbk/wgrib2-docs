@@ -1,4 +1,4 @@
-# wgrib2: -fix_CFSv2_fcst
+# -fix_CFSv2_fcst
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# wgrib2: -spatial_proc
+# -spatial_proc
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# wgrib2: -new_grid_vectors
+# -new_grid_vectors
 
 ## Introduction
 

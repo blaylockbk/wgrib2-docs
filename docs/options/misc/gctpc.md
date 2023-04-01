@@ -1,4 +1,4 @@
-# wgrib2: -gctpc, -proj4
+# -gctpc, -proj4
 
 ## Introduction
 

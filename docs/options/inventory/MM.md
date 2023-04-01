@@ -1,4 +1,4 @@
-# wgrib2: -MM
+# -MM
 
 ## Introduction
 

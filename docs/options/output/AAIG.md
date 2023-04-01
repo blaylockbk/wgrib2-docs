@@ -1,4 +1,4 @@
-# wgrib2: -AAIG
+# -AAIG
 
 ### Ascii ArcInfo Grid
 

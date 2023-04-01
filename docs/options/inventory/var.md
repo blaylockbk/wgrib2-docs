@@ -1,4 +1,4 @@
-# wgrib2: -var, -ext_name, -set_ext_name
+# -var, -ext_name, -set_ext_name
 
 ## Introduction
 

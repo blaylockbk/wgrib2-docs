@@ -1,4 +1,4 @@
-# wgrib2: -ijsmall_grib
+# -ijsmall_grib
 
 ## Introduction
 

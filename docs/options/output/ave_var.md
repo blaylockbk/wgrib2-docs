@@ -1,4 +1,4 @@
-# wgrib2: -ave_var
+# -ave_var
 
 ## Introduction
 

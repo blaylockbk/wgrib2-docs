@@ -1,4 +1,4 @@
-# wgrib2: -rewind_proc CW2
+# -rewind_proc CW2
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# wgrib2: -elseif_n
+# -elseif_n
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# wgrib2: -not_fs
+# -not_fs
 
 ## Introduction
 

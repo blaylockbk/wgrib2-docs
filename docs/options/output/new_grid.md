@@ -1,4 +1,4 @@
-# wgrib2: -new_grid
+# -new_grid
 
 ![New!](../icons/new.png)
 

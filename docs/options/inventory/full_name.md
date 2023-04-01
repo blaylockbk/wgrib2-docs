@@ -1,4 +1,4 @@
-# wgrib2: full_name is idepreciated for wgrib2 3.0.2+
+# full_name is idepreciated for wgrib2 3.0.2+
 
 ## Introduction
 

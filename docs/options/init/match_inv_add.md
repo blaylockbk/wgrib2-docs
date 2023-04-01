@@ -1,4 +1,4 @@
-# wgrib2: -match_inv_add
+# -match_inv_add
 
 ## Introduction !!ALPHA!!
 

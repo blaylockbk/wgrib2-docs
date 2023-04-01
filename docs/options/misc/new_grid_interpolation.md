@@ -1,4 +1,4 @@
-# wgrib2: -new_grid_interpolation
+# -new_grid_interpolation
 
 ## Introduction
 

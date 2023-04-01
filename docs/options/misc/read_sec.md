@@ -1,4 +1,4 @@
-# wgrib2: -read_sec
+# -read_sec
 
 ## Introduction
 

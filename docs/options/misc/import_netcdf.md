@@ -1,4 +1,4 @@
-# wgrib2: -import_netcdf (alpha)
+# -import_netcdf (alpha)
 
 The -import_netcdf option is alpha code which means
 that the syntax is bound to change. You've been warned.

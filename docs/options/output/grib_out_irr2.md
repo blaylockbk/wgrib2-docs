@@ -1,4 +1,4 @@
-# wgrib2: -grib_out_irr2
+# -grib_out_irr2
 
 ## Introduction
 

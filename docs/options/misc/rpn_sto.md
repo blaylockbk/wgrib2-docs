@@ -1,4 +1,4 @@
-# wgrib2: -rpn_sto
+# -rpn_sto
 
 ## Introduction
 

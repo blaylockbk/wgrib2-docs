@@ -1,4 +1,4 @@
-# wgrib2: -grid_def
+# -grid_def
 
 ## Introduction
 

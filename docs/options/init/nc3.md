@@ -1,4 +1,4 @@
-# wgrib2: -nc4, -nc3
+# -nc4, -nc3
 
 ## Introduction
 

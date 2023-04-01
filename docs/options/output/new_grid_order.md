@@ -1,4 +1,4 @@
-# wgrib2: -new_grid_order
+# -new_grid_order
 
 ## Introduction
 

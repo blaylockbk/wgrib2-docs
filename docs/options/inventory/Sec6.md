@@ -1,4 +1,4 @@
-# wgrib2: -Sec6
+# -Sec6
 
 ## Introduction:
 

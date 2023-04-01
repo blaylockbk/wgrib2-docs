@@ -1,4 +1,4 @@
-# wgrib2: -i, -i_file
+# -i, -i_file
 
 ## Introduction
 

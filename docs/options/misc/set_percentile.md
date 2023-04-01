@@ -1,4 +1,4 @@
-# wgrib2: -set_percentile
+# -set_percentile
 
 ## Introduction
 

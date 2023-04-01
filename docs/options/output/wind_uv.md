@@ -1,4 +1,4 @@
-# wgrib2: -wind_uv
+# -wind_uv
 
 ## Introduction
 

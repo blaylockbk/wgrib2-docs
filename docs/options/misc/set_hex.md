@@ -1,4 +1,4 @@
-# wgrib2: -set_hex
+# -set_hex
 
 ## Introduction
 

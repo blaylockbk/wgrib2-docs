@@ -1,4 +1,4 @@
-# wgrib2: -timer (requires wgrib2 v3.0.0+)
+# -timer (requires wgrib2 v3.0.0+)
 
 ## Introduction
 

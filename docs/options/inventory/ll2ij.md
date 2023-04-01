@@ -1,4 +1,4 @@
-# wgrib2: -ll2ij
+# -ll2ij
 
 ## Introduction
 

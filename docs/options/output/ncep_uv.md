@@ -1,4 +1,4 @@
-# wgrib2: -ncep_uv
+# -ncep_uv
 
 ## Introduction
 

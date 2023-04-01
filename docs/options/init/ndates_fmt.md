@@ -1,4 +1,4 @@
-# wgrib2: -ndates_fmt (v2.0.8+)
+# -ndates_fmt (v2.0.8+)
 
 ## Introduction
 

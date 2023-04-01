@@ -1,4 +1,4 @@
-# wgrib2: -reduced_gaussian_grid
+# -reduced_gaussian_grid
 
 ## Introduction
 

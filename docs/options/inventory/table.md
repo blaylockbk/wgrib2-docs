@@ -1,4 +1,4 @@
-# wgrib2: -table
+# -table
 
 ## Introduction
 

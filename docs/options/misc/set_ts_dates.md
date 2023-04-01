@@ -1,4 +1,4 @@
-# wgrib2: -set_ts_dates
+# -set_ts_dates
 
 ## Introduction
 

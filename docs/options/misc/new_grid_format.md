@@ -1,4 +1,4 @@
-# wgrib2: -new_grid_format
+# -new_grid_format
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# wgrib2: -version, --version
+# -version, --version
 
 ## Introduction
 

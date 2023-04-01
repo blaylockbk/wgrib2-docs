@@ -1,4 +1,4 @@
-# wgrib2: -set_pdt
+# -set_pdt
 
 ## Introduction
 

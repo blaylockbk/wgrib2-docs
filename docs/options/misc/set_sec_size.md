@@ -1,4 +1,4 @@
-# wgrib2: -set_sec_size
+# -set_sec_size
 
 ## Introduction
 

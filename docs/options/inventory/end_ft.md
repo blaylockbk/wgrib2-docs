@@ -1,4 +1,4 @@
-# wgrib2: -start_ft, -start_FT, -end_ft, -end_FT
+# -start_ft, -start_FT, -end_ft, -end_FT
 
 ## Introduction
 

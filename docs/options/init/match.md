@@ -1,4 +1,4 @@
-# wgrib2: -match
+# -match
 
 ## Introduction
 

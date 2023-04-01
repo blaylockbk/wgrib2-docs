@@ -1,4 +1,4 @@
-# wgrib2: -set_ijval
+# -set_ijval
 
 ## Introduction
 

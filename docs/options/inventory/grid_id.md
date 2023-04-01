@@ -1,4 +1,4 @@
-# wgrib2: -grid_id
+# -grid_id
 
 ## Introduction
 

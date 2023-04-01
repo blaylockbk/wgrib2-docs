@@ -1,4 +1,4 @@
-# wgrib2: -set_ensm_derived_fcst
+# -set_ensm_derived_fcst
 
 ## Introduction: set ensemble mean derived forecast
 

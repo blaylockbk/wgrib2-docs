@@ -1,4 +1,4 @@
-# wgrib2: -if_fs, -not_if_fs
+# -if_fs, -not_if_fs
 
 ## Introduction
 

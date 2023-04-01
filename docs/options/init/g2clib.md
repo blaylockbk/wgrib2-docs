@@ -1,4 +1,4 @@
-# wgrib2: -g2clib
+# -g2clib
 
 ## Introduction
 

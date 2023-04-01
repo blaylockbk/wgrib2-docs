@@ -1,4 +1,4 @@
-# wgrib2: -ftn_api_fn0
+# -ftn_api_fn0
 
 ## Introduction:
 

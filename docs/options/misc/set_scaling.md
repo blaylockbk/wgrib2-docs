@@ -1,4 +1,4 @@
-# wgrib2: -set_scaling
+# -set_scaling
 
 ## Introduction
 

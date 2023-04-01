@@ -1,4 +1,4 @@
-# wgrib2: -ens_processing
+# -ens_processing
 
 ## Introduction (wgrib2 v2.0.8+)
 

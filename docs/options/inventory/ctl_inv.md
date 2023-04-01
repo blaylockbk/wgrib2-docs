@@ -1,4 +1,4 @@
-# wgrib2: -ctl_inv
+# -ctl_inv
 
 ### Warning
 

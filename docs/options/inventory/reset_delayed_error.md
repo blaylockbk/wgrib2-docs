@@ -1,4 +1,4 @@
-# wgrib2: -reset_delayed_error
+# -reset_delayed_error
 
 ## Introduction
 

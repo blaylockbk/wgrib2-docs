@@ -1,4 +1,4 @@
-# wgrib2: -merge_fcst
+# -merge_fcst
 
 ## Introduction
 

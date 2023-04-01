@@ -1,4 +1,4 @@
-# wgrib2: -elseif_fs
+# -elseif_fs
 
 ## Introduction
 

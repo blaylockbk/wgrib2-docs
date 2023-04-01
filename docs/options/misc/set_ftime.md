@@ -1,4 +1,4 @@
-# wgrib2: -set_ftime
+# -set_ftime
 
 ## Introduction
 

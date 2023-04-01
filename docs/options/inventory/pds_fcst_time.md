@@ -1,4 +1,4 @@
-# wgrib2: -pds_fcst_time
+# -pds_fcst_time
 
 ## Introduction
 

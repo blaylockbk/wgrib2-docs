@@ -1,4 +1,4 @@
-# wgrib2: -one_line
+# -one_line
 
 ## Introduction
 

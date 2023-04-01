@@ -1,4 +1,4 @@
-# wgrib2: -not_if
+# -not_if
 
 ## Introduction
 

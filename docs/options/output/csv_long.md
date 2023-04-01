@@ -1,4 +1,4 @@
-# wgrib2: -csv_long (comma separated values)
+# -csv_long (comma separated values)
 
 ## Introduction
 

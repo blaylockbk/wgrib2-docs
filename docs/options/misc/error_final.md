@@ -1,4 +1,4 @@
-# wgrib2: -error_final
+# -error_final
 
 ## Introduction
 

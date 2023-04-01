@@ -1,4 +1,4 @@
-# wgrib2: -set_ave
+# -set_ave
 
 ## Introduction
 

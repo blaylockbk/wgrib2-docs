@@ -1,4 +1,4 @@
-# wgrib2: -no_flush
+# -no_flush
 
 ## Introduction
 

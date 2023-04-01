@@ -1,4 +1,4 @@
-# wgrib2: -wind_dir
+# -wind_dir
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# wgrib2: -s_out
+# -s_out
 
 The -s_out option is obsolete with the introduction of the
 -last option.

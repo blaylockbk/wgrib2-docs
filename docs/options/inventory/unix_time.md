@@ -1,4 +1,4 @@
-# wgrib2: -stats, -max, -min
+# -stats, -max, -min
 
 ## Introduction
 

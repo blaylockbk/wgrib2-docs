@@ -1,4 +1,4 @@
-# wgrib2: -ave, -fcst_ave
+# -ave, -fcst_ave
 
 ![News](../icons/new.png)
 

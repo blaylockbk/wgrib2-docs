@@ -1,4 +1,4 @@
-# wgrib2: -if, -not_if
+# -if, -not_if
 
 ## Introduction IF block structure
 

@@ -1,4 +1,4 @@
-# wgrib2: -set_ival
+# -set_ival
 
 ## Introduction
 

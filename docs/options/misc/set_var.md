@@ -1,4 +1,4 @@
-# wgrib2: -set_var
+# -set_var
 
 ## Introduction
 

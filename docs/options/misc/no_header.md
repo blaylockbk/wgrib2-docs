@@ -1,4 +1,4 @@
-# wgrib2: -header, -no_header
+# -header, -no_header
 
 ## Introduction
 

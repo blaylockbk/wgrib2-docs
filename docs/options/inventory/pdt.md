@@ -1,4 +1,4 @@
-# wgrib2: -pdt
+# -pdt
 
 ## Introduction
 

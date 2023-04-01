@@ -1,4 +1,4 @@
-# wgrib2: -text_col
+# -text_col
 
 ## Introduction
 

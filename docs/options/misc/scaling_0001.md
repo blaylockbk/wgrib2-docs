@@ -1,4 +1,4 @@
-# wgrib2: -scaling_0001
+# -scaling_0001
 
 ### Scaling_0001
 

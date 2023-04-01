@@ -1,4 +1,4 @@
-# wgrib2: -wind_speed
+# -wind_speed
 
 ## Introduction
 

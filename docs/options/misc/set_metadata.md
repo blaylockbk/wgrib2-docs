@@ -1,4 +1,4 @@
-# wgrib2: -set_metadata
+# -set_metadata
 
 ## Introduction
 

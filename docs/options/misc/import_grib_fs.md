@@ -1,4 +1,4 @@
-# wgrib2: -import_grib_fs (wgrib2 v3.0.0+)
+# -import_grib_fs (wgrib2 v3.0.0+)
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# wgrib2: -match_fs, -not_fs, -if_fs, -not_if_fs
+# -match_fs, -not_fs, -if_fs, -not_if_fs
 
 ## Introduction
 

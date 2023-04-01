@@ -1,4 +1,4 @@
-# wgrib2: -new_grid_ipopt
+# -new_grid_ipopt
 
 ## Introduction
 

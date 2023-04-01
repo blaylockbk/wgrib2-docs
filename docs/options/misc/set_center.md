@@ -1,4 +1,4 @@
-# wgrib2: -set_center
+# -set_center
 
 ## Introduction
 

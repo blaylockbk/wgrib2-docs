@@ -1,4 +1,4 @@
-# wgrib2: -set_grib_type
+# -set_grib_type
 
 ## Introduction
 

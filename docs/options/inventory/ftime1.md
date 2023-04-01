@@ -1,4 +1,4 @@
-# wgrib2: -ftime1
+# -ftime1
 
 ## Introduction
 

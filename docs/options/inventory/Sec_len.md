@@ -1,4 +1,4 @@
-# wgrib2: -Sec_len
+# -Sec_len
 
 ## Introduction
 

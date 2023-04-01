@@ -1,4 +1,4 @@
-# wgrib2: -gribtable_used
+# -gribtable_used
 
 ## Introduction
 

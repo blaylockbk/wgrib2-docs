@@ -1,4 +1,4 @@
-# wgrib2: -ncep_norm
+# -ncep_norm
 
 ## Introduction
 

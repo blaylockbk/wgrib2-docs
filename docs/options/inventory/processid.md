@@ -1,4 +1,4 @@
-# wgrib2: -processid
+# -processid
 
 ## Introduction
 

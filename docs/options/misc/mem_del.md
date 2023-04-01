@@ -1,4 +1,4 @@
-# wgrib2: -mem_del CW2
+# -mem_del CW2
 
 ## Introduction
 

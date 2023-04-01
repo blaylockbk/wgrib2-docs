@@ -1,4 +1,4 @@
-# wgrib2: -grib_out
+# -grib_out
 
 ## Introduction
 

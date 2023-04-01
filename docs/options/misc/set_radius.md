@@ -1,4 +1,4 @@
-# wgrib2: -set_radius
+# -set_radius
 
 ## Introduction
 

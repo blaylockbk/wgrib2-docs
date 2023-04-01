@@ -1,4 +1,4 @@
-# wgrib2: -submsg_uv
+# -submsg_uv
 
 ## Introduction
 

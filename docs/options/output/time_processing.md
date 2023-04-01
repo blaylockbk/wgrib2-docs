@@ -1,4 +1,4 @@
-# wgrib2: -time_processing
+# -time_processing
 
 ![News](../icons/new.png)
 The -time_processing option is being

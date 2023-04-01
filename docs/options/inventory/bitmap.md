@@ -1,4 +1,4 @@
-# wgrib2: -bitmap
+# -bitmap
 
 ## Introduction
 

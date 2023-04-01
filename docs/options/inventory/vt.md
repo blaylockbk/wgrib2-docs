@@ -1,4 +1,4 @@
-# wgrib2: -t -T -vt -VT
+# -t -T -vt -VT
 
 ## Introduction
 

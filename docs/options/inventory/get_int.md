@@ -1,4 +1,4 @@
-# wgrib2: -get_int
+# -get_int
 
 ## Introduction
 

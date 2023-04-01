@@ -1,4 +1,4 @@
-# wgrib2: -mem_final
+# -mem_final
 
 ## Introduction
 

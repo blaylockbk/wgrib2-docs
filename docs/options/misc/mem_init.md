@@ -1,4 +1,4 @@
-# wgrib2: -mem_init CW2
+# -mem_init CW2
 
 ## Introduction
 

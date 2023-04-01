@@ -1,4 +1,4 @@
-# wgrib2: -set_int
+# -set_int
 
 ## Introduction
 

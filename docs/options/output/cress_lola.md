@@ -1,4 +1,4 @@
-# wgrib2: -cress_lola
+# -cress_lola
 
 ## Introduction
 

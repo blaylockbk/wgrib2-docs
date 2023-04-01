@@ -1,4 +1,4 @@
-# wgrib2: -import_bin, -import_ieee, -import_text, -import_grib
+# -import_bin, -import_ieee, -import_text, -import_grib
 
 ## Introduction
 

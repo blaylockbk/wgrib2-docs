@@ -1,4 +1,4 @@
-# wgrib2: -box_ave
+# -box_ave
 
 ## Introduction
 

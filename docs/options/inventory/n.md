@@ -1,4 +1,4 @@
-# wgrib2: -n
+# -n
 
 ## Introduction: message number vs inventory number
 

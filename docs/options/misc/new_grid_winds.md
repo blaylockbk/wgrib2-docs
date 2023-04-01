@@ -1,4 +1,4 @@
-# wgrib2: -new_grid_winds
+# -new_grid_winds
 
 ## Introduction
 

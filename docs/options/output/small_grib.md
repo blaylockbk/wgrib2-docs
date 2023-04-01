@@ -1,4 +1,4 @@
-# wgrib2: -small_grib
+# -small_grib
 
 ## Introduction
 

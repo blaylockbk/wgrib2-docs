@@ -1,4 +1,4 @@
-# wgrib2: -if_rec
+# -if_rec
 
 ## Introduction
 

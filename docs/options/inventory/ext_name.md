@@ -1,4 +1,4 @@
-# wgrib2: -ext_name
+# -ext_name
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# wgrib2: -egrep, -egrep_v, -fgrep, -fgrep_v
+# -egrep, -egrep_v, -fgrep, -fgrep_v
 
 ## Introduction
 

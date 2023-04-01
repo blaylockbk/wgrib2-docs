@@ -1,4 +1,4 @@
-# wgrib2: -ctl_ens
+# -ctl_ens
 
 ### Warning
 

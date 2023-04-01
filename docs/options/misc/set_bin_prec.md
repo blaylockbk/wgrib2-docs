@@ -1,4 +1,4 @@
-# wgrib2: -set_bin_prec
+# -set_bin_prec
 
 ## Introduction
 

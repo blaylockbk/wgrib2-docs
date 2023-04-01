@@ -1,4 +1,4 @@
-# wgrib2: -last
+# -last
 
 ## Introduction
 

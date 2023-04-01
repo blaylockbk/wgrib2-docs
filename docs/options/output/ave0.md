@@ -1,4 +1,4 @@
-# wgrib2: -ave0, -fcst_ave0
+# -ave0, -fcst_ave0
 
 ## Introduction
 

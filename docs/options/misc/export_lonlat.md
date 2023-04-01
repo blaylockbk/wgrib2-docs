@@ -1,4 +1,4 @@
-# wgrib2: -export_lonlat
+# -export_lonlat
 
 ### Writing longitudes and latitudes to a file
 

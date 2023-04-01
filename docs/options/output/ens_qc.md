@@ -1,4 +1,4 @@
-# wgrib2: -ens_qc
+# -ens_qc
 
 ## Introduction (wgrib2 v3.1.1)
 

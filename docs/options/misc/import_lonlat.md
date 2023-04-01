@@ -1,4 +1,4 @@
-# wgrib2: -import_lonlat
+# -import_lonlat
 
 ### Reading longitudes and latitudes to a file
 

@@ -1,4 +1,4 @@
-# wgrib2: -names
+# -names
 
 ## Introduction (alpha)
 

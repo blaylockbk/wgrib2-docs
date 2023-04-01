@@ -1,4 +1,4 @@
-# wgrib2: -print_out
+# -print_out
 
 ## Introduction
 

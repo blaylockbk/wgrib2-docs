@@ -1,4 +1,4 @@
-# wgrib2: -append, -no_append
+# -append, -no_append
 
 ## Introduction
 

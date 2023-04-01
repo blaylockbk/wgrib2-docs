@@ -1,4 +1,4 @@
-# wgrib2: -set_bitmap
+# -set_bitmap
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# wgrib2: -err_bin, -err_string, -eof_bin, -eof_string
+# -err_bin, -err_string, -eof_bin, -eof_string
 
 ## Introduction
 

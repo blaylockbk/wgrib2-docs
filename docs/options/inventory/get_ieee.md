@@ -1,4 +1,4 @@
-# wgrib2: -get_ieee
+# -get_ieee
 
 ## Introduction
 

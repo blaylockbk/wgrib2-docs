@@ -1,4 +1,4 @@
-# wgrib2: -vector_dir
+# -vector_dir
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# wgrib2: -set_regex
+# -set_regex
 
 ## Introduction
 

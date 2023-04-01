@@ -1,4 +1,4 @@
-# wgrib2: -for_n
+# -for_n
 
 A grib file has set of grids and you can reference the field by its grib message number and submessage number.
 You can also reference the field by its inventory number which starts at 1.
@@ -15,7 +15,7 @@ grids 10 through 20 by 2, you can add the option -for_n 10:20:2.
 -for_n I            same as for n = I to MAX_INTEGER by 1
 ```
 
-# wgrib2: multi-processing with -for_n and -n
+# multi-processing with -for_n and -n
 
 ## Introduction
 

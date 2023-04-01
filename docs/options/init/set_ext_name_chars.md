@@ -1,4 +1,4 @@
-# wgrib2: -set_ext_name_chars
+# -set_ext_name_chars
 
 ## Introduction
 

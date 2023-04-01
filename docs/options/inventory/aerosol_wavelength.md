@@ -1,4 +1,4 @@
-# wgrib2: -aerosol_wavelength
+# -aerosol_wavelength
 
 ## Introduction
 

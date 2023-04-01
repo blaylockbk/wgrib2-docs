@@ -1,4 +1,4 @@
-# wgrib2: -set_prob
+# -set_prob
 
 ### set values for Product Definition Templates 4.5 and 4.9
 

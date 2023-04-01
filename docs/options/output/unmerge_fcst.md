@@ -1,4 +1,4 @@
-# wgrib2: -unmerge_fcst (v3.0.0+)
+# -unmerge_fcst (v3.0.0+)
 
 ## Introduction
 

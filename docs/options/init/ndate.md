@@ -1,4 +1,4 @@
-# wgrib2: -ndate (v2.0.8)
+# -ndate (v2.0.8)
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# wgrib2: -rewind_init CW2
+# -rewind_init CW2
 
 ## Introduction
 

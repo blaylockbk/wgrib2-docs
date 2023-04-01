@@ -1,4 +1,4 @@
-# wgrib2: -aerosol_size
+# -aerosol_size
 
 ## Introduction
 

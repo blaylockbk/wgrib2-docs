@@ -1,4 +1,4 @@
-# wgrib2: -grid_changes
+# -grid_changes
 
 ## Introduction
 

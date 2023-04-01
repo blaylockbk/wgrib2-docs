@@ -1,4 +1,4 @@
-# wgrib2: -check_pdt_size
+# -check_pdt_size
 
 ## Introduction
 

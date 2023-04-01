@@ -1,4 +1,4 @@
-# wgrib2: -v -v0 -v2
+# -v -v0 -v2
 
 ## Introduction
 

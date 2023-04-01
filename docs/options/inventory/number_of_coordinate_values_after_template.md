@@ -1,4 +1,4 @@
-# wgrib2: -number_of_coordinate_values_after_template
+# -number_of_coordinate_values_after_template
 
 ## Introduction
 
