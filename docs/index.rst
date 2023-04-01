@@ -15,7 +15,7 @@ This is a remake of the original `wgrib2 documentation <https://www.cpc.ncep.noa
    :maxdepth: 1
 
    user_guide/index
-   .. options/index
+   options/index
    .. pywgrib2_s/index
    release_notes/index
 
@@ -28,3 +28,21 @@ Goals
 - Make open source and invite others to contribute.
 - Correct any wrong information
 - Improve the visual presentation with additional formatting
+
+
+======
+Wgrib2
+======
+
+Wgrib2 is a processor for grib2 files. It is a utility and library for manipulating grib files, The utility was designed to be used to reduce the need for custom Fortran programs to read, write and manipulate grib files.
+
+Wgrib2 has the following abilities.
+
+- inventory and read grib2 files
+- create subsets
+- create regional subsets by cookie cutter or projections
+- export to ieee, text, binary, CSV, netcdf and mysql
+- import to ieee, text, binary, and netcdf
+- write of new grib2 fields
+- parallel processing by using threads (OpenMP)
+- parallel processing by flow-based programming
