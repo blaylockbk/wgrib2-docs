@@ -98,6 +98,73 @@ from homebrew.
 With wgrib2 v3.0.0, MacOS support is now builtin. For prior
 releases, there have been nice pages which detail the compiling process.
 
+### Compiling on ARM platforms
+
+You need to use compile with gcc and gfortran which are both available on 
+ARM platforms.  The primary issue encountered with the wgrib tarball provided 
+is that it has an outdated set of config.guess and config.sub files which are used 
+in the ./configure script in multiple places (wgrib, netcdf and proj) and which need
+to be updated to support compilation on ARM.  Here are the steps to fix this issue (currently has only been tested on armbian/rockchip arm platform):
+1. After unpacking the tarball run these curl commands to get the latest configure
+support files: 
+```
+curl -O 'http://cvs.savannah.gnu.org/viewvc/*checkout*/config/config/config.guess'
+curl -O 'http://savannah.gnu.org/cgi-bin/viewcvs/*checkout*/config/config/config.sub'
+```
+2. Also copy these files in to the netcdf-3.* directory to replace the outdated files there.
+3. Untar the proj-* tarball
+4. Copy the config.guess and config.sub files in to this subdirectory as well.
+5. Open the makefile and comment out these lines to ensure the proj tarball isn't extracted during make
+```
+${proj4lib}:
+  cp ${proj4src}  tmpproj4.tar.gz
+  #	gunzip -f tmpproj4.tar.gz
+  #	tar -xvf tmpproj4.tar
+  #	rm tmpproj4.tar
+  cd ${proj4dir}  && export CFLAGS="${wCPPFLAGS}" &&  ./configure --disable-shared --prefix=${cwd} && ${MAKE} -j 1 check install
+```
+6. run 'make' which should work at this time and it should be able to configure and build the subprojects on ARM.
+
+Note: the error which is encountered if you have out of date config.* files looks like this:
+```
+  This script, last modified 2006-07-02, has failed to recognize
+  the operating system you are using. It is advised that you
+  download the most up to date version of the config scripts from
+
+    http://savannah.gnu.org/cgi-bin/viewcvs/*checkout*/config/config/config.guess
+  and
+    http://savannah.gnu.org/cgi-bin/viewcvs/*checkout*/config/config/config.sub
+
+  If the version you run (./config.guess) is already up to date, please
+  send the following data and any information you think might be
+  pertinent to <config-patches@gnu.org> in order to provide the needed
+  information to handle your system.
+
+  config.guess timestamp = 2006-07-02
+
+  uname -m = aarch64
+  uname -r = 5.10.160-legacy-rk35xx
+  uname -s = Linux
+  uname -v = #1 SMP Sun Mar 10 03:31:30 UTC 2024
+
+  /usr/bin/uname -p = unknown
+  /bin/uname -X     =
+
+  hostinfo               =
+  /bin/universe          =
+  /usr/bin/arch -k       =
+  /bin/arch              = aarch64
+  /usr/bin/oslevel       =
+  /usr/convex/getsysinfo =
+
+  UNAME_MACHINE = aarch64
+  UNAME_RELEASE = 5.10.160-legacy-rk35xx
+  UNAME_SYSTEM  = Linux
+  UNAME_VERSION = #1 SMP Sun Mar 10 03:31:30 UTC 2024
+  configure: error: cannot guess build type; you must specify one
+  make: *** [makefile:1053: /home/scottcha/src/grib2/lib/libnetcdf.a] Error 1
+```
+
 ### Compiling with other compilers
 
 There is no support for other compilers. At one time, AIX was
