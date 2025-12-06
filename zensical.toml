@@ -11,7 +11,7 @@
 # The site_name is shown in the page header and the browser window title
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_name
-site_name = "wgrib2 docs"
+site_name = "The unofficial wgrib2 docs"
 
 # The site_description is included in the HTML head and should contain a
 # meaningful description of the site content for use by search engines.
@@ -96,6 +96,7 @@ repo_url = "https://github.com/blaylockbk/wgrib2-docs"
 # - https://developer.mozilla.org/en-US/docs/Glossary/Favicon
 #
 favicon = "_static/icon.ico"
+logo = "_static/wgrib2-logo.png"
 
 # Zensical supports more than 60 different languages. This means that the
 # labels and tooltips that Zensical's templates produce are translated.
@@ -294,8 +295,9 @@ toggle.name = "Switch to light mode"
 # - https://zensical.org/docs/setup/logo-and-icons
 # - https://zensical.org/docs/authoring/icons-emojis/#search
 # ----------------------------------------------------------------------------
+
+
 [project.theme.icon]
-logo = "material/grid"
 repo = "simple/github"
 
 # ----------------------------------------------------------------------------
