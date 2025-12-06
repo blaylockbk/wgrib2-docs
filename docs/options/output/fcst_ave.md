@@ -1,6 +1,6 @@
 # -ave, -fcst_ave
 
-![News](../icons/new.png)
+![News](./../icons/new.png)
 
 With wgrib2 v2.0.7,
 the -ave and -fcst_ave

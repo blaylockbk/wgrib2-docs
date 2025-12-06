@@ -221,7 +221,7 @@ file with the grib file obtained from another source.
 The -import_netcdf option is not convenient and
 takes some work to setup. However, it did work and I was able to verify
 that the netcdf NARR file was the same as my grib copy. For lat-lon netcdf files
-that follow the coards convention, using GrADS and the [g2grb.gs](../g2grb.md)
+that follow the coards convention, using GrADS and the [g2grb.gs](./../g2grb.md)
 script is easier to use.
 
 ### Warnings

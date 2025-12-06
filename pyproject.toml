@@ -1,20 +1,16 @@
-[build-system]
-requires = ["setuptools>=42", "wheel", "setuptools_scm[toml]>=3.4"]
-build-backend = "setuptools.build_meta"
+[project]
+name = "wgrib2-docs"
+version = "0.1.0"
+description = "Unofficial documentation for wgrib2"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "zensical>=0.0.11",
+]
 
-[tool.setuptools_scm]
-version_scheme = "post-release"
-local_scheme = "no-local-version"
-write_to = "./_version.py"
-
-[tool.isort]
-profile = "black"
-
-[tool.pytest.ini_options]
-minversion = "2.0"
-addopts = "-rsfEX -p pytester --strict-markers --verbosity=3"
-log_level = "DEBUG"
-testpaths = ["tests"]
-xfail_strict = true
-markers = [
+[dependency-groups]
+dev = [
+    "numpy>=2.3.5",
+    "pandas>=2.3.3",
+    "toml>=0.10.2",
 ]
