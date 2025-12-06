@@ -23,6 +23,8 @@ build:
     build:
       html:
         - uv run zensical build
+        # Copy Zensical output into RTD's expected folder
+        - mkdir -p $READTHEDOCS_OUTPUT/html
+        - cp -r site/* $READTHEDOCS_OUTPUT/html/
 
-  directories:
-    html: "site/"
+
