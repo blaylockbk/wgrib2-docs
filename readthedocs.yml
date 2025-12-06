@@ -25,4 +25,4 @@ build:
         - uv run zensical build
 
   directories:
-    html: site
+    html: "site/"
