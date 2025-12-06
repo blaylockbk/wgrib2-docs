@@ -1,9 +1,13 @@
 # Compile from source
 
-These instructions are for compiling wgrib2 `v3.0.2+`. You can find older version [here](https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/).
+These instructions are for compiling wgrib2 `v3.0.2+`. 
 
-[![](https://img.shields.io/badge/Download%20latest%20via-FTP-blue)](ftp://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz)
-[![](https://img.shields.io/badge/Download%20latest%20via-HTTP-blue)](https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz)
+[Download latest via HTTP](https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz){ .md-button }
+
+You can find older version [here](https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/).
+
+<!-- [Download latest via FTP](ftp://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz){ .md-button } -->
+
 
 1. Download wgrib2 source code.
 1. If it exists, remove the pre-existing `grib2/` directory.
@@ -29,7 +33,7 @@ The makefile uses two and one optional environment variables that have to be set
 | Windows, cygwin gcc and gfortran           | `COMP_SYS=cygwin_win`<br>`CC=gcc`<br>`FC=gfortran`    |
 | MacOS, real gcc and gfortran               | `COMP_SYS=gnu_mac`<br>`CC=gcc`<br>`FC=gfortran`       |
 
-> ⚠️ Note: Not recently tested AIX, gnu_linux_g95, and open64
+!!! warning "Not recently tested AIX, gnu_linux_g95, and open64"
 
 The below is an example of setting environment variables and running make in a **BASH** shell.
 
