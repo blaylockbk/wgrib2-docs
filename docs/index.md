@@ -25,4 +25,6 @@ title: Home
 
     I primarily did this because it's sometimes hard to find the right page in the official docs and I remade the docs for my own benefit.
 
-If you would like to get involved, I'd love your help to make *the best wgrib2 documentation ever*. Start by submitting an Issue or Pull Request in the [wgrib2-docs GitHub repo](https://github.com/blaylockbk/wgrib2-docs).
+!!! tip "Get Involved"
+
+    I would love your help to make *the best wgrib2 documentation ever*. Start by submitting an Issue or Pull Request to [wgrib2-docs](https://github.com/blaylockbk/wgrib2-docs).
