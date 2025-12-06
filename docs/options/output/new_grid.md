@@ -1,6 +1,6 @@
 # -new_grid
 
-![New!](../icons/new.png)
+![New!](./../icons/new.png)
 
 Recently discovered bug in IPOLATES. To avoid the bug, all grids should have a size of greater
 than 1 degree longitude. For example, delta_longitude = 0.1 degree, then number of longitude points

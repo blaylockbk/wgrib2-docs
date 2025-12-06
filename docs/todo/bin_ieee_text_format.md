@@ -92,11 +92,11 @@ with the "options sequential" line in the control file.
 Note, the order of the numbers is controled by the
 -order option.
 
-See also: [-text](./text.md),
-[-bin](./bin.md),
-[-ieee](./ieee.md),
-[-lola](./lola.md),
-[-order](./order.md),
+See also: [-text](./to_do/text.md),
+[-bin](./to_do/bin.md),
+[-ieee](./to_do/ieee.md),
+[-lola](./to_do/lola.md),
+[-order](./to_do/order.md),
 
 ---
 

@@ -1,6 +1,6 @@
 # -time_processing
 
-![News](../icons/new.png)
+![News](./../icons/new.png)
 The -time_processing option is being
 introduced with wgrib2 v2.0.7 and has a superset of the capablities of
 -ave and -fcst_ave.
