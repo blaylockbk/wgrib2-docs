@@ -23,3 +23,6 @@ build:
     build:
       html:
         - uv run zensical build
+
+    directories:
+      html: site
