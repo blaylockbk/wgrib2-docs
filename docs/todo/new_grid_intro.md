@@ -97,7 +97,7 @@ add code fragment to wrib2 prior to interpolation;
 ### Answer 2: Scalar vs Vector
 
 Wgrib2 has a built-in list of vector fields. This list can be changed by the
-the [new_grid_vectors](./new_grid_vectors.md) option. The vectors
+the [new_grid_vectors](./to_do/new_grid_vectors.md) option. The vectors
 fields will be interpolated using vector interpolation routines in the IPOLATES library.
 
 ### Answer 3: Global Conservation
@@ -160,7 +160,7 @@ angle.
 
 Grib specifies whether the vectors are earth or grid relative. To transform
 to earth or grid relative winds, you use the
-[-new_grid_winds](./new_grid_winds.md) option.
+[-new_grid_winds](./to_do/new_grid_winds.md) option.
 
 Strangely
 the grib standard doesn't specify which fields are vectors.
@@ -171,7 +171,7 @@ It seems obvious that the default would to be regrid should write
 earth relative winds. However, I work at NCEP and the default
 at NCEP is to use grid relative winds. The only solution is to make
 everyone specify whether the output uses earth or grid relative winds.
-[See](./new_grid_winds.md).
+[See](./to_do/new_grid_winds.md).
 
 ```
 -new_grid_winds earth
@@ -248,19 +248,19 @@ gravity wave drag or wind stresses.
 ```
 
 This ends this introduction. For more information, see
-the regular [new_grid documentation](./new_grid.md),
+the regular [new_grid documentation](./to_do/new_grid.md),
 
 See also:
-[-new_grid](./new_grid.md),
-[-new_grid_interpolation](./new_grid_interpolation.md),
-[-new_grid_winds](./new_grid_winds.md),
-[-new_grid_vectors](./new_grid_vectors.md),
-[-lola](./lola.md),
-[-bin](./bin.md),
-[-import_bin](./import_bin.md),
-[-rpn](./rpn.md),
-[-grib_out](./grib_out.md),
-[new_grid multi-core usage](./new_grid_usage.md),
+[-new_grid](./to_do/new_grid.md),
+[-new_grid_interpolation](./to_do/new_grid_interpolation.md),
+[-new_grid_winds](./to_do/new_grid_winds.md),
+[-new_grid_vectors](./to_do/new_grid_vectors.md),
+[-lola](./to_do/lola.md),
+[-bin](./to_do/bin.md),
+[-import_bin](./to_do/import_bin.md),
+[-rpn](./to_do/rpn.md),
+[-grib_out](./to_do/grib_out.md),
+[new_grid multi-core usage](./to_do/new_grid_usage.md),
 
 ```
 

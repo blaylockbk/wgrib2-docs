@@ -34,7 +34,7 @@ the disk to communicate with wgrib2.
     ierr = wgrib2(argc, argv);
 ```
 
-More information is given in [callable_wgrib2](./callable_wgrib2.md). This
+More information is given in [callable_wgrib2](./to_do/callable_wgrib2.md). This
 facility was used to create a fortran api to read and write grib2.
 
 ### Wgrib2 as a Process (Filter)

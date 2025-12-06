@@ -149,10 +149,10 @@ rm /tmp/p1.$$ /tmp/p2.$$ /tmp/p3.$$
 ```
 
 See also:
-[-if_n](./if_n.md),
-[-for](./for.md),
-[-flush](./flush.md),
-[-n](./n.md),
+[-if_n](./to_do/if_n.md),
+[-for](./to_do/for.md),
+[-flush](./to_do/flush.md),
+[-n](./to_do/n.md),
 [using pipes](./pipes.md),
 
 ---
