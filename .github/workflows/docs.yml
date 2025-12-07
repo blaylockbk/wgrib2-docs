@@ -1,9 +1,8 @@
 name: Documentation
 on:
-  #push:
-  #  branches:
-  #    - master
-  #    - main
+  push:
+    branches:
+      # - main  # turn off: publish with readthedocs
 permissions:
   contents: read
   pages: write
