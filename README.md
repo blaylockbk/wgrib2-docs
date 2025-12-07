@@ -26,3 +26,12 @@ The projects goals are to
 ## Help wanted.
 
 **_If you would like to get involved_**, I would love your help to make _the best wgrib2 documentation ever!_ To get started, submit an Issue or Pull Request.
+
+## Development
+
+I am using [Zensical](https://zensical.org/docs/) to make these docs, and you can too! Just edit the Markdown pages and serve the docs to show them in your browser:
+
+```bash
+uv run zensical serve
+```
+
