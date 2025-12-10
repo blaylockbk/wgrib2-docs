@@ -1,11 +1,11 @@
 # Install with Conda
 
-The easiest way to install **wgrib2** for linux computers is with conda.
+The easiest way to install **wgrib2** for linux is with conda.
 
 [![Conda-version](https://img.shields.io/conda/v/conda-forge/wgrib2)
 ![Conda-platform](https://img.shields.io/conda/pn/conda-forge/wgrib2)](https://anaconda.org/conda-forge/wgrib2)
 
-=== ":simple-conda-forge: Mamba"
+=== ":simple-condaforge: Mamba"
 
     Create a conda environment named "wgrib2" with the `wgrib` package installed.
 
@@ -26,8 +26,10 @@ The easiest way to install **wgrib2** for linux computers is with conda.
     wgrib2 <options>
     ```
 
-=== ":simple-conda: Conda"
+=== ":simple-anaconda: Conda"
+
+    Install wgrib2 from the conda-forge channel:
 
     ```bash
-    conda install -c conda-forge wgrib2
+    conda install conda-forge::wgrib2
     ```
