@@ -4,3 +4,5 @@ _version.py
 
 site
 .venv
+
+*.grib2

@@ -51,8 +51,8 @@ title: Home
 
 New to wgrib2? Start with these pages:
 
-- **[Installation](./User-Guide/install-conda.md)** - Get wgrib2 running on your system
-- **[Basic Usage](./User-Guide/best-practices.md)** - Common commands and workflows
+- **[Installation](./User-Guide/01_install-conda.md)** - Get wgrib2 running on your system
+- **[Basic Usage](./User-Guide/03_best-practices.md)** - Common commands and workflows
 - **[Options Reference](options/)** - Complete list of command-line options
 
 !!! info "About This Site"
