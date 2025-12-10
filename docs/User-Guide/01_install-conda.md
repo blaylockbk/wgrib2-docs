@@ -1,6 +1,6 @@
-# Install with Conda
+# Install from conda-forge
 
-The easiest way to install **wgrib2** for linux is with conda.
+The easiest way to install **wgrib2** for Linux or Mac is with Conda or Mamba from conda-forge.
 
 [![Conda-version](https://img.shields.io/conda/v/conda-forge/wgrib2)
 ![Conda-platform](https://img.shields.io/conda/pn/conda-forge/wgrib2)](https://anaconda.org/conda-forge/wgrib2)
@@ -19,7 +19,7 @@ The easiest way to install **wgrib2** for linux is with conda.
     mamba run -n wgrib2 wgrib2 <options>
     ```
 
-    or activate the environment and then run
+    Or activate the environment and then run:
 
     ```bash
     mamba activate wgrib2
