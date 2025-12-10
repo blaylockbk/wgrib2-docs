@@ -96,7 +96,7 @@ repo_url = "https://github.com/blaylockbk/wgrib2-docs"
 # - https://developer.mozilla.org/en-US/docs/Glossary/Favicon
 #
 favicon = "_static/icon.ico"
-logo = "_static/wgrib2-logo.png"
+logo = "_static/icon.png"
 
 # Zensical supports more than 60 different languages. This means that the
 # labels and tooltips that Zensical's templates produce are translated.

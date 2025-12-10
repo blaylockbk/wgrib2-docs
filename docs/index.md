@@ -2,9 +2,7 @@
 title: Home
 ---
 
-<div style="text-align: center; margin: 2em 0;">
-  <img src="_static/wgrib2-logo.png" alt="wgrib2 logo" style="max-width: 550px;">
-</div>
+![](_static/wgrib2-logo.png)
 
 !!! warning "Unofficial Documentation"
 
