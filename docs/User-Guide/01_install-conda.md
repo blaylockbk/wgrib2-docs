@@ -1,9 +1,22 @@
 # Install from conda-forge
 
-The easiest way to install **wgrib2** for Linux or Mac is with Conda or Mamba from conda-forge.
+The easiest way to install _wgrib2_ for Linux or Mac is from **conda-forge**.
 
-[![Conda-version](https://img.shields.io/conda/v/conda-forge/wgrib2)
-![Conda-platform](https://img.shields.io/conda/pn/conda-forge/wgrib2)](https://anaconda.org/conda-forge/wgrib2)
+[![Conda-version](https://img.shields.io/conda/v/conda-forge/wgrib2)](https://anaconda.org/conda-forge/wgrib2)
+
+=== ":simple-hackthebox: pixi"
+
+    Install wgrib2 globally using [pixi](https://pixi.sh/latest/)
+
+    ```bash
+    pixi global install wgrib2
+    ```
+
+    ```console
+    $ pixi  global install wgrib2
+    └── wgrib2: 3.8.0 (installed)
+        └─ exposes: gmerge, smallest_4, smallest_grib2, wgrib, wgrib2
+    ```
 
 === ":simple-condaforge: Mamba"
 
@@ -28,8 +41,10 @@ The easiest way to install **wgrib2** for Linux or Mac is with Conda or Mamba fr
 
 === ":simple-anaconda: Conda"
 
-    Install wgrib2 from the conda-forge channel:
+    Install wgrib2 from conda-forge:
 
     ```bash
     conda install conda-forge::wgrib2
     ```
+
+!!! note "There are no pre-built wgrib2 builds for Windows."
